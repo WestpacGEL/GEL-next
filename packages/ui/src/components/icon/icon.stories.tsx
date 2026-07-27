@@ -100,6 +100,10 @@ const meta: Meta<typeof Icon> = {
         ],
       },
     },
+    look: {
+      description: 'Icon look variation. Defaults to filled',
+      type: { name: 'enum', value: ['filled', 'outlined'] },
+    },
   },
 };
 

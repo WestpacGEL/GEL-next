@@ -8,6 +8,12 @@ const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
+  argTypes: {
+    className: {
+      description: 'String to override base style',
+      type: { name: 'string' },
+    },
+  },
 };
 
 export default meta;

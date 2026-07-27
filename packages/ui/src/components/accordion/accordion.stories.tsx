@@ -27,6 +27,45 @@ const meta: Meta<typeof Accordion> = {
       return <Story />;
     },
   ],
+  argTypes: {
+    justify: {
+      description: 'Stretch the tab to fill the whole content',
+      type: { name: 'boolean' },
+      table: { defaultValue: { summary: 'false' } },
+    },
+    look: {
+      description: 'The look of the accordion \n\n `soft` `lego`',
+      type: { name: 'enum', value: ['soft', 'lego'] },
+      table: { defaultValue: { summary: 'soft' } },
+    },
+    rounded: {
+      description: 'Whether the accordion is rounded',
+      type: { name: 'boolean' },
+      table: { defaultValue: { summary: 'true' } },
+    },
+    expandedKeys: {
+      description: 'The currently expanded keys (controlled)',
+    },
+    defaultExpandedKeys: {
+      description: 'The initial expanded keys (uncontrolled)',
+    },
+    onExpandedChange: {
+      description: 'Handler called when the expanded keys change',
+      type: { name: 'function' },
+    },
+    isDisabled: {
+      description: 'Whether all accordion items are disabled',
+      type: { name: 'boolean' },
+    },
+    children: {
+      description: '`<AccordionItem />` children',
+      type: { name: 'string' },
+    },
+    className: {
+      description: 'String to override base style',
+      type: { name: 'string' },
+    },
+  },
 };
 
 export default meta;

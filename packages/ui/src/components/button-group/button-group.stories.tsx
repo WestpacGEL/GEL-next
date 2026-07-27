@@ -13,13 +13,55 @@ const meta: Meta<typeof ButtonGroup> = {
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
   argTypes: {
-    isDisabled: {
-      description: 'Controls whether all radio options are disabled or not',
+    children: {
+      description: '`<ButtonGroupButton />` children',
+      type: { name: 'string' },
+    },
+    look: {
+      description: "Controls look of `Button` components, can't be applied directly to `Button` \n\n `primary` `hero`",
+      type: { name: 'enum', value: ['primary', 'hero'] },
+    },
+    block: {
+      description: 'Sets whether buttons fill the entire box they are located in',
       type: { name: 'boolean' },
     },
     size: {
       description:
         'Controls size of buttons, can use any size the regular GEL Next Button components use or responsive sizing',
+    },
+    orientation: {
+      description: 'Orientation of the button group \n\n `horizontal` `vertical`',
+      type: { name: 'enum', value: ['horizontal', 'vertical'] },
+      table: { defaultValue: { summary: 'horizontal' } },
+    },
+    isDisabled: {
+      description: 'Controls whether all radio options are disabled or not',
+      type: { name: 'boolean' },
+    },
+    disallowEmptySelection: {
+      description: 'Whether the group allows empty selection',
+      type: { name: 'boolean' },
+    },
+    selectionMode: {
+      description: 'Whether single or multiple selection is enabled \n\n `single` `multiple`',
+      type: { name: 'enum', value: ['single', 'multiple'] },
+      table: { defaultValue: { summary: 'single' } },
+    },
+    selectedKeys: {
+      description:
+        'The currently selected key(s) (controlled). `Key` for `single`, `Iterable<Key>` for `multiple` selection mode',
+    },
+    defaultSelectedKeys: {
+      description:
+        'The initial selected key(s) (uncontrolled). `Key` for `single`, `Iterable<Key>` for `multiple` selection mode',
+    },
+    onSelectionChange: {
+      description: 'Handler called when the selection changes',
+      type: { name: 'function' },
+    },
+    className: {
+      description: 'String to override base style',
+      type: { name: 'string' },
     },
   },
   args: {

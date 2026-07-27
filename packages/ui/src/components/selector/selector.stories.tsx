@@ -25,6 +25,45 @@ const meta: Meta<typeof Selector> = {
   component: Selector,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
+  argTypes: {
+    type: {
+      description: 'Selector variant to render \n\n `checkbox` `radio` `button` `link`',
+      type: { name: 'enum', value: ['checkbox', 'radio', 'button', 'link'] },
+    },
+    children: {
+      description: '`<SelectorRadio />` | `<SelectorCheckbox />` children',
+      type: { name: 'string' },
+    },
+    orientation: {
+      description: 'Orientation of the options \n\n `horizontal` `vertical`',
+      type: { name: 'enum', value: ['horizontal', 'vertical'] },
+    },
+    size: {
+      description:
+        "(`checkbox` type) Controls size of `CheckboxItem` components, can't be applied directly to `CheckboxItem` \n\n `medium` `large`",
+      type: { name: 'enum', value: ['medium', 'large'] },
+    },
+    className: {
+      description: '(`checkbox` type) String to override base style',
+      type: { name: 'string' },
+    },
+    value: {
+      description: 'Key to set as default value (uncontrolled) or currently selected value (controlled)',
+    },
+    onChange: {
+      description:
+        'Called when selection changes. Providing this prop makes the component controlled. Pass an empty string to clear the selection.',
+      type: { name: 'function' },
+    },
+    isDisabled: {
+      description: '(`button` / `link` types) Whether all options are disabled',
+      type: { name: 'boolean' },
+    },
+    tag: {
+      description: '(`radio` / `button` / `link` types) Tag to render',
+      type: { name: 'string' },
+    },
+  },
 };
 
 export default meta;
