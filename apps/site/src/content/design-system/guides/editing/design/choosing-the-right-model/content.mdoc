@@ -1,0 +1,85 @@
+Start with **In context** and only move to a heavier model when the task requires more focus, space, guidance, validation or risk control.
+
+```tsx
+<Table colspan={4}>
+  <React.Fragment key=".0">
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Use when the task...
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Typical characteristics
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Best suited to
+        </TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+
+    <TableBody>
+
+      <TableRow>
+        <TableCell>
+          <strong>1. In context</strong>
+        </TableCell>
+        <TableCell>
+          Changes a single, low-risk value or setting
+        </TableCell>
+        <TableCell>
+          One field or setting, minimal validation, low risk, little or no guidance, no dependencies
+        </TableCell>
+        <TableCell>
+          Simple changes where staying in place makes the task faster and clearer
+        </TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>
+           <strong>2.Focused in context </strong>
+        </TableCell>
+        <TableCell>
+          Needs focus, confirmation or a small amount of additional input
+        </TableCell>
+        <TableCell>
+          Small related group of fields, low to moderate validation, some guidance, limited dependencies
+        </TableCell>
+        <TableCell>
+          Contained tasks where the customer should remain anchored to the original context
+        </TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>
+           <strong>3. Dedicated space </strong>
+        </TableCell>
+        <TableCell>
+          Involves multiple steps, dependencies, significant validation or higher risk
+        </TableCell>
+        <TableCell>
+          Multiple fields or sections, moderate to high risk, substantial guidance, strong dependencies
+        </TableCell>
+        <TableCell>
+          Complex, regulated, high-risk or multi-step editing experiences
+        </TableCell>
+      </TableRow>
+
+    </TableBody>
+  </React.Fragment>
+</Table>
+```
+
+### Choosing a 'Focussed in context' implementation
+
+When a task falls into the Focused in context model, platforms may use different components depending on the experience and device.
+
+Examples include:
+
+- **Alert dialog -** Suitable only for very small confirmation or input tasks.
+- **Modal or large sheet -** Suitable when additional focus or space is needed but a dedicated destination would be excessive.
+- **Bottom sheet or half sheet -** Suitable for selections, short tasks and contextual interactions where maintaining connection to the underlying experience is valuable.
+
+The component choice may differ by platform, but the underlying editing model remains the same.
