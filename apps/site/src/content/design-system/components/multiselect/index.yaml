@@ -3,7 +3,9 @@ description: >-
   Use the Multi-select component when users need to choose more than one option
   from a defined list within a single control. 
 namedExport:
-  discriminant: false
+  discriminant: true
+  value:
+    name: MultiSelect
 excludeFromNavbar: false
 design:
   - title:

@@ -11,6 +11,9 @@ import { styles } from './components/button-group-button/button-group-button.sty
 type Variants = VariantProps<typeof styles>;
 
 type BaseButtonGroupProps = {
+  /**
+   * The `ButtonGroupButton` components displayed within the group
+   */
   children: React.ReactNode;
   /**
    * Controls look of `Button` components, can't be applied directly to `Button`
@@ -29,16 +32,34 @@ type BaseButtonGroupProps = {
 
 type ButtonGroupPropsPerSelectionMode = {
   single: BaseButtonGroupProps & {
+    /**
+     * Determines whether one or multiple buttons can be selected
+     */
     selectionMode?: 'single';
+    /**
+     * The currently selected button key(s). Providing this prop controls the group's selection
+     */
     selectedKeys?: Key;
+    /**
+     * The initially selected button key(s) when the group is uncontrolled
+     */
     defaultSelectedKeys?: Key;
     /** Handler that is called when the selection changes. */
     onSelectionChange?: (key: Key) => void;
     batata?: string;
   };
   multiple: BaseButtonGroupProps & {
+    /**
+     * Determines whether one or multiple buttons can be selected
+     */
     selectionMode: 'multiple';
+    /**
+     * The currently selected button key(s). Providing this prop controls the group's selection
+     */
     selectedKeys?: Iterable<Key>;
+    /**
+     * The initially selected button key(s) when the group is uncontrolled
+     */
     defaultSelectedKeys?: Iterable<Key>;
     /** Handler that is called when the selection changes. */
     onSelectionChange?: (keys: Set<Key>) => void;
