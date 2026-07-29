@@ -51,26 +51,39 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
 
     const handleChange = useCallback(
       (index: number, event: ChangeEvent<HTMLInputElement>) => {
-        const inputValue = event.target.value.slice(-1);
-        if (
-          (type === 'numbers' && /^\d$/.test(inputValue)) ||
-          (type === 'letters' && /^[a-zA-Z]$/.test(inputValue)) ||
-          (type === 'alphanumeric' && /^[a-zA-Z0-9]$/.test(inputValue))
-        ) {
-          const newPasscode = [...passcode.slice(0, index), inputValue, ...passcode.slice(index + 1)];
-          if (onChange) {
-            onChange(newPasscode);
-          } else {
-            setInternalPasscode(newPasscode);
-          }
+        const inputValue = event.target.value;
+        const validData = inputValue
+          .split('')
+          .filter(char => {
+            if (type === 'numbers') return /^\d$/.test(char);
+            if (type === 'letters') return /^[a-zA-Z]$/.test(char);
+            return /^[a-zA-Z0-9]$/.test(char);
+          })
+          .slice(0, length - index);
 
-          // Move to the next input if available
-          if (index < length - 1 && inputValue !== '') {
-            inputRefs.current[index + 1]?.focus();
-          }
-          if (newPasscode.filter(passcode => !passcode).length === 0 && onComplete) {
-            onComplete(newPasscode.join(''));
-          }
+        if (validData.length === 0) {
+          return;
+        }
+
+        const previousSlice = passcode.slice(0, index);
+        const afterSlice = passcode.slice(index);
+        const newPasscode = [...previousSlice, ...[...validData, ...afterSlice.slice(validData.length)]].slice(
+          0,
+          length,
+        );
+
+        if (onChange) {
+          onChange(newPasscode);
+        } else {
+          setInternalPasscode(newPasscode);
+        }
+
+        // Move to the next input if available
+        if (index + validData.length < length) {
+          inputRefs.current[index + validData.length]?.focus();
+        }
+        if (newPasscode.filter(passcode => !passcode).length === 0 && onComplete) {
+          onComplete(newPasscode.join(''));
         }
       },
       [passcode, length, onChange, onComplete, type],
@@ -81,13 +94,13 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
         event.preventDefault();
         const pastedData = event.clipboardData.getData('text');
         const validData = pastedData
-          .slice(0, length - index)
           .split('')
           .filter(char => {
             if (type === 'numbers') return /^\d$/.test(char);
             if (type === 'letters') return /^[a-zA-Z]$/.test(char);
             return /^[a-zA-Z0-9]$/.test(char);
-          });
+          })
+          .slice(0, length - index);
         const previousSlice = passcode.slice(0, index);
         const afterSlice = passcode.slice(index);
         const newPasscode = [...previousSlice, ...[...validData, ...afterSlice.slice(validData.length)]].slice(
