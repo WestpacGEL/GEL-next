@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.13.1
+
+### Patch Changes
+
+- bfcda6f: Allow for pass-code string to be pasted in mobile browser
+
 ## 1.13.0
 
 ### Minor Changes
