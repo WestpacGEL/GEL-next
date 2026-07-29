@@ -1,76 +1,95 @@
-### Button looks
+### Button looks - default
 
 ```jsx
-<Fragment>
-  <ComponentTitle>Default</ComponentTitle>
-  <Button>Default standard</Button>{' '}
+<div className="flex gap-0.5">
+  <Button>Default standard</Button>
   <Button soft>Default soft</Button>
-  <hr className="border-t border-t-border-muted-soft my-4" />
-  <ComponentTitle>Standard</ComponentTitle>
-  <Button look="primary">Primary standard</Button> <Button look="hero">Hero standard</Button> <Button look="faint">
-    Faint standard
-  </Button>
-  <Button look="link">Link</Button> <Button look="unstyled">Unstyled</Button>
-  <hr className="border-t border-t-border-muted-soft my-4" />
-  <ComponentTitle>Soft</ComponentTitle>
+</div>
+```
+
+### Button looks - standard
+
+```jsx
+<div className="flex gap-0.5">
+  <Button look="primary">Primary standard</Button>
+  <Button look="hero">Hero standard</Button>
+  <Button look="faint">Faint standard</Button>
+  <Button look="link">Link</Button>
+  <Button look="unstyled">Unstyled</Button>
+</div>
+```
+
+### Button looks - soft
+
+```jsx
+<div className="flex gap-0.5">
   <Button look="primary" soft>
     Primary soft
-  </Button>{' '}
+  </Button>
   <Button look="hero" soft>
     Hero soft
-  </Button>{' '}
+  </Button>
   <Button look="faint" soft>
     Faint soft
   </Button>
-</Fragment>
+</div>
 ```
 
 ### Button sizes
 
 ```jsx
-<Fragment>
-  <ComponentTitle>Sizes</ComponentTitle>
-  <Button size="xlarge">Extra large: 48px</Button> <Button size="large">Large: 42px</Button> <Button size="medium">
-    Medium (default): 36px
-  </Button> <Button size="small">Small: 30px</Button>
-  <hr className="border-t border-t-border-muted-soft my-4" />
-  <ComponentTitle>Responsive sizing</ComponentTitle>
-  <Button size={{ initial: 'small', xsl: 'medium', sm: 'large', md: 'xlarge' }}>Responsive size</Button>
-  <br />
-  <br />
-  <Button size={{ initial: 'small', xsl: null, sm: 'xlarge' }}>Responsive size</Button>
-</Fragment>
+<div className="flex flex-col gap-0.5">
+  <div className="flex flex-wrap gap-0.5">
+    <Button size="xlarge">Extra large: 48px</Button>
+    <Button size="large">Large: 42px</Button>
+    <Button size="medium">Medium (default): 36px</Button>
+    <Button size="small">Small: 30px</Button>
+  </div>
+</div>
 ```
 
-### Block buttons
+### Responsive sizing
 
 ```jsx
-<Fragment>
-  <ComponentTitle>Block</ComponentTitle>
+<div className="flex flex-col gap-2">
+  <Button size={{ initial: 'xlarge', md: 'medium' }}>Responsive size</Button>
+  <Button size={{ initial: 'small', xsl: 'medium', sm: 'large', md: 'xlarge' }}>Responsive size</Button>
+</div>
+```
+
+### Block-level buttons
+
+```jsx
+<div className="flex flex-col gap-2">
   <Button block>Block-level button</Button>
-  <Hr />
-  <ComponentTitle>Responsive block</ComponentTitle>
-  <Button block={{ initial: true, xsl: false, sm: true, lg: false }}>Responsive block button</Button>
-  <br />
-  <br />
-  <Button block={{ initial: true, sm: false }}>Responsive block button</Button>
-</Fragment>
+  <Button block={{ initial: true, sm: false }}>Responsive block-level button</Button>
+</div>
 ```
 
 ### Buttons with icons
 
 ```jsx
-<>
-<ComponentTitle>Filled icons</ComponentTitle>
-<div className="flex items-center gap-2 mb-2">  
-<Button iconBefore={SpaIcon}>Icon before</Button>  
-<Button iconAfter={SpaIcon}>Icon after</Button>
+<div>
+  <div className="flex items-center gap-2 mb-2">
+    <Button iconBefore={SpaIcon}>Filled icon before</Button>
+    <Button iconAfter={SpaIcon}>Filled icon after</Button>
+  </div>
+  <Hr />
+  <div className="flex items-center gap-2">
+    <Button iconBefore={SpaIcon} iconLook="outline">
+      Outlined icon after
+    </Button>
+    <Button iconAfter={SpaIcon} iconLook="outline">
+      Outlined icon after
+    </Button>
+  </div>
 </div>
-<Hr />
-<ComponentTitle>Outlined icons</ComponentTitle>
-<div className="flex items-center gap-2">  
-<Button iconBefore={SpaIcon} iconLook="outline">Icon after</Button>  
-<Button iconAfter={SpaIcon} iconLook="outline">Icon after</Button>
-</div>
-</>
+```
+
+### Button as a link
+
+```jsx
+<Button tag="a" href="">
+  Link example
+</Button>
 ```
