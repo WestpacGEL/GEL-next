@@ -112,6 +112,16 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
         } else {
           setInternalPasscode(newPasscode);
         }
+
+        // Move to the next input if available
+        if (index + validData.length < length) {
+          console.log('Paste - index and valid data less than length');
+          inputRefs.current[index + validData.length]?.focus();
+        } else {
+          console.log('Paste - index and valid data more or equal');
+          inputRefs.current[validData.length]?.focus();
+        }
+
         if (newPasscode.filter(passcode => !passcode).length === 0) {
           if (onPasteComplete) {
             onPasteComplete(newPasscode.join(''));
