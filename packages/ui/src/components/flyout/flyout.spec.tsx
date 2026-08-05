@@ -74,6 +74,7 @@ describe('Flyout', () => {
   it('renders the specified root tag and forwards native attributes and styles', () => {
     render(
       <Flyout
+        // eslint-disable-next-line better-tailwindcss/no-unregistered-classes
         className="custom-class"
         data-testid="flyout"
         onClose={vi.fn()}
