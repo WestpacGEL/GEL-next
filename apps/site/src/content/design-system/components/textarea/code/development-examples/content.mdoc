@@ -1,14 +1,7 @@
 ### Default
 
 ```tsx
-<div className="flex flex-col gap-4">
-  <div>
-    <p className="typography-body-10 text-text-muted">
-      <em>Default</em>
-    </p>
-  </div>
-  <Textarea />
-</div>
+<Textarea />
 ```
 
 ---
@@ -16,8 +9,11 @@
 ### Text area sizes
 
 ```tsx
+<Textarea size="small" placeholder="small" className="w-full" />
+
+// other sizes
 () => {
-  const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
+  const SIZES = ['medium', 'large', 'xlarge'] as const;
   return (
 
 
@@ -36,32 +32,34 @@
 
 ---
 
-### Different status
+### Fix-width text area
 
 ```jsx
-<div className="flex flex-col gap-4">
-    <p className="typography-body-10 text-text-muted">
-      <em>Invalid</em>
-      </p>
+<Textarea width={20} /> 
+```
 
-    <div>
-      <Textarea invalid placeholder="Invalid" />
-    </div>
+---
 
-    <p className="typography-body-10 text-text-muted">
-      <em>Disabled</em>
-      </p>
+### Invalid text area
 
-    <div>
-      <Textarea disabled placeholder="Disabled" />
-    </div>
-    <p className="typography-body-10 text-text-muted">
-      <em>Read-only</em>
-      </p>
+```jsx
+<Textarea invalid placeholder="Invalid" />
 
-    <div>
-      <Textarea readOnly value="This value is readonly" />
-    </div>
+```
 
-</div>
+---
+
+### Disabled text area
+
+```jsx
+<Textarea disabled placeholder="Disabled" />
+
+```
+
+---
+
+### Read-only text area
+
+```jsx
+<Textarea readOnly defaultValue="Your application has been submitted." />
 ```
