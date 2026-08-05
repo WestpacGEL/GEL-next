@@ -10,22 +10,14 @@
 
 ```tsx
 () => {
-  const SIZES = ['medium', 'large', 'xlarge'] as const;
+  const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 
   return (
-<>
-// simple example
-<Textarea size="small" className="w-full" />
-
-// other sizes
       <div className="flex flex-col gap-4">
         {SIZES.map(size => (
-          <div key={size}>
             <Textarea placeholder={size} className="w-full" size={size} />
-          </div>
         ))}
       </div>
-</>
   );
 };
 
