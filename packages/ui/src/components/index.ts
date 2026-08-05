@@ -47,3 +47,4 @@ export * from './progress-indicator/index.js';
 export * from './header/index.js';
 export * from './footer/index.js';
 export * from './multi-select/index.js';
+export * from './flyout/index.js';
