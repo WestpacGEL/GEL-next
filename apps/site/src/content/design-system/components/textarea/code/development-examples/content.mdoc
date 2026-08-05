@@ -9,16 +9,15 @@
 ### Text area sizes
 
 ```tsx
-<>
-<Textarea size="small" placeholder="small" className="w-full" />;
-
-// other sizes
 () => {
   const SIZES = ['medium', 'large', 'xlarge'] as const;
+
   return (
+<>
+// simple example
+<Textarea size="small" className="w-full" />
 
-
-
+// other sizes
       <div className="flex flex-col gap-4">
         {SIZES.map(size => (
           <div key={size}>
@@ -26,10 +25,10 @@
           </div>
         ))}
       </div>
-
+</>
   );
 };
-</>
+
 ```
 
 ---
