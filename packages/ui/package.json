@@ -88,6 +88,9 @@
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
     },
+    "./flyout": {
+      "default": "./dist/components/flyout/index.js"
+    },
     "./footer": {
       "default": "./dist/components/footer/index.js"
     },
