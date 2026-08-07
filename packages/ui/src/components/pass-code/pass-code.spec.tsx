@@ -54,6 +54,7 @@ describe('PassCode', () => {
     expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
     expect(onCompleteMock).toHaveBeenCalledOnce();
     expect(onCompleteMock).toHaveBeenCalledWith('1234');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
   });
 
   it('moves focus to the next input after multiple characters', () => {
@@ -79,6 +80,7 @@ describe('PassCode', () => {
     expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
     expect(onCompleteMock).toHaveBeenCalledOnce();
     expect(onCompleteMock).toHaveBeenCalledWith('1234');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
   });
 
   it('triggers the onPasteComplete correctly', () => {
@@ -94,6 +96,23 @@ describe('PassCode', () => {
 
     // Ensure the onPasteComplete callback is called with the correct passcode
     expect(onPasteCompleteMock).toHaveBeenCalledWith('1234');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
+  });
+
+  it('focuses the final input when pasted data fills the remaining inputs', () => {
+    render(<PassCode length={4} type="numbers" />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '1' } });
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_2), { target: { value: '2' } });
+    fireEvent.paste(screen.getByLabelText(PASSCODE_DIGIT_3), {
+      clipboardData: {
+        getData: () => '34',
+      },
+    });
+
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_3).value).toBe('3');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
   });
 
   it('strips invalid characters before limiting pasted data', () => {
