@@ -81,6 +81,8 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
         // Move to the next input if available
         if (index + validData.length < length) {
           inputRefs.current[index + validData.length]?.focus();
+        } else {
+          inputRefs.current[index + validData.length - 1]?.focus();
         }
         if (newPasscode.filter(passcode => !passcode).length === 0 && onComplete) {
           onComplete(newPasscode.join(''));
@@ -115,11 +117,9 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
 
         // Move to the next input if available
         if (index + validData.length < length) {
-          console.log('Paste - index and valid data less than length');
           inputRefs.current[index + validData.length]?.focus();
         } else {
-          console.log('Paste - index and valid data more or equal');
-          inputRefs.current[validData.length]?.focus();
+          inputRefs.current[index + validData.length - 1]?.focus();
         }
 
         if (newPasscode.filter(passcode => !passcode).length === 0) {
