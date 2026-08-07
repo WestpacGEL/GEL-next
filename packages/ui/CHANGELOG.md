@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.14.0
+
+### Minor Changes
+
+- 450398a: Update the pass-code index on text paste
+
 ## 1.13.1
 
 ### Patch Changes
