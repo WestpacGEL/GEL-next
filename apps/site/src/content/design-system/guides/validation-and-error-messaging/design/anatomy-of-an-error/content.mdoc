@@ -1,9 +1,31 @@
-When we alert users to something that requires their attention, we use the [reserved colours](/components/foundation/colour) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour _Danger_, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
+When we alert users to something that requires their attention, we use the [reserved colours](/components/foundation/colour) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour *Danger*, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
 
 ```jsx
 <InputGroup width={20} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
   <Input invalid />
 </InputGroup>
+```
+
+### Error placement
+
+Place validation errors directly beneath the field label and any hint text, and above the associated input. Keeping labels, supporting information, and error messages together creates a predictable pattern that is easier to scan, reduces cognitive load, and ensures the relationship between the error and its field remains clear. This approach also provides a more consistent experience across different control types, preventing errors from being obscured by dropdown menus or separated from their labels by long lists of checkboxes or radio buttons.
+
+```jsx
+<div className="grid grid-cols-2">
+  <InputGroup width={20} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
+  <Input invalid />
+</InputGroup>
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+</div>
 ```
 
 Some of the questions presented to users have multiple inputs e.g., Date of birth – Day, Month and Year. Each input has its own error which appears stacked.&nbsp;

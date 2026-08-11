@@ -25,9 +25,10 @@ design:
     noDemo: false
 accessibility: []
 relatedComponents:
+  icon: cube
   links:
-      - title: Alerts
-        slug: /components/alerts
-      - title: Colours
-        slug: /components/foundation/colours
+    - title: Alerts
+      slug: /components/alerts
+    - title: Colours
+      slug: /components/foundation/colours
 code: []
