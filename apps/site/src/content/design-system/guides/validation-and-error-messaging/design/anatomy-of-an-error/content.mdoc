@@ -57,11 +57,9 @@ hintMessage="Hint text"
       ]}
     />
 
-<InputGroup width="20" hint="Hint text" errorMessage="If there is an error it can go here"  label="Label" supportingText="I am supporting text">
-  <Textarea />
-</InputGroup>
 
-    <InputGroup label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
+
+    <InputGroup label="Label" errorMessage="If there is an error it can go here" hint="Hint text" supportingText={counterText}>
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
 
