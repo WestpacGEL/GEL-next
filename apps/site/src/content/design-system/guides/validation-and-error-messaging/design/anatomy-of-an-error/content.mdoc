@@ -15,16 +15,19 @@ Place validation errors directly beneath the field label and any hint text, and 
   <InputGroup width={20} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
   <Input invalid />
 </InputGroup>
-  <CheckboxGroup 
-    className="col-span-1" 
-    label={<ComponentTitle>Large</ComponentTitle>} 
-    size="large"
-    checkboxes={[
-      { value: "Option 1", label: "Option 1" },
-      { value: "Option 2", label: "Option 2" },
-      { value: "Option 3", label: "Option 3" },
-    ]}
-  />
+ <CheckboxGroup 
+errorMessage="If there is an error it can go here"    
+hintMessage="These are large sized checkboxes"
+    label="Select an option"
+  validationState="invalid"
+      className="col-span-1" 
+      size="large"
+      checkboxes={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+      ]}
+    />
 </div>
 ```
 
