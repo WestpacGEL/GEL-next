@@ -57,7 +57,7 @@ function isToken(node) {
 }
 
 // match types and values with what's expected by GEL
-function normalizeExportType(type) {
+function convertFigmaTypeToGelType(type) {
   if (type === 'number') {
     return 'float';
   }
@@ -65,7 +65,7 @@ function normalizeExportType(type) {
   return type;
 }
 
-function normalizeExportValue(value, type) {
+function convertFigmaValueToGelValue(value, type) {
   if (type === 'color' && value && typeof value === 'object') {
     if (!value.hex) {
       throw new Error('A colour token is missing its hex value');
@@ -87,19 +87,24 @@ function convertFigmaTokenToGelToken(figmaToken, collectionName) {
   const { $type: figmaType, $value: figmaValue, $description: description } = figmaToken;
 
   const { primitivePath, scopes, hiddenFromPublishing } = getFigmaTokenInformation(figmaToken);
-  const normalizedToken = {
-    $type: normalizeExportType(type),
-    $value: aliasData?.targetVariableName
-      ? aliasNameToGELReference(aliasData.targetVariableName)
-      : normalizeExportValue(value, type),
+
+  let gelValue;
+
+  gelValue = primitivePath
+    ? aliasNameToGELReference(primitivePath)
+    : convertFigmaValueToGelValue(figmaValue, figmaType);
+
+  const gelToken = {
+    $type: convertFigmaTypeToGelType(figmaType),
+    $value: gelValue,
   };
 
-  if (description) normalizedToken.$description = description;
-  if (scopes?.length) normalizedToken.$scopes = scopes;
-  if (hidden) normalizedToken.$hiddenFromPublishing = true;
-  if (collectionName) normalizedToken.$collectionName = collectionName;
+  if (description) gelToken.$description = description;
+  if (scopes?.length) gelToken.$scopes = scopes;
+  if (hiddenFromPublishing) gelToken.$hiddenFromPublishing = true;
+  if (collectionName) gelToken.$collectionName = collectionName;
 
-  return normalizedToken;
+  return gelToken;
 }
 
 function normalizeFigmaExport(figmaItem, collectionName) {
@@ -108,7 +113,7 @@ function normalizeFigmaExport(figmaItem, collectionName) {
   }
 
   if (isToken(figmaItem)) {
-    return normalizeToken(figmaItem, collectionName);
+    return convertFigmaTokenToGelToken(figmaItem, collectionName);
   }
 
   const normalizedGroup = {};
@@ -146,18 +151,25 @@ function findMissingAliases(figmaItem, primitivesJson, currentTokenPath = [], mi
   }
 
   if (isToken(figmaItem)) {
-    const targetPrimitivePath = extensions?.['com.figma.aliasData']?.targetVariableName;
-  }
+    const { primitivePath } = getFigmaTokenInformation(figmaItem);
 
-  if (targetPrimitivePath && !doesPrimitiveTokenExist(primitivesJson, targetPrimitivePath)) {
-    missingAliases.push({ semanticToken: currentTokenPath.join('.'), missingPrimitive: targetPrimitivePath });
+    const primitiveIsMissing = primitivePath && !doesPrimitiveTokenExist(primitivesJson, primitivePath);
+
+    if (primitiveIsMissing) {
+      missingAliases.push({ semanticToken: currentTokenPath.join('.'), missingPrimitive: primitivePath });
+    }
+
     return missingAliases;
   }
 
-  for (const [key, childItem] of Object.entries(figmaItem)) {
-    if (key !== '$extensions') {
-      findMissingAliases(childItem, primitivesJson, [...currentTokenPath, key], missingAliases);
+  for (const [itemName, childItem] of Object.entries(figmaItem)) {
+    if (itemName === '$extensions') {
+      continue;
     }
+
+    const childItemPath = [...currentTokenPath, itemName];
+
+    findMissingAliases(childItem, primitivesJson, childItemPath, missingAliases);
   }
 
   return missingAliases;
