@@ -48,7 +48,7 @@ hintMessage="Hint text"
 
     <InputGroup label="Label" errorMessage="If there is an error it can go here" hint="Hint text" supportingText={counterText}>
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
-  <Input invalid />    
+          <Textarea invalid />  
 </InputGroup>
 
 </div>
@@ -94,7 +94,7 @@ hintMessage="Hint text"
 
    <div> <InputGroup label="Label" hint="Hint text" supportingText={counterText}>
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
-  <Input invalid />    
+          <Textarea invalid />  
 </InputGroup>
 <Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
