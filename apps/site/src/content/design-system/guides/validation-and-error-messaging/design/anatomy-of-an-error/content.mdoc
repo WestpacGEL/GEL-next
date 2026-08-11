@@ -31,14 +31,9 @@ hintMessage="Hint text"
       ]}
     />
 
-<Field label="Label" hintMessage="Hint text" errorMessage="If there is an error it can go here">
-        <Select invalid>
-          <option value="option-1">Option 1</option>
-          <option value="option-2">Option 2</option>
-          <option value="option-3">Option 3</option>
-          <option value="option-4">Option 4</option>
-        </Select>
-      </Field>
+  <InputGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
+          <Textarea invalid />
+        </InputGroup>
 </div>
 ```
 
@@ -64,14 +59,9 @@ hintMessage="Hint text"
     />
 <Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
-<div><Field label="Label" hintMessage="Hint text">
-        <Select invalid>
-          <option value="option-1">Option 1</option>
-          <option value="option-2">Option 2</option>
-          <option value="option-3">Option 3</option>
-          <option value="option-4">Option 4</option>
-        </Select>
-      </Field><Alert className="mt-1" look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+<div>  <InputGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
+          <Textarea invalid />
+        </InputGroup><Alert className="mt-1" look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
 </div>
 ```
