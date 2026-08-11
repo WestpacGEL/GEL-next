@@ -11,7 +11,7 @@ When we alert users to something that requires their attention, we use the [rese
 Place validation errors directly beneath the field label and any hint text, and above the associated input. Keeping labels, supporting information, and error messages together creates a predictable pattern that is easier to scan, reduces cognitive load, and ensures the relationship between the error and its field remains clear. This approach also provides a more consistent experience across different control types, preventing errors from being obscured by dropdown menus or separated from their labels by long lists of checkboxes or radio buttons.
 
 ```jsx
-<div>() => {
+() => {
   const MAX_LENGTH = 250;
   const [inputValue, setInputValue] = useState<string>('');
   const counterText = useMemo(() => {
@@ -24,7 +24,7 @@ Place validation errors directly beneath the field label and any hint text, and 
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
   );
-};</div>
+};
 ```
 
 ```jsx
