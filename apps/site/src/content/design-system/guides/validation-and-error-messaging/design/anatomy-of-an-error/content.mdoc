@@ -11,6 +11,7 @@ When we alert users to something that requires their attention, we use the [rese
 Place validation errors directly beneath the field label and any hint text, and above the associated input. Keeping labels, supporting information, and error messages together creates a predictable pattern that is easier to scan, reduces cognitive load, and ensures the relationship between the error and its field remains clear. This approach also provides a more consistent experience across different control types, preventing errors from being obscured by dropdown menus or separated from their labels by long lists of checkboxes or radio buttons.
 
 ```jsx
+<h3 className="typography-body-10 text-text-success mb-3">DO THIS</h3>
 <div className="grid grid-cols-3">
   <InputGroup width={10} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
   <Input invalid />
@@ -64,7 +65,7 @@ hintMessage="Hint text"
     />
 <Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
-<div><Field label="Label" hintMessage="Hint text" defaultMenuIsOpen >
+<div><Field label="Label" hintMessage="Hint text">
         <Select invalid>
           <option value="option-1">Option 1</option>
           <option value="option-2">Option 2</option>
