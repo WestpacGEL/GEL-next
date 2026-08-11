@@ -88,7 +88,7 @@
   --primitives-color-wbc-primary-800: #780d09;
   --primitives-color-wbc-primary-900: #570906;
   --primitives-color-wbc-primary-950: #370604;
-  --primitives-color-wbc-primary-opacity: rgba(218, 23, 16, 0.5);
+  --primitives-color-wbc-primary-opacity: rgba(218, 23, 16, 0.3);
   --primitives-color-wbc-hero-50: #f1f0fa;
   --primitives-color-wbc-hero-100: #e2e1f4;
   --primitives-color-wbc-hero-200: #a9a5df;
@@ -100,7 +100,7 @@
   --primitives-color-wbc-hero-800: #0d093e;
   --primitives-color-wbc-hero-900: #090538;
   --primitives-color-wbc-hero-950: #060236;
-  --primitives-color-wbc-hero-opacity: rgba(58, 52, 147, 0.6);
+  --primitives-color-wbc-hero-opacity: rgba(58, 52, 147, 0.3);
   --primitives-color-wbc-pop-50: #fff5fd;
   --primitives-color-wbc-pop-100: #ffecfb;
   --primitives-color-wbc-pop-200: #ffcff6;
@@ -112,7 +112,7 @@
   --primitives-color-wbc-pop-800: #8c2278;
   --primitives-color-wbc-pop-900: #59154d;
   --primitives-color-wbc-pop-950: #330c2c;
-  --primitives-color-wbc-pop-opacity: rgba(255, 61, 219, 0.45);
+  --primitives-color-wbc-pop-opacity: rgba(255, 61, 219, 0.3);
   --primitives-color-wbc-holler-50: #faf1fd;
   --primitives-color-wbc-holler-100: #ebcdf9;
   --primitives-color-wbc-holler-200: #ce84f0;
@@ -124,7 +124,7 @@
   --primitives-color-wbc-holler-800: #5c0f7f;
   --primitives-color-wbc-holler-900: #450c5f;
   --primitives-color-wbc-holler-950: #2e0840;
-  --primitives-color-wbc-holler-opacity: rgba(153, 26, 214, 0.5);
+  --primitives-color-wbc-holler-opacity: rgba(153, 26, 214, 0.3);
   --primitives-color-wbc-sing-50: #faf2f2;
   --primitives-color-wbc-sing-100: #f5d9d9;
   --primitives-color-wbc-sing-200: #efa2a2;
@@ -136,7 +136,7 @@
   --primitives-color-wbc-sing-800: #5d0000;
   --primitives-color-wbc-sing-900: #4d0000;
   --primitives-color-wbc-sing-950: #410000;
-  --primitives-color-wbc-sing-opacity: rgba(153, 0, 0, 0.5);
+  --primitives-color-wbc-sing-opacity: rgba(153, 0, 0, 0.3);
   --primitives-color-wbc-dance-50: #fef4eb;
   --primitives-color-wbc-dance-100: #fde7d3;
   --primitives-color-wbc-dance-200: #fbcba2;
@@ -148,7 +148,7 @@
   --primitives-color-wbc-dance-800: #713705;
   --primitives-color-wbc-dance-900: #401f03;
   --primitives-color-wbc-dance-950: #2c1502;
-  --primitives-color-wbc-dance-opacity: rgba(245, 122, 15, 0.45);
+  --primitives-color-wbc-dance-opacity: rgba(245, 122, 15, 0.3);
 }
 
 [data-brand="wbc"] {
@@ -236,6 +236,10 @@
   --color-data-f-opacity: var(--primitives-color-wbc-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-surface-pictogram-base: var(--primitives-color-wbc-hero-500); /* Reserved. Only for use on Pictograms. */
   --color-surface-pictogram-accent: var(--primitives-color-wbc-primary-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-a: var(--primitives-color-wbc-hero-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-b: var(--primitives-color-wbc-primary-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-c: var(--primitives-color-wbc-muted-200); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-d: var(--primitives-color-mono-white); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-wbc-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-wbc-primary-200);
   --color-surface-hover-hero: var(--primitives-color-wbc-hero-400); /* This token is for hover states. */

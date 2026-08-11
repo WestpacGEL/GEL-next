@@ -72,10 +72,10 @@ public enum STGLightColors {
   public static let dataAOpacity = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 0.30196078431372547)
   public static let dataBSolid = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 1)
   public static let dataBTint = UIColor(red: 0.184, green: 0.659, blue: 0.329, alpha: 1)
-  public static let dataBOpacity = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 0.45098039215686275)
+  public static let dataBOpacity = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 0.30196078431372547)
   public static let dataCSolid = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
   public static let dataCTint = UIColor(red: 0.671, green: 0.898, blue: 0.384, alpha: 1)
-  public static let dataCOpacity = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 0.45098039215686275)
+  public static let dataCOpacity = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 0.30196078431372547)
   public static let dataDSolid = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 1)
   public static let dataDTint = UIColor(red: 0.733, green: 0.639, blue: 0.886, alpha: 1)
   public static let dataDOpacity = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 0.30196078431372547)
@@ -87,6 +87,10 @@ public enum STGLightColors {
   public static let dataFOpacity = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 0.4)
   public static let surfacePictogramBase = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
   public static let surfacePictogramAccent = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
+  public static let surfacePictogramA = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
+  public static let surfacePictogramB = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
+  public static let surfacePictogramC = UIColor(red: 0.898, green: 0.969, blue: 0.812, alpha: 1)
+  public static let surfacePictogramD = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceHoverPrimary = UIColor(red: 0.949, green: 0.094, blue: 0.094, alpha: 1)
   public static let surfaceActivePrimary = UIColor(red: 0.973, green: 0.447, blue: 0.447, alpha: 1)
   public static let surfaceHoverHero = UIColor(red: 0.129, green: 0.616, blue: 0.294, alpha: 1)
@@ -942,6 +946,46 @@ public enum STGColors {
           return STGDarkColors.surfacePictogramAccent
         default:
           return STGLightColors.surfacePictogramAccent
+      }
+    }
+  }
+  public static var surfacePictogramA: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.surfacePictogramA
+        default:
+          return STGLightColors.surfacePictogramA
+      }
+    }
+  }
+  public static var surfacePictogramB: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.surfacePictogramB
+        default:
+          return STGLightColors.surfacePictogramB
+      }
+    }
+  }
+  public static var surfacePictogramC: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.surfacePictogramC
+        default:
+          return STGLightColors.surfacePictogramC
+      }
+    }
+  }
+  public static var surfacePictogramD: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.surfacePictogramD
+        default:
+          return STGLightColors.surfacePictogramD
       }
     }
   }

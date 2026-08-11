@@ -73,10 +73,10 @@
   <color name="stgDataAOpacity">#e300004d</color>
   <color name="stgDataBSolid">#008739</color>
   <color name="stgDataBTint">#2fa854</color>
-  <color name="stgDataBOpacity">#00873973</color>
+  <color name="stgDataBOpacity">#0087394d</color>
   <color name="stgDataCSolid">#78be20</color>
   <color name="stgDataCTint">#abe562</color>
-  <color name="stgDataCOpacity">#78be2073</color>
+  <color name="stgDataCOpacity">#78be204d</color>
   <color name="stgDataDSolid">#502d79</color>
   <color name="stgDataDTint">#bba3e2</color>
   <color name="stgDataDOpacity">#502d794d</color>
@@ -88,6 +88,10 @@
   <color name="stgDataFOpacity">#ff7f2966</color>
   <color name="stgSurfacePictogramBase">#004833</color>
   <color name="stgSurfacePictogramAccent">#78be20</color>
+  <color name="stgSurfacePictogramA">#004833</color>
+  <color name="stgSurfacePictogramB">#78be20</color>
+  <color name="stgSurfacePictogramC">#e5f7cf</color>
+  <color name="stgSurfacePictogramD">#ffffff</color>
   <color name="stgSurfaceHoverPrimary">#f21818</color>
   <color name="stgSurfaceActivePrimary">#f87272</color>
   <color name="stgSurfaceHoverHero">#219d4b</color>

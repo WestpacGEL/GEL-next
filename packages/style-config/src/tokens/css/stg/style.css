@@ -100,7 +100,7 @@
   --primitives-color-stg-hero-800: #004833;
   --primitives-color-stg-hero-900: #003323;
   --primitives-color-stg-hero-950: #002a1c;
-  --primitives-color-stg-hero-opacity: rgba(0, 135, 57, 0.45);
+  --primitives-color-stg-hero-opacity: rgba(0, 135, 57, 0.3);
   --primitives-color-stg-pop-50: #f1fbe5;
   --primitives-color-stg-pop-100: #e5f7cf;
   --primitives-color-stg-pop-200: #c2ec8e;
@@ -112,7 +112,7 @@
   --primitives-color-stg-pop-800: #365909;
   --primitives-color-stg-pop-900: #223b04;
   --primitives-color-stg-pop-950: #132402;
-  --primitives-color-stg-pop-opacity: rgba(120, 190, 32, 0.45);
+  --primitives-color-stg-pop-opacity: rgba(120, 190, 32, 0.3);
   --primitives-color-stg-holler-50: #f5f2fb;
   --primitives-color-stg-holler-100: #e6dff5;
   --primitives-color-stg-holler-200: #bba3e2;
@@ -236,6 +236,10 @@
   --color-data-f-opacity: var(--primitives-color-stg-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-surface-pictogram-base: var(--primitives-color-stg-hero-800); /* Reserved. Only for use on Pictograms. */
   --color-surface-pictogram-accent: var(--primitives-color-stg-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-a: var(--primitives-color-stg-hero-800); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-b: var(--primitives-color-stg-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-c: var(--primitives-color-stg-pop-100); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-d: var(--primitives-color-mono-white); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-stg-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-stg-primary-200);
   --color-surface-hover-hero: var(--primitives-color-stg-hero-400); /* This token is for hover states. */

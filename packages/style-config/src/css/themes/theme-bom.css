@@ -31,7 +31,7 @@
       --bom-primary-800: #6f1a00;
       --bom-primary-900: #501000;
       --bom-primary-950: #380900;
-      --bom-primary-opacity: #d1390080;
+      --bom-primary-opacity: #d139004d;
       --bom-hero-50: #f6f5ff;
       --bom-hero-100: #dad6fe;
       --bom-hero-200: #c6c0fd;
@@ -43,7 +43,7 @@
       --bom-hero-800: #261b58;
       --bom-hero-900: #20024e;
       --bom-hero-950: #1b0045;
-      --bom-hero-opacity: #53489180;
+      --bom-hero-opacity: #5348914d;
       --bom-pop-50: #f6f5ff;
       --bom-pop-100: #ebe9fe;
       --bom-pop-200: #dad6fe;
@@ -55,7 +55,7 @@
       --bom-pop-800: #3d0dc0;
       --bom-pop-900: #200470;
       --bom-pop-950: #140250;
-      --bom-pop-opacity: #a094fc80;
+      --bom-pop-opacity: #a094fc4d;
       --bom-holler-50: #eeedf8;
       --bom-holler-100: #dfddf3;
       --bom-holler-200: #c1bce8;
@@ -67,7 +67,7 @@
       --bom-holler-800: #2b2162;
       --bom-holler-900: #19123e;
       --bom-holler-950: #0e0928;
-      --bom-holler-opacity: #685ac080;
+      --bom-holler-opacity: #685ac04d;
       --bom-sing-50: #fff1ea;
       --bom-sing-100: #fee3d4;
       --bom-sing-200: #fec6a3;
@@ -79,7 +79,7 @@
       --bom-sing-800: #553004;
       --bom-sing-900: #321a01;
       --bom-sing-950: #210f01;
-      --bom-sing-opacity: #d17e1580;
+      --bom-sing-opacity: #d17e154d;
       --bom-dance-50: #ffe9e7;
       --bom-dance-100: #ffcfcb;
       --bom-dance-200: #ff9b90;
@@ -178,6 +178,10 @@
       --data-f-opacity: var(--bom-dance-opacity);
       --surface-pictogram-base: var(--bom-hero-500);
       --surface-pictogram-accent: var(--bom-pop-500);
+      --surface-pictogram-a: var(--bom-hero-500);
+      --surface-pictogram-b: var(--bom-pop-500);
+      --surface-pictogram-c: var(--bom-hero-100);
+      --surface-pictogram-d: var(--mono-white);
       --surface-hover-primary: var(--bom-primary-400);
       --surface-active-primary: var(--bom-primary-200);
       --surface-hover-hero: var(--bom-hero-400);

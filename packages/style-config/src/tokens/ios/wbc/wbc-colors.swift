@@ -69,24 +69,28 @@ public enum WBCLightColors {
   public static let borderFocus = UIColor(red: 0.737, green: 0.341, blue: 0.922, alpha: 1)
   public static let dataASolid = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
   public static let dataATint = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let dataAOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.5019607843137255)
+  public static let dataAOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.30196078431372547)
   public static let dataBSolid = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
   public static let dataBTint = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
-  public static let dataBOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.6)
+  public static let dataBOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.30196078431372547)
   public static let dataCSolid = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
   public static let dataCTint = UIColor(red: 1.000, green: 0.620, blue: 0.929, alpha: 1)
-  public static let dataCOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.45098039215686275)
+  public static let dataCOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.30196078431372547)
   public static let dataDSolid = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
   public static let dataDTint = UIColor(red: 0.808, green: 0.518, blue: 0.941, alpha: 1)
-  public static let dataDOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.5019607843137255)
+  public static let dataDOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.30196078431372547)
   public static let dataESolid = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
   public static let dataETint = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
-  public static let dataEOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.5019607843137255)
+  public static let dataEOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.30196078431372547)
   public static let dataFSolid = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
   public static let dataFTint = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
-  public static let dataFOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45098039215686275)
+  public static let dataFOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.30196078431372547)
   public static let surfacePictogramBase = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
   public static let surfacePictogramAccent = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let surfacePictogramA = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let surfacePictogramB = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let surfacePictogramC = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let surfacePictogramD = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceHoverPrimary = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
   public static let surfaceActivePrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
   public static let surfaceHoverHero = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
@@ -942,6 +946,46 @@ public enum WBCColors {
           return WBCDarkColors.surfacePictogramAccent
         default:
           return WBCLightColors.surfacePictogramAccent
+      }
+    }
+  }
+  public static var surfacePictogramA: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramA
+        default:
+          return WBCLightColors.surfacePictogramA
+      }
+    }
+  }
+  public static var surfacePictogramB: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramB
+        default:
+          return WBCLightColors.surfacePictogramB
+      }
+    }
+  }
+  public static var surfacePictogramC: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramC
+        default:
+          return WBCLightColors.surfacePictogramC
+      }
+    }
+  }
+  public static var surfacePictogramD: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramD
+        default:
+          return WBCLightColors.surfacePictogramD
       }
     }
   }

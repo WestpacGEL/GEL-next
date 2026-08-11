@@ -43,7 +43,7 @@
       --stg-hero-800: #004833;
       --stg-hero-900: #003323;
       --stg-hero-950: #002a1c;
-      --stg-hero-opacity: #00873973;
+      --stg-hero-opacity: #0087394d;
       --stg-pop-50: #f1fbe5;
       --stg-pop-100: #e5f7cf;
       --stg-pop-200: #c2ec8e;
@@ -55,7 +55,7 @@
       --stg-pop-800: #365909;
       --stg-pop-900: #223b04;
       --stg-pop-950: #132402;
-      --stg-pop-opacity: #78be2073;
+      --stg-pop-opacity: #78be204d;
       --stg-holler-50: #f5f2fb;
       --stg-holler-100: #e6dff5;
       --stg-holler-200: #bba3e2;
@@ -178,6 +178,10 @@
       --data-f-opacity: var(--stg-dance-opacity);
       --surface-pictogram-base: var(--stg-hero-800);
       --surface-pictogram-accent: var(--stg-pop-500);
+      --surface-pictogram-a: var(--stg-hero-800);
+      --surface-pictogram-b: var(--stg-pop-500);
+      --surface-pictogram-c: var(--stg-pop-100);
+      --surface-pictogram-d: var(--mono-white);
       --surface-hover-primary: var(--stg-primary-400);
       --surface-active-primary: var(--stg-primary-200);
       --surface-hover-hero: var(--stg-hero-400);
