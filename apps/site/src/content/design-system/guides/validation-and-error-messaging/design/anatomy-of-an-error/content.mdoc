@@ -42,6 +42,39 @@ hintMessage="Hint text"
 </div>
 ```
 
+```jsx
+<div className="grid grid-cols-3">
+  <InputGroup width={10} label="Label" hint="Hint text" >
+  <Input invalid />
+</InputGroup>
+<Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+      </Alert>
+ <CheckboxGroup 
+errorMessage="If there is an error it can go here"    
+hintMessage="Hint text"
+    label="Label"
+  validationState="invalid"
+      className="col-span-1" 
+      size="large"
+      checkboxes={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+        { value: "Option 4", label: "Option 4" },
+      ]}
+    />
+
+<Field label="Label" hintMessage="Hint text" errorMessage="If there is an error it can go here">
+        <Select invalid>
+          <option value="option-1">Option 1</option>
+          <option value="option-2">Option 2</option>
+          <option value="option-3">Option 3</option>
+          <option value="option-4">Option 4</option>
+        </Select>
+      </Field>
+</div>
+```
+
 Some of the questions presented to users have multiple inputs e.g., Date of birth – Day, Month and Year. Each input has its own error which appears stacked.&nbsp;
 
 ```tsx
