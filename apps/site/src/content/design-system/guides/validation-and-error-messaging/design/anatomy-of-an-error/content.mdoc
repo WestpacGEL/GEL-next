@@ -69,8 +69,17 @@ hintMessage="Hint text"
 ```
 
 ```jsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
 <div className="grid grid-cols-3">
-<InputGroup width={10} label="Label" hint="Hint text" >
+<div><InputGroup width={10} label="Label" hint="Hint text" >
   <Input invalid />
 </InputGroup>
 <Alert className="mt-1" look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
@@ -90,11 +99,15 @@ hintMessage="Hint text"
     />
 <Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
-<div>  <InputGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
-          <Textarea invalid />
-        </InputGroup><Alert className="mt-1" look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+
+   <div> <InputGroup label="Label" errorMessage="If there is an error it can go here" hint="Hint text" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+<Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
 </div>
+  );
+};
 ```
 
 Some of the questions presented to users have multiple inputs e.g., Date of birth – Day, Month and Year. Each input has its own error which appears stacked.&nbsp;
