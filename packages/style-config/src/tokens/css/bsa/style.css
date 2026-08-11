@@ -1,14 +1,4 @@
 :root, :host {
-  --primitives-border-radius-0px: 0;
-  --primitives-border-radius-3px: 3;
-  --primitives-border-radius-4px: 4;
-  --primitives-border-radius-5px: 5;
-  --primitives-border-radius-6px: 6;
-  --primitives-border-radius-8px: 8;
-  --primitives-border-radius-12px: 12;
-  --primitives-border-radius-16px: 16;
-  --primitives-border-radius-24px: 24;
-  --primitives-border-radius-999px: 999;
   --primitives-color-mono-white: #ffffff;
   --primitives-color-mono-black: #000000;
   --primitives-color-success-50: #f2f9f2;
@@ -88,7 +78,7 @@
   --primitives-color-bsa-primary-800: #7a0a14;
   --primitives-color-bsa-primary-900: #56050b;
   --primitives-color-bsa-primary-950: #380205;
-  --primitives-color-bsa-primary-opacity: rgba(216, 27, 43, 0.5);
+  --primitives-color-bsa-primary-opacity: #d81b2b;
   --primitives-color-bsa-hero-50: #e9f1fb;
   --primitives-color-bsa-hero-100: #b5d0f2;
   --primitives-color-bsa-hero-200: #4c8de1;
@@ -100,7 +90,7 @@
   --primitives-color-bsa-hero-800: #001f47;
   --primitives-color-bsa-hero-900: #001b3d;
   --primitives-color-bsa-hero-950: #001838;
-  --primitives-color-bsa-hero-opacity: rgba(0, 47, 108, 0.55);
+  --primitives-color-bsa-hero-opacity: #002f6c;
   --primitives-color-bsa-pop-50: #e3fafc;
   --primitives-color-bsa-pop-100: #c1f6fa;
   --primitives-color-bsa-pop-200: #69ebf7;
@@ -112,7 +102,7 @@
   --primitives-color-bsa-pop-800: #00545c;
   --primitives-color-bsa-pop-900: #00383d;
   --primitives-color-bsa-pop-950: #002529;
-  --primitives-color-bsa-pop-opacity: rgba(0, 173, 189, 0.5);
+  --primitives-color-bsa-pop-opacity: #00adbd;
   --primitives-color-bsa-holler-50: #fbeef6;
   --primitives-color-bsa-holler-100: #f4cce3;
   --primitives-color-bsa-holler-200: #e689bd;
@@ -124,7 +114,7 @@
   --primitives-color-bsa-holler-800: #541237;
   --primitives-color-bsa-holler-900: #3b0c26;
   --primitives-color-bsa-holler-950: #2e0a1e;
-  --primitives-color-bsa-holler-opacity: rgba(162, 34, 105, 0.5);
+  --primitives-color-bsa-holler-opacity: #a22269;
   --primitives-color-bsa-sing-50: #eff9ec;
   --primitives-color-bsa-sing-100: #d2edc9;
   --primitives-color-bsa-sing-200: #b5e2a7;
@@ -136,7 +126,7 @@
   --primitives-color-bsa-sing-800: #2d5c1e;
   --primitives-color-bsa-sing-900: #1e3d14;
   --primitives-color-bsa-sing-950: #172e0f;
-  --primitives-color-bsa-sing-opacity: rgba(92, 187, 62, 0.5);
+  --primitives-color-bsa-sing-opacity: #5cbb3e;
   --primitives-color-bsa-dance-50: #fef1e1;
   --primitives-color-bsa-dance-100: #fde0bf;
   --primitives-color-bsa-dance-200: #fbcd98;
@@ -148,7 +138,17 @@
   --primitives-color-bsa-dance-800: #7b4404;
   --primitives-color-bsa-dance-900: #4a2903;
   --primitives-color-bsa-dance-950: #311b02;
-  --primitives-color-bsa-dance-opacity: rgba(247, 146, 30, 0.5);
+  --primitives-color-bsa-dance-opacity: #f7921e;
+  --primitives-border-radius-0px: 0;
+  --primitives-border-radius-3px: 3;
+  --primitives-border-radius-4px: 4;
+  --primitives-border-radius-5px: 5;
+  --primitives-border-radius-6px: 6;
+  --primitives-border-radius-8px: 8;
+  --primitives-border-radius-12px: 12;
+  --primitives-border-radius-16px: 16;
+  --primitives-border-radius-24px: 24;
+  --primitives-border-radius-999px: 999;
 }
 
 [data-brand="bsa"] {
@@ -170,8 +170,8 @@
   --color-surface-hero-faint: var(--primitives-color-bsa-hero-50); /* Reserved do not use. */
   --color-surface-pop: var(--primitives-color-bsa-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
   --color-surface-pop-faint: var(--primitives-color-bsa-pop-50); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
-  --color-surface-holler: var(--primitives-color-bsa-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-surface-holler-faint: var(--primitives-color-bsa-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler: var(--primitives-color-bsa-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler-faint: var(--primitives-color-bsa-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-surface-success: var(--primitives-color-success-500); /* Only use for success alert components, do not use for anything else. */
   --color-surface-success-faint: var(--primitives-color-success-50); /* Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here. */
   --color-surface-info: var(--primitives-color-info-500); /* Only use for info alert components, do not use for anything else. */
@@ -189,7 +189,7 @@
   --color-text-muted: var(--primitives-color-bsa-muted-500); /* Use for text that requires less emphasis like hint text etc. */
   --color-text-primary: var(--primitives-color-bsa-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
   --color-text-hero: var(--primitives-color-bsa-hero-500); /* Use for text that requires more emphasis, call outs, quotes etc. */
-  --color-text-holler: var(--primitives-color-bsa-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-text-holler: var(--primitives-color-bsa-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-text-link: var(--primitives-color-bsa-primary-500); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -205,7 +205,7 @@
   --color-border-hero: var(--primitives-color-bsa-hero-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
   --color-border-primary: var(--primitives-color-bsa-primary-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
   --color-border-pop: var(--primitives-color-bsa-pop-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-holler: var(--primitives-color-bsa-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-border-holler: var(--primitives-color-bsa-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-border-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-success-mild: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -236,6 +236,10 @@
   --color-data-f-opacity: var(--primitives-color-bsa-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-surface-pictogram-base: var(--primitives-color-bsa-hero-500); /* Reserved. Only for use on Pictograms. */
   --color-surface-pictogram-accent: var(--primitives-color-bsa-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-a: var(--primitives-color-bsa-hero-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-b: var(--primitives-color-bsa-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-c: var(--primitives-color-bsa-pop-100); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-d: var(--primitives-color-mono-white); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-bsa-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-bsa-primary-200);
   --color-surface-hover-hero: var(--primitives-color-bsa-hero-400); /* This token is for hover states. */

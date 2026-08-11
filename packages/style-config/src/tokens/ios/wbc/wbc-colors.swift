@@ -4,25 +4,25 @@ import UIKit
 
 public enum WBCLightColors {
   public static let backgroundWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let backgroundPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let backgroundFaint = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let backgroundPale = UIColor(red: 0.969, green: 0.965, blue: 0.949, alpha: 1)
+  public static let backgroundFaint = UIColor(red: 0.984, green: 0.980, blue: 0.976, alpha: 1)
   public static let backgroundPrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let backgroundHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let surfaceMutedVivid = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-  public static let surfaceMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
-  public static let surfaceMutedStrong = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
-  public static let surfaceMutedMild = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
-  public static let surfaceMutedSoft = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
-  public static let surfaceMutedPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let surfaceMutedFaint = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let backgroundHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfaceMutedVivid = UIColor(red: 0.094, green: 0.082, blue: 0.082, alpha: 1)
+  public static let surfaceMuted = UIColor(red: 0.467, green: 0.431, blue: 0.431, alpha: 1)
+  public static let surfaceMutedStrong = UIColor(red: 0.580, green: 0.533, blue: 0.529, alpha: 1)
+  public static let surfaceMutedMild = UIColor(red: 0.667, green: 0.631, blue: 0.627, alpha: 1)
+  public static let surfaceMutedSoft = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
+  public static let surfaceMutedPale = UIColor(red: 0.969, green: 0.965, blue: 0.949, alpha: 1)
+  public static let surfaceMutedFaint = UIColor(red: 0.984, green: 0.980, blue: 0.976, alpha: 1)
   public static let surfacePrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
   public static let surfacePrimaryFaint = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
-  public static let surfaceHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let surfaceHeroFaint = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
-  public static let surfacePop = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-  public static let surfacePopFaint = UIColor(red: 1.000, green: 0.961, blue: 0.992, alpha: 1)
-  public static let surfaceHoller = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
-  public static let surfaceHollerFaint = UIColor(red: 0.980, green: 0.945, blue: 0.992, alpha: 1)
+  public static let surfaceHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfaceHeroFaint = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
+  public static let surfacePop = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let surfacePopFaint = UIColor(red: 1.000, green: 0.957, blue: 0.957, alpha: 1)
+  public static let surfaceHoller = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
+  public static let surfaceHollerFaint = UIColor(red: 0.969, green: 0.957, blue: 0.953, alpha: 1)
   public static let surfaceSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let surfaceSuccessFaint = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
   public static let surfaceInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -35,12 +35,12 @@ public enum WBCLightColors {
   public static let surfaceSystemErrorDark = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
   public static let surfaceMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let textBody = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-  public static let textHeading = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let textMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
+  public static let textBody = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
+  public static let textHeading = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
+  public static let textMuted = UIColor(red: 0.467, green: 0.431, blue: 0.431, alpha: 1)
   public static let textPrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let textHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let textHoller = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let textHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let textHoller = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
   public static let textLink = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
   public static let textSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let textInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -49,14 +49,14 @@ public enum WBCLightColors {
   public static let textSystemError = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
   public static let textMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let textReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let borderMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
-  public static let borderMutedStrong = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
-  public static let borderMutedMild = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
-  public static let borderMutedSoft = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
-  public static let borderHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let borderMuted = UIColor(red: 0.467, green: 0.431, blue: 0.431, alpha: 1)
+  public static let borderMutedStrong = UIColor(red: 0.580, green: 0.533, blue: 0.529, alpha: 1)
+  public static let borderMutedMild = UIColor(red: 0.667, green: 0.631, blue: 0.627, alpha: 1)
+  public static let borderMutedSoft = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
+  public static let borderHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
   public static let borderPrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let borderPop = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-  public static let borderHoller = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let borderPop = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let borderHoller = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
   public static let borderSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let borderSuccessMild = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
   public static let borderInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -67,38 +67,42 @@ public enum WBCLightColors {
   public static let borderDangerMild = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
   public static let borderMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let borderFocus = UIColor(red: 0.737, green: 0.341, blue: 0.922, alpha: 1)
-  public static let dataASolid = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let dataATint = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let dataAOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.5019607843137255)
-  public static let dataBSolid = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let dataBTint = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
-  public static let dataBOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.6)
-  public static let dataCSolid = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-  public static let dataCTint = UIColor(red: 1.000, green: 0.620, blue: 0.929, alpha: 1)
-  public static let dataCOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.45098039215686275)
+  public static let dataASolid = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let dataATint = UIColor(red: 1.000, green: 0.588, blue: 0.588, alpha: 1)
+  public static let dataAOpacity = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let dataBSolid = UIColor(red: 0.376, green: 0.000, blue: 0.000, alpha: 1)
+  public static let dataBTint = UIColor(red: 0.718, green: 0.529, blue: 0.498, alpha: 1)
+  public static let dataBOpacity = UIColor(red: 0.376, green: 0.000, blue: 0.000, alpha: 1)
+  public static let dataCSolid = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let dataCTint = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
+  public static let dataCOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
   public static let dataDSolid = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
   public static let dataDTint = UIColor(red: 0.808, green: 0.518, blue: 0.941, alpha: 1)
-  public static let dataDOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.5019607843137255)
-  public static let dataESolid = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
-  public static let dataETint = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
-  public static let dataEOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.5019607843137255)
-  public static let dataFSolid = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
-  public static let dataFTint = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
-  public static let dataFOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45098039215686275)
-  public static let surfacePictogramBase = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let surfacePictogramAccent = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let dataDOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let dataESolid = UIColor(red: 0.922, green: 0.310, blue: 0.835, alpha: 1)
+  public static let dataETint = UIColor(red: 0.953, green: 0.627, blue: 0.894, alpha: 1)
+  public static let dataEOpacity = UIColor(red: 0.922, green: 0.310, blue: 0.835, alpha: 1)
+  public static let dataFSolid = UIColor(red: 0.376, green: 0.635, blue: 1.000, alpha: 1)
+  public static let dataFTint = UIColor(red: 0.671, green: 0.780, blue: 1.000, alpha: 1)
+  public static let dataFOpacity = UIColor(red: 0.376, green: 0.635, blue: 1.000, alpha: 1)
+  public static let surfacePictogramBase = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfacePictogramAccent = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let surfacePictogramA = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfacePictogramB = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let surfacePictogramC = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
+  public static let surfacePictogramD = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceHoverPrimary = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
   public static let surfaceActivePrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let surfaceHoverHero = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
-  public static let surfaceActiveHero = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let surfaceHoverHero = UIColor(red: 0.812, green: 0.173, blue: 0.173, alpha: 1)
+  public static let surfaceActiveHero = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
   public static let surfaceHoverPrimaryFaint = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
   public static let surfaceActivePrimaryFaint = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
-  public static let surfaceHoverHeroFaint = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
-  public static let surfaceActiveHeroFaint = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
-  public static let surfaceHoverMutedPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let surfaceActiveMutedPale = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
+  public static let surfaceHoverHeroFaint = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
+  public static let surfaceActiveHeroFaint = UIColor(red: 0.961, green: 0.851, blue: 0.851, alpha: 1)
+  public static let surfaceHoverMutedPale = UIColor(red: 0.969, green: 0.965, blue: 0.949, alpha: 1)
+  public static let surfaceActiveMutedPale = UIColor(red: 0.667, green: 0.631, blue: 0.627, alpha: 1)
   public static let surfaceHoverMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let surfaceActiveMono = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let surfaceActiveMono = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
 }
 
 
@@ -942,6 +946,46 @@ public enum WBCColors {
           return WBCDarkColors.surfacePictogramAccent
         default:
           return WBCLightColors.surfacePictogramAccent
+      }
+    }
+  }
+  public static var surfacePictogramA: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramA
+        default:
+          return WBCLightColors.surfacePictogramA
+      }
+    }
+  }
+  public static var surfacePictogramB: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramB
+        default:
+          return WBCLightColors.surfacePictogramB
+      }
+    }
+  }
+  public static var surfacePictogramC: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramC
+        default:
+          return WBCLightColors.surfacePictogramC
+      }
+    }
+  }
+  public static var surfacePictogramD: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.surfacePictogramD
+        default:
+          return WBCLightColors.surfacePictogramD
       }
     }
   }

@@ -1,14 +1,4 @@
 :root, :host {
-  --primitives-border-radius-0px: 0;
-  --primitives-border-radius-3px: 3;
-  --primitives-border-radius-4px: 4;
-  --primitives-border-radius-5px: 5;
-  --primitives-border-radius-6px: 6;
-  --primitives-border-radius-8px: 8;
-  --primitives-border-radius-12px: 12;
-  --primitives-border-radius-16px: 16;
-  --primitives-border-radius-24px: 24;
-  --primitives-border-radius-999px: 999;
   --primitives-color-mono-white: #ffffff;
   --primitives-color-mono-black: #000000;
   --primitives-color-success-50: #f2f9f2;
@@ -88,7 +78,7 @@
   --primitives-color-bom-primary-800: #6f1a00;
   --primitives-color-bom-primary-900: #501000;
   --primitives-color-bom-primary-950: #380900;
-  --primitives-color-bom-primary-opacity: rgba(209, 57, 0, 0.5);
+  --primitives-color-bom-primary-opacity: #d13900;
   --primitives-color-bom-hero-50: #f6f5ff;
   --primitives-color-bom-hero-100: #dad6fe;
   --primitives-color-bom-hero-200: #c6c0fd;
@@ -100,7 +90,7 @@
   --primitives-color-bom-hero-800: #261b58;
   --primitives-color-bom-hero-900: #20024e;
   --primitives-color-bom-hero-950: #1b0045;
-  --primitives-color-bom-hero-opacity: rgba(83, 72, 145, 0.5);
+  --primitives-color-bom-hero-opacity: #534891;
   --primitives-color-bom-pop-50: #f6f5ff;
   --primitives-color-bom-pop-100: #ebe9fe;
   --primitives-color-bom-pop-200: #dad6fe;
@@ -112,7 +102,7 @@
   --primitives-color-bom-pop-800: #3d0dc0;
   --primitives-color-bom-pop-900: #200470;
   --primitives-color-bom-pop-950: #140250;
-  --primitives-color-bom-pop-opacity: rgba(160, 148, 252, 0.5);
+  --primitives-color-bom-pop-opacity: #a094fc;
   --primitives-color-bom-holler-50: #eeedf8;
   --primitives-color-bom-holler-100: #dfddf3;
   --primitives-color-bom-holler-200: #c1bce8;
@@ -124,7 +114,7 @@
   --primitives-color-bom-holler-800: #2b2162;
   --primitives-color-bom-holler-900: #19123e;
   --primitives-color-bom-holler-950: #0e0928;
-  --primitives-color-bom-holler-opacity: rgba(104, 90, 192, 0.5);
+  --primitives-color-bom-holler-opacity: #685ac0;
   --primitives-color-bom-sing-50: #fff1ea;
   --primitives-color-bom-sing-100: #fee3d4;
   --primitives-color-bom-sing-200: #fec6a3;
@@ -136,7 +126,7 @@
   --primitives-color-bom-sing-800: #553004;
   --primitives-color-bom-sing-900: #321a01;
   --primitives-color-bom-sing-950: #210f01;
-  --primitives-color-bom-sing-opacity: rgba(209, 126, 21, 0.5);
+  --primitives-color-bom-sing-opacity: #d17e15;
   --primitives-color-bom-dance-50: #ffe9e7;
   --primitives-color-bom-dance-100: #ffcfcb;
   --primitives-color-bom-dance-200: #ff9b90;
@@ -148,7 +138,17 @@
   --primitives-color-bom-dance-800: #490e00;
   --primitives-color-bom-dance-900: #300700;
   --primitives-color-bom-dance-950: #230400;
-  --primitives-color-bom-dance-opacity: rgba(158, 42, 0, 0.5);
+  --primitives-color-bom-dance-opacity: #9e2a00;
+  --primitives-border-radius-0px: 0;
+  --primitives-border-radius-3px: 3;
+  --primitives-border-radius-4px: 4;
+  --primitives-border-radius-5px: 5;
+  --primitives-border-radius-6px: 6;
+  --primitives-border-radius-8px: 8;
+  --primitives-border-radius-12px: 12;
+  --primitives-border-radius-16px: 16;
+  --primitives-border-radius-24px: 24;
+  --primitives-border-radius-999px: 999;
 }
 
 [data-brand="bom"] {
@@ -170,8 +170,8 @@
   --color-surface-hero-faint: var(--primitives-color-bom-hero-50); /* Reserved do not use. */
   --color-surface-pop: var(--primitives-color-bom-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
   --color-surface-pop-faint: var(--primitives-color-bom-pop-50); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
-  --color-surface-holler: var(--primitives-color-bom-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-surface-holler-faint: var(--primitives-color-bom-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler: var(--primitives-color-bom-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler-faint: var(--primitives-color-bom-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-surface-success: var(--primitives-color-success-500); /* Only use for success alert components, do not use for anything else. */
   --color-surface-success-faint: var(--primitives-color-success-50); /* Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here. */
   --color-surface-info: var(--primitives-color-info-500); /* Only use for info alert components, do not use for anything else. */
@@ -189,7 +189,7 @@
   --color-text-muted: var(--primitives-color-bom-muted-500); /* Use for text that requires less emphasis like hint text etc. */
   --color-text-primary: var(--primitives-color-bom-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
   --color-text-hero: var(--primitives-color-bom-hero-500); /* Use for text that requires more emphasis, call outs, quotes etc. */
-  --color-text-holler: var(--primitives-color-bom-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-text-holler: var(--primitives-color-bom-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-text-link: var(--primitives-color-bom-primary-500); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -205,7 +205,7 @@
   --color-border-hero: var(--primitives-color-bom-hero-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
   --color-border-primary: var(--primitives-color-bom-primary-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
   --color-border-pop: var(--primitives-color-bom-pop-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-holler: var(--primitives-color-bom-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-border-holler: var(--primitives-color-bom-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it's approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-border-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-success-mild: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -236,6 +236,10 @@
   --color-data-f-opacity: var(--primitives-color-bom-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-surface-pictogram-base: var(--primitives-color-bom-hero-500); /* Reserved. Only for use on Pictograms. */
   --color-surface-pictogram-accent: var(--primitives-color-bom-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-a: var(--primitives-color-bom-hero-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-b: var(--primitives-color-bom-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-c: var(--primitives-color-bom-hero-100); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-d: var(--primitives-color-mono-white); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-bom-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-bom-primary-200);
   --color-surface-hover-hero: var(--primitives-color-bom-hero-400); /* This token is for hover states. */

@@ -24,7 +24,7 @@
     "build:tokens-file:json": "node ./utils/transformers/figma-json-to-tokens.cjs",
     "build:style-dictionary": "node ./utils/transformers/style-dictionary.cjs",
     "build:css": "node ./utils/transformers/css.cjs",
-    "build:css:copy": "cp -a ./src/css ./dist/",
+    "build:css:copy": "shx cp -r ./src/css ./dist/",
     "build:ts": "tsc",
     "build": "pnpm clean && pnpm build:style-dictionary && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
   },

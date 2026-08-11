@@ -1072,15 +1072,21 @@ async function ensureFolderExists(folderPath) {
  * Creates a subset of tokens for a given brand.
  */
 function extractBrandTokens(themeName, primitiveName, tokens) {
+  const brandColors = {
+    mono: tokens.Primitives.color.mono,
+    reserved: tokens.Primitives.color.reserved,
+    [primitiveName]: tokens.Primitives.color[primitiveName],
+  };
+
+  const westpac2026Colours = tokens.Primitives.color['WBC 26'];
+
+  if (themeName === 'Westpac' && westpac2026Colours) {
+    brandColors['WBC 26'] = westpac2026Colours;
+  }
   return {
     Primitives: {
-      border: tokens.Primitives.border, // Include all border primitives (shared across brands)
-      color: {
-        mono: tokens.Primitives.color.mono, // Include shared mono colors
-        reserved: tokens.Primitives.color.reserved, // Include shared reserved colors
-        // Include only the specific brand's primitives for optimized file sizes
-        [primitiveName]: tokens.Primitives.color[primitiveName],
-      },
+      ...tokens.Primitives,
+      color: brandColors,
     },
     Tokens: tokens.Tokens[themeName],
   };

@@ -19,16 +19,16 @@
 
   /* Token definitions  */
   [data-brand] {
-    --rounded-none: var(--border-radius-0);
-    --rounded-sm: var(--border-radius-3);
-    --rounded-md: var(--border-radius-4);
-    --rounded-lg: var(--border-radius-5);
-    --rounded-xl: var(--border-radius-6);
-    --rounded-2xl: var(--border-radius-8);
-    --rounded-3xl: var(--border-radius-12);
-    --rounded-4xl: var(--border-radius-16);
-    --rounded-5xl: var(--border-radius-24);
-    --rounded-full: var(--border-radius-999);
+    --rounded-none: {Primitives.border.radius.0px};
+    --rounded-sm: {Primitives.border.radius.3px};
+    --rounded-md: {Primitives.border.radius.4px};
+    --rounded-lg: {Primitives.border.radius.5px};
+    --rounded-xl: {Primitives.border.radius.6px};
+    --rounded-2xl: {Primitives.border.radius.8px};
+    --rounded-3xl: {Primitives.border.radius.12px};
+    --rounded-4xl: {Primitives.border.radius.16px};
+    --rounded-5xl: {Primitives.border.radius.24px};
+    --rounded-full: {Primitives.border.radius.999px};
 
     /* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */
     @variant dark {
@@ -38,12 +38,12 @@
 
 /* Tailwind theme variables  */
 @theme inline static {
-  --radius-sm: var(--border-radius-3);
-  --radius-md: var(--border-radius-4);
-  --radius-lg: var(--border-radius-5);
-  --radius-xl: var(--border-radius-6);
-  --radius-2xl: var(--border-radius-8);
-  --radius-3xl: var(--border-radius-12);
-  --radius-4xl: var(--border-radius-16);
-  --radius-5xl: var(--border-radius-24);
+  --radius-sm: {Primitives.border.radius.3px};
+  --radius-md: {Primitives.border.radius.4px};
+  --radius-lg: {Primitives.border.radius.5px};
+  --radius-xl: {Primitives.border.radius.6px};
+  --radius-2xl: {Primitives.border.radius.8px};
+  --radius-3xl: {Primitives.border.radius.12px};
+  --radius-4xl: {Primitives.border.radius.16px};
+  --radius-5xl: {Primitives.border.radius.24px};
 }
