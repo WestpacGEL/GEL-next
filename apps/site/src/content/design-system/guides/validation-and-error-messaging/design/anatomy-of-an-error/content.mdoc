@@ -31,9 +31,24 @@ hintMessage="Hint text"
       ]}
     />
 
-<InputGroup width="10" errorMessage="If there is an error it can go here"  label="Supporting text" supportingText="I am supporting text">
+<InputGroup width="10" hint="Hint text" errorMessage="If there is an error it can go here"  label="Supporting text" supportingText="I am supporting text">
   <Input />
 </InputGroup>
+
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
+    <InputGroup label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
 </div>
 ```
 
