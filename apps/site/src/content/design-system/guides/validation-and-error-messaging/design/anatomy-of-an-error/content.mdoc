@@ -21,8 +21,8 @@ Place validation errors directly beneath the field label and any hint text, and 
 
   return (
 
+<div><h4 className="typography-body-10 text-text-muted italic mb-3">Default</h4>
 <div className="grid grid-cols-3">
-<h4 className="typography-body-10 text-text-muted italic mb-3">Default</h4>
   <InputGroup width={10} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
   <Input invalid />
 </InputGroup>
@@ -50,6 +50,7 @@ hintMessage="Hint text"
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
 
+</div>
 </div>
   );
 };
