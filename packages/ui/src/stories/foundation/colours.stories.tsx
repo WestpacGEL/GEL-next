@@ -160,7 +160,14 @@ const LOADED_COLORS = {
     'bg-data-f-tint',
     'bg-data-f-opacity',
   ],
-  pictogram: ['bg-surface-pictogram-base', 'bg-surface-pictogram-accent'],
+  pictogram: [
+    'bg-surface-pictogram-base',
+    'bg-surface-pictogram-accent',
+    'bg-surface-pictogram-a',
+    'bg-surface-pictogram-b',
+    'bg-surface-pictogram-c',
+    'bg-surface-pictogram-d',
+  ],
   state: [
     'bg-surface-hover-primary',
     'bg-surface-active-primary',
