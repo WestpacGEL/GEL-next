@@ -49,7 +49,7 @@ hintMessage="Hint text"
 </InputGroup>
 <Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
       </Alert></div>
- <CheckboxGroup 
+<div> <CheckboxGroup 
 errorMessage="If there is an error it can go here"    
 hintMessage="Hint text"
     label="Label"
@@ -63,15 +63,17 @@ hintMessage="Hint text"
         { value: "Option 4", label: "Option 4" },
       ]}
     />
-
-<Field label="Label" hintMessage="Hint text" errorMessage="If there is an error it can go here">
+<Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+      </Alert></div>
+<div><Field label="Label" hintMessage="Hint text" errorMessage="If there is an error it can go here">
         <Select invalid>
           <option value="option-1">Option 1</option>
           <option value="option-2">Option 2</option>
           <option value="option-3">Option 3</option>
           <option value="option-4">Option 4</option>
         </Select>
-      </Field>
+      </Field><Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+      </Alert></div>
 </div>
 ```
 
