@@ -35,7 +35,7 @@ hintMessage="Hint text"
   <Input />
 </InputGroup>
 
-() => {
+<div>() => {
   const MAX_LENGTH = 250;
   const [inputValue, setInputValue] = useState<string>('');
   const counterText = useMemo(() => {
@@ -48,7 +48,7 @@ hintMessage="Hint text"
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
   );
-};
+};</div>
 </div>
 ```
 
