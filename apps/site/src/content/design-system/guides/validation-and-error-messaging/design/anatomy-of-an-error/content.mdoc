@@ -28,6 +28,15 @@ Place validation errors directly beneath the field label and any hint text, and 
 ```
 
 ```jsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
 <div className="grid grid-cols-3">
   <InputGroup width={10} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
   <Input invalid />
@@ -52,15 +61,7 @@ hintMessage="Hint text"
 <InputGroup width="20" hint="Hint text" errorMessage="If there is an error it can go here"  label="Label" supportingText="I am supporting text">
   <Textarea />
 </InputGroup>
-() => {
-  const MAX_LENGTH = 250;
-  const [inputValue, setInputValue] = useState<string>('');
-  const counterText = useMemo(() => {
-    const lengthLeft = MAX_LENGTH - inputValue.length;
-    return `${lengthLeft} remaining`;
-  }, [inputValue]);
 
-  return (
     <InputGroup label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
