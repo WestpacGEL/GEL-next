@@ -12,7 +12,7 @@ design:
       name: 'Anatomy of an error '
       slug: anatomy-of-an-error
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Error triggers & display
       slug: error-triggers-and-display
