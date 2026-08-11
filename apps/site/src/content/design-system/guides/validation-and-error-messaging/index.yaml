@@ -17,7 +17,7 @@ design:
       name: Error triggers & display
       slug: error-triggers-and-display
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Writing error messages
       slug: writing-error-messages
