@@ -1,23 +1,23 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { useState } from 'react';
+import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 
 import { Flyout } from './flyout.component.js';
-import { FlyoutProps } from './flyout.types.js';
+import { type FlyoutProps } from './flyout.types.js';
 
-const StoryFlyout = ({ children, ...props }: FlyoutProps) => {
-  const [open, setOpen] = useState(false);
+function StoryFlyout({ children, state: _state, ...props }: FlyoutProps) {
+  const state = useOverlayTriggerState({});
 
   return (
-    <div className="flex h-[300px] items-start justify-center pt-4">
-      <Button onClick={() => setOpen(true)}>Open flyout</Button>
-      <Flyout {...props} onClose={() => setOpen(false)} open={open}>
+    <div className="flex h-50 items-start justify-center pt-4">
+      <Button onClick={() => state.open()}>Open flyout</Button>
+      <Flyout {...props} state={state}>
         {children}
       </Flyout>
     </div>
   );
-};
+}
 
 const meta: Meta<typeof Flyout> = {
   title: 'Components/Flyout',
@@ -44,7 +44,9 @@ export const Default: Story = {
         ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
       </p>
     ),
-    width: '300px',
+    'aria-label': 'Flyout',
+    className: 'w-70',
+    isDismissable: true,
   },
 };
 
@@ -60,8 +62,9 @@ export const LeftAlignedWithHeading: Story = {
         ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
       </p>
     ),
+    className: 'w-50',
     heading: 'Flyout heading',
+    isDismissable: true,
     position: 'left',
-    width: '250px',
   },
 };

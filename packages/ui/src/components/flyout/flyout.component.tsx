@@ -2,47 +2,51 @@
 
 import React from 'react';
 
-import { Button } from '../button/index.js';
-import { CloseIcon } from '../icon/index.js';
-
-import { styles } from './flyout.styles.js';
+import { FlyoutBackdrop, FlyoutDialog } from './components/index.js';
 import { type FlyoutProps } from './flyout.types.js';
 
 export function Flyout({
+  backdropClassName,
   children,
   className,
-  closeAssistiveText = 'Close flyout',
+  closeAssistiveText,
   heading,
-  headingTag: HeadingTag = 'h2',
-  onClose,
-  open,
+  headingTag,
+  isDismissable = true,
+  isKeyboardDismissDisabled,
+  portalContainer,
   position = 'right',
-  style,
-  tag: Tag = 'div',
-  width,
+  shouldCloseOnInteractOutside,
+  state,
+  zIndex,
   ...props
 }: FlyoutProps) {
-  const componentStyles = styles({ position });
-
-  if (!open) {
-    return null;
-  }
-
   return (
-    <Tag className={componentStyles.base({ className })} style={{ ...style, width }} {...props}>
-      <div className={componentStyles.header()}>
-        {heading && <HeadingTag className={componentStyles.heading()}>{heading}</HeadingTag>}
-        <Button
-          aria-label={closeAssistiveText}
-          className={componentStyles.close()}
-          look="unstyled"
-          onClick={onClose}
-          type="button"
+    <FlyoutBackdrop
+      className={backdropClassName}
+      isDismissable={isDismissable}
+      isKeyboardDismissDisabled={isKeyboardDismissDisabled}
+      portalContainer={portalContainer}
+      shouldCloseOnInteractOutside={shouldCloseOnInteractOutside}
+      state={state}
+      zIndex={zIndex}
+    >
+      {({ flyoutRef, modalProps }) => (
+        <FlyoutDialog
+          {...props}
+          className={className}
+          closeAssistiveText={closeAssistiveText}
+          flyoutRef={flyoutRef}
+          heading={heading}
+          headingTag={headingTag}
+          isOpen={state.isOpen}
+          modalProps={modalProps}
+          onClose={isDismissable ? () => state.close() : undefined}
+          position={position}
         >
-          <CloseIcon color="primary" size="medium" aria-hidden />
-        </Button>
-      </div>
-      <div className={componentStyles.body()}>{children}</div>
-    </Tag>
+          {children}
+        </FlyoutDialog>
+      )}
+    </FlyoutBackdrop>
   );
 }
