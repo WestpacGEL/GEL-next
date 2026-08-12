@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="wbc26BorderRoundedNone">0dp</dimen>
+  <dimen name="wbc26BorderRoundedSm">3dp</dimen>
+  <dimen name="wbc26BorderRoundedMd">4dp</dimen>
+  <dimen name="wbc26BorderRoundedLg">5dp</dimen>
+  <dimen name="wbc26BorderRoundedXl">6dp</dimen>
+  <dimen name="wbc26BorderRounded2xl">8dp</dimen>
+  <dimen name="wbc26BorderRounded3xl">12dp</dimen>
+  <dimen name="wbc26BorderRounded4xl">16dp</dimen>
+  <dimen name="wbc26BorderRounded5xl">24dp</dimen>
+  <dimen name="wbc26BorderRoundedFull">999dp</dimen>
+</resources>

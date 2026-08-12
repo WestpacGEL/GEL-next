@@ -57,6 +57,16 @@ public enum AllBrandsLightDimensions {
   public static let tokensBankOfMelbourneModeBorderRadiusRounded4xl = 16
   public static let tokensBankOfMelbourneModeBorderRadiusRounded5xl = 24
   public static let tokensBankOfMelbourneModeBorderRadiusRoundedFull = 999
+  public static let tokensWestpac2026LightModeRadiusRoundedNone = 0
+  public static let tokensWestpac2026LightModeRadiusRoundedSm = 3
+  public static let tokensWestpac2026LightModeRadiusRoundedMd = 4
+  public static let tokensWestpac2026LightModeRadiusRoundedLg = 5
+  public static let tokensWestpac2026LightModeRadiusRoundedXl = 6
+  public static let tokensWestpac2026LightModeRadiusRounded2xl = 8
+  public static let tokensWestpac2026LightModeRadiusRounded3xl = 12
+  public static let tokensWestpac2026LightModeRadiusRounded4xl = 16
+  public static let tokensWestpac2026LightModeRadiusRounded5xl = 24
+  public static let tokensWestpac2026LightModeRadiusRoundedFull = 999
 }
 
 

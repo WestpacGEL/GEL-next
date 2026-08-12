@@ -293,12 +293,13 @@ function transformFigmaRestResponse(figmaData) {
   
   // Find brand extension collections that contain variable overrides
   const brandExtensions = Object.values(variableCollections).filter(c => 
-    ['StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(c.name) && c.isExtension
+    ['Westpac 2026', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(c.name) && c.isExtension
   );
   
   // Map collection names to brand codes
   const collectionToBrandCode = {
     'Westpac': 'WBC',
+    'Westpac 2026': 'WBC 26',
     'StGeorge': 'STG', 
     'Bank SA': 'BSA',
     'Bank of Melbourne': 'BOM'

@@ -31,7 +31,7 @@ function refToVar(ref) {
   let match = ref.match(/\{Primitives\.color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, brand, color, shade] = match;
-    return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
+    return `var(--${brand.toLowerCase().replace(/\s+/g, '')}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
 
   // Handle border radius references: {Primitives.border.radius.value}
@@ -86,9 +86,10 @@ function extractPrimitives(tokens) {
   const colorsObj = {};
   if (primitives) {
     for (const parentKey in primitives) {
-      const colors = flattenColors(primitives[parentKey], parentKey.toLowerCase());
-      colorsObj[parentKey.toLowerCase()] = colorsObj[parentKey.toLowerCase()] || {};
-      colorsObj[parentKey.toLowerCase()].primitives = colors;
+      const primitiveCode = parentKey.toLowerCase().replace(/\s+/g, '');
+      const colors = flattenColors(primitives[parentKey], primitiveCode);
+      colorsObj[primitiveCode] = colorsObj[primitiveCode] || {};
+      colorsObj[primitiveCode].primitives = colors;
     }
   }
   return colorsObj;
@@ -114,9 +115,7 @@ function extractTokens(tokens) {
   if (tokensBlock) {
     // Check if this is the new consolidated structure (brand names as keys)
     const brandNames = Object.keys(tokensBlock);
-    const isConsolidatedStructure = brandNames.some(name =>
-      ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name),
-    );
+    const isConsolidatedStructure = brandNames.some(name => BRANDS.some(({ themeName }) => themeName === name));
 
     if (isConsolidatedStructure) {
       // New consolidated structure: extract from first brand (Westpac) as reference
@@ -222,9 +221,7 @@ function getModeBorders(tokens) {
 
   // Check if this is the new consolidated structure
   const brandNames = Object.keys(modes);
-  const isConsolidatedStructure = brandNames.some(name =>
-    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name),
-  );
+  const isConsolidatedStructure = brandNames.some(name => BRANDS.some(({ themeName }) => themeName === name));
 
   if (isConsolidatedStructure) {
     // New consolidated structure: extract from first brand (Westpac) as reference
@@ -296,15 +293,16 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   // Check if this is the new consolidated structure
   const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
   const isConsolidatedStructure =
-    modes && Object.keys(modes).some(name => ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name));
+    modes && Object.keys(modes).some(name => BRANDS.some(({ themeName }) => themeName === name));
 
-  BRANDS.forEach(({ primitiveName, themeName }) => {
-    const brand = primitiveName.toLowerCase();
+  BRANDS.forEach(({ brandCode: brand, fallbackPrimitiveName, themeName }) => {
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
+    const fallbackPrimitiveCode = fallbackPrimitiveName?.toLowerCase().replace(/\s+/g, '');
 
     // Merge brand-specific primitives with shared mono primitives
     const allPrimitives = {
       ...(primitivesObj.mono?.primitives || {}),
+      ...(primitivesObj[fallbackPrimitiveCode]?.primitives || {}),
       ...(primitivesObj[brand]?.primitives || {}),
     };
 
@@ -454,10 +452,10 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandFontMap = BRANDS.reduce((acc, { fontName, primitiveName }) => {
+  const brandFontMap = BRANDS.reduce((acc, { brandCode, fontName }) => {
     return {
       ...acc,
-      [primitiveName.toLowerCase()]: fontName,
+      [brandCode]: fontName,
     };
   }, {});
 
