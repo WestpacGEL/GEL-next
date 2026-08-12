@@ -22,6 +22,7 @@ export const Theme = () => (
    * - btfg
    * - stg
    * - wbc
+   * - wbc26
    *
    * Valid theme tokens
    *  NOTE: DARK MODE HAS BEEN DISABLED FOR THIS RELEASE AND SWITCHING TO DARK MODE WILL NOT DO ANYTHING
