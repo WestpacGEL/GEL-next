@@ -1,5 +1,6 @@
-import { BrandKey } from '@westpac/ui/types';
 import { clsx } from 'clsx';
+
+import { BrandKey } from '@/app/types/brand.types';
 
 import { styles } from './background-image.styles';
 import { BsaBackgroundSvg, StgBackgroundSvg, WbcBackgroundSvg } from './components';

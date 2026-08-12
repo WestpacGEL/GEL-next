@@ -1,9 +1,10 @@
 'use client';
 
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
-import { type BrandKey } from '@westpac/ui/types';
 import throttle from 'lodash.throttle';
 import { useLayoutEffect, useRef, useState } from 'react';
+
+import { type BrandKey } from '@/app/types/brand.types';
 
 import { useSidebar } from '../../../sidebar/sidebar.context';
 import { BackgroundImage } from '../background-image/background-image.component';
