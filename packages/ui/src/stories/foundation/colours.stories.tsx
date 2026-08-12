@@ -13,6 +13,7 @@ const meta: Meta = {
 
 const brandMap = {
   WBC: 'Westpac',
+  WBC26: 'Westpac 2026',
   STG: 'StGeorge',
   BOM: 'Bank of Melbourne',
   BSA: 'Bank SA',

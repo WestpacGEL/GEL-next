@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import '@westpac/style-config/tailwind';
 @import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/wbc26';
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
