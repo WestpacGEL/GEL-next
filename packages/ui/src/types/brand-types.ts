@@ -1,1 +1,1 @@
-export type BrandKey = 'bom' | 'bsa' | 'btfg' | 'stg' | 'wbc';
+export type BrandKey = 'bom' | 'bsa' | 'btfg' | 'stg' | 'wbc' | 'wbc26';
