@@ -835,7 +835,7 @@
           },
           "opacity": {
             "$type": "color",
-            "$value": "#00873973",
+            "$value": "#0087394d",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -933,7 +933,7 @@
           },
           "opacity": {
             "$type": "color",
-            "$value": "#78be2073",
+            "$value": "#78be204d",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2003,6 +2003,42 @@
           "surface-pictogram-accent": {
             "$type": "color",
             "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          },
+          "surface-pictogram-a": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          },
+          "surface-pictogram-b": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          },
+          "surface-pictogram-c": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          },
+          "surface-pictogram-d": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"

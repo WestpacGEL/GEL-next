@@ -88,7 +88,7 @@
   --primitives-color-bom-primary-800: #6f1a00;
   --primitives-color-bom-primary-900: #501000;
   --primitives-color-bom-primary-950: #380900;
-  --primitives-color-bom-primary-opacity: rgba(209, 57, 0, 0.5);
+  --primitives-color-bom-primary-opacity: rgba(209, 57, 0, 0.3);
   --primitives-color-bom-hero-50: #f6f5ff;
   --primitives-color-bom-hero-100: #dad6fe;
   --primitives-color-bom-hero-200: #c6c0fd;
@@ -100,7 +100,7 @@
   --primitives-color-bom-hero-800: #261b58;
   --primitives-color-bom-hero-900: #20024e;
   --primitives-color-bom-hero-950: #1b0045;
-  --primitives-color-bom-hero-opacity: rgba(83, 72, 145, 0.5);
+  --primitives-color-bom-hero-opacity: rgba(83, 72, 145, 0.3);
   --primitives-color-bom-pop-50: #f6f5ff;
   --primitives-color-bom-pop-100: #ebe9fe;
   --primitives-color-bom-pop-200: #dad6fe;
@@ -112,7 +112,7 @@
   --primitives-color-bom-pop-800: #3d0dc0;
   --primitives-color-bom-pop-900: #200470;
   --primitives-color-bom-pop-950: #140250;
-  --primitives-color-bom-pop-opacity: rgba(160, 148, 252, 0.5);
+  --primitives-color-bom-pop-opacity: rgba(160, 148, 252, 0.3);
   --primitives-color-bom-holler-50: #eeedf8;
   --primitives-color-bom-holler-100: #dfddf3;
   --primitives-color-bom-holler-200: #c1bce8;
@@ -124,7 +124,7 @@
   --primitives-color-bom-holler-800: #2b2162;
   --primitives-color-bom-holler-900: #19123e;
   --primitives-color-bom-holler-950: #0e0928;
-  --primitives-color-bom-holler-opacity: rgba(104, 90, 192, 0.5);
+  --primitives-color-bom-holler-opacity: rgba(104, 90, 192, 0.3);
   --primitives-color-bom-sing-50: #fff1ea;
   --primitives-color-bom-sing-100: #fee3d4;
   --primitives-color-bom-sing-200: #fec6a3;
@@ -136,7 +136,7 @@
   --primitives-color-bom-sing-800: #553004;
   --primitives-color-bom-sing-900: #321a01;
   --primitives-color-bom-sing-950: #210f01;
-  --primitives-color-bom-sing-opacity: rgba(209, 126, 21, 0.5);
+  --primitives-color-bom-sing-opacity: rgba(209, 126, 21, 0.3);
   --primitives-color-bom-dance-50: #ffe9e7;
   --primitives-color-bom-dance-100: #ffcfcb;
   --primitives-color-bom-dance-200: #ff9b90;
@@ -236,6 +236,10 @@
   --color-data-f-opacity: var(--primitives-color-bom-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-surface-pictogram-base: var(--primitives-color-bom-hero-500); /* Reserved. Only for use on Pictograms. */
   --color-surface-pictogram-accent: var(--primitives-color-bom-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-a: var(--primitives-color-bom-hero-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-b: var(--primitives-color-bom-pop-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-c: var(--primitives-color-bom-hero-100); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-d: var(--primitives-color-mono-white); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-bom-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-bom-primary-200);
   --color-surface-hover-hero: var(--primitives-color-bom-hero-400); /* This token is for hover states. */

@@ -2,27 +2,27 @@
 
 import UIKit
 
-public enum WBCLightColors {
+public enum WBC26LightColors {
   public static let backgroundWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let backgroundPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let backgroundFaint = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let backgroundPale = UIColor(red: 0.969, green: 0.965, blue: 0.949, alpha: 1)
+  public static let backgroundFaint = UIColor(red: 0.984, green: 0.980, blue: 0.976, alpha: 1)
   public static let backgroundPrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let backgroundHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let surfaceMutedVivid = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-  public static let surfaceMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
-  public static let surfaceMutedStrong = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
-  public static let surfaceMutedMild = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
-  public static let surfaceMutedSoft = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
-  public static let surfaceMutedPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let surfaceMutedFaint = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let backgroundHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfaceMutedVivid = UIColor(red: 0.094, green: 0.082, blue: 0.082, alpha: 1)
+  public static let surfaceMuted = UIColor(red: 0.467, green: 0.431, blue: 0.431, alpha: 1)
+  public static let surfaceMutedStrong = UIColor(red: 0.580, green: 0.533, blue: 0.529, alpha: 1)
+  public static let surfaceMutedMild = UIColor(red: 0.667, green: 0.631, blue: 0.627, alpha: 1)
+  public static let surfaceMutedSoft = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
+  public static let surfaceMutedPale = UIColor(red: 0.969, green: 0.965, blue: 0.949, alpha: 1)
+  public static let surfaceMutedFaint = UIColor(red: 0.984, green: 0.980, blue: 0.976, alpha: 1)
   public static let surfacePrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
   public static let surfacePrimaryFaint = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
-  public static let surfaceHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let surfaceHeroFaint = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
-  public static let surfacePop = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-  public static let surfacePopFaint = UIColor(red: 1.000, green: 0.961, blue: 0.992, alpha: 1)
-  public static let surfaceHoller = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
-  public static let surfaceHollerFaint = UIColor(red: 0.980, green: 0.945, blue: 0.992, alpha: 1)
+  public static let surfaceHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfaceHeroFaint = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
+  public static let surfacePop = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let surfacePopFaint = UIColor(red: 1.000, green: 0.957, blue: 0.957, alpha: 1)
+  public static let surfaceHoller = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
+  public static let surfaceHollerFaint = UIColor(red: 0.969, green: 0.957, blue: 0.953, alpha: 1)
   public static let surfaceSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let surfaceSuccessFaint = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
   public static let surfaceInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -35,12 +35,12 @@ public enum WBCLightColors {
   public static let surfaceSystemErrorDark = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
   public static let surfaceMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let textBody = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-  public static let textHeading = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let textMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
+  public static let textBody = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
+  public static let textHeading = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
+  public static let textMuted = UIColor(red: 0.467, green: 0.431, blue: 0.431, alpha: 1)
   public static let textPrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let textHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let textHoller = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let textHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let textHoller = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
   public static let textLink = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
   public static let textSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let textInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -49,14 +49,14 @@ public enum WBCLightColors {
   public static let textSystemError = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
   public static let textMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let textReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let borderMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
-  public static let borderMutedStrong = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
-  public static let borderMutedMild = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
-  public static let borderMutedSoft = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
-  public static let borderHero = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let borderMuted = UIColor(red: 0.467, green: 0.431, blue: 0.431, alpha: 1)
+  public static let borderMutedStrong = UIColor(red: 0.580, green: 0.533, blue: 0.529, alpha: 1)
+  public static let borderMutedMild = UIColor(red: 0.667, green: 0.631, blue: 0.627, alpha: 1)
+  public static let borderMutedSoft = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
+  public static let borderHero = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
   public static let borderPrimary = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let borderPop = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-  public static let borderHoller = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let borderPop = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let borderHoller = UIColor(red: 0.247, green: 0.016, blue: 0.016, alpha: 1)
   public static let borderSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let borderSuccessMild = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
   public static let borderInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -67,55 +67,55 @@ public enum WBCLightColors {
   public static let borderDangerMild = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
   public static let borderMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let borderFocus = UIColor(red: 0.737, green: 0.341, blue: 0.922, alpha: 1)
-  public static let dataASolid = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let dataATint = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let dataAOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.30196078431372547)
-  public static let dataBSolid = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let dataBTint = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
-  public static let dataBOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.30196078431372547)
-  public static let dataCSolid = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-  public static let dataCTint = UIColor(red: 1.000, green: 0.620, blue: 0.929, alpha: 1)
-  public static let dataCOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.30196078431372547)
+  public static let dataASolid = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let dataATint = UIColor(red: 1.000, green: 0.588, blue: 0.588, alpha: 1)
+  public static let dataAOpacity = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 0.30196078431372547)
+  public static let dataBSolid = UIColor(red: 0.376, green: 0.000, blue: 0.000, alpha: 1)
+  public static let dataBTint = UIColor(red: 0.718, green: 0.529, blue: 0.498, alpha: 1)
+  public static let dataBOpacity = UIColor(red: 0.376, green: 0.000, blue: 0.000, alpha: 0.30196078431372547)
+  public static let dataCSolid = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let dataCTint = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
+  public static let dataCOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.30196078431372547)
   public static let dataDSolid = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
   public static let dataDTint = UIColor(red: 0.808, green: 0.518, blue: 0.941, alpha: 1)
   public static let dataDOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.30196078431372547)
-  public static let dataESolid = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
-  public static let dataETint = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
-  public static let dataEOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.30196078431372547)
-  public static let dataFSolid = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
-  public static let dataFTint = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
-  public static let dataFOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.30196078431372547)
-  public static let surfacePictogramBase = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let surfacePictogramAccent = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let surfacePictogramA = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let dataESolid = UIColor(red: 0.922, green: 0.310, blue: 0.835, alpha: 1)
+  public static let dataETint = UIColor(red: 0.953, green: 0.627, blue: 0.894, alpha: 1)
+  public static let dataEOpacity = UIColor(red: 0.922, green: 0.310, blue: 0.835, alpha: 0.5019607843137255)
+  public static let dataFSolid = UIColor(red: 0.376, green: 0.635, blue: 1.000, alpha: 1)
+  public static let dataFTint = UIColor(red: 0.671, green: 0.780, blue: 1.000, alpha: 1)
+  public static let dataFOpacity = UIColor(red: 0.376, green: 0.635, blue: 1.000, alpha: 0.30196078431372547)
+  public static let surfacePictogramBase = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfacePictogramAccent = UIColor(red: 1.000, green: 0.145, blue: 0.161, alpha: 1)
+  public static let surfacePictogramA = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
   public static let surfacePictogramB = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let surfacePictogramC = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let surfacePictogramC = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
   public static let surfacePictogramD = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceHoverPrimary = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
   public static let surfaceActivePrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let surfaceHoverHero = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
-  public static let surfaceActiveHero = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let surfaceHoverHero = UIColor(red: 0.812, green: 0.173, blue: 0.173, alpha: 1)
+  public static let surfaceActiveHero = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
   public static let surfaceHoverPrimaryFaint = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
   public static let surfaceActivePrimaryFaint = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
-  public static let surfaceHoverHeroFaint = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
-  public static let surfaceActiveHeroFaint = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
-  public static let surfaceHoverMutedPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let surfaceActiveMutedPale = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
+  public static let surfaceHoverHeroFaint = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
+  public static let surfaceActiveHeroFaint = UIColor(red: 0.961, green: 0.851, blue: 0.851, alpha: 1)
+  public static let surfaceHoverMutedPale = UIColor(red: 0.969, green: 0.965, blue: 0.949, alpha: 1)
+  public static let surfaceActiveMutedPale = UIColor(red: 0.667, green: 0.631, blue: 0.627, alpha: 1)
   public static let surfaceHoverMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let surfaceActiveMono = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let surfaceActiveMono = UIColor(red: 0.871, green: 0.855, blue: 0.835, alpha: 1)
 }
 
 
 
 
-public enum WBCColors {
+public enum WBC26Colors {
   public static var backgroundWhite: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.backgroundWhite
+          return WBC26DarkColors.backgroundWhite
         default:
-          return WBCLightColors.backgroundWhite
+          return WBC26LightColors.backgroundWhite
       }
     }
   }
@@ -123,9 +123,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.backgroundPale
+          return WBC26DarkColors.backgroundPale
         default:
-          return WBCLightColors.backgroundPale
+          return WBC26LightColors.backgroundPale
       }
     }
   }
@@ -133,9 +133,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.backgroundFaint
+          return WBC26DarkColors.backgroundFaint
         default:
-          return WBCLightColors.backgroundFaint
+          return WBC26LightColors.backgroundFaint
       }
     }
   }
@@ -143,9 +143,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.backgroundPrimary
+          return WBC26DarkColors.backgroundPrimary
         default:
-          return WBCLightColors.backgroundPrimary
+          return WBC26LightColors.backgroundPrimary
       }
     }
   }
@@ -153,9 +153,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.backgroundHero
+          return WBC26DarkColors.backgroundHero
         default:
-          return WBCLightColors.backgroundHero
+          return WBC26LightColors.backgroundHero
       }
     }
   }
@@ -163,9 +163,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMutedVivid
+          return WBC26DarkColors.surfaceMutedVivid
         default:
-          return WBCLightColors.surfaceMutedVivid
+          return WBC26LightColors.surfaceMutedVivid
       }
     }
   }
@@ -173,9 +173,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMuted
+          return WBC26DarkColors.surfaceMuted
         default:
-          return WBCLightColors.surfaceMuted
+          return WBC26LightColors.surfaceMuted
       }
     }
   }
@@ -183,9 +183,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMutedStrong
+          return WBC26DarkColors.surfaceMutedStrong
         default:
-          return WBCLightColors.surfaceMutedStrong
+          return WBC26LightColors.surfaceMutedStrong
       }
     }
   }
@@ -193,9 +193,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMutedMild
+          return WBC26DarkColors.surfaceMutedMild
         default:
-          return WBCLightColors.surfaceMutedMild
+          return WBC26LightColors.surfaceMutedMild
       }
     }
   }
@@ -203,9 +203,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMutedSoft
+          return WBC26DarkColors.surfaceMutedSoft
         default:
-          return WBCLightColors.surfaceMutedSoft
+          return WBC26LightColors.surfaceMutedSoft
       }
     }
   }
@@ -213,9 +213,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMutedPale
+          return WBC26DarkColors.surfaceMutedPale
         default:
-          return WBCLightColors.surfaceMutedPale
+          return WBC26LightColors.surfaceMutedPale
       }
     }
   }
@@ -223,9 +223,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMutedFaint
+          return WBC26DarkColors.surfaceMutedFaint
         default:
-          return WBCLightColors.surfaceMutedFaint
+          return WBC26LightColors.surfaceMutedFaint
       }
     }
   }
@@ -233,9 +233,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePrimary
+          return WBC26DarkColors.surfacePrimary
         default:
-          return WBCLightColors.surfacePrimary
+          return WBC26LightColors.surfacePrimary
       }
     }
   }
@@ -243,9 +243,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePrimaryFaint
+          return WBC26DarkColors.surfacePrimaryFaint
         default:
-          return WBCLightColors.surfacePrimaryFaint
+          return WBC26LightColors.surfacePrimaryFaint
       }
     }
   }
@@ -253,9 +253,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHero
+          return WBC26DarkColors.surfaceHero
         default:
-          return WBCLightColors.surfaceHero
+          return WBC26LightColors.surfaceHero
       }
     }
   }
@@ -263,9 +263,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHeroFaint
+          return WBC26DarkColors.surfaceHeroFaint
         default:
-          return WBCLightColors.surfaceHeroFaint
+          return WBC26LightColors.surfaceHeroFaint
       }
     }
   }
@@ -273,9 +273,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePop
+          return WBC26DarkColors.surfacePop
         default:
-          return WBCLightColors.surfacePop
+          return WBC26LightColors.surfacePop
       }
     }
   }
@@ -283,9 +283,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePopFaint
+          return WBC26DarkColors.surfacePopFaint
         default:
-          return WBCLightColors.surfacePopFaint
+          return WBC26LightColors.surfacePopFaint
       }
     }
   }
@@ -293,9 +293,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoller
+          return WBC26DarkColors.surfaceHoller
         default:
-          return WBCLightColors.surfaceHoller
+          return WBC26LightColors.surfaceHoller
       }
     }
   }
@@ -303,9 +303,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHollerFaint
+          return WBC26DarkColors.surfaceHollerFaint
         default:
-          return WBCLightColors.surfaceHollerFaint
+          return WBC26LightColors.surfaceHollerFaint
       }
     }
   }
@@ -313,9 +313,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceSuccess
+          return WBC26DarkColors.surfaceSuccess
         default:
-          return WBCLightColors.surfaceSuccess
+          return WBC26LightColors.surfaceSuccess
       }
     }
   }
@@ -323,9 +323,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceSuccessFaint
+          return WBC26DarkColors.surfaceSuccessFaint
         default:
-          return WBCLightColors.surfaceSuccessFaint
+          return WBC26LightColors.surfaceSuccessFaint
       }
     }
   }
@@ -333,9 +333,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceInfo
+          return WBC26DarkColors.surfaceInfo
         default:
-          return WBCLightColors.surfaceInfo
+          return WBC26LightColors.surfaceInfo
       }
     }
   }
@@ -343,9 +343,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceInfoFaint
+          return WBC26DarkColors.surfaceInfoFaint
         default:
-          return WBCLightColors.surfaceInfoFaint
+          return WBC26LightColors.surfaceInfoFaint
       }
     }
   }
@@ -353,9 +353,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceWarning
+          return WBC26DarkColors.surfaceWarning
         default:
-          return WBCLightColors.surfaceWarning
+          return WBC26LightColors.surfaceWarning
       }
     }
   }
@@ -363,9 +363,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceWarningFaint
+          return WBC26DarkColors.surfaceWarningFaint
         default:
-          return WBCLightColors.surfaceWarningFaint
+          return WBC26LightColors.surfaceWarningFaint
       }
     }
   }
@@ -373,9 +373,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceDanger
+          return WBC26DarkColors.surfaceDanger
         default:
-          return WBCLightColors.surfaceDanger
+          return WBC26LightColors.surfaceDanger
       }
     }
   }
@@ -383,9 +383,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceDangerFaint
+          return WBC26DarkColors.surfaceDangerFaint
         default:
-          return WBCLightColors.surfaceDangerFaint
+          return WBC26LightColors.surfaceDangerFaint
       }
     }
   }
@@ -393,9 +393,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceSystemError
+          return WBC26DarkColors.surfaceSystemError
         default:
-          return WBCLightColors.surfaceSystemError
+          return WBC26LightColors.surfaceSystemError
       }
     }
   }
@@ -403,9 +403,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceSystemErrorDark
+          return WBC26DarkColors.surfaceSystemErrorDark
         default:
-          return WBCLightColors.surfaceSystemErrorDark
+          return WBC26LightColors.surfaceSystemErrorDark
       }
     }
   }
@@ -413,9 +413,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceMono
+          return WBC26DarkColors.surfaceMono
         default:
-          return WBCLightColors.surfaceMono
+          return WBC26LightColors.surfaceMono
       }
     }
   }
@@ -423,9 +423,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceReversed
+          return WBC26DarkColors.surfaceReversed
         default:
-          return WBCLightColors.surfaceReversed
+          return WBC26LightColors.surfaceReversed
       }
     }
   }
@@ -433,9 +433,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textBody
+          return WBC26DarkColors.textBody
         default:
-          return WBCLightColors.textBody
+          return WBC26LightColors.textBody
       }
     }
   }
@@ -443,9 +443,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textHeading
+          return WBC26DarkColors.textHeading
         default:
-          return WBCLightColors.textHeading
+          return WBC26LightColors.textHeading
       }
     }
   }
@@ -453,9 +453,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textMuted
+          return WBC26DarkColors.textMuted
         default:
-          return WBCLightColors.textMuted
+          return WBC26LightColors.textMuted
       }
     }
   }
@@ -463,9 +463,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textPrimary
+          return WBC26DarkColors.textPrimary
         default:
-          return WBCLightColors.textPrimary
+          return WBC26LightColors.textPrimary
       }
     }
   }
@@ -473,9 +473,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textHero
+          return WBC26DarkColors.textHero
         default:
-          return WBCLightColors.textHero
+          return WBC26LightColors.textHero
       }
     }
   }
@@ -483,9 +483,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textHoller
+          return WBC26DarkColors.textHoller
         default:
-          return WBCLightColors.textHoller
+          return WBC26LightColors.textHoller
       }
     }
   }
@@ -493,9 +493,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textLink
+          return WBC26DarkColors.textLink
         default:
-          return WBCLightColors.textLink
+          return WBC26LightColors.textLink
       }
     }
   }
@@ -503,9 +503,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textSuccess
+          return WBC26DarkColors.textSuccess
         default:
-          return WBCLightColors.textSuccess
+          return WBC26LightColors.textSuccess
       }
     }
   }
@@ -513,9 +513,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textInfo
+          return WBC26DarkColors.textInfo
         default:
-          return WBCLightColors.textInfo
+          return WBC26LightColors.textInfo
       }
     }
   }
@@ -523,9 +523,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textWarning
+          return WBC26DarkColors.textWarning
         default:
-          return WBCLightColors.textWarning
+          return WBC26LightColors.textWarning
       }
     }
   }
@@ -533,9 +533,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textDanger
+          return WBC26DarkColors.textDanger
         default:
-          return WBCLightColors.textDanger
+          return WBC26LightColors.textDanger
       }
     }
   }
@@ -543,9 +543,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textSystemError
+          return WBC26DarkColors.textSystemError
         default:
-          return WBCLightColors.textSystemError
+          return WBC26LightColors.textSystemError
       }
     }
   }
@@ -553,9 +553,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textMono
+          return WBC26DarkColors.textMono
         default:
-          return WBCLightColors.textMono
+          return WBC26LightColors.textMono
       }
     }
   }
@@ -563,9 +563,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.textReversed
+          return WBC26DarkColors.textReversed
         default:
-          return WBCLightColors.textReversed
+          return WBC26LightColors.textReversed
       }
     }
   }
@@ -573,9 +573,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderMuted
+          return WBC26DarkColors.borderMuted
         default:
-          return WBCLightColors.borderMuted
+          return WBC26LightColors.borderMuted
       }
     }
   }
@@ -583,9 +583,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderMutedStrong
+          return WBC26DarkColors.borderMutedStrong
         default:
-          return WBCLightColors.borderMutedStrong
+          return WBC26LightColors.borderMutedStrong
       }
     }
   }
@@ -593,9 +593,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderMutedMild
+          return WBC26DarkColors.borderMutedMild
         default:
-          return WBCLightColors.borderMutedMild
+          return WBC26LightColors.borderMutedMild
       }
     }
   }
@@ -603,9 +603,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderMutedSoft
+          return WBC26DarkColors.borderMutedSoft
         default:
-          return WBCLightColors.borderMutedSoft
+          return WBC26LightColors.borderMutedSoft
       }
     }
   }
@@ -613,9 +613,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderHero
+          return WBC26DarkColors.borderHero
         default:
-          return WBCLightColors.borderHero
+          return WBC26LightColors.borderHero
       }
     }
   }
@@ -623,9 +623,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderPrimary
+          return WBC26DarkColors.borderPrimary
         default:
-          return WBCLightColors.borderPrimary
+          return WBC26LightColors.borderPrimary
       }
     }
   }
@@ -633,9 +633,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderPop
+          return WBC26DarkColors.borderPop
         default:
-          return WBCLightColors.borderPop
+          return WBC26LightColors.borderPop
       }
     }
   }
@@ -643,9 +643,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderHoller
+          return WBC26DarkColors.borderHoller
         default:
-          return WBCLightColors.borderHoller
+          return WBC26LightColors.borderHoller
       }
     }
   }
@@ -653,9 +653,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderSuccess
+          return WBC26DarkColors.borderSuccess
         default:
-          return WBCLightColors.borderSuccess
+          return WBC26LightColors.borderSuccess
       }
     }
   }
@@ -663,9 +663,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderSuccessMild
+          return WBC26DarkColors.borderSuccessMild
         default:
-          return WBCLightColors.borderSuccessMild
+          return WBC26LightColors.borderSuccessMild
       }
     }
   }
@@ -673,9 +673,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderInfo
+          return WBC26DarkColors.borderInfo
         default:
-          return WBCLightColors.borderInfo
+          return WBC26LightColors.borderInfo
       }
     }
   }
@@ -683,9 +683,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderInfoMild
+          return WBC26DarkColors.borderInfoMild
         default:
-          return WBCLightColors.borderInfoMild
+          return WBC26LightColors.borderInfoMild
       }
     }
   }
@@ -693,9 +693,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderWarning
+          return WBC26DarkColors.borderWarning
         default:
-          return WBCLightColors.borderWarning
+          return WBC26LightColors.borderWarning
       }
     }
   }
@@ -703,9 +703,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderWarningMild
+          return WBC26DarkColors.borderWarningMild
         default:
-          return WBCLightColors.borderWarningMild
+          return WBC26LightColors.borderWarningMild
       }
     }
   }
@@ -713,9 +713,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderDanger
+          return WBC26DarkColors.borderDanger
         default:
-          return WBCLightColors.borderDanger
+          return WBC26LightColors.borderDanger
       }
     }
   }
@@ -723,9 +723,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderDangerMild
+          return WBC26DarkColors.borderDangerMild
         default:
-          return WBCLightColors.borderDangerMild
+          return WBC26LightColors.borderDangerMild
       }
     }
   }
@@ -733,9 +733,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderMono
+          return WBC26DarkColors.borderMono
         default:
-          return WBCLightColors.borderMono
+          return WBC26LightColors.borderMono
       }
     }
   }
@@ -743,9 +743,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.borderFocus
+          return WBC26DarkColors.borderFocus
         default:
-          return WBCLightColors.borderFocus
+          return WBC26LightColors.borderFocus
       }
     }
   }
@@ -753,9 +753,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataASolid
+          return WBC26DarkColors.dataASolid
         default:
-          return WBCLightColors.dataASolid
+          return WBC26LightColors.dataASolid
       }
     }
   }
@@ -763,9 +763,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataATint
+          return WBC26DarkColors.dataATint
         default:
-          return WBCLightColors.dataATint
+          return WBC26LightColors.dataATint
       }
     }
   }
@@ -773,9 +773,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataAOpacity
+          return WBC26DarkColors.dataAOpacity
         default:
-          return WBCLightColors.dataAOpacity
+          return WBC26LightColors.dataAOpacity
       }
     }
   }
@@ -783,9 +783,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataBSolid
+          return WBC26DarkColors.dataBSolid
         default:
-          return WBCLightColors.dataBSolid
+          return WBC26LightColors.dataBSolid
       }
     }
   }
@@ -793,9 +793,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataBTint
+          return WBC26DarkColors.dataBTint
         default:
-          return WBCLightColors.dataBTint
+          return WBC26LightColors.dataBTint
       }
     }
   }
@@ -803,9 +803,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataBOpacity
+          return WBC26DarkColors.dataBOpacity
         default:
-          return WBCLightColors.dataBOpacity
+          return WBC26LightColors.dataBOpacity
       }
     }
   }
@@ -813,9 +813,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataCSolid
+          return WBC26DarkColors.dataCSolid
         default:
-          return WBCLightColors.dataCSolid
+          return WBC26LightColors.dataCSolid
       }
     }
   }
@@ -823,9 +823,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataCTint
+          return WBC26DarkColors.dataCTint
         default:
-          return WBCLightColors.dataCTint
+          return WBC26LightColors.dataCTint
       }
     }
   }
@@ -833,9 +833,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataCOpacity
+          return WBC26DarkColors.dataCOpacity
         default:
-          return WBCLightColors.dataCOpacity
+          return WBC26LightColors.dataCOpacity
       }
     }
   }
@@ -843,9 +843,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataDSolid
+          return WBC26DarkColors.dataDSolid
         default:
-          return WBCLightColors.dataDSolid
+          return WBC26LightColors.dataDSolid
       }
     }
   }
@@ -853,9 +853,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataDTint
+          return WBC26DarkColors.dataDTint
         default:
-          return WBCLightColors.dataDTint
+          return WBC26LightColors.dataDTint
       }
     }
   }
@@ -863,9 +863,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataDOpacity
+          return WBC26DarkColors.dataDOpacity
         default:
-          return WBCLightColors.dataDOpacity
+          return WBC26LightColors.dataDOpacity
       }
     }
   }
@@ -873,9 +873,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataESolid
+          return WBC26DarkColors.dataESolid
         default:
-          return WBCLightColors.dataESolid
+          return WBC26LightColors.dataESolid
       }
     }
   }
@@ -883,9 +883,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataETint
+          return WBC26DarkColors.dataETint
         default:
-          return WBCLightColors.dataETint
+          return WBC26LightColors.dataETint
       }
     }
   }
@@ -893,9 +893,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataEOpacity
+          return WBC26DarkColors.dataEOpacity
         default:
-          return WBCLightColors.dataEOpacity
+          return WBC26LightColors.dataEOpacity
       }
     }
   }
@@ -903,9 +903,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataFSolid
+          return WBC26DarkColors.dataFSolid
         default:
-          return WBCLightColors.dataFSolid
+          return WBC26LightColors.dataFSolid
       }
     }
   }
@@ -913,9 +913,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataFTint
+          return WBC26DarkColors.dataFTint
         default:
-          return WBCLightColors.dataFTint
+          return WBC26LightColors.dataFTint
       }
     }
   }
@@ -923,9 +923,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.dataFOpacity
+          return WBC26DarkColors.dataFOpacity
         default:
-          return WBCLightColors.dataFOpacity
+          return WBC26LightColors.dataFOpacity
       }
     }
   }
@@ -933,9 +933,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePictogramBase
+          return WBC26DarkColors.surfacePictogramBase
         default:
-          return WBCLightColors.surfacePictogramBase
+          return WBC26LightColors.surfacePictogramBase
       }
     }
   }
@@ -943,9 +943,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePictogramAccent
+          return WBC26DarkColors.surfacePictogramAccent
         default:
-          return WBCLightColors.surfacePictogramAccent
+          return WBC26LightColors.surfacePictogramAccent
       }
     }
   }
@@ -953,9 +953,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePictogramA
+          return WBC26DarkColors.surfacePictogramA
         default:
-          return WBCLightColors.surfacePictogramA
+          return WBC26LightColors.surfacePictogramA
       }
     }
   }
@@ -963,9 +963,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePictogramB
+          return WBC26DarkColors.surfacePictogramB
         default:
-          return WBCLightColors.surfacePictogramB
+          return WBC26LightColors.surfacePictogramB
       }
     }
   }
@@ -973,9 +973,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePictogramC
+          return WBC26DarkColors.surfacePictogramC
         default:
-          return WBCLightColors.surfacePictogramC
+          return WBC26LightColors.surfacePictogramC
       }
     }
   }
@@ -983,9 +983,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfacePictogramD
+          return WBC26DarkColors.surfacePictogramD
         default:
-          return WBCLightColors.surfacePictogramD
+          return WBC26LightColors.surfacePictogramD
       }
     }
   }
@@ -993,9 +993,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoverPrimary
+          return WBC26DarkColors.surfaceHoverPrimary
         default:
-          return WBCLightColors.surfaceHoverPrimary
+          return WBC26LightColors.surfaceHoverPrimary
       }
     }
   }
@@ -1003,9 +1003,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceActivePrimary
+          return WBC26DarkColors.surfaceActivePrimary
         default:
-          return WBCLightColors.surfaceActivePrimary
+          return WBC26LightColors.surfaceActivePrimary
       }
     }
   }
@@ -1013,9 +1013,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoverHero
+          return WBC26DarkColors.surfaceHoverHero
         default:
-          return WBCLightColors.surfaceHoverHero
+          return WBC26LightColors.surfaceHoverHero
       }
     }
   }
@@ -1023,9 +1023,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceActiveHero
+          return WBC26DarkColors.surfaceActiveHero
         default:
-          return WBCLightColors.surfaceActiveHero
+          return WBC26LightColors.surfaceActiveHero
       }
     }
   }
@@ -1033,9 +1033,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoverPrimaryFaint
+          return WBC26DarkColors.surfaceHoverPrimaryFaint
         default:
-          return WBCLightColors.surfaceHoverPrimaryFaint
+          return WBC26LightColors.surfaceHoverPrimaryFaint
       }
     }
   }
@@ -1043,9 +1043,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceActivePrimaryFaint
+          return WBC26DarkColors.surfaceActivePrimaryFaint
         default:
-          return WBCLightColors.surfaceActivePrimaryFaint
+          return WBC26LightColors.surfaceActivePrimaryFaint
       }
     }
   }
@@ -1053,9 +1053,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoverHeroFaint
+          return WBC26DarkColors.surfaceHoverHeroFaint
         default:
-          return WBCLightColors.surfaceHoverHeroFaint
+          return WBC26LightColors.surfaceHoverHeroFaint
       }
     }
   }
@@ -1063,9 +1063,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceActiveHeroFaint
+          return WBC26DarkColors.surfaceActiveHeroFaint
         default:
-          return WBCLightColors.surfaceActiveHeroFaint
+          return WBC26LightColors.surfaceActiveHeroFaint
       }
     }
   }
@@ -1073,9 +1073,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoverMutedPale
+          return WBC26DarkColors.surfaceHoverMutedPale
         default:
-          return WBCLightColors.surfaceHoverMutedPale
+          return WBC26LightColors.surfaceHoverMutedPale
       }
     }
   }
@@ -1083,9 +1083,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceActiveMutedPale
+          return WBC26DarkColors.surfaceActiveMutedPale
         default:
-          return WBCLightColors.surfaceActiveMutedPale
+          return WBC26LightColors.surfaceActiveMutedPale
       }
     }
   }
@@ -1093,9 +1093,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceHoverMono
+          return WBC26DarkColors.surfaceHoverMono
         default:
-          return WBCLightColors.surfaceHoverMono
+          return WBC26LightColors.surfaceHoverMono
       }
     }
   }
@@ -1103,9 +1103,9 @@ public enum WBCColors {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.surfaceActiveMono
+          return WBC26DarkColors.surfaceActiveMono
         default:
-          return WBCLightColors.surfaceActiveMono
+          return WBC26LightColors.surfaceActiveMono
       }
     }
   }

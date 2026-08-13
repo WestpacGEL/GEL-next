@@ -151,6 +151,10 @@
       --color-data-f-opacity: var(--data-f-opacity);
       --color-surface-pictogram-base: var(--surface-pictogram-base);
       --color-surface-pictogram-accent: var(--surface-pictogram-accent);
+      --color-surface-pictogram-a: var(--surface-pictogram-a);
+      --color-surface-pictogram-b: var(--surface-pictogram-b);
+      --color-surface-pictogram-c: var(--surface-pictogram-c);
+      --color-surface-pictogram-d: var(--surface-pictogram-d);
       --color-surface-hover-primary: var(--surface-hover-primary);
       --color-surface-active-primary: var(--surface-active-primary);
       --color-surface-hover-hero: var(--surface-hover-hero);

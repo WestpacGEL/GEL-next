@@ -44,4 +44,14 @@
   <dimen name="bankOfMelbourneLightModeBorderRadiusRounded4xl">16</dimen>
   <dimen name="bankOfMelbourneLightModeBorderRadiusRounded5xl">24</dimen>
   <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedFull">999</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRoundedSm">3</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRoundedMd">4</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRoundedLg">5</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRoundedXl">6</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRounded2xl">8</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRounded3xl">12</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRounded4xl">16</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRounded5xl">24</dimen>
+  <dimen name="westpac2026LightModeBorderRadiusRoundedFull">999</dimen>
 </resources>

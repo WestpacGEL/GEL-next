@@ -734,10 +734,10 @@ StyleDictionary.registerTransform({
 
 const SRC_FOLDER = './src/tokens';
 
-const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, primitiveName }) => {
+const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, brandCode }) => {
   return {
     ...acc,
-    [pascalToKebab(themeName)]: primitiveName.toLowerCase(),
+    [pascalToKebab(themeName)]: brandCode,
   };
 }, {});
 
@@ -902,11 +902,6 @@ function processTokensSection(tokenSection, brands) {
  */
 function mergeTokens(tokens) {
   // Get brands from the constants - using both themeName and primitiveName
-  const brands = BRANDS.map(b => ({
-    themeName: b.themeName,
-    primitiveName: b.primitiveName,
-  }));
-
   const result = { Tokens: {} };
 
   return tokens.reduce((acc, current) => {
@@ -927,7 +922,10 @@ function mergeTokens(tokens) {
           },
         };
 
-        const processedTokens = processTokensSectionWithBrand(tokenSection, brands);
+        const brand = BRANDS.find(({ themeName }) => themeName === brandName);
+        if (!brand) return;
+
+        const processedTokens = processTokensSection(tokenSection, [brand]);
 
         // Merge the processed tokens into the accumulator
         Object.keys(processedTokens).forEach(brandKey => {
@@ -937,111 +935,6 @@ function mergeTokens(tokens) {
     }
     return acc;
   }, result);
-}
-
-/**
- * Processes brand-specific token sections with proper brand detection
- */
-function processTokensSectionWithBrand(tokenSection, brands) {
-  // The tokenSection contains modes with Light mode and Dark mode
-  // We need to determine which brand this token section belongs to by examining the token values
-  const result = {};
-
-  // Try to detect the brand by looking at the first token reference
-  let detectedBrand = null;
-  const firstToken = getFirstTokenValue(tokenSection);
-
-  if (firstToken && firstToken.$value && typeof firstToken.$value === 'string') {
-    const match = firstToken.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
-    if (match) {
-      const brandCode = match[1];
-      detectedBrand = brands.find(b => b.primitiveName.toUpperCase() === brandCode);
-    }
-  }
-
-  // If we can't detect the brand, fall back to processing all brands (old behavior)
-  if (!detectedBrand) {
-    return processTokensSection(tokenSection, brands);
-  }
-
-  // Process only the detected brand
-  const themeName = detectedBrand.themeName;
-  const primitiveName = detectedBrand.primitiveName;
-
-  result[themeName] = {};
-
-  Object.entries(tokenSection.modes).forEach(([modeName, groups]) => {
-    const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
-
-    result[themeName][normalizedMode] = Object.fromEntries(
-      // Skip "misc" group as they are figma related tokens
-      Object.entries(groups)
-        .filter(([propGroup]) => propGroup !== 'misc')
-        .map(([propGroup, categories]) => [
-          propGroup,
-          Object.fromEntries(
-            Object.entries(categories).map(([categoryName, tokens]) => [
-              categoryName,
-              Object.fromEntries(
-                Object.entries(tokens).map(([tokenName, tokenValue]) => [
-                  tokenName,
-                  applyValuePrefix(tokenValue, primitiveName),
-                ]),
-              ),
-            ]),
-          ),
-        ]),
-    );
-  });
-
-  return result;
-}
-
-/**
- * Helper function to get the first token value from a token section
- */
-function getFirstTokenValue(tokenSection) {
-  if (!tokenSection.modes) return null;
-
-  // Look for a brand-specific token first
-  for (const mode of Object.values(tokenSection.modes)) {
-    for (const group of Object.values(mode)) {
-      if (typeof group === 'object' && group !== null) {
-        for (const category of Object.values(group)) {
-          if (typeof category === 'object' && category !== null) {
-            for (const token of Object.values(category)) {
-              if (token && token.$value && token.$value.includes('Primitives.color.')) {
-                // Check if this is a brand-specific reference
-                const match = token.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
-                if (match) {
-                  return token; // Return the first brand-specific token found
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Fallback: return any token
-  for (const mode of Object.values(tokenSection.modes)) {
-    for (const group of Object.values(mode)) {
-      if (typeof group === 'object' && group !== null) {
-        for (const category of Object.values(group)) {
-          if (typeof category === 'object' && category !== null) {
-            for (const token of Object.values(category)) {
-              if (token && token.$value) {
-                return token;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  return null;
 }
 
 /**
@@ -1071,15 +964,22 @@ async function ensureFolderExists(folderPath) {
 /**
  * Creates a subset of tokens for a given brand.
  */
-function extractBrandTokens(themeName, primitiveName, tokens) {
+function extractBrandTokens(themeName, primitiveName, fallbackPrimitiveName, tokens) {
+  const brandPrimitives = {
+    [primitiveName]: tokens.Primitives.color[primitiveName],
+  };
+
+  if (fallbackPrimitiveName) {
+    brandPrimitives[fallbackPrimitiveName] = tokens.Primitives.color[fallbackPrimitiveName];
+  }
+
   return {
     Primitives: {
       border: tokens.Primitives.border, // Include all border primitives (shared across brands)
       color: {
         mono: tokens.Primitives.color.mono, // Include shared mono colors
         reserved: tokens.Primitives.color.reserved, // Include shared reserved colors
-        // Include only the specific brand's primitives for optimized file sizes
-        [primitiveName]: tokens.Primitives.color[primitiveName],
+        ...brandPrimitives,
       },
     },
     Tokens: tokens.Tokens[themeName],
@@ -1110,9 +1010,9 @@ const LOG_CONFIG = {
   await baseDictionary.buildAllPlatforms();
 
   // Build per brand
-  for (const { themeName, primitiveName } of BRANDS) {
-    const brandTokens = extractBrandTokens(themeName, primitiveName, mergedTokens);
-    const brandName = primitiveName.toLowerCase();
+  for (const { themeName, primitiveName, fallbackPrimitiveName, brandCode } of BRANDS) {
+    const brandTokens = extractBrandTokens(themeName, primitiveName, fallbackPrimitiveName, mergedTokens);
+    const brandName = brandCode;
     const brandFile = `${SRC_FOLDER}/w3c/${brandName}.json`;
 
     await saveJSON(brandFile, brandTokens);

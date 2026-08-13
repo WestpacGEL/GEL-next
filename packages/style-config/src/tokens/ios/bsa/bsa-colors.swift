@@ -69,24 +69,28 @@ public enum BSALightColors {
   public static let borderFocus = UIColor(red: 0.859, green: 0.322, blue: 0.620, alpha: 1)
   public static let dataASolid = UIColor(red: 0.847, green: 0.106, blue: 0.169, alpha: 1)
   public static let dataATint = UIColor(red: 0.976, green: 0.416, blue: 0.435, alpha: 1)
-  public static let dataAOpacity = UIColor(red: 0.847, green: 0.106, blue: 0.169, alpha: 0.5019607843137255)
+  public static let dataAOpacity = UIColor(red: 0.847, green: 0.106, blue: 0.169, alpha: 0.30196078431372547)
   public static let dataBSolid = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 1)
   public static let dataBTint = UIColor(red: 0.145, green: 0.455, blue: 0.855, alpha: 1)
-  public static let dataBOpacity = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 0.5490196078431373)
+  public static let dataBOpacity = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 0.30196078431372547)
   public static let dataCSolid = UIColor(red: 0.000, green: 0.678, blue: 0.741, alpha: 1)
   public static let dataCTint = UIColor(red: 0.035, green: 0.851, blue: 0.925, alpha: 1)
-  public static let dataCOpacity = UIColor(red: 0.000, green: 0.678, blue: 0.741, alpha: 0.5019607843137255)
+  public static let dataCOpacity = UIColor(red: 0.000, green: 0.678, blue: 0.741, alpha: 0.30196078431372547)
   public static let dataDSolid = UIColor(red: 0.635, green: 0.133, blue: 0.412, alpha: 1)
   public static let dataDTint = UIColor(red: 0.902, green: 0.537, blue: 0.741, alpha: 1)
-  public static let dataDOpacity = UIColor(red: 0.635, green: 0.133, blue: 0.412, alpha: 0.5019607843137255)
+  public static let dataDOpacity = UIColor(red: 0.635, green: 0.133, blue: 0.412, alpha: 0.30196078431372547)
   public static let dataESolid = UIColor(red: 0.361, green: 0.733, blue: 0.243, alpha: 1)
   public static let dataETint = UIColor(red: 0.584, green: 0.835, blue: 0.506, alpha: 1)
-  public static let dataEOpacity = UIColor(red: 0.361, green: 0.733, blue: 0.243, alpha: 0.5019607843137255)
+  public static let dataEOpacity = UIColor(red: 0.361, green: 0.733, blue: 0.243, alpha: 0.30196078431372547)
   public static let dataFSolid = UIColor(red: 0.969, green: 0.573, blue: 0.118, alpha: 1)
   public static let dataFTint = UIColor(red: 0.980, green: 0.729, blue: 0.439, alpha: 1)
   public static let dataFOpacity = UIColor(red: 0.969, green: 0.573, blue: 0.118, alpha: 0.5019607843137255)
   public static let surfacePictogramBase = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 1)
   public static let surfacePictogramAccent = UIColor(red: 0.000, green: 0.678, blue: 0.741, alpha: 1)
+  public static let surfacePictogramA = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 1)
+  public static let surfacePictogramB = UIColor(red: 0.000, green: 0.678, blue: 0.741, alpha: 1)
+  public static let surfacePictogramC = UIColor(red: 0.757, green: 0.965, blue: 0.980, alpha: 1)
+  public static let surfacePictogramD = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceHoverPrimary = UIColor(red: 0.929, green: 0.122, blue: 0.188, alpha: 1)
   public static let surfaceActivePrimary = UIColor(red: 0.976, green: 0.416, blue: 0.435, alpha: 1)
   public static let surfaceHoverHero = UIColor(red: 0.063, green: 0.314, blue: 0.635, alpha: 1)
@@ -942,6 +946,46 @@ public enum BSAColors {
           return BSADarkColors.surfacePictogramAccent
         default:
           return BSALightColors.surfacePictogramAccent
+      }
+    }
+  }
+  public static var surfacePictogramA: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.surfacePictogramA
+        default:
+          return BSALightColors.surfacePictogramA
+      }
+    }
+  }
+  public static var surfacePictogramB: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.surfacePictogramB
+        default:
+          return BSALightColors.surfacePictogramB
+      }
+    }
+  }
+  public static var surfacePictogramC: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.surfacePictogramC
+        default:
+          return BSALightColors.surfacePictogramC
+      }
+    }
+  }
+  public static var surfacePictogramD: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.surfacePictogramD
+        default:
+          return BSALightColors.surfacePictogramD
       }
     }
   }

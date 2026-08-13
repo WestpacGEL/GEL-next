@@ -27,6 +27,10 @@ const LOGO_MAP = {
     logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <WBCMultibrandLargeLogo {...props} />,
   },
+  wbc26: {
+    logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <WBCMultibrandLargeLogo {...props} />,
+  },
   stg: {
     logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <STGMultibrandLargeLogo {...props} />,

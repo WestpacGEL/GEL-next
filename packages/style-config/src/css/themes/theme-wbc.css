@@ -31,7 +31,7 @@
       --wbc-primary-800: #780d09;
       --wbc-primary-900: #570906;
       --wbc-primary-950: #370604;
-      --wbc-primary-opacity: #da171080;
+      --wbc-primary-opacity: #da17104d;
       --wbc-hero-50: #f1f0fa;
       --wbc-hero-100: #e2e1f4;
       --wbc-hero-200: #a9a5df;
@@ -43,7 +43,7 @@
       --wbc-hero-800: #0d093e;
       --wbc-hero-900: #090538;
       --wbc-hero-950: #060236;
-      --wbc-hero-opacity: #3a349399;
+      --wbc-hero-opacity: #3a34934d;
       --wbc-pop-50: #fff5fd;
       --wbc-pop-100: #ffecfb;
       --wbc-pop-200: #ffcff6;
@@ -55,7 +55,7 @@
       --wbc-pop-800: #8c2278;
       --wbc-pop-900: #59154d;
       --wbc-pop-950: #330c2c;
-      --wbc-pop-opacity: #ff3ddb73;
+      --wbc-pop-opacity: #ff3ddb4d;
       --wbc-holler-50: #faf1fd;
       --wbc-holler-100: #ebcdf9;
       --wbc-holler-200: #ce84f0;
@@ -67,7 +67,7 @@
       --wbc-holler-800: #5c0f7f;
       --wbc-holler-900: #450c5f;
       --wbc-holler-950: #2e0840;
-      --wbc-holler-opacity: #991ad680;
+      --wbc-holler-opacity: #991ad64d;
       --wbc-sing-50: #faf2f2;
       --wbc-sing-100: #f5d9d9;
       --wbc-sing-200: #efa2a2;
@@ -79,7 +79,7 @@
       --wbc-sing-800: #5d0000;
       --wbc-sing-900: #4d0000;
       --wbc-sing-950: #410000;
-      --wbc-sing-opacity: #99000080;
+      --wbc-sing-opacity: #9900004d;
       --wbc-dance-50: #fef4eb;
       --wbc-dance-100: #fde7d3;
       --wbc-dance-200: #fbcba2;
@@ -91,7 +91,7 @@
       --wbc-dance-800: #713705;
       --wbc-dance-900: #401f03;
       --wbc-dance-950: #2c1502;
-      --wbc-dance-opacity: #f57a0f73;
+      --wbc-dance-opacity: #f57a0f4d;
 
       /* Light Mode Semantic Tokens */
       --background-white: var(--mono-white);
@@ -178,6 +178,10 @@
       --data-f-opacity: var(--wbc-dance-opacity);
       --surface-pictogram-base: var(--wbc-hero-500);
       --surface-pictogram-accent: var(--wbc-primary-500);
+      --surface-pictogram-a: var(--wbc-hero-500);
+      --surface-pictogram-b: var(--wbc-primary-500);
+      --surface-pictogram-c: var(--wbc-muted-200);
+      --surface-pictogram-d: var(--mono-white);
       --surface-hover-primary: var(--wbc-primary-400);
       --surface-active-primary: var(--wbc-primary-200);
       --surface-hover-hero: var(--wbc-hero-400);

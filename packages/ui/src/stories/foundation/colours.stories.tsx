@@ -13,6 +13,7 @@ const meta: Meta = {
 
 const brandMap = {
   WBC: 'Westpac',
+  WBC26: 'Westpac 2026',
   STG: 'StGeorge',
   BOM: 'Bank of Melbourne',
   BSA: 'Bank SA',
@@ -160,7 +161,14 @@ const LOADED_COLORS = {
     'bg-data-f-tint',
     'bg-data-f-opacity',
   ],
-  pictogram: ['bg-surface-pictogram-base', 'bg-surface-pictogram-accent'],
+  pictogram: [
+    'bg-surface-pictogram-base',
+    'bg-surface-pictogram-accent',
+    'bg-surface-pictogram-a',
+    'bg-surface-pictogram-b',
+    'bg-surface-pictogram-c',
+    'bg-surface-pictogram-d',
+  ],
   state: [
     'bg-surface-hover-primary',
     'bg-surface-active-primary',
