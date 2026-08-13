@@ -32,7 +32,7 @@ const meta: Meta<typeof Pictogram> = {
   argTypes: {
     mode: {
       description: 'mode',
-      type: { name: 'enum', value: ['duo', 'base', 'mono'] },
+      type: { name: 'enum', value: ['duo', 'base', 'mono', 'default', 'inverse'] },
     },
     copyrightYear: {
       description: 'SVG copyright year',

@@ -11,6 +11,8 @@ export const fill = tv({
       base: 'fill-surface-pictogram-base',
       mono: 'fill-surface-mono',
       duo: '',
+      default: '',
+      inverse: '',
     },
     highlight: {
       true: '',
