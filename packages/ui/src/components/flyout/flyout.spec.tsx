@@ -50,6 +50,18 @@ describe('Flyout', () => {
     expect(screen.getByTestId('flyout')).toHaveClass('left-0', 'translate-x-0', 'border-r', 'border-border-muted-soft');
   });
 
+  it('remounts the dialog when its position changes', () => {
+    const { rerender } = render(<TestFlyout position="left" />);
+    const leftFlyout = screen.getByTestId('flyout');
+
+    rerender(<TestFlyout position="right" />);
+
+    const rightFlyout = screen.getByTestId('flyout');
+    expect(rightFlyout).not.toBe(leftFlyout);
+    expect(leftFlyout).not.toBeInTheDocument();
+    expect(rightFlyout).toHaveClass('right-0', 'translate-x-0', 'border-l', 'border-border-muted-soft');
+  });
+
   it('renders an optional heading as an h2 and labels the dialog', () => {
     render(<TestFlyout aria-label={undefined} heading="Flyout heading" />);
 

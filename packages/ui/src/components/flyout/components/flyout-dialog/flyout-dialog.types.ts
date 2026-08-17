@@ -34,11 +34,6 @@ export type FlyoutDialogProps = {
    * @default right
    */
   position?: Variants['position'];
-  /**
-   * Remount the dialog when alignment changes
-   * @default right
-   */
-  key: Variants['position'];
 } & AriaDialogProps &
   HTMLAttributes<HTMLDivElement>;
 
