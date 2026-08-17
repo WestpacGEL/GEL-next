@@ -43,6 +43,7 @@ export function Flyout({
           modalProps={modalProps}
           onClose={isDismissable ? () => state.close() : undefined}
           position={position}
+          key={position}
         >
           {children}
         </FlyoutDialog>

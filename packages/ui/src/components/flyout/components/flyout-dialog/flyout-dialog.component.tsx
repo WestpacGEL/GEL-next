@@ -23,6 +23,7 @@ export function FlyoutDialog({
   isOpen,
   modalProps,
   onClose,
+  key,
   position = 'right',
   ...props
 }: FlyoutDialogInternalProps) {
