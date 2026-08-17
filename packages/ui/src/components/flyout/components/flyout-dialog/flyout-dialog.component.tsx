@@ -1,7 +1,8 @@
 'use client';
 
 import { useEnterAnimation } from '@react-aria/utils';
-import React from 'react';
+import { clsx } from 'clsx';
+import React, { useEffect, useRef, useState } from 'react';
 import { mergeProps, useDialog } from 'react-aria';
 
 import { Button } from '../../../button/index.js';
@@ -29,6 +30,23 @@ export function FlyoutDialog({
   const isEntering = useEnterAnimation(flyoutRef);
   const styles = dialogStyles({ isEntering, isOpen, position });
   const { dialogProps, titleProps } = useDialog(props, flyoutRef);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = listRef.current;
+    if (!element) {
+      return;
+    }
+    const listener = () => {
+      const y = listRef.current?.scrollTop || 0;
+      setScrolled(y > 0);
+    };
+    listRef?.current?.addEventListener('scroll', listener);
+    return () => {
+      listRef?.current?.removeEventListener('scroll', listener);
+    };
+  }, []);
 
   return (
     <div
@@ -38,7 +56,11 @@ export function FlyoutDialog({
       ref={flyoutRef}
     >
       <div className={styles.content()}>
-        <div className={styles.header()}>
+        <div
+          className={clsx(styles.header(), {
+            'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
+          })}
+        >
           {heading && (
             <HeadingTag {...titleProps} className={styles.heading()}>
               {heading}
@@ -55,7 +77,9 @@ export function FlyoutDialog({
             />
           )}
         </div>
-        <div className={styles.body()}>{children}</div>
+        <div className={styles.body()} ref={listRef}>
+          {children}
+        </div>
       </div>
     </div>
   );
