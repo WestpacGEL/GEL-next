@@ -1,17 +1,17 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 
 import { Flyout } from './flyout.component.js';
 import { type FlyoutProps } from './flyout.types.js';
-import { useState } from 'react';
 
 function StoryFlyout({ children, state: _state, ...props }: FlyoutProps) {
   const state = useOverlayTriggerState({});
 
   return (
-    <div className="flex h-50 items-start justify-center pt-4 gap-4">
+    <div className="flex h-50 items-start justify-center gap-4 pt-4">
       <Button onClick={() => state.open()}>Open flyout</Button>
       <Flyout {...props} state={state}>
         {children}
