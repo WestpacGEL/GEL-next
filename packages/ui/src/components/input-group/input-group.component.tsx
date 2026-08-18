@@ -10,6 +10,7 @@ import React, {
   useId,
   useMemo,
 } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
@@ -94,14 +95,14 @@ export function InputGroup({
 
   const renderChildren = useCallback(() => {
     return Children.map<ReactNode, ReactNode>(children, child => {
-      if (isValidElement(child)) {
+      if (isValidElement<{ className?: string }>(child)) {
         return cloneElement(child, {
           size: resolvedSize,
           id: propID || id,
           'aria-labelledby': ariaLabelledBy,
           'aria-describedby': ariaDescribedBy || ariaDescribedByValue,
           'aria-label': ariaLabel,
-          className: 'focus:z-10', // for focus ring visibility
+          className: twMerge('focus:z-10', child.props.className), // for focus ring visibility
           ...(resolvedWidth !== 'full' ? { width: resolvedWidth } : {}),
         } as Partial<unknown> & Attributes);
       }
