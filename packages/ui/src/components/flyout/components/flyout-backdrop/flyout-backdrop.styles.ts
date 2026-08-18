@@ -7,7 +7,7 @@ export const styles = tv({
   variants: {
     isOpen: {
       true: {
-        base: 'bg-black/65',
+        base: 'animate-fadeIn bg-black/65',
       },
       false: {
         base: 'pointer-events-none',
