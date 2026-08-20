@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.15.0
+
+### Minor Changes
+
+- 55d5f0d: Added new flyout component
+
 ## 1.14.0
 
 ### Minor Changes
