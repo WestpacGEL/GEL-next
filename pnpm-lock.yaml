@@ -78,6 +78,9 @@ importers:
       react-dom:
         specifier: ^19.2.4
         version: 19.2.4(react@19.2.4)
+      react-stately:
+        specifier: ~3.42.0
+        version: 3.42.0(react@19.2.4)
       zustand:
         specifier: ~4.5.4
         version: 4.5.7(@types/react@18.3.28)(immer@9.0.21)(react@19.2.4)
