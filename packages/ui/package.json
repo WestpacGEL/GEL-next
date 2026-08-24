@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.14.0",
+  "version": "1.15.1",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -87,6 +87,9 @@
     },
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
+    },
+    "./flyout": {
+      "default": "./dist/components/flyout/index.js"
     },
     "./footer": {
       "default": "./dist/components/footer/index.js"

@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 1.15.1
+
+### Patch Changes
+
+- d946e26: InputGroup - merge child className instead of overwriting it
+
+## 1.15.0
+
+### Minor Changes
+
+- 55d5f0d: Added new flyout component
+
 ## 1.14.0
 
 ### Minor Changes
