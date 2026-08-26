@@ -1,9 +1,7 @@
 trigger:
   branches:
     include:
-     - main
-    exclude:
-     - '*'
+      - main
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 stages:
@@ -15,48 +13,66 @@ stages:
     jobs:
       - job: snyk
         steps:
-          - task: UseNode@1
+          - task: UseNode@1.274.1
             inputs:
               version: '22.x'
             displayName: 'Install Node.js'
-          - task: Cache@2
+          - task: Cache@2.274.0
             inputs:
               key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
               path: $(pnpm_config_cache)
             displayName: Cache pnpm
 
-          - script: |
-              corepack enable
-              corepack prepare pnpm@9.1 --activate
-              pnpm config set store-dir $(pnpm_config_cache)
+          - task: Bash@3.278.0
             displayName: 'Setup pnpm'
+            inputs:
+              targetType: inline
+              script: |
+                corepack enable
+                corepack prepare pnpm@10.30.2 --activate
+                pnpm config set store-dir $(pnpm_config_cache)
 
-          - script: |
-              pnpm install
+          - task: Bash@3.278.0
             displayName: 'pnpm install'
-          - task: Bash@3
-            displayName: 'Enable synk monitor mode'
+            inputs:
+              targetType: inline
+              script: pnpm install --frozen-lockfile
+          - task: Bash@3.278.0
+            displayName: 'Enable Snyk monitor mode'
             condition: and(succeeded(), eq(variables.isMain, true))
             inputs:
               targetType: inline
               script: |
                 echo "##vso[task.setvariable variable=snyk_cmd]monitor"
-          - task: Bash@3
-            displayName: 'Enable synk test mode'
+          - task: Bash@3.278.0
+            displayName: 'Enable Snyk test mode'
             condition: and(succeeded(), eq(variables.isMain, false))
             inputs:
               targetType: inline
               script: |
                 echo "##vso[task.setvariable variable=snyk_cmd]test"
-          - task: CmdLine@2
+          - task: CmdLine@2.279.0
             displayName: 'Snyk scan'
             inputs:
               script: |
                 docker run --rm \
                   --env SNYK_TOKEN \
-                  --env DEBUG=1 \
-                  -v $(Build.SourcesDirectory):/app \
+                  --volume "$(Build.SourcesDirectory):/app" \
+                  --workdir /app \
                   snyk/snyk:node-22 snyk ${SNYK_CMD} --severity-threshold=critical --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+            env:
+              SNYK_TOKEN: $(SNYK_TOKEN)
+              SNYK_ORG_ID: $(SNYK_ORG_ID)
+
+          - task: CmdLine@2.279.0
+            displayName: 'Snyk Code scan'
+            inputs:
+              script: |
+                docker run --rm \
+                  --env SNYK_TOKEN \
+                  --volume "$(Build.SourcesDirectory):/app" \
+                  --workdir /app \
+                  snyk/snyk:node-22 snyk code test --severity-threshold=high --org=${SNYK_ORG_ID} --report --project-name=GEL-next --target-reference=$(Build.SourceBranchName) --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
             env:
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
@@ -69,7 +85,7 @@ stages:
         pool:
           vmImage: 'ubuntu-latest'
         steps:
-          - task: Bash@3
+          - task: Bash@3.278.0
             displayName: 'Create dist folder'
             inputs:
               targetType: 'inline'
@@ -77,15 +93,17 @@ stages:
                 mkdir -p $(Build.SourcesDirectory)/.dist/src 
                 mkdir -p $(Build.SourcesDirectory)/.dist/lib && echo '' >> $(Build.SourcesDirectory)/.dist/lib/blank.txt 
                 rsync -aF -m $(Build.SourcesDirectory)/ $(Build.SourcesDirectory)/.dist/src/
-          - task: ArchiveFiles@2
+          - task: ArchiveFiles@2.274.0
             inputs:
               rootFolderOrFile: '$(Build.SourcesDirectory)/.dist'
               includeRootFolder: false
               archiveType: 'zip'
               archiveFile: '$(Build.ArtifactStagingDirectory)/source.zip'
 
-          - publish: '$(Build.ArtifactStagingDirectory)/source.zip'
-            artifact: drop
+          - task: PublishPipelineArtifact@1.242.0
+            inputs:
+              path: '$(Build.ArtifactStagingDirectory)/source.zip'
+              artifactName: drop
       - job: 'fortify_scan'
         displayName: 'fortify scan'
         dependsOn: 'fortify_prepare'
@@ -93,9 +111,12 @@ stages:
           name: 'a00c6a-non-prod-self-hosted'
         steps:
           - checkout: none
-          - download: current
-            artifact: drop
-          - task: Bash@3
+          - task: DownloadPipelineArtifact@2.198.0
+            inputs:
+              source: current
+              artifact: drop
+              path: '$(Pipeline.Workspace)'
+          - task: Bash@3.278.0
             inputs:
               targetType: 'inline'
               script: |
@@ -104,7 +125,7 @@ stages:
               JFROG_URL: $(JFROG_URL)
               JFROG_USER: $(JFROG_USER)
               JFROG_TOKEN: $(JFROG_TOKEN)
-          - task: Bash@3
+          - task: Bash@3.278.0
             inputs:
               targetType: inline
               script: |
@@ -127,7 +148,7 @@ stages:
         steps:
           - checkout: self
             fetchDepth: 0
-          - task: Bash@3
+          - task: Bash@3.278.0
             env:
               BB_USER: $(BB_USER)
               BB_EMAIL: $(BB_EMAIL)
@@ -137,7 +158,7 @@ stages:
               script: |
                 git config user.name "${BB_USER}"
                 git config user.email "${BB_EMAIL}"
-          - task: Bash@3
+          - task: Bash@3.278.0
             displayName: 'Push to Bitbucket'
             env:
               BB_USER: $(BB_USER)
