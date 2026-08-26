@@ -1,11 +1,10 @@
 trigger:
   branches:
     include:
-     - main
-    exclude:
-     - '*'
+      - main
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  snykTargetReference: $[replace(coalesce(variables['System.PullRequest.SourceBranch'], variables['Build.SourceBranch']), 'refs/heads/', '')]
 stages:
   - stage: Snyk
     pool:
@@ -15,106 +14,90 @@ stages:
     jobs:
       - job: snyk
         steps:
-          - task: UseNode@1
+          - task: UseNode@1.274.1
             inputs:
               version: '22.x'
             displayName: 'Install Node.js'
-          - task: Cache@2
+          - task: Cache@2.274.0
             inputs:
               key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
               path: $(pnpm_config_cache)
             displayName: Cache pnpm
 
-          - script: |
-              corepack enable
-              corepack prepare pnpm@9.1 --activate
-              pnpm config set store-dir $(pnpm_config_cache)
+          - task: Bash@3.278.0
             displayName: 'Setup pnpm'
+            inputs:
+              targetType: inline
+              script: |
+                corepack enable
+                corepack prepare pnpm@10.30.2 --activate
+                pnpm config set store-dir $(pnpm_config_cache)
 
-          - script: |
-              pnpm install
+          - task: Bash@3.278.0
             displayName: 'pnpm install'
-          - task: Bash@3
-            displayName: 'Enable synk monitor mode'
+            inputs:
+              targetType: inline
+              script: pnpm install --frozen-lockfile
+          - task: Bash@3.278.0
+            displayName: 'Enable Snyk monitor mode'
             condition: and(succeeded(), eq(variables.isMain, true))
             inputs:
               targetType: inline
               script: |
                 echo "##vso[task.setvariable variable=snyk_cmd]monitor"
-          - task: Bash@3
-            displayName: 'Enable synk test mode'
+          - task: Bash@3.278.0
+            displayName: 'Enable Snyk test mode'
             condition: and(succeeded(), eq(variables.isMain, false))
             inputs:
               targetType: inline
               script: |
                 echo "##vso[task.setvariable variable=snyk_cmd]test"
-          - task: CmdLine@2
+          - task: CmdLine@2.279.0
             displayName: 'Snyk scan'
             inputs:
               script: |
                 docker run --rm \
                   --env SNYK_TOKEN \
-                  --env DEBUG=1 \
-                  -v $(Build.SourcesDirectory):/app \
+                  --volume "$(Build.SourcesDirectory):/app" \
+                  --workdir /app \
                   snyk/snyk:node-22 snyk ${SNYK_CMD} --severity-threshold=critical --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
             env:
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
 
-  - stage: Fortify
-    condition: and(succeeded(), eq(variables.isMain, true))
-    jobs:
-      - job: 'fortify_prepare'
-        displayName: 'fortify prepare'
-        pool:
-          vmImage: 'ubuntu-latest'
-        steps:
-          - task: Bash@3
-            displayName: 'Create dist folder'
-            inputs:
-              targetType: 'inline'
-              script: |
-                mkdir -p $(Build.SourcesDirectory)/.dist/src 
-                mkdir -p $(Build.SourcesDirectory)/.dist/lib && echo '' >> $(Build.SourcesDirectory)/.dist/lib/blank.txt 
-                rsync -aF -m $(Build.SourcesDirectory)/ $(Build.SourcesDirectory)/.dist/src/
-          - task: ArchiveFiles@2
-            inputs:
-              rootFolderOrFile: '$(Build.SourcesDirectory)/.dist'
-              includeRootFolder: false
-              archiveType: 'zip'
-              archiveFile: '$(Build.ArtifactStagingDirectory)/source.zip'
-
-          - publish: '$(Build.ArtifactStagingDirectory)/source.zip'
-            artifact: drop
-      - job: 'fortify_scan'
-        displayName: 'fortify scan'
-        dependsOn: 'fortify_prepare'
-        pool:
-          name: 'a00c6a-non-prod-self-hosted'
-        steps:
-          - checkout: none
-          - download: current
-            artifact: drop
-          - task: Bash@3
-            inputs:
-              targetType: 'inline'
-              script: |
-                curl -${JFROG_USER}:${JFROG_TOKEN} -T $(Pipeline.Workspace)/drop/source.zip "${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
-            env:
-              JFROG_URL: $(JFROG_URL)
-              JFROG_USER: $(JFROG_USER)
-              JFROG_TOKEN: $(JFROG_TOKEN)
-          - task: Bash@3
+          - task: Bash@3.278.0
+            displayName: 'Snyk Code scan'
             inputs:
               targetType: inline
               script: |
-                curl -s -o /dev/null -w "%{http_code}" --request POST --url ${FORTIFY_URL} --header "Authorization: Basic ${FORTIFY_TOKEN}" --header "Content-Type: application/x-www-form-urlencoded" --data "APP_ID=${APP_ID}" --data "COMPONENT=GEL" --data "PJVERID=${FORTIFY_COMPONENT_PJVERID}" --data "EMAIL_ADDRESS=${FORTIFY_EMAIL}" --data "BUILD_LABEL=0.0.$(Build.BuildId)" --data "CODE_LANGUAGE=TypeScript" --data "BRANCH=main" --data "AF_LINK=${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
+                snyk_args=(
+                  code
+                  test
+                  --severity-threshold=high
+                  "--org=${SNYK_ORG_ID}"
+                )
+
+                if [[ "${IS_MAIN}" =~ ^[Tt][Rr][Uu][Ee]$ ]]; then
+                  snyk_args+=(
+                    --report
+                    --project-name=GEL-next
+                    --target-name=GEL-next
+                    "--target-reference=${SNYK_TARGET_REFERENCE}"
+                    --remote-repo-url=https://github.com/WestpacGEL/GEL-next
+                    --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+                  )
+                fi
+
+                docker run --rm \
+                  --env SNYK_TOKEN \
+                  --volume "$(Build.SourcesDirectory):/app" \
+                  --workdir /app \
+                  snyk/snyk:node-22 snyk "${snyk_args[@]}"
             env:
-              APP_ID: $(APP_ID)
-              FORTIFY_URL: $(FORTIFY_URL)
-              FORTIFY_TOKEN: $(FORTIFY_TOKEN)
-              FORTIFY_COMPONENT_PJVERID: $(FORTIFY_COMPONENT_PJVERID)
-              FORTIFY_EMAIL: $(FORTIFY_EMAIL)
+              IS_MAIN: $(isMain)
+              SNYK_TOKEN: $(SNYK_TOKEN)
+              SNYK_ORG_ID: $(SNYK_ORG_ID)
+              SNYK_TARGET_REFERENCE: $(snykTargetReference)
 
   - stage: SyncToBitbucket
     displayName: 'Sync to Bitbucket'
@@ -127,7 +110,7 @@ stages:
         steps:
           - checkout: self
             fetchDepth: 0
-          - task: Bash@3
+          - task: Bash@3.278.0
             env:
               BB_USER: $(BB_USER)
               BB_EMAIL: $(BB_EMAIL)
@@ -137,7 +120,7 @@ stages:
               script: |
                 git config user.name "${BB_USER}"
                 git config user.email "${BB_EMAIL}"
-          - task: Bash@3
+          - task: Bash@3.278.0
             displayName: 'Push to Bitbucket'
             env:
               BB_USER: $(BB_USER)
