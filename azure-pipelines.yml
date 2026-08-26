@@ -65,16 +65,36 @@ stages:
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
 
-          - task: CmdLine@2.279.0
+          - task: Bash@3.278.0
             displayName: 'Snyk Code scan'
             inputs:
+              targetType: inline
               script: |
+                snyk_args=(
+                  code
+                  test
+                  --severity-threshold=high
+                  "--org=${SNYK_ORG_ID}"
+                )
+
+                if [[ "${IS_MAIN}" =~ ^[Tt][Rr][Uu][Ee]$ ]]; then
+                  snyk_args+=(
+                    --report
+                    --project-name=GEL-next
+                    --target-name=GEL-next
+                    "--target-reference=${SNYK_TARGET_REFERENCE}"
+                    --remote-repo-url=https://github.com/WestpacGEL/GEL-next
+                    --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+                  )
+                fi
+
                 docker run --rm \
                   --env SNYK_TOKEN \
                   --volume "$(Build.SourcesDirectory):/app" \
                   --workdir /app \
-                  snyk/snyk:node-22 snyk code test --severity-threshold=high --org=${SNYK_ORG_ID} --report --project-name=GEL-next --target-name=GEL-next --target-reference="${SNYK_TARGET_REFERENCE}" --remote-repo-url=https://github.com/WestpacGEL/GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+                  snyk/snyk:node-22 snyk "${snyk_args[@]}"
             env:
+              IS_MAIN: $(isMain)
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
               SNYK_TARGET_REFERENCE: $(snykTargetReference)
