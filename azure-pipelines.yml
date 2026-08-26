@@ -4,6 +4,7 @@ trigger:
       - main
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  snykTargetReference: $[replace(coalesce(variables['System.PullRequest.SourceBranch'], variables['Build.SourceBranch']), 'refs/heads/', '')]
 stages:
   - stage: Snyk
     pool:
@@ -72,10 +73,11 @@ stages:
                   --env SNYK_TOKEN \
                   --volume "$(Build.SourcesDirectory):/app" \
                   --workdir /app \
-                  snyk/snyk:node-22 snyk code test --severity-threshold=high --org=${SNYK_ORG_ID} --report --project-name=GEL-next --target-reference=$(Build.SourceBranchName) --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+                  snyk/snyk:node-22 snyk code test --severity-threshold=high --org=${SNYK_ORG_ID} --report --project-name=GEL-next --target-name=GEL-next --target-reference="${SNYK_TARGET_REFERENCE}" --remote-repo-url=https://github.com/WestpacGEL/GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
             env:
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
+              SNYK_TARGET_REFERENCE: $(snykTargetReference)
 
   - stage: SyncToBitbucket
     displayName: 'Sync to Bitbucket'
