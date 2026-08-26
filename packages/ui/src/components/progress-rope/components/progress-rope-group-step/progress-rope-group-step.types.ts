@@ -1,8 +1,24 @@
 import { ReactNode } from 'react';
+import { type VariantProps } from 'tailwind-variants';
 
-import { ProgressRopeStepItem } from '../../progress-rope.types.js';
+import { RopeStepItem } from '../../progress-rope.types.js';
 
-export type ProgressRopeGroupStepProps = {
+import { styles } from './progress-rope-group-step.styles.js';
+
+type Variants = VariantProps<typeof styles>;
+
+type GroupStepRenderContext = {
+  current: boolean;
+  firstItem: boolean;
+  furthest: boolean;
+  furthestVisitedStep: number;
+  lastItem: boolean;
+  lastItemInRope: boolean;
+  tabIndex: number;
+  visited: boolean;
+};
+
+export type ProgressRopeGroupStepProps<TStepItem extends RopeStepItem> = {
   /**
    * Children
    */
@@ -33,11 +49,19 @@ export type ProgressRopeGroupStepProps = {
   opened?: boolean;
 
   /**
+   * Render function for each step
+   */
+  renderStep: (step: TStepItem & { index: number }, context: GroupStepRenderContext) => ReactNode;
+  /**
    * Steps to render
    */
-  steps: (ProgressRopeStepItem & { index: number })[];
+  steps: (TStepItem & { index: number })[];
   /**
    * Tag for the heading wrapper
    */
   tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /**
+   * Rope presentation variant
+   */
+  variant: Variants['variant'];
 };

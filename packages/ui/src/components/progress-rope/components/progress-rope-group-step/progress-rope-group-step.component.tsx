@@ -2,8 +2,9 @@ import { LazyMotion, m, useAnimate } from 'motion/react';
 import React, { useEffect, useId, useMemo, useState } from 'react';
 import { useFocusRing } from 'react-aria';
 
+import { ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
 import { Circle, VisuallyHidden } from '../../../index.js';
-import { ProgressRopeStep } from '../index.js';
+import { RopeStepItem } from '../../progress-rope.types.js';
 
 import { styles as progressRopeGroupStyles } from './progress-rope-group-step.styles.js';
 import { type ProgressRopeGroupStepProps } from './progress-rope-group-step.types.js';
@@ -13,16 +14,19 @@ const loadAnimations = () => import('./progress-rope-group-step.utils.js').then(
 /**
  * @private
  */
-export function ProgressRopeGroupStep({
+export function ProgressRopeGroupStep<TStepItem extends RopeStepItem>({
   steps,
   currentKey,
   furthestVisitedStep,
   children,
   firstItem,
+  lastItem,
   opened,
   onToggle,
   tag: Tag,
-}: ProgressRopeGroupStepProps) {
+  renderStep,
+  variant,
+}: ProgressRopeGroupStepProps<TStepItem>) {
   // Handling expanding animation this way for focus ring on steps
   const [scope, animate] = useAnimate();
   const id = useId();
@@ -61,7 +65,7 @@ export function ProgressRopeGroupStep({
     return 'non-visited';
   }, [current, visited]);
 
-  const styles = progressRopeGroupStyles({ firstItem, state, isFocusVisible });
+  const styles = progressRopeGroupStyles({ firstItem, state, isFocusVisible, variant });
   const [overflowVisible, setOverflowVisible] = useState(false);
 
   useEffect(() => {
@@ -104,7 +108,18 @@ export function ProgressRopeGroupStep({
         {...focusProps}
       >
         <Circle className={styles.circle()} aria-hidden="true" />
-        {children}
+        {variant === 'status' ? (
+          <span className={styles.label()}>
+            {children}
+            {opened ? (
+              <ExpandLessIcon aria-hidden="true" className={styles.icon()} size="small" />
+            ) : (
+              <ExpandMoreIcon aria-hidden="true" className={styles.icon()} size="small" />
+            )}
+          </span>
+        ) : (
+          children
+        )}
         <VisuallyHidden>{visuallyHiddenMessage}</VisuallyHidden>
       </button>
       <LazyMotion features={loadAnimations}>
@@ -118,18 +133,16 @@ export function ProgressRopeGroupStep({
           <ol className={styles.stepsWrapper({})} id={stepsContainerID} aria-hidden={!opened}>
             {steps.map((step, index) => (
               <li key={step.index}>
-                <ProgressRopeStep
-                  firstItem={index === 0}
-                  lastItemInGroup={index === steps.length - 1}
-                  size="small"
-                  onClick={(furthestVisitedStep || 0) >= step.index ? step.onClick : undefined}
-                  current={step.index === currentKey}
-                  visited={(furthestVisitedStep || 0) > step.index}
-                  furthest={furthestVisitedStep === step.index}
-                  tabIndex={opened ? 0 : -1} // Using hidden/visibility breaks styles
-                >
-                  {step.text}
-                </ProgressRopeStep>
+                {renderStep(step, {
+                  current: step.index === currentKey,
+                  firstItem: index === 0,
+                  furthest: furthestVisitedStep === step.index,
+                  furthestVisitedStep: furthestVisitedStep || 0,
+                  lastItem: index === steps.length - 1,
+                  lastItemInRope: !!lastItem && index === steps.length - 1,
+                  tabIndex: opened ? 0 : -1,
+                  visited: (furthestVisitedStep || 0) > step.index,
+                })}
               </li>
             ))}
           </ol>
