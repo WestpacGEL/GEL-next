@@ -73,7 +73,10 @@ function useRopeStep({
   return { focusProps, state, styles };
 }
 
-export function BaseRopeStep({ current, visited, furthest, styles, text, subText }: BaseRopeStepProps) {
+/**
+ * @private
+ */
+export function BaseRopeStep({ current, visited, furthest, styles, text, subText, variant }: BaseRopeStepProps) {
   const stateText = useMemo(() => {
     if (current) {
       return ', in progress';
@@ -86,7 +89,7 @@ export function BaseRopeStep({ current, visited, furthest, styles, text, subText
 
   return (
     <>
-      {subText === undefined ? (
+      {variant === 'progress' ? (
         <>
           <Circle className={styles.circle()} aria-hidden="true" />
           {text}
@@ -110,7 +113,6 @@ export function ProgressRopeStep({
   className,
   current,
   visited,
-  tag: Tag = 'button',
   size = 'medium',
   firstItem,
   lastItemInGroup,
@@ -134,17 +136,28 @@ export function ProgressRopeStep({
   });
 
   return (
-    <Tag
+    <button
+      type="button"
       className={styles.base({})}
       aria-current={current ? 'step' : false}
-      disabled={state === 'non-visited'}
+      disabled={state === 'non-visited' && !furthest}
       {...mergeProps(props, focusProps)}
     >
-      <BaseRopeStep current={current} visited={visited} furthest={furthest} styles={styles} text={text} />
-    </Tag>
+      <BaseRopeStep
+        current={current}
+        visited={visited}
+        furthest={furthest}
+        styles={styles}
+        text={text}
+        variant="progress"
+      />
+    </button>
   );
 }
 
+/**
+ * @private
+ */
 export function StatusRopeStep({
   className,
   current,
@@ -181,6 +194,7 @@ export function StatusRopeStep({
         styles={styles}
         subText={subText}
         text={text}
+        variant="status"
       />
     </div>
   );

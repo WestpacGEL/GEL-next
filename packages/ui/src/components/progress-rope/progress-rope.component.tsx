@@ -30,10 +30,8 @@ function verifyByCurrentIndexWhichGroupIsOpened<TStepItem extends RopeStepItem>(
 function BaseRope<TStepItem extends RopeStepItem>({
   current = 0,
   data,
-  headingTag = 'h3',
   renderGroup,
   renderStep,
-  ...props
 }: BaseRopeProps<TStepItem>) {
   const [furthestVisitedStep, setFurthestVisitedStep] = useState<number>(current);
 
@@ -122,99 +120,53 @@ export function ProgressRope({
   headingTag = 'h3',
   ...props
 }: ProgressRopeProps) {
-  const [furthestVisitedStep, setFurthestVisitedStep] = useState<number>(current);
-
-  const mappedData = useMemo(() => {
-    let autoIncrement = -1;
-    return data?.reduce((acc: RopeStepWithIndex<ProgressRopeStepItem>[], current) => {
-      if (current.type === 'group') {
-        return [
-          ...acc,
-          {
-            ...current,
-            steps: current.steps.map(step => {
-              autoIncrement++;
-              return { ...step, index: autoIncrement };
-            }),
-          },
-        ];
-      }
-      autoIncrement++;
-      return [
-        ...acc,
-        {
-          ...current,
-          index: autoIncrement,
-        },
-      ];
-    }, []);
-  }, [data]);
-
-  useEffect(() => {
-    setFurthestVisitedStep(state => {
-      return state > current ? state : current;
-    });
-  }, [current]);
-
-  const [openedGroupStepIndex, setOpenedGroupStepIndex] = useState<number | null>(
-    verifyByCurrentIndexWhichGroupIsOpened(current, mappedData || []),
-  );
-
-  useEffect(() => {
-    const newGroupStepIndex = verifyByCurrentIndexWhichGroupIsOpened(current, mappedData || []);
-    setOpenedGroupStepIndex(newGroupStepIndex);
-  }, [current, mappedData]);
-
   return (
     <Tag className={className} role={role} aria-label={ariaLabel} {...props}>
-      <ol className={styles({})}>
-        {mappedData?.map((item, index) => {
-          return (
-            <li key={index}>
-              {item.type === 'group' ? (
-                <ProgressRopeGroupStep
-                  firstItem={index === 0}
-                  lastItem={index === mappedData.length - 1}
-                  furthestVisitedStep={furthestVisitedStep}
-                  currentKey={current}
-                  steps={item.steps}
-                  opened={openedGroupStepIndex === index}
-                  onToggle={() => setOpenedGroupStepIndex(state => (state === index ? null : index))}
-                  tag={headingTag}
-                  variant="progress"
-                  renderStep={(step, context) => (
-                    <ProgressRopeStep
-                      firstItem={context.firstItem}
-                      lastItemInGroup={context.lastItem}
-                      lastItemInRope={context.lastItemInRope}
-                      size="small"
-                      onClick={context.furthestVisitedStep >= step.index ? step.onClick : undefined}
-                      current={context.current}
-                      visited={context.visited}
-                      furthest={context.furthest}
-                      tabIndex={context.tabIndex}
-                      text={step.text}
-                    />
-                  )}
-                >
-                  {item.text}
-                </ProgressRopeGroupStep>
-              ) : (
-                <ProgressRopeStep
-                  firstItem={index === 0}
-                  onClick={furthestVisitedStep >= item.index ? item.onClick : undefined}
-                  visited={furthestVisitedStep > item.index}
-                  furthest={furthestVisitedStep === item.index}
-                  current={current === item.index}
-                  previousStepGroup={mappedData[index - 1]?.type === 'group'}
-                  lastItemInRope={item === mappedData.slice(-1)[0]}
-                  text={item.text}
-                />
-              )}
-            </li>
-          );
-        })}
-      </ol>
+      <BaseRope<ProgressRopeStepItem>
+        current={current}
+        data={data}
+        renderGroup={(group, context) => (
+          <ProgressRopeGroupStep
+            firstItem={context.firstItem}
+            lastItem={context.lastItem}
+            furthestVisitedStep={context.furthestVisitedStep}
+            currentKey={current}
+            steps={group.steps}
+            opened={context.opened}
+            onToggle={context.toggle}
+            tag={headingTag}
+            variant="progress"
+            renderStep={(step, stepContext) => (
+              <ProgressRopeStep
+                firstItem={stepContext.firstItem}
+                lastItemInGroup={stepContext.lastItem}
+                lastItemInRope={stepContext.lastItemInRope}
+                size="small"
+                onClick={stepContext.furthestVisitedStep >= step.index ? step.onClick : undefined}
+                current={stepContext.current}
+                visited={stepContext.visited}
+                furthest={stepContext.furthest}
+                tabIndex={stepContext.tabIndex}
+                text={step.text}
+              />
+            )}
+          >
+            {group.text}
+          </ProgressRopeGroupStep>
+        )}
+        renderStep={(step, context) => (
+          <ProgressRopeStep
+            firstItem={context.firstItem}
+            onClick={context.furthestVisitedStep >= step.index ? step.onClick : undefined}
+            visited={context.visited}
+            furthest={context.furthest}
+            current={context.current}
+            previousStepGroup={context.previousStepGroup}
+            lastItemInRope={context.lastItem}
+            text={step.text}
+          />
+        )}
+      />
     </Tag>
   );
 }
@@ -224,7 +176,6 @@ export function StatusRope({ className, current = 0, data, headingTag = 'h3', ..
     <section className={className} aria-label="Form Status" {...props}>
       <BaseRope<StatusRopeStepItem>
         current={current}
-        headingTag={headingTag}
         data={data}
         renderGroup={(group, context) => (
           <ProgressRopeGroupStep
@@ -246,7 +197,6 @@ export function StatusRope({ className, current = 0, data, headingTag = 'h3', ..
                 current={stepContext.current}
                 visited={stepContext.visited}
                 furthest={stepContext.furthest}
-                tabIndex={stepContext.tabIndex}
                 text={step.text}
                 subText={step.subText}
               />

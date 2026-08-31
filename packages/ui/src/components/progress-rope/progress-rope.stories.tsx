@@ -4,8 +4,8 @@ import { useCallback, useState } from 'react';
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
 import { Button, Well } from '../index.js';
 
-import { ProgressRope } from './progress-rope.component.js';
-import { ProgressRopeProps } from './progress-rope.types.js';
+import { ProgressRope, StatusRope } from './progress-rope.component.js';
+import { ProgressRopeProps, StatusRopeProps } from './progress-rope.types.js';
 
 const meta: Meta<typeof ProgressRope> = {
   title: 'Components/ProgressRope',
@@ -126,6 +126,64 @@ export const GroupingSteps = () => {
             look="faint"
             size="small"
             onClick={() => setActiveIndex(state => ++state)}
+          >
+            next
+          </Button>
+        </div>
+        <code className="flex">Current: {activeIndex}</code>
+      </Well>
+    </div>
+  );
+};
+
+const STATUS_ROPE_DATA: StatusRopeProps['data'] = [
+  {
+    type: 'group',
+    text: 'About you',
+    steps: [
+      { text: 'Personal details', subText: 'Your name and date of birth' },
+      { text: 'Contact details', subText: 'Your phone, email and address' },
+    ],
+  },
+  {
+    type: 'group',
+    text: 'Your finances',
+    steps: [
+      { text: 'Income', subText: 'Your regular sources of income' },
+      { text: 'Expenses', subText: 'Your regular living expenses' },
+    ],
+  },
+  { text: 'Review and submit', subText: 'Check the information you provided' },
+];
+
+/**
+ * > Status rope usage example
+ */
+export const StatusRopeVariation = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <div>
+      <StatusRope current={activeIndex} data={STATUS_ROPE_DATA} />
+      <Well className="flex items-center p-2 sm:p-2">
+        <div className="mr-2 flex items-center space-x-1">
+          <Button
+            iconBefore={ArrowLeftIcon}
+            soft
+            look="faint"
+            size="small"
+            disabled={activeIndex === 0}
+            onClick={() => setActiveIndex(state => state - 1)}
+          >
+            prev
+          </Button>{' '}
+          <Button
+            iconAfter={ArrowRightIcon}
+            soft
+            look="faint"
+            size="small"
+            disabled={activeIndex === 4}
+            onClick={() => setActiveIndex(state => state + 1)}
           >
             next
           </Button>

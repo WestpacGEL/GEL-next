@@ -14,7 +14,9 @@ export const styles = tv({
     variant: {
       progress: {},
       status: {
-        circleWrapper: 'h-[3rem] py-0 typography-body-9 text-text-body',
+        circle: 'cursor-pointer',
+        circleWrapper: 'h-[3rem] cursor-default py-0 typography-body-9 text-text-body',
+        label: 'cursor-pointer',
       },
     },
     firstItem: {

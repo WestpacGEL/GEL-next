@@ -101,6 +101,7 @@ export function ProgressRopeGroupStep<TStepItem extends RopeStepItem>({
   return (
     <Tag>
       <button
+        type="button"
         aria-expanded={opened}
         className={styles.circleWrapper({})}
         onClick={onToggle}

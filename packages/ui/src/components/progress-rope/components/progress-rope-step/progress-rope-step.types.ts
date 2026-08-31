@@ -11,37 +11,41 @@ type Variants = VariantProps<typeof styles>;
 
 export type RopeStepProps = {
   /**
-   * Says it is current
+   * Whether the step is currently active
    */
   current?: boolean;
   /**
-   * Whether step is first item
+   * Whether the step is the first item in its containing list
    */
   firstItem?: Variants['firstItem'];
   /**
-   * Whether step is furthest visited
+   * Whether the step is the furthest one reached by the user
    */
   furthest?: boolean;
   /**
-   * Whether step is last item in a group
+   * Whether the step is the last item in its group
    */
   lastItemInGroup?: Variants['lastItemInGroup'];
   /**
-   * Whether step is last item in the rope e.g. Review and Submit
+   * Whether the step is the final item in the rope
    */
   lastItemInRope?: Variants['lastItemInGroup'];
   /**
-   * Whether previous step was part of group
+   * Whether the preceding top-level rope item is a group
    */
   previousStepGroup?: boolean;
   /**
-   * Size of step
+   * Visual size of the step indicator
+   * @default medium
    */
   size?: ResponsiveVariants<Variants['size']>;
   /**
-   * Says it is visited
+   * Whether the user has progressed beyond the step
    */
   visited?: boolean;
+  /**
+   * Rope presentation variant used to resolve the step styling
+   */
   variant?: Variants['variant'];
 } & Omit<HTMLAttributes<Element>, 'children' | 'onClick'>;
 
@@ -57,6 +61,9 @@ export type UseRopeStepProps = Pick<
   | 'size'
   | 'visited'
 > & {
+  /**
+   * Rope presentation variant used to resolve the step styling
+   */
   variant: NonNullable<RopeStepProps['variant']>;
 };
 
@@ -65,11 +72,18 @@ export type BaseRopeStepProps = Pick<RopeStepProps, 'current' | 'furthest' | 'vi
    * Additional information associated with the step
    */
   subText?: ReactNode;
+  /**
+   * Resolved slot styles for the step
+   */
   styles: ReturnType<typeof styles>;
   /**
    * Step text
    */
   text: ReactNode;
+  /**
+   * Rope presentation variant used to select the step layout
+   */
+  variant: 'progress' | 'status';
 };
 
 export type StatusRopeStepProps = RopeStepProps & {
@@ -85,39 +99,36 @@ export type StatusRopeStepProps = RopeStepProps & {
 
 export type ProgressRopeStepProps = {
   /**
-   * Says it is current
+   * Whether the step is currently active
    */
   current?: boolean;
   /**
-   * Whether step is first item
+   * Whether the step is the first item in its containing list
    */
   firstItem?: Variants['firstItem'];
   /**
-   * Whether step is furthest visited
+   * Whether the step is the furthest one reached by the user
    */
   furthest?: boolean;
   /**
-   * Whether step is last item in a group
+   * Whether the step is the last item in its group
    */
   lastItemInGroup?: Variants['lastItemInGroup'];
   /**
-   * Whether step is last item in the rope e.g. Review and Submit
+   * Whether the step is the final item in the rope
    */
   lastItemInRope?: Variants['lastItemInGroup'];
   /**
-   * Whether previous step was part of group
+   * Whether the preceding top-level rope item is a group
    */
   previousStepGroup?: boolean;
   /**
-   * Size of step
+   * Visual size of the step indicator
+   * @default medium
    */
   size?: ResponsiveVariants<Variants['size']>;
   /**
-   * Tag to render
-   */
-  tag?: keyof JSX.IntrinsicElements;
-  /**
-   * Says it is visited
+   * Whether the user has progressed beyond the step
    */
   visited?: boolean;
 } & Omit<ProgressRopeStepItem, 'type'> &
