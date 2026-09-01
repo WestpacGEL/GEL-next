@@ -5,7 +5,7 @@ export const styles = tv({
     base: 'relative flex w-full gap-2 pt-[0.5rem] pb-[0.875rem] typography-body-10 leading-loose outline-transparent transition-colors',
     circle: 'relative z-10 bg-background-white transition-colors',
     label: 'grid w-full grid-cols-[auto_1fr] items-center',
-    subText: 'col-start-2 pt-[0.625rem] typography-body-10 font-normal text-text-muted',
+    subText: 'col-start-2 pt-[0.75rem] typography-body-10 font-normal text-text-muted',
   },
   variants: {
     variant: {
@@ -176,6 +176,12 @@ export const styles = tv({
       variant: 'progress',
       state: 'non-visited',
       className: 'text-text-muted/90',
+    },
+    {
+      slots: ['base'],
+      variant: 'status',
+      state: 'non-visited',
+      className: 'text-text-muted',
     },
     {
       slots: ['circle'],

@@ -182,7 +182,53 @@ export const StatusRopeVariation = () => {
             soft
             look="faint"
             size="small"
-            disabled={activeIndex === 4}
+            disabled={activeIndex === 5}
+            onClick={() => setActiveIndex(state => state + 1)}
+          >
+            next
+          </Button>
+        </div>
+        <code className="flex">Current: {activeIndex}</code>
+      </Well>
+    </div>
+  );
+};
+
+const STATUS_ROPE_STEPS_DATA: StatusRopeProps['data'] = [
+  { text: 'Application received', subText: 'We have received your application' },
+  { text: 'Identity check', subText: 'Your identity has been confirmed' },
+  { text: 'Financial review', subText: 'We are reviewing your information' },
+  { text: 'Final assessment', subText: 'Your application is being assessed' },
+  { text: 'Decision', subText: 'We will notify you when a decision is available' },
+];
+
+/**
+ * > Status rope with ungrouped steps usage example
+ */
+export const StatusRopeSteps = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <div>
+      <StatusRope current={activeIndex} data={STATUS_ROPE_STEPS_DATA} />
+      <Well className="flex items-center p-2 sm:p-2">
+        <div className="mr-2 flex items-center space-x-1">
+          <Button
+            iconBefore={ArrowLeftIcon}
+            soft
+            look="faint"
+            size="small"
+            disabled={activeIndex === 0}
+            onClick={() => setActiveIndex(state => state - 1)}
+          >
+            prev
+          </Button>{' '}
+          <Button
+            iconAfter={ArrowRightIcon}
+            soft
+            look="faint"
+            size="small"
+            disabled={activeIndex === 5}
             onClick={() => setActiveIndex(state => state + 1)}
           >
             next

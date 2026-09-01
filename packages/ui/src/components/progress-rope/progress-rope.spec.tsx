@@ -228,11 +228,12 @@ describe('StatusRope', () => {
     expect(label?.parentElement).not.toHaveClass('font-bold');
     expect(getByText('Additional step information')).toHaveClass(
       'col-start-2',
-      'pt-[0.625rem]',
+      'pt-[0.75rem]',
       'typography-body-10',
       'font-normal',
       'text-text-muted',
     );
+    expect(getByText('Step 2').closest('[aria-current]')).toHaveClass('text-text-muted');
 
     const groupButton = getByRole('button', { name: /Group 1/i });
 
