@@ -11,36 +11,35 @@ type Variants = VariantProps<typeof styles>;
 
 export type RopeStepProps = {
   /**
-   * Whether the step is currently active
+   * Says it is current
    */
   current?: boolean;
   /**
-   * Whether the step is the first item in its containing list
+   * Whether step is first item
    */
   firstItem?: Variants['firstItem'];
   /**
-   * Whether the step is the furthest one reached by the user
+   * Whether step is furthest visited
    */
   furthest?: boolean;
   /**
-   * Whether the step is the last item in its group
+   * Whether step is last item in a group
    */
   lastItemInGroup?: Variants['lastItemInGroup'];
   /**
-   * Whether the step is the final item in the rope
+   * Whether step is last item in the rope e.g. Review and Submit
    */
   lastItemInRope?: Variants['lastItemInGroup'];
   /**
-   * Whether the preceding top-level rope item is a group
+   * Whether previous step was part of group
    */
   previousStepGroup?: boolean;
   /**
-   * Visual size of the step indicator
-   * @default medium
+   * Size of step
    */
   size?: ResponsiveVariants<Variants['size']>;
   /**
-   * Whether the user has progressed beyond the step
+   * Says it is visited
    */
   visited?: boolean;
   /**
@@ -99,36 +98,35 @@ export type StatusRopeStepProps = RopeStepProps & {
 
 export type ProgressRopeStepProps = {
   /**
-   * Whether the step is currently active
+   * Says it is current
    */
   current?: boolean;
   /**
-   * Whether the step is the first item in its containing list
+   * Whether step is first item
    */
   firstItem?: Variants['firstItem'];
   /**
-   * Whether the step is the furthest one reached by the user
+   * Whether step is furthest visited
    */
   furthest?: boolean;
   /**
-   * Whether the step is the last item in its group
+   * Whether step is last item in a group
    */
   lastItemInGroup?: Variants['lastItemInGroup'];
   /**
-   * Whether the step is the final item in the rope
+   * Whether step is last item in the rope e.g. Review and Submit
    */
   lastItemInRope?: Variants['lastItemInGroup'];
   /**
-   * Whether the preceding top-level rope item is a group
+   * Whether previous step was part of group
    */
   previousStepGroup?: boolean;
   /**
-   * Visual size of the step indicator
-   * @default medium
+   * Size of step
    */
   size?: ResponsiveVariants<Variants['size']>;
   /**
-   * Whether the user has progressed beyond the step
+   * Says it is visited
    */
   visited?: boolean;
 } & Omit<ProgressRopeStepItem, 'type'> &

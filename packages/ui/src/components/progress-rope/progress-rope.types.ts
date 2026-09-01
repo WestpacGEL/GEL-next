@@ -198,7 +198,7 @@ export type ProgressRopeProps1 = {
    */
   current?: number;
   /**
-   * Ordered steps and groups displayed by the rope
+   * Data
    */
   data?: (
     | ProgressRopeStepItem

@@ -44,35 +44,36 @@ type GroupStepRenderContext = {
 
 export type ProgressRopeGroupStepProps<TStepItem extends RopeStepItem> = {
   /**
-   * Content displayed as the group label
+   * Children
    */
   children: ReactNode;
   /**
-   * Zero-based index of the currently active step
+   * currentKey
    */
   currentKey?: number;
   /**
-   * Whether the group is the first item in the rope
+   * Boolean to tell if it is the first item of the rope
    */
   firstItem?: boolean;
   /**
-   * Zero-based index of the furthest step reached by the user
+   * Furtherst visited step
    */
   furthestVisitedStep?: number;
   /**
-   * Whether the group is the last item in the rope
+   * Whether or not it is the last item
    */
   lastItem?: boolean;
   /**
-   * Handler called when the user expands or collapses the group
+   * Trigger when the user try to open/close the group
    */
   onToggle?: () => unknown;
   /**
-   * Whether the group's steps are expanded
+   * Boolean to tell if group is expanded
    */
   opened?: boolean;
+
   /**
-   * Renders each contained step and provides its resolved state
+   * Render function for each step
    */
   renderStep: (
     step: TStepItem & {
@@ -84,7 +85,7 @@ export type ProgressRopeGroupStepProps<TStepItem extends RopeStepItem> = {
     context: GroupStepRenderContext,
   ) => ReactNode;
   /**
-   * Indexed steps contained within the group
+   * Steps to render
    */
   steps: (TStepItem & {
     /**
@@ -93,11 +94,11 @@ export type ProgressRopeGroupStepProps<TStepItem extends RopeStepItem> = {
     index: number;
   })[];
   /**
-   * Semantic heading element used for the group label
+   * Tag for the heading wrapper
    */
   tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /**
-   * Rope presentation variant used to resolve group styling
+   * Rope presentation variant
    */
   variant: Variants['variant'];
 };
