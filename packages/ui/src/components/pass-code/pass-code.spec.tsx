@@ -57,6 +57,18 @@ describe('PassCode', () => {
     expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
   });
 
+  it('triggers onPasteComplete instead of onComplete for multiple characters from a change event', () => {
+    const onCompleteMock = vi.fn();
+    const onPasteCompleteMock = vi.fn();
+    render(<PassCode length={4} type="numbers" onComplete={onCompleteMock} onPasteComplete={onPasteCompleteMock} />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '1234' } });
+
+    expect(onPasteCompleteMock).toHaveBeenCalledOnce();
+    expect(onPasteCompleteMock).toHaveBeenCalledWith('1234');
+    expect(onCompleteMock).not.toHaveBeenCalled();
+  });
+
   it('moves focus to the next input after multiple characters', () => {
     render(<PassCode length={4} type="numbers" />);
 

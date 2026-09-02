@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.15.1",
+  "version": "1.15.2",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -290,7 +290,7 @@
     "vitest": "^3.2.6"
   },
   "dependencies": {
-    "@internationalized/date": "~3.10.0",
+    "@internationalized/date": "^3.12.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
@@ -304,7 +304,6 @@
     "zustand": "~4.5.4"
   },
   "peerDependencies": {
-    "@internationalized/date": "~3.10.0",
     "react": ">=18.2.0",
     "tailwindcss": "~4.1.12"
   },
