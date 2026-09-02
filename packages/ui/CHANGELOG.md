@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.15.2
+
+### Patch Changes
+
+- b8a2199: Update internationalized/date package
+- eefe4eb: Add paste handling for mobile
+
 ## 1.15.1
 
 ### Patch Changes
