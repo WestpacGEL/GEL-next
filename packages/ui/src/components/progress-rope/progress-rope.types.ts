@@ -37,7 +37,7 @@ export type StatusRopeStepItem = {
   /**
    * Additional information displayed beneath the step label
    */
-  subText: ReactNode;
+  description: ReactNode;
 } & RopeStepItem;
 
 /**
@@ -190,56 +190,3 @@ export type ProgressRopeProps = {
   headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 } & HTMLAttributes<Element> &
   Omit<BaseRopeProps<ProgressRopeStepItem>, 'renderGroup' | 'renderStep'>;
-
-export type ProgressRopeProps1 = {
-  /**
-   * Current active step (zero-indexed)
-   * @default 0
-   */
-  current?: number;
-  /**
-   * Data
-   */
-  data?: (
-    | ProgressRopeStepItem
-    | StatusRopeStepItem
-    | {
-        /**
-         * Progress steps contained within the group
-         */
-        steps: ProgressRopeStepItem[];
-        /**
-         * Content displayed as the group label
-         */
-        text: ReactNode;
-        /**
-         * Identifies the item as a group of steps
-         */
-        type: 'group';
-      }
-    | {
-        /**
-         * Status steps contained within the group
-         */
-        steps: StatusRopeStepItem[];
-        /**
-         * Content displayed as the group label
-         */
-        text: ReactNode;
-        /**
-         * Identifies the item as a group of steps
-         */
-        type: 'group';
-      }
-  )[];
-  /**
-   * The semantic tag for the group step headings
-   * @default h3
-   */
-  headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  /**
-   * Tag to render
-   * @default nav
-   */
-  tag?: keyof JSX.IntrinsicElements;
-} & HTMLAttributes<Element>;

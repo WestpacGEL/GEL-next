@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode } from 'react';
+import { type FocusRingAria } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
@@ -64,6 +65,21 @@ export type UseRopeStepProps = Pick<
    * Rope presentation variant used to resolve the step styling
    */
   variant: NonNullable<RopeStepProps['variant']>;
+};
+
+export type UseRopeStepReturn = {
+  /**
+   * Props to apply to the focusable step element
+   */
+  focusProps: FocusRingAria['focusProps'];
+  /**
+   * Resolved rope step state
+   */
+  state: NonNullable<Variants['state']>;
+  /**
+   * Resolved slot styles for the step
+   */
+  styles: ReturnType<typeof styles>;
 };
 
 export type BaseRopeStepProps = Pick<RopeStepProps, 'current' | 'furthest' | 'visited'> & {

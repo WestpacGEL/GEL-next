@@ -3,13 +3,12 @@ import { mergeProps } from 'react-aria';
 
 import { BaseRopeStep } from '../base-rope-step/base-rope-step.component.js';
 import { useRopeStep } from '../base-rope-step/use-rope-step.hook.js';
-
-import { type ProgressRopeStepProps } from './progress-rope-step.types.js';
+import { type StatusRopeStepProps } from '../progress-rope-step/progress-rope-step.types.js';
 
 /**
  * @private
  */
-export function ProgressRopeStep({
+export function StatusRopeStep({
   className,
   current,
   visited,
@@ -19,10 +18,11 @@ export function ProgressRopeStep({
   lastItemInRope,
   furthest,
   previousStepGroup,
+  subText,
   text,
   ...props
-}: ProgressRopeStepProps) {
-  const { focusProps, state, styles } = useRopeStep({
+}: StatusRopeStepProps) {
+  const { focusProps, styles } = useRopeStep({
     className,
     current,
     firstItem,
@@ -31,26 +31,21 @@ export function ProgressRopeStep({
     lastItemInRope,
     previousStepGroup,
     size,
-    variant: 'progress',
+    variant: 'status',
     visited,
   });
 
   return (
-    <button
-      type="button"
-      className={styles.base({})}
-      aria-current={current ? 'step' : false}
-      disabled={state === 'non-visited' && !furthest}
-      {...mergeProps(props, focusProps)}
-    >
+    <div className={styles.base()} aria-current={current ? 'step' : false} {...mergeProps(props, focusProps)}>
       <BaseRopeStep
         current={current}
         visited={visited}
         furthest={furthest}
         styles={styles}
+        subText={subText}
         text={text}
-        variant="progress"
+        variant="status"
       />
-    </button>
+    </div>
   );
 }

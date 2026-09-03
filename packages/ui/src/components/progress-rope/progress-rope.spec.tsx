@@ -2,8 +2,9 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { type FormEvent } from 'react';
 
-import { ProgressRope, StatusRope } from './progress-rope.component.js';
+import { ProgressRope } from './progress-rope.component.js';
 import { ProgressRopeProps, StatusRopeProps } from './progress-rope.types.js';
+import { StatusRope } from './status-rope.component.js';
 
 describe('ProgressRope', () => {
   it('renders a labelled navigation containing grouped and ungrouped steps', () => {
@@ -189,13 +190,13 @@ describe('ProgressRope', () => {
 describe('StatusRope', () => {
   it('renders a labelled region with grouped and ungrouped status steps', () => {
     const statusRopeData: StatusRopeProps['data'] = [
-      { text: 'Step 1', subText: 'Additional step information' },
+      { text: 'Step 1', description: 'Additional step information' },
       {
         type: 'group',
         text: 'Group 1',
-        steps: [{ text: 'Step 2', subText: 'More step information' }],
+        steps: [{ text: 'Step 2', description: 'More step information' }],
       },
-      { text: 'Step 3', subText: 'Final step information' },
+      { text: 'Step 3', description: 'Final step information' },
     ];
 
     const { getByRole, getByText } = render(
@@ -212,11 +213,11 @@ describe('StatusRope', () => {
 
   it('renders status step subtext with its default styling', () => {
     const statusRopeData: StatusRopeProps['data'] = [
-      { text: 'Step 1', subText: 'Additional step information' },
+      { text: 'Step 1', description: 'Additional step information' },
       {
         type: 'group',
         text: 'Group 1',
-        steps: [{ text: 'Step 2', subText: 'More step information' }],
+        steps: [{ text: 'Step 2', description: 'More step information' }],
       },
     ];
 
@@ -245,7 +246,7 @@ describe('StatusRope', () => {
   });
 
   it('uses the status layout when subtext is undefined', () => {
-    const statusRopeData: StatusRopeProps['data'] = [{ text: 'Step 1', subText: undefined }];
+    const statusRopeData: StatusRopeProps['data'] = [{ text: 'Step 1', description: undefined }];
 
     const { getByText } = render(<StatusRope current={0} data={statusRopeData} />);
 
@@ -257,12 +258,12 @@ describe('StatusRope', () => {
       {
         type: 'group',
         text: 'Group 1',
-        steps: [{ text: 'Step 1', subText: 'First step information' }],
+        steps: [{ text: 'Step 1', description: 'First step information' }],
       },
       {
         type: 'group',
         text: 'Group 2',
-        steps: [{ text: 'Step 2', subText: 'Second step information' }],
+        steps: [{ text: 'Step 2', description: 'Second step information' }],
       },
     ];
 
@@ -288,7 +289,7 @@ describe('StatusRope', () => {
       {
         type: 'group',
         text: 'Group 1',
-        steps: [{ text: 'Step 1', subText: 'Additional step information' }],
+        steps: [{ text: 'Step 1', description: 'Additional step information' }],
       },
     ];
 
@@ -311,8 +312,8 @@ describe('StatusRope', () => {
 
   it('ends the status rope connector at the final circle', () => {
     const statusRopeData: StatusRopeProps['data'] = [
-      { text: 'Step 1', subText: 'Additional step information' },
-      { text: 'Final step', subText: 'Final step information' },
+      { text: 'Step 1', description: 'Additional step information' },
+      { text: 'Final step', description: 'Final step information' },
     ];
 
     const { getByText } = render(<StatusRope current={2} data={statusRopeData} />);

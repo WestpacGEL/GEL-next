@@ -3,47 +3,38 @@
 import React from 'react';
 
 import { BaseRope } from './components/base-rope/base-rope.component.js';
-import { ProgressRopeGroupStep, ProgressRopeStep } from './components/index.js';
-import { ProgressRopeStepItem, type ProgressRopeProps } from './progress-rope.types.js';
+import { ProgressRopeGroupStep } from './components/index.js';
+import { StatusRopeStep } from './components/status-rope-step/status-rope-step.component.js';
+import { StatusRopeProps, StatusRopeStepItem } from './progress-rope.types.js';
 
-export function ProgressRope({
-  'aria-label': ariaLabel = 'In this form',
-  role = 'navigation',
-  className,
-  tag: Tag = 'nav',
-  current = 0,
-  data,
-  headingTag = 'h3',
-  ...props
-}: ProgressRopeProps) {
+export function StatusRope({ className, current = 0, data, headingTag = 'h3', ...props }: StatusRopeProps) {
   return (
-    <Tag className={className} role={role} aria-label={ariaLabel} {...props}>
-      <BaseRope<ProgressRopeStepItem>
+    <section className={className} aria-label="Form Status" {...props}>
+      <BaseRope<StatusRopeStepItem>
         current={current}
         data={data}
         renderGroup={(group, context) => (
           <ProgressRopeGroupStep
             firstItem={context.firstItem}
             lastItem={context.lastItem}
-            furthestVisitedStep={context.furthestVisitedStep}
             currentKey={current}
+            furthestVisitedStep={context.furthestVisitedStep}
             steps={group.steps}
             opened={context.opened}
             onToggle={context.toggle}
             tag={headingTag}
-            variant="progress"
+            variant="status"
             renderStep={(step, stepContext) => (
-              <ProgressRopeStep
+              <StatusRopeStep
                 firstItem={stepContext.firstItem}
                 lastItemInGroup={stepContext.lastItem}
                 lastItemInRope={stepContext.lastItemInRope}
                 size="small"
-                onClick={stepContext.furthestVisitedStep >= step.index ? step.onClick : undefined}
                 current={stepContext.current}
                 visited={stepContext.visited}
                 furthest={stepContext.furthest}
-                tabIndex={stepContext.tabIndex}
                 text={step.text}
+                subText={step.description}
               />
             )}
           >
@@ -51,18 +42,18 @@ export function ProgressRope({
           </ProgressRopeGroupStep>
         )}
         renderStep={(step, context) => (
-          <ProgressRopeStep
+          <StatusRopeStep
             firstItem={context.firstItem}
-            onClick={context.furthestVisitedStep >= step.index ? step.onClick : undefined}
+            lastItemInRope={context.lastItem}
+            previousStepGroup={context.previousStepGroup}
+            current={context.current}
             visited={context.visited}
             furthest={context.furthest}
-            current={context.current}
-            previousStepGroup={context.previousStepGroup}
-            lastItemInRope={context.lastItem}
             text={step.text}
+            subText={step.description}
           />
         )}
       />
-    </Tag>
+    </section>
   );
 }
