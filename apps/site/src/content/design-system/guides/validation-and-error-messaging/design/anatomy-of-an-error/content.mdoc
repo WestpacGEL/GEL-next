@@ -1,9 +1,107 @@
-When we alert users to something that requires their attention, we use the [reserved colours](/components/foundation/colour) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour _Danger_, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
+When we alert users to something that requires their attention, we use the [reserved colours](/components/foundation/colour) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour *Danger*, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
 
 ```jsx
 <InputGroup width={20} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
   <Input invalid />
 </InputGroup>
+```
+
+### Error placement
+
+Place validation errors directly below the field label and hint text, above the input. Keeping labels, supporting information, and error messages together creates a predictable pattern that is easier to scan, reduces cognitive load, and ensures the relationship between the error and its field remains clear. This approach also provides a more consistent experience across different control types, preventing errors from being obscured by dropdown menus or separated from their labels by long lists of checkboxes or radio buttons.
+
+```jsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
+
+<div><h4 className="typography-body-9 font-bold text-text-success mb-3">Do:</h4>
+<div className="grid grid-cols-3">
+  <InputGroup width={10} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
+  <Input invalid />
+</InputGroup>
+
+ <CheckboxGroup 
+errorMessage="If there is an error it can go here"    
+hintMessage="Hint text"
+    label="Label"
+  validationState="invalid"
+      className="col-span-1" 
+      size="large"
+      checkboxes={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+        { value: "Option 4", label: "Option 4" },
+        { value: "Option 5", label: "Option 5" },
+        { value: "Option 6", label: "Option 6" },
+      ]}
+    />
+
+
+
+    <InputGroup label="Label" errorMessage="If there is an error it can go here" hint="Hint text" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} invalid />
+
+</InputGroup>
+
+</div>
+</div>
+  );
+};
+```
+
+```jsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
+<div><h4 className="typography-body-9 font-bold text-text-danger mb-3">Don't:</h4>
+<div className="grid grid-cols-3">
+<div><InputGroup width={10} label="Label" hint="Hint text" >
+  <Input invalid />
+</InputGroup>
+<Alert className="mt-1" look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+      </Alert></div>
+<div> <CheckboxGroup   
+hintMessage="Hint text"
+    label="Label"
+  validationState="invalid"
+      className="col-span-1" 
+      size="large"
+      checkboxes={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+        { value: "Option 4", label: "Option 4" },
+        { value: "Option 5", label: "Option 5" },
+        { value: "Option 6", label: "Option 6" },
+      ]}
+    />
+<Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+      </Alert></div>
+
+   <div> <InputGroup label="Label" hint="Hint text" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} invalid />
+
+</InputGroup>
+<Alert look="danger" iconSize="xsmall" mode="text">If there is an error it can go here
+      </Alert></div>
+</div>
+</div>
+  );
+};
 ```
 
 Some of the questions presented to users have multiple inputs e.g., Date of birth – Day, Month and Year. Each input has its own error which appears stacked.&nbsp;
