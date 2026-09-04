@@ -12,6 +12,30 @@ const meta: Meta<typeof ProgressRope> = {
   component: ProgressRope,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
+  argTypes: {
+    current: {
+      control: 'number',
+      description: 'Current active step (zero-indexed)',
+      table: { defaultValue: { summary: '0' } },
+    },
+    data: {
+      control: 'object',
+      description: 'Data',
+      table: {
+        type: {
+          summary: 'Array<ProgressStep | ProgressStepGroup>',
+          detail: `(
+  | ProgressRopeStepItem
+  | {
+      steps: ProgressRopeStepItem[];
+      text: ReactNode;
+      type: 'group';
+    }
+)[]`,
+        },
+      },
+    },
+  },
 };
 
 export default meta;
