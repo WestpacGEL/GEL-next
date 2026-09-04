@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.16.0
+
+### Minor Changes
+
+- b05394a: export PassCodeRef type from PassCode component
+
 ## 1.15.2
 
 ### Patch Changes
