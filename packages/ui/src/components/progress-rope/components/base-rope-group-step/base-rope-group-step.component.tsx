@@ -4,17 +4,17 @@ import { useFocusRing } from 'react-aria';
 
 import { ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
 import { Circle, VisuallyHidden } from '../../../index.js';
-import { RopeStepItem } from '../../progress-rope.types.js';
+import { RopeStepItem } from '../base-rope/base-rope.types.js';
 
-import { styles as progressRopeGroupStyles } from './progress-rope-group-step.styles.js';
-import { type ProgressRopeGroupStepProps } from './progress-rope-group-step.types.js';
+import { baseRopeGroupStepStyles } from './base-rope-group-step.styles.js';
+import { type BaseRopeGroupStepProps } from './base-rope-group-step.types.js';
 
-const loadAnimations = () => import('./progress-rope-group-step.utils.js').then(res => res.default);
+const loadAnimations = () => import('./base-rope-group-step.utils.js').then(res => res.default);
 
 /**
  * @private
  */
-export function ProgressRopeGroupStep<TStepItem extends RopeStepItem>({
+export function BaseRopeGroupStep<TStepItem extends RopeStepItem>({
   steps,
   currentKey,
   furthestVisitedStep,
@@ -26,11 +26,11 @@ export function ProgressRopeGroupStep<TStepItem extends RopeStepItem>({
   tag: Tag,
   renderStep,
   variant,
-}: ProgressRopeGroupStepProps<TStepItem>) {
+}: BaseRopeGroupStepProps<TStepItem>) {
   // Handling expanding animation this way for focus ring on steps
   const [scope, animate] = useAnimate();
   const id = useId();
-  const stepsContainerID = `progress-rope-group-steps-container-${id}`;
+  const stepsContainerID = `base-rope-group-steps-container-${id}`;
 
   const current = useMemo(() => {
     return !!steps.find(step => step.index === currentKey);
@@ -65,7 +65,7 @@ export function ProgressRopeGroupStep<TStepItem extends RopeStepItem>({
     return 'non-visited';
   }, [current, visited]);
 
-  const styles = progressRopeGroupStyles({ firstItem, state, isFocusVisible, variant });
+  const styles = baseRopeGroupStepStyles({ firstItem, state, isFocusVisible, variant });
   const [overflowVisible, setOverflowVisible] = useState(false);
 
   useEffect(() => {
@@ -106,6 +106,7 @@ export function ProgressRopeGroupStep<TStepItem extends RopeStepItem>({
         className={styles.circleWrapper({})}
         onClick={onToggle}
         aria-controls={stepsContainerID}
+        disabled={variant === 'progress' && !current && !visited}
         {...focusProps}
       >
         <Circle className={styles.circle()} aria-hidden="true" />

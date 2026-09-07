@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useReducer, useState } from 'react';
 
-import { styles } from '../../progress-rope.styles.js';
-import { BaseRopeProps, RopeStepItem, type RopeStepWithIndex } from '../../progress-rope.types.js';
+import { baseRopeStyles } from './base-rope.styles.js';
+import { BaseRopeProps, OpenedGroupsAction, RopeStepItem, type RopeStepWithIndex } from './base-rope.types.js';
 
 function verifyByCurrentIndexWhichGroupIsOpened<TStepItem extends RopeStepItem>(
   currentIndex: number,
@@ -17,12 +17,31 @@ function verifyByCurrentIndexWhichGroupIsOpened<TStepItem extends RopeStepItem>(
   }, null);
 }
 
+function openedGroupsReducer(state: number[], action: OpenedGroupsAction) {
+  if (action.type === 'sync') {
+    if (action.mode === 'single') {
+      return action.groupIndex === null ? [] : [action.groupIndex];
+    }
+
+    return action.groupIndex === null || state.includes(action.groupIndex) ? state : [...state, action.groupIndex];
+  }
+
+  if (action.mode === 'single') {
+    return state.includes(action.groupIndex) ? [] : [action.groupIndex];
+  }
+
+  return state.includes(action.groupIndex)
+    ? state.filter(groupIndex => groupIndex !== action.groupIndex)
+    : [...state, action.groupIndex];
+}
+
 /**
  * @private
  */
 export function BaseRope<TStepItem extends RopeStepItem>({
   current = 0,
   data,
+  groupToggleMode,
   renderGroup,
   renderStep,
 }: BaseRopeProps<TStepItem>) {
@@ -60,17 +79,19 @@ export function BaseRope<TStepItem extends RopeStepItem>({
     });
   }, [current]);
 
-  const [openedGroupStepIndex, setOpenedGroupStepIndex] = useState<number | null>(
-    verifyByCurrentIndexWhichGroupIsOpened<TStepItem>(current, mappedData || []),
+  const initiallyOpenedGroupStepIndex = verifyByCurrentIndexWhichGroupIsOpened<TStepItem>(current, mappedData || []);
+  const [openedGroupStepIndexes, dispatchOpenedGroups] = useReducer(
+    openedGroupsReducer,
+    initiallyOpenedGroupStepIndex === null ? [] : [initiallyOpenedGroupStepIndex],
   );
 
   useEffect(() => {
     const newGroupStepIndex = verifyByCurrentIndexWhichGroupIsOpened(current, mappedData || []);
-    setOpenedGroupStepIndex(newGroupStepIndex);
-  }, [current, mappedData]);
+    dispatchOpenedGroups({ groupIndex: newGroupStepIndex, mode: groupToggleMode, type: 'sync' });
+  }, [current, groupToggleMode, mappedData]);
 
   return (
-    <ol className={styles({})}>
+    <ol className={baseRopeStyles({})}>
       {mappedData?.map((item, index) => {
         const firstItem = index === 0;
         const lastItem = index === mappedData.length - 1;
@@ -82,8 +103,8 @@ export function BaseRope<TStepItem extends RopeStepItem>({
                   current: item.steps.some(step => step.index === current),
                   visited: item.steps.some(step => furthestVisitedStep >= step.index),
                   furthestVisitedStep,
-                  opened: openedGroupStepIndex === index,
-                  toggle: () => setOpenedGroupStepIndex(state => (state === index ? null : index)),
+                  opened: openedGroupStepIndexes.includes(index),
+                  toggle: () => dispatchOpenedGroups({ groupIndex: index, mode: groupToggleMode, type: 'toggle' }),
                   firstItem,
                   lastItem,
                 })

@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv({
+export const baseRopeGroupStepStyles = tv({
   slots: {
     base: '',
     circle: 'relative z-10 size-[14px] border-2 bg-background-white transition-colors',

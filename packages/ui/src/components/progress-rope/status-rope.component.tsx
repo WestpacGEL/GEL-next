@@ -3,9 +3,9 @@
 import React from 'react';
 
 import { BaseRope } from './components/base-rope/base-rope.component.js';
-import { ProgressRopeGroupStep } from './components/index.js';
+import { BaseRopeGroupStep } from './components/index.js';
 import { StatusRopeStep } from './components/status-rope-step/status-rope-step.component.js';
-import { StatusRopeProps, StatusRopeStepItem } from './progress-rope.types.js';
+import { StatusRopeProps, StatusRopeStepItem } from './status-rope.types.js';
 
 export function StatusRope({ className, current = 0, data, headingTag = 'h3', ...props }: StatusRopeProps) {
   return (
@@ -13,8 +13,9 @@ export function StatusRope({ className, current = 0, data, headingTag = 'h3', ..
       <BaseRope<StatusRopeStepItem>
         current={current}
         data={data}
+        groupToggleMode="multiple"
         renderGroup={(group, context) => (
-          <ProgressRopeGroupStep
+          <BaseRopeGroupStep
             firstItem={context.firstItem}
             lastItem={context.lastItem}
             currentKey={current}
@@ -39,7 +40,7 @@ export function StatusRope({ className, current = 0, data, headingTag = 'h3', ..
             )}
           >
             {group.text}
-          </ProgressRopeGroupStep>
+          </BaseRopeGroupStep>
         )}
         renderStep={(step, context) => (
           <StatusRopeStep

@@ -3,12 +3,9 @@ import { useFocusRing } from 'react-aria';
 
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { styles as progressRopeStyles } from '../progress-rope-step/progress-rope-step.styles.js';
-import {
-  RopeStepProps,
-  type UseRopeStepProps,
-  type UseRopeStepReturn,
-} from '../progress-rope-step/progress-rope-step.types.js';
+
+import { baseRopeStepStyles } from './base-rope-step.styles.js';
+import { RopeStepProps, type UseRopeStepProps, type UseRopeStepReturn } from './base-rope-step.types.js';
 
 function getRopeStepState({
   current,
@@ -52,7 +49,7 @@ export function useRopeStep({
   const { isFocusVisible, focusProps } = useFocusRing();
   const breakpoint = useBreakpoint();
 
-  const styles = progressRopeStyles({
+  const styles = baseRopeStepStyles({
     className,
     state,
     size: resolveResponsiveVariant(size, breakpoint),

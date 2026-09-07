@@ -2,10 +2,10 @@ import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
-import { Button, Well } from '../index.js';
+import { Badge, Button, Well } from '../index.js';
 
-import { StatusRopeProps } from './progress-rope.types.js';
 import { StatusRope } from './status-rope.component.js';
+import { StatusRopeProps } from './status-rope.types.js';
 
 const meta: Meta<typeof StatusRope> = {
   title: 'Components/StatusRope',
@@ -43,21 +43,61 @@ export default meta;
 const STATUS_ROPE_DATA: StatusRopeProps['data'] = [
   {
     type: 'group',
-    text: 'About you',
+    text: 'Group',
     steps: [
-      { text: 'Personal details', description: 'Your name and date of birth' },
-      { text: 'Contact details', description: 'Your phone, email and address' },
+      {
+        text: 'Step',
+        description: (
+          <div className="flex flex-col gap-1">
+            <>Description content goes here, there could be quite a lot of copy that wraps.</>
+            <Badge color={'muted'}>Label</Badge>
+          </div>
+        ),
+      },
+      {
+        text: 'Step',
+        description: (
+          <div className="flex flex-col gap-1">
+            <>Description content goes here, there could be quite a lot of copy that wraps.</>
+            <Badge color={'muted'}>Label</Badge>
+          </div>
+        ),
+      },
     ],
   },
   {
     type: 'group',
-    text: 'Your finances',
+    text: 'Group',
     steps: [
-      { text: 'Income', description: 'Your regular sources of income' },
-      { text: 'Expenses', description: 'Your regular living expenses' },
+      {
+        text: 'Step',
+        description: (
+          <div className="flex flex-col gap-1">
+            <>Description content goes here, there could be quite a lot of copy that wraps.</>
+            <Badge color={'muted'}>Label</Badge>
+          </div>
+        ),
+      },
+      {
+        text: 'Step',
+        description: (
+          <div className="flex flex-col gap-1">
+            <>Description content goes here, there could be quite a lot of copy that wraps.</>
+            <Badge color={'muted'}>Label</Badge>
+          </div>
+        ),
+      },
     ],
   },
-  { text: 'Review and submit', description: 'Check the information you provided' },
+  {
+    text: 'Final step',
+    description: (
+      <div className="flex flex-col gap-1">
+        <>Description content goes here, there could be quite a lot of copy that wraps.</>
+        <Badge color={'muted'}>Label</Badge>
+      </div>
+    ),
+  },
 ];
 
 /**
@@ -89,11 +129,51 @@ export const StatusRopeVariation = () => {
 };
 
 const STATUS_ROPE_STEPS_DATA: StatusRopeProps['data'] = [
-  { text: 'Application received', description: 'We have received your application' },
-  { text: 'Identity check', description: 'Your identity has been confirmed' },
-  { text: 'Financial review', description: 'We are reviewing your information' },
-  { text: 'Final assessment', description: 'Your application is being assessed' },
-  { text: 'Decision', description: 'We will notify you when a decision is available' },
+  {
+    text: 'Step',
+    description: (
+      <div className="flex flex-col gap-1">
+        <>Description content goes here, there could be quite a lot of copy that wraps.</>
+        <Badge color={'muted'}>Label</Badge>
+      </div>
+    ),
+  },
+  {
+    text: 'Step',
+    description: (
+      <div className="flex flex-col gap-1">
+        <>Description content goes here, there could be quite a lot of copy that wraps.</>
+        <Badge color={'muted'}>Label</Badge>
+      </div>
+    ),
+  },
+  {
+    text: 'Step',
+    description: (
+      <div className="flex flex-col gap-1">
+        <>Description content goes here, there could be quite a lot of copy that wraps.</>
+        <Badge color={'muted'}>Label</Badge>
+      </div>
+    ),
+  },
+  {
+    text: 'Step',
+    description: (
+      <div className="flex flex-col gap-1">
+        <>Description content goes here, there could be quite a lot of copy that wraps.</>
+        <Badge color={'muted'}>Label</Badge>
+      </div>
+    ),
+  },
+  {
+    text: 'Step',
+    description: (
+      <div className="flex flex-col gap-1">
+        <>Description content goes here, there could be quite a lot of copy that wraps.</>
+        <Badge color={'muted'}>Label</Badge>
+      </div>
+    ),
+  },
 ];
 
 /**
@@ -107,16 +187,6 @@ export const StatusRopeSteps = () => {
       <StatusRope current={activeIndex} data={STATUS_ROPE_STEPS_DATA} />
       <Well className="flex items-center p-2 sm:p-2">
         <div className="mr-2 flex items-center space-x-1">
-          <Button
-            iconBefore={ArrowLeftIcon}
-            soft
-            look="faint"
-            size="small"
-            disabled={activeIndex === 0}
-            onClick={() => setActiveIndex(state => state - 1)}
-          >
-            prev
-          </Button>{' '}
           <Button
             iconAfter={ArrowRightIcon}
             soft

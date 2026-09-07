@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { RopeStepItem } from '../../progress-rope.types.js';
+import { RopeStepItem } from '../base-rope/base-rope.types.js';
 
-import { styles } from './progress-rope-group-step.styles.js';
+import { baseRopeGroupStepStyles } from './base-rope-group-step.styles.js';
 
-type Variants = VariantProps<typeof styles>;
+type Variants = VariantProps<typeof baseRopeGroupStepStyles>;
 
-type GroupStepRenderContext = {
+type BaseRopeGroupStepRenderContext = {
   /**
    * Whether the step is currently active
    */
@@ -42,7 +42,7 @@ type GroupStepRenderContext = {
   visited: boolean;
 };
 
-export type ProgressRopeGroupStepProps<TStepItem extends RopeStepItem> = {
+export type BaseRopeGroupStepProps<TStepItem extends RopeStepItem> = {
   /**
    * Children
    */
@@ -82,7 +82,7 @@ export type ProgressRopeGroupStepProps<TStepItem extends RopeStepItem> = {
        */
       index: number;
     },
-    context: GroupStepRenderContext,
+    context: BaseRopeGroupStepRenderContext,
   ) => ReactNode;
   /**
    * Steps to render

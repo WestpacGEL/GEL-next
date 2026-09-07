@@ -3,7 +3,8 @@ import { mergeProps } from 'react-aria';
 
 import { BaseRopeStep } from '../base-rope-step/base-rope-step.component.js';
 import { useRopeStep } from '../base-rope-step/use-rope-step.hook.js';
-import { type StatusRopeStepProps } from '../progress-rope-step/progress-rope-step.types.js';
+
+import { type StatusRopeStepProps } from './status-rope-step.types.js';
 
 /**
  * @private

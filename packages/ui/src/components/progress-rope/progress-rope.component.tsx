@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { BaseRope } from './components/base-rope/base-rope.component.js';
-import { ProgressRopeGroupStep, ProgressRopeStep } from './components/index.js';
+import { BaseRopeGroupStep, ProgressRopeStep } from './components/index.js';
 import { ProgressRopeStepItem, type ProgressRopeProps } from './progress-rope.types.js';
 
 export function ProgressRope({
@@ -21,8 +21,9 @@ export function ProgressRope({
       <BaseRope<ProgressRopeStepItem>
         current={current}
         data={data}
+        groupToggleMode="single"
         renderGroup={(group, context) => (
-          <ProgressRopeGroupStep
+          <BaseRopeGroupStep
             firstItem={context.firstItem}
             lastItem={context.lastItem}
             furthestVisitedStep={context.furthestVisitedStep}
@@ -48,7 +49,7 @@ export function ProgressRope({
             )}
           >
             {group.text}
-          </ProgressRopeGroupStep>
+          </BaseRopeGroupStep>
         )}
         renderStep={(step, context) => (
           <ProgressRopeStep

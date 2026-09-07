@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 
 import { Circle, VisuallyHidden } from '../../../index.js';
-import { type BaseRopeStepProps } from '../progress-rope-step/progress-rope-step.types.js';
+
+import { type BaseRopeStepProps } from './base-rope-step.types.js';
 
 /**
  * @private
