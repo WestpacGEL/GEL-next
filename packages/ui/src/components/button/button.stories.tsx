@@ -1,4 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { Link, MemoryRouter } from 'react-router-dom';
 import { fn, expect } from 'storybook/test';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -259,13 +260,22 @@ export const ResponsiveSize = () => (
 /**
  * > As anchor tag
  */
-export const AsLink: Story = {
-  args: {
-    children: 'Link button',
-    tag: 'a',
-    href: '#',
-  },
-};
+export const AsLink = () => (
+  <Button tag="a" href="#">
+    Link button
+  </Button>
+);
+
+/**
+ * > Render the button as a custom component
+ */
+export const Polymorphic = () => (
+  <MemoryRouter>
+    <Button tag={Link} to="/button-example">
+      React Router link
+    </Button>
+  </MemoryRouter>
+);
 
 /**
  * > Disabled look
