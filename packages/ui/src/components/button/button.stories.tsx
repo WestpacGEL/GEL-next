@@ -259,8 +259,18 @@ export const ResponsiveSize = () => (
 /**
  * > As anchor tag
  */
-export const AsLink = () => (
+export const AsAnchor = () => (
   <Button tag="a" href="#">
+    Anchor button
+  </Button>
+);
+const Link = ({ to, ...props }: JSX.IntrinsicElements['a'] & { to: string }) => <a href={to} {...props} />;
+
+/**
+ * > Demonstrating polymorphic capabilities with custom link
+ */
+export const PolymorphicButton = () => (
+  <Button tag={Link} to="#">
     Link button
   </Button>
 );
