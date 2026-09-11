@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 1.17.0
+
+### Minor Changes
+
+- d935603: Added polymorphic rendering support for button component
+
+### Patch Changes
+
+- 4ea3692: Declare react-dom as a peer dependency.
+
 ## 1.16.0
 
 ### Minor Changes
