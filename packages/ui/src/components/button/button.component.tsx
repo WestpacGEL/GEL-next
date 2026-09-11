@@ -1,13 +1,13 @@
 'use client';
 
-import React, { Ref, forwardRef, useMemo } from 'react';
+import React, { ForwardedRef, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 
 import { styles as buttonStyles } from './button.styles.js';
-import { type ButtonProps, ButtonRef } from './button.types.js';
+import { ButtonImplementationProps, ButtonComponent } from './button.types.js';
 import { getIconSize } from './button.utils.js';
 
 function BaseButton(
@@ -18,7 +18,7 @@ function BaseButton(
     soft,
     block = false,
     justify,
-    tag: Tag = 'button',
+    tag: Tag,
     iconBefore: IconBefore,
     iconAfter: IconAfter,
     iconLook,
@@ -26,11 +26,12 @@ function BaseButton(
     iconSize,
     children,
     removeLinkPadding,
-    type = Tag === 'button' ? 'button' : undefined,
     ...props
-  }: ButtonProps,
-  ref: Ref<ButtonRef>,
+  }: ButtonImplementationProps,
+  ref: ForwardedRef<unknown>,
 ) {
+  const Component = Tag ?? 'button';
+  const renderProps = Component === 'button' ? { ...props, type: props.type ?? 'button' } : props;
   const { isFocusVisible, focusProps } = useFocusRing();
   const btnIconSize = useMemo(() => iconSize || getIconSize(size), [iconSize, size]);
   const breakpoint = useBreakpoint();
@@ -76,7 +77,7 @@ function BaseButton(
   }, [iconColor, look, soft]);
 
   return (
-    <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)} type={type}>
+    <Component ref={ref} className={styles.base({ className })} {...mergeProps(renderProps, focusProps)}>
       {IconBefore && (
         <IconBefore
           look={iconLook}
@@ -96,8 +97,8 @@ function BaseButton(
           aria-hidden
         />
       )}
-    </Tag>
+    </Component>
   );
 }
 
-export const Button = forwardRef(BaseButton);
+export const Button = forwardRef(BaseButton) as unknown as ButtonComponent;
