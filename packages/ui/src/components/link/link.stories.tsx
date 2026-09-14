@@ -28,15 +28,15 @@ export const Default: Story = {
 type RouterLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & { to: string };
 
 const RouterLink = forwardRef<HTMLAnchorElement, RouterLinkProps>(({ to, ...props }, ref) => (
-  <a ref={ref} href={to} {...props} />
+  <a ref={ref} {...props} href={to} />
 ));
 
 /**
  * > Demonstrates rendering Link as a custom routing component while retaining GEL styling and behaviour.
  */
 export const PolymorphicLink = () => (
-  <Link tag={RouterLink} to="#polymorphic-link">
-    Polymorphic link
+  <Link tag={RouterLink} to="#">
+    Look, I'm a polymorphic link
   </Link>
 );
 

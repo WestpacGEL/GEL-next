@@ -33,6 +33,10 @@ export function BaseLink(
     onPressEnd,
     onPressStart,
     onPressUp,
+    download,
+    ping,
+    referrerPolicy,
+    rel,
     routerOptions,
     ...componentProps
   }: LinkImplementationProps,
@@ -44,6 +48,7 @@ export function BaseLink(
   const { linkProps } = useLink(
     {
       autoFocus,
+      download,
       elementType,
       href: typeof href === 'string' ? href : undefined,
       onBlur,
@@ -57,7 +62,11 @@ export function BaseLink(
       onPressEnd,
       onPressStart,
       onPressUp,
+      ping,
+      referrerPolicy,
+      rel,
       routerOptions,
+      target,
     },
     linkRef,
   );
