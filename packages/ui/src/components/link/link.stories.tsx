@@ -1,4 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import { ArrowRightIcon, PdfFileIcon } from '../icon/index.js';
 
@@ -23,6 +24,21 @@ export const Default: Story = {
     href: '#',
   },
 };
+
+type RouterLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & { to: string };
+
+const RouterLink = forwardRef<HTMLAnchorElement, RouterLinkProps>(({ to, ...props }, ref) => (
+  <a ref={ref} href={to} {...props} />
+));
+
+/**
+ * > Demonstrates rendering Link as a custom routing component while retaining GEL styling and behaviour.
+ */
+export const PolymorphicLink = () => (
+  <Link tag={RouterLink} to="#polymorphic-link">
+    Polymorphic link
+  </Link>
+);
 
 const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;
 

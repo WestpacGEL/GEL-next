@@ -1,13 +1,76 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { ComponentPropsWithoutRef, createRef, forwardRef } from 'react';
+import { RouterProvider } from 'react-aria';
 
 import { InfoIcon, PdfFileIcon } from '../icon/index.js';
 
 import { Link } from './link.component.js';
 
+type CustomLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & {
+  href: string | { pathname: string };
+  prefetch?: boolean;
+};
+
+const CustomLink = forwardRef<HTMLAnchorElement, CustomLinkProps>(({ href, prefetch, ...props }, ref) => (
+  <a ref={ref} href={typeof href === 'string' ? href : href.pathname} data-prefetch={prefetch} {...props} />
+));
+
 describe('Link', () => {
   it('renders the component', () => {
     const { container } = render(<Link />);
     expect(container).toBeInTheDocument();
+  });
+
+  it('defaults to an anchor with its existing props', () => {
+    render(<Link href="/default-link">Default link</Link>);
+
+    expect(screen.getByText('Default link').closest('a')).toHaveAttribute('href', '/default-link');
+  });
+
+  it('renders as a custom component with its props and ref', () => {
+    const ref = createRef<HTMLAnchorElement>();
+    render(
+      <Link tag={CustomLink} ref={ref} href={{ pathname: '/custom-link' }} prefetch={false}>
+        Custom link
+      </Link>,
+    );
+
+    const link = screen.getByText('Custom link').closest('a');
+    expect(link).toHaveAttribute('href', '/custom-link');
+    expect(link).toHaveAttribute('data-prefetch', 'false');
+    expect(ref.current).toBe(link);
+  });
+
+  it('calls onClick once when rendering a custom link', async () => {
+    const user = userEvent.setup();
+    const onClick = vi.fn();
+
+    render(
+      <Link tag={CustomLink} href="#custom-link" onClick={onClick}>
+        Custom link
+      </Link>,
+    );
+
+    await user.click(screen.getByText('Custom link'));
+
+    expect(onClick).toHaveBeenCalledOnce();
+  });
+
+  it('passes string destinations to the React Aria router', async () => {
+    const user = userEvent.setup();
+    const navigate = vi.fn();
+
+    render(
+      <RouterProvider navigate={navigate}>
+        <Link href="/react-aria-link">React Aria link</Link>
+      </RouterProvider>,
+    );
+
+    await user.click(screen.getByText('React Aria link'));
+
+    expect(navigate).toHaveBeenCalledOnce();
+    expect(navigate).toHaveBeenCalledWith('/react-aria-link', undefined);
   });
 
   it('should have the correct style when standalone', () => {
