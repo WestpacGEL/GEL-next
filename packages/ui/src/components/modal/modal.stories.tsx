@@ -71,7 +71,7 @@ export const WithFooter = () => {
  * > Footer with configurable button styles
  */
 export const ButtonStyles = () => {
-  const state = useOverlayTriggerState({ defaultOpen: true });
+  const state = useOverlayTriggerState({});
 
   return (
     <>
