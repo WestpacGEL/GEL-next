@@ -44,7 +44,13 @@
         { size: 'lg', label: 'Large' },
       ].map(({ size, label }: { size: string; label: string }) => (
         <Fragment key={size}>
-          <Modal zIndex={1020} isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
+          <Modal
+            zIndex={1020}
+            isDismissable
+            size={size}
+            state={states[size as 'sm' | 'md' | 'lg']}
+            title="Sudden and magnificent"
+          >
             <ModalBody>
               <p>
                 The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
@@ -81,6 +87,7 @@
         <ModalFooter
           primaryLabel="Label"
           primaryOnClick={state.close}
+          secondaryButtonProps={{ look: 'faint', soft: true }}
           secondaryLabel="Label"
           secondaryOnClick={state.close}
         />

@@ -35,6 +35,32 @@ describe('Modal', () => {
 
     expect(screen.getByText('Footer')).toBeVisible();
   });
+  it('passes button props to the footer buttons', () => {
+    const { result } = renderHook(() => useOverlayTriggerState({ isOpen: true }));
+
+    render(
+      <Modal state={result.current}>
+        <ModalBody>Body</ModalBody>
+        <ModalFooter
+          primaryLabel="Confirm"
+          primaryOnClick={() => null}
+          primaryButtonProps={{ className: 'custom-primary', soft: true, type: 'submit' }}
+          secondaryLabel="Cancel"
+          secondaryOnClick={() => null}
+          secondaryButtonProps={{ className: 'custom-secondary', disabled: true, look: 'faint', soft: true }}
+        />
+      </Modal>,
+    );
+
+    expect(screen.getByRole('button', { name: 'Confirm' })).toHaveAttribute('type', 'submit');
+    expect(screen.getByRole('button', { name: 'Confirm' })).toHaveClass('custom-primary', 'bg-background-white');
+    expect(screen.getByRole('button', { name: 'Cancel' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Cancel' })).toHaveClass(
+      'custom-secondary',
+      'border-border-muted-strong',
+      'bg-background-white',
+    );
+  });
   it('shows the footer content', async () => {
     const { result } = renderHook(() => useOverlayTriggerState({ defaultOpen: true }));
 
