@@ -22,6 +22,7 @@ export function BaseLink(
     type = 'standalone',
     underline = true,
     autoFocus,
+    elementType,
     onBlur,
     onClick,
     onFocus,
@@ -43,13 +44,14 @@ export function BaseLink(
   ref: ForwardedRef<unknown>,
 ) {
   const Component = Tag ?? 'a';
-  const elementType = typeof Component === 'string' ? Component : 'a';
+  const ariaElementType = typeof Component === 'string' ? Component : (elementType ?? 'a');
   const linkRef = useObjectRef(ref as ForwardedRef<FocusableElement>);
   const { linkProps } = useLink(
     {
+      ...componentProps,
       autoFocus,
       download,
-      elementType,
+      elementType: ariaElementType,
       href: typeof href === 'string' ? href : undefined,
       onBlur,
       onClick,

@@ -16,6 +16,10 @@ const CustomLink = forwardRef<HTMLAnchorElement, CustomLinkProps>(({ href, prefe
   <a ref={ref} href={typeof href === 'string' ? href : href.pathname} data-prefetch={prefetch} {...props} />
 ));
 
+const CustomSpan = forwardRef<HTMLSpanElement, ComponentPropsWithoutRef<'span'>>((props, ref) => (
+  <span ref={ref} {...props} />
+));
+
 describe('Link', () => {
   it('renders the component', () => {
     const { container } = render(<Link />);
@@ -68,6 +72,24 @@ describe('Link', () => {
     await user.click(screen.getByText('Custom link'));
 
     expect(onClick).toHaveBeenCalledOnce();
+  });
+
+  it('applies link semantics to a custom component that does not render an anchor', async () => {
+    const user = userEvent.setup();
+    const onPress = vi.fn();
+
+    render(
+      <Link tag={CustomSpan} elementType="span" onPress={onPress}>
+        Custom span link
+      </Link>,
+    );
+
+    const link = screen.getByRole('link', { name: /Custom span link/ });
+    expect(link.tagName).toBe('SPAN');
+    expect(link).toHaveAttribute('tabindex', '0');
+
+    await user.click(link);
+    expect(onPress).toHaveBeenCalledOnce();
   });
 
   it('passes string destinations to the React Aria router', async () => {

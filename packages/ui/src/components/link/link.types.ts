@@ -35,6 +35,12 @@ export type BaseLinkProps = {
    * @default true
    */
   underline?: boolean;
+  /**
+   * Specifies DOM element rendered by a custom component
+   * Required when the custom component does not render an '<a>' element
+   * @default 'a'
+   */
+  elementType?: AriaLinkOptions['elementType'];
 } & Omit<AriaLinkOptions, 'elementType' | 'href' | 'isDisabled'>;
 
 export type LinkRef<C extends React.ElementType = 'a'> = React.ComponentRef<C>;
