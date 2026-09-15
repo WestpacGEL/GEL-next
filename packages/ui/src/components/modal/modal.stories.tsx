@@ -70,7 +70,7 @@ export const WithFooter = () => {
 /**
  * > Footer with configurable button styles
  */
-export const WithConfigurableFooterButtons = () => {
+export const ButtonStyles = () => {
   const state = useOverlayTriggerState({ defaultOpen: true });
 
   return (
@@ -78,10 +78,10 @@ export const WithConfigurableFooterButtons = () => {
       <Modal title="Title" isDismissable state={state} aria-label="Modal title">
         <ModalBody>{`I'm children`}</ModalBody>
         <ModalFooter
-          primaryLabel="Confirm"
+          primaryLabel="Label"
           primaryOnClick={() => state.close()}
           secondaryButtonProps={{ look: 'faint', soft: true }}
-          secondaryLabel="Cancel"
+          secondaryLabel="Label"
           secondaryOnClick={() => state.close()}
         />
       </Modal>
