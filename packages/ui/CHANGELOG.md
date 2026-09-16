@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.18.0
+
+### Minor Changes
+
+- 6fb2b1c: Added configurable primary and secondary button props to ModalFooter.
+- 998ef2e: Polymorphic rendering capabilities added to the Link component
+
 ## 1.17.0
 
 ### Minor Changes
