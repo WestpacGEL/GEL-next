@@ -1,11 +1,16 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef, forwardRef, type ReactNode } from 'react';
 import { vi } from 'vitest';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
 
 import { Button } from './button.component.js';
 import { getIconSize } from './button.utils.js';
+
+const CustomLink = forwardRef<HTMLAnchorElement, { children?: ReactNode; className?: string; to: string }>(
+  ({ to, ...props }, ref) => <a ref={ref} href={to} {...props} />,
+);
 
 describe('Button', () => {
   const user = userEvent.setup();
@@ -31,6 +36,23 @@ describe('Button', () => {
       </Button>,
     );
     expect(screen.getByRole('link', { name: 'Link' })).toBeInTheDocument();
+  });
+
+  it('renders as a custom component with its props and ref', () => {
+    const ref = createRef<HTMLAnchorElement>();
+    render(
+      <Button tag={CustomLink} ref={ref} to="/custom-link">
+        Custom link
+      </Button>,
+    );
+
+    expect(screen.getByRole('link', { name: 'Custom link' })).toHaveAttribute('href', '/custom-link');
+    expect(ref.current).toBe(screen.getByRole('link', { name: 'Custom link' }));
+  });
+
+  it('defaults a native button to type button', () => {
+    render(<Button>Button</Button>);
+    expect(screen.getByRole('button', { name: 'Button' })).toHaveAttribute('type', 'button');
   });
 
   it('calls the onClick', async () => {

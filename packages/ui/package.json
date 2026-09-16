@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.16.0",
+  "version": "1.18.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -305,6 +305,7 @@
   },
   "peerDependencies": {
     "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
     "tailwindcss": "~4.1.12"
   },
   "repository": {
