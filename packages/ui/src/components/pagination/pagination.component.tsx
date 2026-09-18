@@ -195,8 +195,8 @@ export function Pagination({
       );
 
       // Decide where to show ellipses
-      const lastItemMiddle = middle.at(-1);
-      const hasLeftDots = middle[0] && middle[0] - 1 !== leftCorner.at(-1);
+      const lastItemMiddle = middle[middle.length - 1];
+      const hasLeftDots = middle[0] && middle[0] - 1 !== leftCorner[leftCorner.length - 1];
       const hasRightDots = lastItemMiddle && lastItemMiddle + 1 !== rightCorner[0];
 
       if (middle.length === 0 && leftCorner.length + rightCorner.length !== totalPages) {
