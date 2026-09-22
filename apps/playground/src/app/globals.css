@@ -4,3 +4,4 @@
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
+@source "../../node_modules/@westpac/ui/src";

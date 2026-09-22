@@ -1,10 +1,11 @@
 'use client';
 
-import React, { createContext } from 'react';
+import React, { ForwardedRef, createContext, forwardRef } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
+import { FocusHandle, useFocusManagerRef } from '../../../../hook/focus-manager-ref.hook.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-checkbox-group.styles.js';
@@ -74,8 +75,13 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
   },
 });
 
-export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
+function BaseSelectorCheckboxGroup(
+  props: SelectorCheckboxGroupProps,
+  // `ref.current.focus()` moves focus to the first tabbable checkbox input.
+  ref: ForwardedRef<FocusHandle>,
+) {
   const { children, label, description, errorMessage } = props;
+  const wrapperRef = useFocusManagerRef(ref);
   const state = useCheckboxGroupState(props);
   const { groupProps, labelProps, descriptionProps, errorMessageProps } = useCheckboxGroup(props, state);
 
@@ -84,9 +90,12 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div {...groupProps} className={styles({ className: groupProps.className })}>
+      <div {...groupProps} className={styles({ className: groupProps.className })} ref={wrapperRef}>
         <SelectorCheckboxGroupContext.Provider value={state}>{children}</SelectorCheckboxGroupContext.Provider>
       </div>
     </>
   );
 }
+
+export const SelectorCheckboxGroup = forwardRef(BaseSelectorCheckboxGroup);
+SelectorCheckboxGroup.displayName = 'SelectorCheckboxGroup';

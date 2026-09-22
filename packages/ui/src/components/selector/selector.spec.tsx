@@ -1,5 +1,9 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef, useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+
+import { FocusHandle } from '../../hook/focus-manager-ref.hook.js';
 
 import { Selector } from './selector.component.js';
 import { type SelectorProps } from './selector.types.js';
@@ -252,5 +256,149 @@ describe('Selector', () => {
     const { getByTestId } = render(<SimpleLinkSelector isDisabled />);
 
     expect(getByTestId('opt1')).toHaveClass('pointer-events-none');
+  });
+
+  describe('ref', () => {
+    it('radio type: focus() skips disabled radios and focuses the first enabled one', () => {
+      const ref = createRef<FocusHandle>();
+      render(
+        <Selector type="radio" aria-label="test" ref={ref}>
+          <SelectorRadio value="1" data-testid="opt1" isDisabled>
+            option 1
+          </SelectorRadio>
+          <SelectorRadio value="2" data-testid="opt2">
+            option 2
+          </SelectorRadio>
+        </Selector>,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByTestId('opt2')).toHaveFocus();
+    });
+
+    it('radio type: focus() targets the selected radio (the group tab stop), not the first', () => {
+      const ref = createRef<FocusHandle>();
+      render(
+        <Selector type="radio" aria-label="test" ref={ref} defaultValue="2">
+          <SelectorRadio value="1" data-testid="opt1">
+            option 1
+          </SelectorRadio>
+          <SelectorRadio value="2" data-testid="opt2">
+            option 2
+          </SelectorRadio>
+        </Selector>,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByTestId('opt2')).toHaveFocus();
+    });
+
+    it('radio type: focus() falls back to the first enabled radio when value matches no radio (no tab stop)', () => {
+      // react-hook-form forms commonly use '' as the default value; react-aria then gives every radio tabindex=-1.
+      const ref = createRef<FocusHandle>();
+      render(
+        <Selector type="radio" aria-label="test" ref={ref} value="">
+          <SelectorRadio value="1" data-testid="opt1" isDisabled>
+            option 1
+          </SelectorRadio>
+          <SelectorRadio value="2" data-testid="opt2">
+            option 2
+          </SelectorRadio>
+        </Selector>,
+      );
+      expect(screen.getByTestId('opt2')).toHaveAttribute('tabindex', '-1');
+      act(() => ref.current?.focus());
+      expect(screen.getByTestId('opt2')).toHaveFocus();
+    });
+
+    it('radio type: focus() works when options render after mount', () => {
+      const ref = createRef<FocusHandle>();
+      function AsyncOptions() {
+        const [options, setOptions] = useState<string[]>([]);
+        useEffect(() => setOptions(['1', '2']), []);
+        return (
+          <Selector type="radio" aria-label="test" ref={ref}>
+            {options.map(value => (
+              <SelectorRadio key={value} value={value} data-testid={`opt${value}`}>
+                option {value}
+              </SelectorRadio>
+            ))}
+          </Selector>
+        );
+      }
+      render(<AsyncOptions />);
+      act(() => ref.current?.focus());
+      expect(screen.getByTestId('opt1')).toHaveFocus();
+    });
+
+    it('checkbox type: focus() focuses the first checkbox input', () => {
+      const ref = createRef<FocusHandle>();
+      render(
+        <Selector type="checkbox" aria-label="test" ref={ref}>
+          <SelectorCheckbox value="1" data-testid="opt1">
+            option 1
+          </SelectorCheckbox>
+          <SelectorCheckbox value="2" data-testid="opt2">
+            option 2
+          </SelectorCheckbox>
+        </Selector>,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByTestId('opt1')).toHaveFocus();
+    });
+
+    it('button type: focus() skips disabled buttons and focuses the first enabled one', () => {
+      const ref = createRef<FocusHandle>();
+      render(
+        <Selector type="button" aria-label="test" ref={ref}>
+          <SelectorButtonOption id="A" data-testid="opt1" isDisabled>
+            option 1
+          </SelectorButtonOption>
+          <SelectorButtonOption id="B" data-testid="opt2">
+            option 2
+          </SelectorButtonOption>
+        </Selector>,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByTestId('opt2')).toHaveFocus();
+    });
+
+    it('react-hook-form focuses the selector when submit fails validation', async () => {
+      const user = userEvent.setup();
+      function Form() {
+        const { control, handleSubmit } = useForm<{ option?: string }>();
+        return (
+          <form
+            onSubmit={event => {
+              void handleSubmit(() => undefined)(event);
+            }}
+          >
+            <Controller
+              control={control}
+              name="option"
+              rules={{ required: 'Choose an option' }}
+              render={({ field }) => (
+                <Selector
+                  type="radio"
+                  aria-label="test"
+                  ref={field.ref}
+                  value={field.value ?? null}
+                  onChange={field.onChange}
+                >
+                  <SelectorRadio value="1" data-testid="opt1">
+                    option 1
+                  </SelectorRadio>
+                  <SelectorRadio value="2" data-testid="opt2">
+                    option 2
+                  </SelectorRadio>
+                </Selector>
+              )}
+            />
+            <button type="submit">Submit</button>
+          </form>
+        );
+      }
+      render(<Form />);
+      await act(() => user.click(screen.getByText('Submit')));
+      expect(screen.getByTestId('opt1')).toHaveFocus();
+    });
   });
 });

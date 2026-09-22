@@ -69,6 +69,9 @@ importers:
       '@westpac/style-config':
         specifier: workspace:*
         version: link:../../packages/style-config
+      '@westpac/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       next:
         specifier: 15.5.18
         version: 15.5.18(@babel/core@7.29.7)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -78,6 +81,9 @@ importers:
       react-dom:
         specifier: ^19.2.4
         version: 19.2.4(react@19.2.4)
+      react-hook-form:
+        specifier: ~7.62.0
+        version: 7.62.0(react@19.2.4)
       zustand:
         specifier: ~4.5.4
         version: 4.5.7(@types/react@18.3.28)(immer@9.0.21)(react@19.2.4)
@@ -410,6 +416,9 @@ importers:
       '@react-aria/accordion':
         specifier: 3.0.0-alpha.37
         version: 3.0.0-alpha.37(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-aria/focus':
+        specifier: ~3.21.5
+        version: 3.21.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils':
         specifier: ~3.29.1
         version: 3.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

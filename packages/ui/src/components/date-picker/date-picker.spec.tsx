@@ -2,6 +2,7 @@
 import { CalendarDate } from '@internationalized/date';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef } from 'react';
 import { I18nProvider } from 'react-aria';
 import { act } from 'react-dom/test-utils';
 import { Mock, describe, expect, it, vi } from 'vitest';
@@ -88,5 +89,20 @@ describe('DatePicker component', () => {
     render(<DatePicker label="Test Label" className="custom-class" />);
     const inputDiv = screen.getByText('Test Label').nextSibling as HTMLElement;
     expect(inputDiv.className).toContain('custom-class');
+  });
+
+  describe('ref', () => {
+    it('points at the first editable date segment', () => {
+      const ref = createRef<HTMLSpanElement>();
+      render(<DatePicker ref={ref} label="Test Label" />);
+      expect(ref.current).toBe(screen.getAllByRole('spinbutton')[0]);
+    });
+
+    it('focus() moves focus to the first date segment', () => {
+      const ref = createRef<HTMLSpanElement>();
+      render(<DatePicker ref={ref} label="Test Label" />);
+      act(() => ref.current?.focus());
+      expect(screen.getAllByRole('spinbutton')[0]).toHaveFocus();
+    });
   });
 });

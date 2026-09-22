@@ -1,11 +1,12 @@
 'use client';
 
-import React, { createContext, useEffect, useId, useMemo, useRef, useState } from 'react';
+import React, { ForwardedRef, createContext, forwardRef, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { FocusHandle, acceptInputs, useFocusManagerRef } from '../../hook/focus-manager-ref.hook.js';
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
@@ -79,22 +80,28 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
     },
   },
 });
-export function CheckboxGroup({
-  className,
-  checkboxes,
-  label,
-  orientation = 'vertical',
-  showAmount = 0,
-  size = 'medium',
-  errorMessage,
-  hintMessage,
-  ...props
-}: CheckboxGroupProps) {
+function BaseCheckboxGroup(
+  {
+    className,
+    checkboxes,
+    label,
+    orientation = 'vertical',
+    showAmount = 0,
+    size = 'medium',
+    errorMessage,
+    hintMessage,
+    ...props
+  }: CheckboxGroupProps,
+  // `ref.current.focus()` (e.g. react-hook-form focusing a field with a validation error) moves focus
+  // to the first enabled checkbox.
+  ref: ForwardedRef<FocusHandle>,
+) {
+  const wrapperRef = useFocusManagerRef(ref, { accept: acceptInputs });
   const state = useCheckboxGroupState({ ...props, label });
   const { groupProps, labelProps, errorMessageProps, descriptionProps } = useCheckboxGroup({ ...props, label }, state);
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
-  const firstNewCheckboxRef = useRef<HTMLLabelElement>(null);
+  const firstNewCheckboxRef = useRef<HTMLInputElement>(null);
   const revealAmount = checkboxes && checkboxes.length - showAmount;
   const breakpoint = useBreakpoint();
   const styles = checkboxStyles({ orientation: resolveResponsiveVariant(orientation, breakpoint), isFocusVisible });
@@ -118,7 +125,7 @@ export function CheckboxGroup({
       <Label {...labelProps}>{label}</Label>
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div className={styles.itemWrapper()} id={panelId}>
+      <div className={styles.itemWrapper()} id={panelId} ref={wrapperRef}>
         <CheckboxGroupContext.Provider
           value={{
             state,
@@ -147,3 +154,6 @@ export function CheckboxGroup({
     </div>
   );
 }
+
+export const CheckboxGroup = forwardRef(BaseCheckboxGroup);
+CheckboxGroup.displayName = 'CheckboxGroup';
