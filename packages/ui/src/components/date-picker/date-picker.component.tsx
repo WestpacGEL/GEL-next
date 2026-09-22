@@ -89,12 +89,15 @@ function BaseDatePicker(
 
   const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
   const brandContainer = useMemo(() => {
-    return (
-      document.querySelector('[data-brand]') ||
-      document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
-      undefined
-    );
+    if (typeof window !== 'undefined') {
+      return (
+        document.querySelector('[data-brand]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        undefined
+      );
+    }
   }, []);
 
   return (
