@@ -28,7 +28,7 @@
     "codemod:tokens": "node run-codemod.cjs"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.8",
+    "@changesets/cli": "^3.0.1",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
     "eslint-config-turbo": "^2.5.8",
@@ -37,7 +37,7 @@
     "turbo": "^2.9.14"
   },
   "engines": {
-    "node": ">=20"
+    "node": "^22.11 || ^24 || >=26"
   },
   "packageManager": "pnpm@10.30.2",
   "dependencies": {
@@ -58,7 +58,7 @@
       "@keystatic/core>js-yaml": "^4.2.0",
       "@eslint/eslintrc>js-yaml": "^4.2.0",
       "@isaacs/brace-expansion": ">=5.0.6",
-      "@internationalized/date": "3.11.0",
+      "@internationalized/date": "3.12.0",
       "@types/react": "18.3.28",
       "@types/react-dom": "18.3.1",
       "eslint-plugin-sonarjs>minimatch": "^10.2.1",

@@ -84,11 +84,15 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
         } else {
           inputRefs.current[index + validData.length - 1]?.focus();
         }
-        if (newPasscode.filter(passcode => !passcode).length === 0 && onComplete) {
-          onComplete(newPasscode.join(''));
+        if (newPasscode.filter(passcode => !passcode).length === 0) {
+          if (onPasteComplete && validData.length > 1) {
+            onPasteComplete(newPasscode.join(''));
+          } else if (onComplete) {
+            onComplete(newPasscode.join(''));
+          }
         }
       },
-      [passcode, length, onChange, onComplete, type],
+      [passcode, length, onChange, onComplete, onPasteComplete, type],
     );
 
     const handlePaste = useCallback(

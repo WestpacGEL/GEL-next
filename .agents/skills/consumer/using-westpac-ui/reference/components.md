@@ -32,6 +32,7 @@ These components pass `className` through `styles({ className })` or `styles.bas
 | **Dropdown**          | Root element (base slot)          | Button-level styles                                                                      |
 | **ErrorMessage**      | Root element (base slot)          | Text, spacing                                                                            |
 | **FlexiCell**         | Root element (base slot)          | Padding, border, layout                                                                  |
+| **Flyout**            | Dialog panel (base slot)          | Width, background, borders                                                               |
 | **Footer**            | Root `footer` (base slot)         | Background, padding                                                                      |
 | **Grid**              | Root element                      | Layout, gap                                                                              |
 | **Header**            | Root `header` (base slot)         | Background, positioning, z-index                                                         |

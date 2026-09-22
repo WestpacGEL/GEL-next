@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.14.0",
+  "version": "1.18.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -87,6 +87,9 @@
     },
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
+    },
+    "./flyout": {
+      "default": "./dist/components/flyout/index.js"
     },
     "./footer": {
       "default": "./dist/components/footer/index.js"
@@ -287,7 +290,7 @@
     "vitest": "^3.2.6"
   },
   "dependencies": {
-    "@internationalized/date": "~3.10.0",
+    "@internationalized/date": "^3.12.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/focus": "~3.21.5",
     "@react-aria/utils": "~3.29.1",
@@ -302,8 +305,8 @@
     "zustand": "~4.5.4"
   },
   "peerDependencies": {
-    "@internationalized/date": "~3.10.0",
     "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
     "tailwindcss": "~4.1.12"
   },
   "repository": {
