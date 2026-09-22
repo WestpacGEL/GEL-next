@@ -1,9 +1,8 @@
-/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { Button, Link as LinkGELUI } from '@westpac/ui';
 import { ErrorIcon } from '@westpac/ui/icon';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
 
@@ -14,8 +13,9 @@ export default function ErrorPage() {
         groupHeading="Get started"
         leadText={
           <>
-            <p>We’re experiencing technical difficulties.</p>
-            <p>Please try again later.</p>
+            We’re experiencing technical difficulties.
+            <br />
+            Please try again later.
           </>
         }
         beforeContent={
@@ -34,11 +34,16 @@ export default function ErrorPage() {
         for assistance.
       </p>
 
-      <Link href="/" passHref legacyBehavior>
-        <Button tag="a" look="primary" size="large" block={{ initial: true, xsl: false }} className="mt-5">
-          Go to page
-        </Button>
-      </Link>
+      <Button
+        tag={NextLink}
+        href="/"
+        look="primary"
+        size="large"
+        block={{ initial: true, xsl: false }}
+        className="mt-5"
+      >
+        Go to page
+      </Button>
     </div>
   );
 }
