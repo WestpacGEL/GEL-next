@@ -1,5 +1,25 @@
 # @westpac/ui
 
+## 1.19.0
+
+### Minor Changes
+
+- 20f0934: Forward refs on composite form fields so form libraries such as react-hook-form can focus them on validation errors (`field.ref` → `focus()`):
+  - Single controls forward a DOM ref to their focusable element, like `Input` and `Button` already do: `Switch` → the switch `<input>`, `DatePicker` → the first editable date segment, `MultiSelect` → the trigger button.
+  - Groups (`RadioGroup`, `CheckboxGroup`, `Selector` with `radio`/`checkbox`/`button` types, `ButtonGroup`) forward a `FocusHandle` (`{ focus() }`, exported from `@westpac/ui`). `focus()` uses react-aria's focus manager to focus the group's first tabbable option at call time, so it follows the selected radio (roving tabindex), skips disabled options, and works when options render after mount.
+
+  `RadioGroupRadio` and `CheckboxGroupCheckbox` refs now point at the `<input>` instead of the wrapping `<label>`, in line with react-hook-form's guidance that a field ref should be the focusable input.
+
+  Fixed: the "Show N more items" button in `RadioGroup`/`CheckboxGroup` now moves focus to the first revealed option (it previously called `focus()` on a non-focusable label).
+
+  Adds `@react-aria/focus` as a direct dependency.
+
+### Patch Changes
+
+- 20f0934: `DatePicker`: the date field no longer wraps its year segment onto a second line when the page font is wider than the design system's default. The per-size width is now a minimum (`min-w-*`) and segments are kept on one line (`whitespace-nowrap`), so the field grows to fit its content instead of overflowing.
+- e419df1: `DatePicker`: no longer throws `ReferenceError: document is not defined` when rendered on the server (for example during Next.js prerendering). The default portal container lookup is now skipped outside the browser, matching the other portalled components.
+- 20f0934: `MultiSelect`: fixed keyboard users being unable to select options. The dropdown is a non-modal react-aria popover, which react-aria dismisses on any page scroll; because focus moves into the dropdown (filter input, "Select all", options) the browser could scroll the page while arrowing through options and the dropdown closed mid-navigation. The popover no longer closes on scroll (all dismissal is handled by the component: blur, Escape, Tab, dismiss button), and focus moves inside the dropdown with react-aria's `focusWithoutScrolling` so the page does not jump. Also removed the incorrect `aria-modal="true"` from the non-modal popover.
+
 ## 1.18.0
 
 ### Minor Changes
