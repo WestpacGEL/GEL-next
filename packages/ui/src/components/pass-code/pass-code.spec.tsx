@@ -42,6 +42,59 @@ describe('PassCode', () => {
     expect(onCompleteMock).toHaveBeenCalledWith('1234');
   });
 
+  it('handles multiple characters from a change event', () => {
+    const onCompleteMock = vi.fn();
+    render(<PassCode length={4} type="numbers" onComplete={onCompleteMock} />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '1234' } });
+
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_1).value).toBe('1');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_2).value).toBe('2');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_3).value).toBe('3');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
+    expect(onCompleteMock).toHaveBeenCalledOnce();
+    expect(onCompleteMock).toHaveBeenCalledWith('1234');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
+  });
+
+  it('triggers onPasteComplete instead of onComplete for multiple characters from a change event', () => {
+    const onCompleteMock = vi.fn();
+    const onPasteCompleteMock = vi.fn();
+    render(<PassCode length={4} type="numbers" onComplete={onCompleteMock} onPasteComplete={onPasteCompleteMock} />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '1234' } });
+
+    expect(onPasteCompleteMock).toHaveBeenCalledOnce();
+    expect(onPasteCompleteMock).toHaveBeenCalledWith('1234');
+    expect(onCompleteMock).not.toHaveBeenCalled();
+  });
+
+  it('moves focus to the next input after multiple characters', () => {
+    render(<PassCode length={4} type="numbers" />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '12' } });
+
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_1).value).toBe('1');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_2).value).toBe('2');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_3));
+  });
+
+  it('limits multiple characters to the inputs available after the current index', () => {
+    const onCompleteMock = vi.fn();
+    render(<PassCode length={4} type="numbers" onComplete={onCompleteMock} />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '1' } });
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_2), { target: { value: '2345' } });
+
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_1).value).toBe('1');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_2).value).toBe('2');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_3).value).toBe('3');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
+    expect(onCompleteMock).toHaveBeenCalledOnce();
+    expect(onCompleteMock).toHaveBeenCalledWith('1234');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
+  });
+
   it('triggers the onPasteComplete correctly', () => {
     const onPasteCompleteMock = vi.fn();
     render(<PassCode length={4} onPasteComplete={onPasteCompleteMock} />);
@@ -54,6 +107,41 @@ describe('PassCode', () => {
     });
 
     // Ensure the onPasteComplete callback is called with the correct passcode
+    expect(onPasteCompleteMock).toHaveBeenCalledWith('1234');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
+  });
+
+  it('focuses the final input when pasted data fills the remaining inputs', () => {
+    render(<PassCode length={4} type="numbers" />);
+
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_1), { target: { value: '1' } });
+    fireEvent.change(screen.getByLabelText(PASSCODE_DIGIT_2), { target: { value: '2' } });
+    fireEvent.paste(screen.getByLabelText(PASSCODE_DIGIT_3), {
+      clipboardData: {
+        getData: () => '34',
+      },
+    });
+
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_3).value).toBe('3');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
+    expect(document.activeElement).toBe(screen.getByLabelText(PASSCODE_DIGIT_4));
+  });
+
+  it('strips invalid characters before limiting pasted data', () => {
+    const onPasteCompleteMock = vi.fn();
+    render(<PassCode length={4} type="numbers" onPasteComplete={onPasteCompleteMock} />);
+
+    fireEvent.paste(screen.getByLabelText(PASSCODE_DIGIT_1), {
+      clipboardData: {
+        getData: () => '12-34',
+      },
+    });
+
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_1).value).toBe('1');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_2).value).toBe('2');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_3).value).toBe('3');
+    expect(screen.getByLabelText<HTMLInputElement>(PASSCODE_DIGIT_4).value).toBe('4');
+    expect(onPasteCompleteMock).toHaveBeenCalledOnce();
     expect(onPasteCompleteMock).toHaveBeenCalledWith('1234');
   });
 

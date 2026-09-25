@@ -12,8 +12,10 @@ import { type ModalDialogFooterProps } from './modal-dialog-footer.types.js';
 
 export function ModalDialogFooter({
   className,
+  primaryButtonProps,
   primaryLabel,
   primaryOnClick,
+  secondaryButtonProps,
   secondaryLabel,
   secondaryOnClick,
   ...props
@@ -29,11 +31,23 @@ export function ModalDialogFooter({
 
   return (
     <div className={styles.base({ className })} {...props}>
-      <Button look="primary" size="large" className={styles.primaryBtn()} onClick={primaryOnClick}>
+      <Button
+        {...primaryButtonProps}
+        look={primaryButtonProps?.look ?? 'primary'}
+        size={primaryButtonProps?.size ?? 'large'}
+        className={styles.primaryBtn({ className: primaryButtonProps?.className })}
+        onClick={primaryOnClick}
+      >
         {primaryLabel}
       </Button>
       {secondaryLabel && (
-        <Button look="link" size="large" className={styles.secondaryBtn()} onClick={secondaryOnClick}>
+        <Button
+          {...secondaryButtonProps}
+          look={secondaryButtonProps?.look ?? 'link'}
+          size={secondaryButtonProps?.size ?? 'large'}
+          className={styles.secondaryBtn({ className: secondaryButtonProps?.className })}
+          onClick={secondaryOnClick}
+        >
           {secondaryLabel}
         </Button>
       )}

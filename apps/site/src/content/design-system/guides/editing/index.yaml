@@ -1,0 +1,47 @@
+name: Editing
+description: >-
+  Editing is a common interaction across Westpac digital experiences, from
+  updating preferences to managing account information.
+
+  This guidance provides a shared enterprise approach to editing experiences,
+  helping teams create consistent, reusable and scalable solutions across
+  products and platforms.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: What we mean by editing
+      slug: what-we-mean-by-editing
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Core principle
+      slug: core-principle
+    noTitle: false
+    noDemo: false
+  - title:
+      name: The 3 editing models
+      slug: the-three-editing-models
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Choosing the right model
+      slug: choosing-the-right-model
+    noTitle: false
+    noDemo: true
+  - title:
+      name: Guardrails
+      slug: guardrails
+    noTitle: false
+    noDemo: true
+  - title:
+      name: What good looks like
+      slug: what-good-looks-like
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents:
+  icon: cube
+  links: []
+code: []

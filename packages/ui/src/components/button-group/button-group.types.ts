@@ -46,7 +46,6 @@ type ButtonGroupPropsPerSelectionMode = {
     defaultSelectedKeys?: Key;
     /** Handler that is called when the selection changes. */
     onSelectionChange?: (key: Key) => void;
-    batata?: string;
   };
   multiple: BaseButtonGroupProps & {
     /**

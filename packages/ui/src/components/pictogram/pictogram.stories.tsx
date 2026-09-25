@@ -34,6 +34,22 @@ const meta: Meta<typeof Pictogram> = {
       description: 'mode',
       type: { name: 'enum', value: ['duo', 'base', 'mono'] },
     },
+    copyrightYear: {
+      description: 'SVG copyright year',
+      type: { name: 'string' },
+    },
+    tag: {
+      description: 'Tag to render',
+      type: { name: 'string' },
+    },
+    viewBoxHeight: {
+      description: 'SVG viewBox height',
+      type: { name: 'number' },
+    },
+    viewBoxWidth: {
+      description: 'SVG viewBox width',
+      type: { name: 'number' },
+    },
   },
 };
 

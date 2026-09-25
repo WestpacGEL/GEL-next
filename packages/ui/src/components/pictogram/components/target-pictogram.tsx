@@ -11,7 +11,7 @@ export function TargetPictogram({
   mode = 'duo',
   viewBoxWidth = 78,
   viewBoxHeight = 78,
-  'aria-label': ariaLabel = 'Passport',
+  'aria-label': ariaLabel = 'Target',
   copyrightYear = '2025',
   className,
   ...props

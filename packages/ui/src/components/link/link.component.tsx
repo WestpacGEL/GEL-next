@@ -1,30 +1,77 @@
-// TODO: This component will not work with the Next Link component in Next.js 16+ as legacyBehavior as has been deprecated in 15. Need to find a solution.
 'use client';
 
-import React, { ForwardedRef, RefObject, forwardRef } from 'react';
-import { mergeProps, useFocusRing, useLink } from 'react-aria';
+import { type FocusableElement } from '@react-types/shared';
+import React, { ForwardedRef, forwardRef } from 'react';
+import { mergeProps, useFocusRing, useLink, useObjectRef } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
 
 import { styles as linkStyles } from './link.styles.js';
-import { type LinkProps } from './link.types.js';
+import { LinkComponent, LinkImplementationProps } from './link.types.js';
 
 export function BaseLink(
   {
     className,
     children,
     href,
+    tag: Tag,
     iconBefore: IconBefore,
     iconAfter: IconAfter,
     iconSize = 'small',
     target,
     type = 'standalone',
     underline = true,
-    ...props
-  }: LinkProps,
-  ref: ForwardedRef<HTMLAnchorElement>,
+    autoFocus,
+    elementType,
+    onBlur,
+    onClick,
+    onFocus,
+    onFocusChange,
+    onKeyDown,
+    onKeyUp,
+    onPress,
+    onPressChange,
+    onPressEnd,
+    onPressStart,
+    onPressUp,
+    download,
+    ping,
+    referrerPolicy,
+    rel,
+    routerOptions,
+    ...componentProps
+  }: LinkImplementationProps,
+  ref: ForwardedRef<unknown>,
 ) {
-  const { linkProps } = useLink({ ...props, elementType: 'a' }, ref as RefObject<HTMLAnchorElement>);
+  const Component = Tag ?? 'a';
+  const ariaElementType = typeof Component === 'string' ? Component : (elementType ?? 'a');
+  const linkRef = useObjectRef(ref as ForwardedRef<FocusableElement>);
+  const { linkProps } = useLink(
+    {
+      ...componentProps,
+      autoFocus,
+      download,
+      elementType: ariaElementType,
+      href: typeof href === 'string' ? href : undefined,
+      onBlur,
+      onClick,
+      onFocus,
+      onFocusChange,
+      onKeyDown,
+      onKeyUp,
+      onPress,
+      onPressChange,
+      onPressEnd,
+      onPressStart,
+      onPressUp,
+      ping,
+      referrerPolicy,
+      rel,
+      routerOptions,
+      target,
+    },
+    linkRef,
+  );
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = linkStyles({ type, underline, isFocusVisible });
 
@@ -33,9 +80,10 @@ export function BaseLink(
   }
 
   return (
-    <a
+    <Component
+      {...componentProps}
       {...mergeProps(linkProps, focusProps)}
-      ref={ref}
+      ref={linkRef}
       href={href}
       target={target}
       className={styles.base({ className })}
@@ -43,8 +91,8 @@ export function BaseLink(
       {IconBefore && <IconBefore size={iconSize} color="primary" className={styles.iconBefore()} />}
       <span>{children}</span>
       {IconAfter && <IconAfter size={iconSize} color="primary" className={styles.iconAfter()} />}
-    </a>
+    </Component>
   );
 }
 
-export const Link = forwardRef(BaseLink);
+export const Link = forwardRef(BaseLink) as unknown as LinkComponent;

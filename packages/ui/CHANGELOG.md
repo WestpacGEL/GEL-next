@@ -1,5 +1,73 @@
 # @westpac/ui
 
+## 1.18.0
+
+### Minor Changes
+
+- 6fb2b1c: Added configurable primary and secondary button props to ModalFooter.
+- 998ef2e: Polymorphic rendering capabilities added to the Link component
+
+## 1.17.0
+
+### Minor Changes
+
+- d935603: Added polymorphic rendering support for button component
+
+### Patch Changes
+
+- 4ea3692: Declare react-dom as a peer dependency.
+
+## 1.16.0
+
+### Minor Changes
+
+- b05394a: export PassCodeRef type from PassCode component
+
+## 1.15.2
+
+### Patch Changes
+
+- b8a2199: Update internationalized/date package
+- eefe4eb: Add paste handling for mobile
+
+## 1.15.1
+
+### Patch Changes
+
+- d946e26: InputGroup - merge child className instead of overwriting it
+
+## 1.15.0
+
+### Minor Changes
+
+- 55d5f0d: Added new flyout component
+
+## 1.14.0
+
+### Minor Changes
+
+- 450398a: Update the pass-code index on text paste
+
+## 1.13.1
+
+### Patch Changes
+
+- bfcda6f: Allow for pass-code string to be pasted in mobile browser
+
+## 1.13.0
+
+### Minor Changes
+
+- a885e5a: - Prevent button text from clipping vertically
+  - Add dropdown subpath export
+
+## 1.12.0
+
+### Minor Changes
+
+- 6d3c3b0: Added map pin, notification and tablet pictograms, updated mobile device pictogram, and updated phone and tablet icons.
+- aa3e2c1: add panel icons
+
 ## 1.11.0
 
 ### Minor Changes

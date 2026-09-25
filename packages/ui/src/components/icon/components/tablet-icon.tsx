@@ -7,9 +7,13 @@ export function TabletIcon({ 'aria-label': ariaLabel = 'Tablet', copyrightYear =
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
       <path
+        d="M13 4C13.5523 4 14 4.44772 14 5C14 5.55228 13.5523 6 13 6H11C10.4477 6 10 5.55228 10 5C10 4.44772 10.4477 4 11 4H13Z"
+        fill="currentColor"
+      />
+      <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M2 2C2 0.89543 2.89543 0 4 0H20C21.1046 0 22 0.895431 22 2V22C22 23.1046 21.1046 24 20 24H4C2.89543 24 2 23.1046 2 22V2ZM4 2H20V18H4V2ZM12 22.5C12.8284 22.5 13.5 21.8284 13.5 21C13.5 20.1716 12.8284 19.5 12 19.5C11.1716 19.5 10.5 20.1716 10.5 21C10.5 21.8284 11.1716 22.5 12 22.5Z"
+        d="M20 0C21.1046 0 22 0.895431 22 2V22C22 23.1046 21.1046 24 20 24H4C2.89543 24 2 23.1046 2 22V2C2 0.895431 2.89543 0 4 0H20ZM4 22H20V2H4V22Z"
         fill="currentColor"
       />
     </Icon>

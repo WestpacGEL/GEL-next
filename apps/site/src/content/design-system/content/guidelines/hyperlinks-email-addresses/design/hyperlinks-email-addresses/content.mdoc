@@ -1,8 +1,8 @@
 Customers with accessibility requirements may use a screen reader which means that they listen to a link text. To assist these customers:
 
-- link copy should be contextual
-- avoid duplicating link text within the same page
-- avoid using full URLs.
+- Link copy should be contextual
+- Avoid duplicating link text within the same page
+- Avoid using full URLs.
 
 ```jsx
                              <div>
@@ -38,5 +38,23 @@ Westpac URLs don’t include ‘https://’ or ‘www.’ but external websites 
 <p className="typography-body-10 mb-2 ml-4">johnsmith@westpac.com.au</p>
 <p className="typography-body-10 mb-6 ml-4">westpac.com.au/westpacapp</p>
 <p className="typography-body-10 text-text-muted italic">Note: Don’t end a URL with a full stop or forward slash.</p>
+</div>
+```
+
+---
+
+When linking to files:
+
+- Use the name of the document as the text link.
+- Add brackets around the filetype and document size
+
+```jsx
+<div>
+<h4 className="typography-body-10 text-text-muted mb-3">For example:</h4>
+<p className="typography-body-10 mb-2 ml-4">For a list of documents that we accept, refer to{' '}
+    <Link href="#" type="inline" iconBefore={PdfFileIcon}>
+      Identification Checklist (PDF 123KB)
+    </Link>{' '}
+</p>
 </div>
 ```

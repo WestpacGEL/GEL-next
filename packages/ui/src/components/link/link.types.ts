@@ -1,9 +1,9 @@
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { AriaLinkOptions } from 'react-aria';
 
 import { IconProps } from '../icon/index.js';
 
-export type LinkProps = {
+export type BaseLinkProps = {
   /**
    * Link text or component
    */
@@ -35,5 +35,32 @@ export type LinkProps = {
    * @default true
    */
   underline?: boolean;
-} & Omit<AriaLinkOptions, 'isDisabled' | 'elementType'> &
-  AnchorHTMLAttributes<Element>;
+  /**
+   * Specifies DOM element rendered by a custom component
+   * Required when the custom component does not render an '<a>' element
+   * @default 'a'
+   */
+  elementType?: AriaLinkOptions['elementType'];
+} & Omit<AriaLinkOptions, 'elementType' | 'href' | 'isDisabled'>;
+
+export type LinkRef<C extends React.ElementType = 'a'> = React.ComponentRef<C>;
+
+export type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
+
+export type LinkProps<C extends React.ElementType = 'a'> = BaseLinkProps & {
+  /**
+   * Type to render
+   * @default a
+   */
+  tag?: C;
+} & Omit<React.ComponentPropsWithoutRef<C>, keyof BaseLinkProps | 'tag'>;
+
+export type LinkImplementationProps = BaseLinkProps & {
+  className?: string;
+  href?: unknown;
+  tag?: React.ElementType;
+} & Record<string, unknown>;
+
+export type LinkComponent = <C extends React.ElementType = 'a'>(
+  props: LinkProps<C> & { ref?: PolymorphicRef<C> },
+) => React.ReactElement | null;

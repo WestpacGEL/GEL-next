@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.11.0",
+  "version": "1.18.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -73,6 +73,9 @@
     "./date-picker": {
       "default": "./dist/components/date-picker/index.js"
     },
+    "./dropdown": {
+      "default": "./dist/components/dropdown/index.js"
+    },
     "./error-message": {
       "default": "./dist/components/error-message/index.js"
     },
@@ -84,6 +87,9 @@
     },
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
+    },
+    "./flyout": {
+      "default": "./dist/components/flyout/index.js"
     },
     "./footer": {
       "default": "./dist/components/footer/index.js"
@@ -207,6 +213,7 @@
     "build:types": "tsc --project tsconfig.build.json",
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:icons": "node --loader ts-node/esm ./utils/build-icons/index.ts",
+    "build:pictogram-assets": "node --loader ts-node/esm ./utils/build-pictogram-assets/index.ts",
     "build:exports": "node --loader ts-node/esm ./utils/build-exports/index.ts && prettier --write package.json",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
@@ -252,12 +259,13 @@
     "@types/react-dom": "^18.2.1",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react-swc": "^3.7.0",
-    "@vitest/coverage-v8": "~3.2.6",
+    "@vitest/coverage-v8": "4.1.11",
     "@vueless/storybook-dark-mode": "~9.0.8",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/style-config": "workspace:~",
     "@westpac/test-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
+    "adm-zip": ">=0.6.0",
     "chokidar": "^3.5.3",
     "cross-env": "~7.0.3",
     "csstype": "~3.1.3",
@@ -266,7 +274,7 @@
     "glob": "~10.5.0",
     "jsdom": "^22.1.0",
     "plop": "~4.0.5",
-    "postcss": "~8.5.10",
+    "postcss": "~8.5.23",
     "postcss-cli": "~10.1.0",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
@@ -280,10 +288,10 @@
     "ts-node": "~10.9.1",
     "typescript": "^5.5.4",
     "vite": "^7.3.5",
-    "vitest": "^3.2.6"
+    "vitest": "4.1.11"
   },
   "dependencies": {
-    "@internationalized/date": "~3.10.0",
+    "@internationalized/date": "^3.12.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
@@ -297,8 +305,8 @@
     "zustand": "~4.5.4"
   },
   "peerDependencies": {
-    "@internationalized/date": "~3.10.0",
     "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
     "tailwindcss": "~4.1.12"
   },
   "repository": {

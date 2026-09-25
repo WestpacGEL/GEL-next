@@ -1,9 +1,7 @@
-// TODO: Find solution for Link component that doesn't require legacyBehavior and passHref props, and remove eslint disable for sonarjs/deprecation when this is resolved
-/* eslint-disable sonarjs/deprecation */
 'use client';
 
-import { List, ListItem, Link as GELLink } from '@westpac/ui';
-import Link from 'next/link';
+import { Link, List, ListItem } from '@westpac/ui';
+import NextLink from 'next/link';
 
 import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
 import { CustomFooter } from '@/components/custom-footer/custom-footer';
@@ -45,8 +43,8 @@ export default function Home() {
             </h3>
             <List type="unstyled" className="flex flex-col gap-3">
               <ListItem className="flex flex-col gap-1">
-                <Link href="/credit-cards?flatten=true" passHref legacyBehavior>
-                  <GELLink className="typography-body-9">Default progress rope</GELLink>
+                <Link tag={NextLink} href="/credit-cards?flatten=true" className="typography-body-9">
+                  Default progress rope
                 </Link>
                 <p className="typography-body-9 text-text-muted">
                   Use the default progress rope for forms with up to around eight pages. It shows customers how many
@@ -55,8 +53,8 @@ export default function Home() {
               </ListItem>
 
               <ListItem className="flex flex-col gap-1">
-                <Link href="/credit-cards" passHref legacyBehavior>
-                  <GELLink className="typography-body-9">Grouped progress rope</GELLink>
+                <Link tag={NextLink} href="/credit-cards" className="typography-body-9">
+                  Grouped progress rope
                 </Link>
                 <p className="typography-body-9 text-text-muted">
                   For complex forms with more than eight pages, use the Grouped progress rope. In this version pages are
@@ -65,8 +63,8 @@ export default function Home() {
               </ListItem>
 
               <ListItem className="flex flex-col gap-1">
-                <Link href="/no-progress-rope" passHref legacyBehavior>
-                  <GELLink className="typography-body-9">No progress rope</GELLink>
+                <Link tag={NextLink} href="/no-progress-rope" className="typography-body-9">
+                  No progress rope
                 </Link>
                 <p className="typography-body-9 text-text-muted">
                   For very simple forms with just one or two pages, a progress rope isn't needed.
@@ -88,18 +86,22 @@ export default function Home() {
               clearly show which profile they are working in. The Extra-care indicator is used only for staff facing
               processes.
             </p>
-            <List type="link" className="flex flex-col gap-1">
-              <Link href="/personal-customer" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1 typography-body-9">Personal customer</ListItem>
-              </Link>
-              <Link href="/business-customer" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1 typography-body-9">Business customer</ListItem>
-              </Link>
-              <Link href="/extra-care-customer" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1 typography-body-9">
+            <List type="unstyled" className="flex flex-col gap-1">
+              <ListItem className="flex flex-col gap-1">
+                <Link tag={NextLink} href="/personal-customer" className="typography-body-9">
+                  Personal customer
+                </Link>
+              </ListItem>
+              <ListItem className="flex flex-col gap-1">
+                <Link tag={NextLink} href="/business-customer" className="typography-body-9">
+                  Business customer
+                </Link>
+              </ListItem>
+              <ListItem className="flex flex-col gap-1">
+                <Link tag={NextLink} href="/extra-care-customer" className="typography-body-9">
                   Extra-care customer (Staff facing only)
-                </ListItem>
-              </Link>
+                </Link>
+              </ListItem>
             </List>
           </div>
           <div>
@@ -111,16 +113,22 @@ export default function Home() {
             >
               Messaging page examples
             </h3>
-            <List type="link" className="flex flex-col gap-1">
-              <Link href="/error" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1 typography-body-9">Error messaging page</ListItem>
-              </Link>
-              <Link href="/success" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1 typography-body-9">Success messaging page</ListItem>
-              </Link>
-              <Link href="/task-completion-messaging" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1 typography-body-9">Task completion messaging page</ListItem>
-              </Link>
+            <List type="unstyled" className="flex flex-col gap-1">
+              <ListItem className="flex flex-col gap-1">
+                <Link tag={NextLink} href="/error" className="typography-body-9">
+                  Error messaging page
+                </Link>
+              </ListItem>
+              <ListItem className="flex flex-col gap-1">
+                <Link tag={NextLink} href="/success" className="typography-body-9">
+                  Success messaging page
+                </Link>
+              </ListItem>
+              <ListItem className="flex flex-col gap-1">
+                <Link tag={NextLink} href="/task-completion-messaging" className="typography-body-9">
+                  Task completion messaging page
+                </Link>
+              </ListItem>
             </List>
           </div>
         </div>

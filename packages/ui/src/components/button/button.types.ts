@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
@@ -8,9 +8,7 @@ import { styles } from './button.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type ButtonRef = HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement;
-
-export type ButtonProps = {
+export type BaseButtonProps = {
   /**
    * Fit button width to its parent width.
    * @default false
@@ -69,10 +67,25 @@ export type ButtonProps = {
    * Removes background colour and adjusts text colour.
    */
   soft?: ResponsiveVariants<Variants['soft']>;
+};
+
+export type ButtonRef<C extends React.ElementType = 'button'> = React.ComponentRef<C>;
+
+export type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
+
+export type ButtonProps<C extends React.ElementType = 'button'> = BaseButtonProps & {
   /**
-   * Tag to render
+   * Type to render
    * @default button
    */
-  tag?: keyof Pick<JSX.IntrinsicElements, 'a' | 'span' | 'button' | 'div'>;
-} & ButtonHTMLAttributes<Element> &
-  AnchorHTMLAttributes<Element>;
+  tag?: C;
+} & Omit<React.ComponentPropsWithoutRef<C>, keyof BaseButtonProps | 'tag'>;
+
+export type ButtonImplementationProps = BaseButtonProps & {
+  className?: string;
+  tag?: React.ElementType;
+} & Record<string, unknown>;
+
+export type ButtonComponent = <C extends React.ElementType = 'button'>(
+  props: ButtonProps<C> & { ref?: PolymorphicRef<C> },
+) => React.ReactElement | null;
