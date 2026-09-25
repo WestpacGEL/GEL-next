@@ -1,9 +1,10 @@
 'use client';
 
-import React, { createContext, useCallback, useMemo, useState } from 'react';
+import React, { ForwardedRef, createContext, forwardRef, useCallback, useMemo, useState } from 'react';
 import { useField } from 'react-aria';
 
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { FocusHandle, useFocusManagerRef } from '../../../../hook/focus-manager-ref.hook.js';
 import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
@@ -17,18 +18,23 @@ export const SelectorButtonContext = createContext<SelectorButtonGroupContextSta
   isDisabled: undefined,
 });
 
-export function SelectorButtonGroup({
-  className,
-  children,
-  label,
-  orientation = 'vertical',
-  errorMessage,
-  description,
-  value = '',
-  onChange,
-  isDisabled,
-  ...props
-}: SelectorButtonGroupProps) {
+function BaseSelectorButtonGroup(
+  {
+    className,
+    children,
+    label,
+    orientation = 'vertical',
+    errorMessage,
+    description,
+    value = '',
+    onChange,
+    isDisabled,
+    ...props
+  }: SelectorButtonGroupProps,
+  // `ref.current.focus()` moves focus to the first tabbable option button.
+  ref: ForwardedRef<FocusHandle>,
+) {
+  const wrapperRef = useFocusManagerRef(ref);
   const isControlled = onChange !== undefined;
   const onChangeCallback = onChange as ((value: string) => void) | undefined;
   const [selected, setSelected] = useState(value);
@@ -69,9 +75,12 @@ export function SelectorButtonGroup({
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div className={styles({ className, orientation: resolvedOrientation })} {...fieldProps}>
+      <div className={styles({ className, orientation: resolvedOrientation })} {...fieldProps} ref={wrapperRef}>
         <SelectorButtonContext.Provider value={state}>{children}</SelectorButtonContext.Provider>
       </div>
     </>
   );
 }
+
+export const SelectorButtonGroup = forwardRef(BaseSelectorButtonGroup);
+SelectorButtonGroup.displayName = 'SelectorButtonGroup';

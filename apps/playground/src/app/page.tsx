@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { Card } from '@/components/card/card.component';
 import { useThemeStore } from '@/theme/theme.store';
 import { BrandKey } from '@/theme/theme.types';
@@ -19,6 +21,9 @@ export default function Home() {
             <option value="bsa">BankSA</option>
           </select>
         </div>
+        <Link href="/form-focus" className="underline">
+          Form focus-on-error test (react-hook-form)
+        </Link>
         <Card active />
         <Card brand="wbc" />
         <Card brand="stg" />

@@ -1,5 +1,6 @@
-import { render, screen, within, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef } from 'react';
 
 import { MultiSelect, MultiSelectItem, MultiSelectSection } from './multi-select.component.js';
 
@@ -257,11 +258,60 @@ describe('MultiSelect', () => {
       expect(screen.getByRole('listbox')).toBeInTheDocument();
     });
 
-    // Simple navigation test - just verify the listbox responds to keyboard input
-    await user.keyboard('{ArrowDown}');
+    // Focus lands on the filter input when the dropdown opens
+    await waitFor(() => {
+      expect(screen.getByLabelText('Filter options')).toHaveFocus();
+    });
 
-    // Verify listbox is still present and interactive
+    // ArrowDown: filter input -> "Select all" -> first option
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('option', { name: 'Select all options' })).toHaveFocus();
+    await user.keyboard('{ArrowDown}');
+    const option1 = screen.getByRole('option', { name: 'Option 1' });
+    expect(option1).toHaveFocus();
+
+    // Space / Enter toggle the focused option
+    await user.keyboard(' ');
+    expect(option1).toHaveAttribute('aria-checked', 'true');
+    expect(screen.getByRole('option', { name: 'Select all options' })).toHaveAttribute('aria-checked', 'mixed');
+    await user.keyboard('{Enter}');
+    expect(option1).toHaveAttribute('aria-checked', 'false');
+
+    // ArrowUp from the first option goes back to "Select all"
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('option', { name: 'Select all options' })).toHaveFocus();
+
+    // Escape closes and returns focus to the trigger
+    await user.keyboard('{Escape}');
+    await waitFor(() => {
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    });
+    expect(triggerButton).toHaveFocus();
+  });
+
+  it('stays open when the page scrolls while focus is inside the dropdown', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <MultiSelect items={mockOptions} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+        {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+      </MultiSelect>,
+    );
+
+    await user.click(screen.getByRole('combobox'));
+    await waitFor(() => {
+      expect(screen.getByLabelText('Filter options')).toHaveFocus();
+    });
+
+    // Browsers scroll the page when focus moves (or the layout shifts); react-aria's default non-modal
+    // popover behaviour would dismiss the dropdown here, mid keyboard navigation.
+    fireEvent.scroll(document);
+    await user.keyboard('{ArrowDown}{ArrowDown}');
+    fireEvent.scroll(document);
+    await user.keyboard(' ');
+
     expect(screen.getByRole('listbox')).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Option 1' })).toHaveAttribute('aria-checked', 'true');
   });
 
   it('handles empty items array', () => {
@@ -359,5 +409,28 @@ describe('MultiSelect', () => {
     expect(screen.getByText('Option 1')).toBeInTheDocument();
     expect(screen.queryByText('Option 2')).not.toBeInTheDocument();
     expect(screen.queryByText('Option 3')).not.toBeInTheDocument();
+  });
+
+  describe('ref', () => {
+    it('points at the trigger button', () => {
+      const ref = createRef<HTMLButtonElement>();
+      render(
+        <MultiSelect ref={ref} items={mockOptions} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+          {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+        </MultiSelect>,
+      );
+      expect(ref.current).toBe(screen.getByRole('combobox'));
+    });
+
+    it('focus() moves focus to the trigger button', () => {
+      const ref = createRef<HTMLButtonElement>();
+      render(
+        <MultiSelect ref={ref} items={mockOptions} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+          {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+        </MultiSelect>,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByRole('combobox')).toHaveFocus();
+    });
   });
 });

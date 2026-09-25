@@ -3,26 +3,26 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     input: 'form-control flex items-center border-0',
-    dateField: 'rounded rounded-r-none border border-r-0 border-border-muted-strong',
+    dateField: 'rounded rounded-r-none border border-r-0 border-border-muted-strong whitespace-nowrap',
     button: 'flex items-center justify-center rounded-l-none border-border-muted-strong bg-surface-muted-pale',
   },
   variants: {
     size: {
       small: {
         input: 'max-h-5',
-        dateField: 'h-5 w-[120px] form-control-small',
+        dateField: 'h-5 min-w-[120px] form-control-small',
       },
       medium: {
         input: 'max-h-6',
-        dateField: 'h-6 w-[140px] form-control-medium',
+        dateField: 'h-6 min-w-[140px] form-control-medium',
       },
       large: {
         input: 'max-h-7',
-        dateField: 'h-7 w-[145px] form-control-large',
+        dateField: 'h-7 min-w-[145px] form-control-large',
       },
       xlarge: {
         input: 'max-h-8',
-        dateField: 'h-8 w-[165px] form-control-xlarge',
+        dateField: 'h-8 min-w-[165px] form-control-xlarge',
       },
     },
     block: {

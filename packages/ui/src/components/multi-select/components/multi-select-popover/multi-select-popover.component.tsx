@@ -24,6 +24,13 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // react-aria assumes a non-modal popover never receives DOM focus, so it closes it whenever the page
+  // scrolls (useOverlayPosition -> useCloseOnScroll via `state.close`). Focus does move into this popover
+  // (filter input / options), and browsers may scroll the page when it does, which closed the dropdown
+  // mid keyboard navigation. Dismissal (blur, Escape, Tab, DismissButton) is handled explicitly below, so
+  // give react-aria a state it cannot close.
+  const positioningState = { ...overlayState, close: () => undefined };
+
   const { popoverProps } = usePopover(
     {
       ...props,
@@ -35,7 +42,7 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
       shouldCloseOnInteractOutside: () => false, // need to manage accessibility manually due to complexity of component
       offset: 6,
     },
-    overlayState,
+    positioningState,
   );
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
@@ -80,7 +87,6 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
           }
         }}
         role="dialog"
-        aria-modal="true"
         aria-label="Options list with filter"
       >
         {children}

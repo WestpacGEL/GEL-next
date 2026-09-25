@@ -2,7 +2,7 @@
 
 import { DateValue, getDayOfWeek, isWeekend } from '@internationalized/date';
 import { Breakpoint } from '@westpac/style-config/constants';
-import React, { useMemo, useRef } from 'react';
+import React, { ForwardedRef, forwardRef, useMemo, useRef } from 'react';
 import { useButton, useDatePicker, useLocale } from 'react-aria';
 import { useDatePickerState } from 'react-stately';
 
@@ -19,19 +19,24 @@ import { styles as datePickerStyles } from './date-picker.styles.js';
 import { type DatePickerProps } from './date-picker.types.js';
 
 const BREAKPOINTS_DECRECENT = ['xl', 'lg', 'md', 'sm', 'xsl', 'initial'] as const;
-export function DatePicker({
-  size = 'medium',
-  className,
-  bottomSheetView = { initial: true, xsl: false },
-  block,
-  isDateUnavailable,
-  disableDaysOfWeek,
-  disableWeekends,
-  separator,
-  portalContainer,
-  placement = 'bottom left',
-  ...props
-}: DatePickerProps) {
+function BaseDatePicker(
+  {
+    size = 'medium',
+    className,
+    bottomSheetView = { initial: true, xsl: false },
+    block,
+    isDateUnavailable,
+    disableDaysOfWeek,
+    disableWeekends,
+    separator,
+    portalContainer,
+    placement = 'bottom left',
+    ...props
+  }: DatePickerProps,
+  // Attached to the first editable date segment, so `ref.current.focus()` (e.g. react-hook-form
+  // focusing a field with a validation error) lands on a focusable control.
+  forwardedRef: ForwardedRef<HTMLSpanElement>,
+) {
   const { locale } = useLocale();
 
   const enhancedIsDateUnavailable = useMemo(() => {
@@ -60,7 +65,7 @@ export function DatePicker({
     isReadOnly: props.isReadOnly,
     isDisabled: props.isDisabled,
   });
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
     { isDateUnavailable: enhancedIsDateUnavailable, ...props },
@@ -84,12 +89,15 @@ export function DatePicker({
 
   const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
   const brandContainer = useMemo(() => {
-    return (
-      document.querySelector('[data-brand]') ||
-      document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
-      undefined
-    );
+    if (typeof window !== 'undefined') {
+      return (
+        document.querySelector('[data-brand]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        undefined
+      );
+    }
   }, []);
 
   return (
@@ -107,7 +115,7 @@ export function DatePicker({
         }}
         className={styles.input({ className })}
       >
-        <DateField className={styles.dateField()} separator={separator} {...fieldProps} />
+        <DateField className={styles.dateField()} separator={separator} {...fieldProps} ref={forwardedRef} />
         <Button
           look="faint"
           className={styles.button()}
@@ -134,3 +142,6 @@ export function DatePicker({
     </>
   );
 }
+
+export const DatePicker = forwardRef(BaseDatePicker);
+DatePicker.displayName = 'DatePicker';

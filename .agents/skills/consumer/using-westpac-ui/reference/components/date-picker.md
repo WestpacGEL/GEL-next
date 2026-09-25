@@ -31,4 +31,23 @@ import { parseDate } from '@internationalized/date';
 <DatePicker label="Date" bottomSheetView={{ initial: true, md: false }} />
 ```
 
-**Capabilities:** Responsive size/block · Calendar popup or bottom sheet (breakpoint-aware) · Disable specific days/weekends · Custom placement · Built on react-aria/react-stately DatePicker · Uses `@internationalized/date` for date values
+**Capabilities:** Responsive size/block · Calendar popup or bottom sheet (breakpoint-aware) · Disable specific days/weekends · Custom placement · Built on react-aria/react-stately DatePicker · Uses `@internationalized/date` for date values · Forwards ref to the first editable date segment (so `field.ref` from react-hook-form can focus it)
+
+**With react-hook-form** (pass `field.ref` so validation errors focus the field; default the value to `null`, not `''`)
+
+```tsx
+<Controller
+  control={control}
+  name="dateOfBirth"
+  rules={{ required: 'Enter your date of birth' }}
+  render={({ field, fieldState }) => (
+    <DatePicker
+      ref={field.ref}
+      label="Date of birth"
+      value={field.value}
+      onChange={field.onChange}
+      isInvalid={fieldState.invalid}
+    />
+  )}
+/>
+```

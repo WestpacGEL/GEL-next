@@ -35,4 +35,4 @@ Group of checkboxes.
 </CheckboxGroup>
 ```
 
-**Capabilities:** Responsive size/orientation · Error/hint messages · Show/reveal pattern · Data-driven or compositional · Built on react-aria
+**Capabilities:** Responsive size/orientation · Error/hint messages · Show/reveal pattern · Data-driven or compositional · Built on react-aria · `ref` is a `FocusHandle` (`{ focus() }`) that focuses the first enabled checkbox — pass `field.ref` from react-hook-form so validation errors focus the field
