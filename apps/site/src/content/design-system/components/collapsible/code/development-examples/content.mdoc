@@ -59,3 +59,38 @@
   </div>
 </div>
 ```
+
+### Open by default
+
+```jsx
+<div>
+  <Collapsible text="Show me more - Open" open>
+    <p>
+      It was all very well to say ‘Drink me,’ but the wise little Alice was not going to do that in a hurry. ‘No, I’ll
+      look first,’ she said, ‘and see whether it’s marked “poison” or not’; for she had read several nice little
+      histories about children who had got burnt, and eaten up by wild beasts and other unpleasant things, all because
+      they would not remember the simple rules their friends had taught them: such as, that a red-hot poker will burn
+      you if you hold it too long; and that if you cut your finger very deeply with a knife, it usually bleeds; and she
+      had never forgotten that, if you drink much from a bottle marked ‘poison,’ it is almost certain to disagree with
+      you, sooner or later.
+    </p>
+  </Collapsible>
+</div>
+```
+
+### With onClick
+
+```tsx
+() => {
+  const [clickCount, setClickCount] = useState(0);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <Collapsible text="Show account details" onClick={() => setClickCount(count => count + 1)}>
+        <p>Your account details appear here.</p>
+      </Collapsible>
+      <p className="typography-body-10 text-text-muted">Clicked: {clickCount}</p>
+    </div>
+  );
+};
+```

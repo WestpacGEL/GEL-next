@@ -34,8 +34,8 @@
 
 ### Invalid
 
-```jsx
-<Autocomplete aria-label="Animals" invalid>
+```tsx
+<Autocomplete label="Animal" errorMessage="Select an animal from the list" invalid>
   <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
   <AutocompleteItem key="cat">Cat</AutocompleteItem>
   <AutocompleteItem key="dog">Dog</AutocompleteItem>
@@ -45,10 +45,19 @@
 </Autocomplete>
 ```
 
+### Hint message
+
+```tsx
+<Autocomplete label="Are you an existing customer?" hintMessage="Choose one of the following options">
+  <AutocompleteItem key="yes">Yes</AutocompleteItem>
+  <AutocompleteItem key="no">No</AutocompleteItem>
+</Autocomplete>
+```
+
 ### Disabled
 
 ```jsx
-<Autocomplete aria-label="Animals" disabled>
+<Autocomplete aria-label="Animals" isDisabled>
   <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
   <AutocompleteItem key="cat">Cat</AutocompleteItem>
   <AutocompleteItem key="dog">Dog</AutocompleteItem>
@@ -61,34 +70,34 @@
 ### Sizes
 
 ```tsx
-() => {
-  const [selectedKey, setSelectedKey] = useState<Key>();
-  const handleSelectionChange = (key: Key) => {
-    setSelectedKey(key);
-  };
-  return (
-    <Fragment>
-      {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <div className="py-2" key={size}>
-          <Autocomplete label={size} size={size} aria-label={`size ${size}`}>
-            <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
-            <AutocompleteItem key="cat">Cat</AutocompleteItem>
-            <AutocompleteItem key="dog">Dog</AutocompleteItem>
-            <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
-            <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
-            <AutocompleteItem key="snake">Snake</AutocompleteItem>
-          </Autocomplete>
-        </div>
-      ))}
-    </Fragment>
-  );
-};
+<div className="flex flex-col gap-4">
+  <Autocomplete label="Small" size="small">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete label="Medium" size="medium">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete label="Large" size="large">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete label="Extra large" size="xlarge">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  </Autocomplete>
+</div>
 ```
 
 ### Footer
 
 ```jsx
-<Autocomplete aria-label="Animals" disabled footer={<h3>Footer message</h3>}>
+<Autocomplete aria-label="Animals" footer={<h3>Footer message</h3>}>
   <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
   <AutocompleteItem key="cat">Cat</AutocompleteItem>
   <AutocompleteItem key="dog">Dog</AutocompleteItem>
@@ -143,7 +152,7 @@
 
   return (
     <div className="flex flex-col gap-2">
-      <Autocomplete items={items} onFocus={getCollection} loadingState={loading}>
+      <Autocomplete label="Animal" items={items} onFocus={getCollection} loadingState={loading}>
         {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
     </div>
@@ -153,64 +162,52 @@
 
 ### Customised Items
 
-```jsx
-() => {
-  const options = [
-    { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
-    { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
-    { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
-    { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
-  ];
-  return (
-    <Autocomplete width="30" aria-label="Staff directory" defaultItems={options}>
-      {item => (
-        <AutocompleteItem key={item.name} textValue={item.name}>
-          <div className="flex items-center gap-2">
-            <Circle className="size-5 bg-surface-muted text-text-mono">{item.initials}</Circle>
-            <div className="flex flex-col ">
-              <h3 className="typography-body-9">{item.name}</h3>
-              <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
-                {item.role}
-              </p>
-            </div>
-          </div>
-        </AutocompleteItem>
-      )}
-    </Autocomplete>
-  );
-};
+```tsx
+<Autocomplete width="30" aria-label="Staff directory">
+  <AutocompleteItem key="oliver-bennett" textValue="Oliver Bennett">
+    <div className="flex items-center gap-2">
+      <Circle className="size-5 bg-surface-muted text-text-mono">OB</Circle>
+      <div className="flex flex-col">
+        <h3 className="typography-body-9">Oliver Bennett</h3>
+        <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
+          Compliance Officer, Legal
+        </p>
+      </div>
+    </div>
+  </AutocompleteItem>
+  <AutocompleteItem key="mia-chandler" textValue="Mia Chandler">
+    <div className="flex items-center gap-2">
+      <Circle className="size-5 bg-surface-muted text-text-mono">MC</Circle>
+      <div className="flex flex-col">
+        <h3 className="typography-body-9">Mia Chandler</h3>
+        <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
+          Financial Analyst, Finance
+        </p>
+      </div>
+    </div>
+  </AutocompleteItem>
+</Autocomplete>
 ```
 
 ### More customised Items
 
-```jsx
-() => {
-  const options = [
-    { name: 'Nimbus Analytics Pty Ltd', abn: '123 456 789' },
-    { name: 'Blueleaf Financial Group', abn: '987 654 321' },
-    { name: 'Ironclad Risk Solutions', abn: '456 789 123' },
-    { name: 'Summit Edge Advisory', abn: '321 654 987' },
-  ];
-  return (
-    <Autocomplete
-      noOptionsMessage="No options found, try a different spelling"
-      width="30"
-      aria-label="Business directory"
-      defaultItems={options}
-    >
-      {item => (
-        <AutocompleteItem key={item.name} textValue={item.name}>
-          <div className="flex items-center gap-2">
-            <div className="flex flex-col ">
-              <h3 className="typography-body-9">{item.name}</h3>
-              <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
-                {item.abn}
-              </p>
-            </div>
-          </div>
-        </AutocompleteItem>
-      )}
-    </Autocomplete>
-  );
-};
+```tsx
+<Autocomplete noOptionsMessage="No options found, try a different spelling" width="30" aria-label="Business directory">
+  <AutocompleteItem key="nimbus-analytics" textValue="Nimbus Analytics Pty Ltd">
+    <div className="flex flex-col">
+      <h3 className="typography-body-9">Nimbus Analytics Pty Ltd</h3>
+      <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
+        123 456 789
+      </p>
+    </div>
+  </AutocompleteItem>
+  <AutocompleteItem key="blueleaf-financial" textValue="Blueleaf Financial Group">
+    <div className="flex flex-col">
+      <h3 className="typography-body-9">Blueleaf Financial Group</h3>
+      <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
+        987 654 321
+      </p>
+    </div>
+  </AutocompleteItem>
+</Autocomplete>
 ```

@@ -1,27 +1,52 @@
-### ButtonGroup sizes
+### Button group sizes
 
-```jsx
-<ButtonGroup>
-  <ButtonGroupButton id="Left">Left</ButtonGroupButton>
-  <ButtonGroupButton id="Middle">Middle</ButtonGroupButton>
-  <ButtonGroupButton id="Right">Right</ButtonGroupButton>
-</ButtonGroup>
+```tsx
+<div className="grid gap-6">
+  <div className="flex flex-col gap-1">
+    <p className="typography-body-11 text-text-body">Small: 30 px</p>
+    <ButtonGroup size="small">
+      <ButtonGroupButton id="small-left">Left</ButtonGroupButton>
+      <ButtonGroupButton id="small-right">Right</ButtonGroupButton>
+    </ButtonGroup>
+  </div>
+  <div className="flex flex-col gap-1">
+    <p className="typography-body-11 text-text-body">Medium: 36 px</p>
+    <ButtonGroup size="medium">
+      <ButtonGroupButton id="medium-left">Left</ButtonGroupButton>
+      <ButtonGroupButton id="medium-right">Right</ButtonGroupButton>
+    </ButtonGroup>
+  </div>
+  <div className="flex flex-col gap-1">
+    <p className="typography-body-11 text-text-body">Large: 42 px</p>
+    <ButtonGroup size="large">
+      <ButtonGroupButton id="large-left">Left</ButtonGroupButton>
+      <ButtonGroupButton id="large-right">Right</ButtonGroupButton>
+    </ButtonGroup>
+  </div>
+  <div className="flex flex-col gap-1">
+    <p className="typography-body-11 text-text-body">Extra large: 48 px</p>
+    <ButtonGroup size="xlarge">
+      <ButtonGroupButton id="xlarge-left">Left</ButtonGroupButton>
+      <ButtonGroupButton id="xlarge-right">Right</ButtonGroupButton>
+    </ButtonGroup>
+  </div>
+</div>
 ```
 
-### ButtonGroup looks
+### Button group key types
 
-```jsx
+```tsx
 <div className="grid gap-3">
-  <Field label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Index (integer)</p>}>
-    <ButtonGroup selectedKeys={0}>
+  <Field label="Integer keys">
+    <ButtonGroup defaultSelectedKeys={0}>
       <ButtonGroupButton id={0}>Left</ButtonGroupButton>
       <ButtonGroupButton id={1}>Middle</ButtonGroupButton>
       <ButtonGroupButton id={2}>Right</ButtonGroupButton>
     </ButtonGroup>
   </Field>
 
-  <Field label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Key (string)</p>}>
-    <ButtonGroup selectedKeys="left">
+  <Field label="String keys">
+    <ButtonGroup defaultSelectedKeys="left">
       <ButtonGroupButton id="left">Left</ButtonGroupButton>
       <ButtonGroupButton id="middle">Middle</ButtonGroupButton>
       <ButtonGroupButton id="right">Right</ButtonGroupButton>
@@ -30,36 +55,69 @@
 </div>
 ```
 
-### With onChange
+### Button group looks
 
-```jsx
+```tsx
+<div className="grid gap-3">
+  <Field label="Hero">
+    <ButtonGroup look="hero" defaultSelectedKeys="hero-yes">
+      <ButtonGroupButton id="hero-yes">Yes</ButtonGroupButton>
+      <ButtonGroupButton id="hero-no">No</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
+
+  <Field label="Primary">
+    <ButtonGroup look="primary" defaultSelectedKeys="primary-yes">
+      <ButtonGroupButton id="primary-yes">Yes</ButtonGroupButton>
+      <ButtonGroupButton id="primary-no">No</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
+</div>
+```
+
+### Responsive size
+
+```tsx
+<ButtonGroup size={{ initial: 'small', md: 'large', lg: 'xlarge' }}>
+  <ButtonGroupButton id="responsive-left">Left</ButtonGroupButton>
+  <ButtonGroupButton id="responsive-right">Right</ButtonGroupButton>
+</ButtonGroup>
+```
+
+### Block
+
+```tsx
+<ButtonGroup block>
+  <ButtonGroupButton id="email">Email</ButtonGroupButton>
+  <ButtonGroupButton id="phone">Phone</ButtonGroupButton>
+  <ButtonGroupButton id="sms">SMS</ButtonGroupButton>
+</ButtonGroup>
+```
+
+### Multiple selection
+
+```tsx
+<ButtonGroup selectionMode="multiple" defaultSelectedKeys={['email', 'sms']}>
+  <ButtonGroupButton id="email">Email</ButtonGroupButton>
+  <ButtonGroupButton id="phone">Phone</ButtonGroupButton>
+  <ButtonGroupButton id="sms">SMS</ButtonGroupButton>
+</ButtonGroup>
+```
+
+### With onSelectionChange
+
+```tsx
 () => {
-  const [controlled, setControlled] = useState('');
+  const [selectedKey, setSelectedKey] = useState<Key>('yes');
 
   return (
     <div className="grid gap-2">
-      <div className="flex gap-1">
-        <Button type="button" onClick={() => setControlled('yes')} size="small">
-          Set to "yes"
-        </Button>
-        <Button type="button" onClick={() => setControlled('maybe')} size="small">
-          Set to "maybe"
-        </Button>
-        <Button type="button" onClick={() => setControlled('no')} size="small">
-          Set to "no"
-        </Button>
-        <Button type="button" onClick={() => setControlled('')} size="small">
-          reset
-        </Button>
-      </div>
-      <ButtonGroup
-        look="hero"
-        selectedKeys={controlled}
-      >
+      <ButtonGroup look="hero" selectedKeys={selectedKey} onSelectionChange={setSelectedKey}>
         <ButtonGroupButton id="yes">Yes</ButtonGroupButton>
         <ButtonGroupButton id="maybe">Maybe</ButtonGroupButton>
         <ButtonGroupButton id="no">No</ButtonGroupButton>
       </ButtonGroup>
+      <p className="typography-body-10 text-text-muted">Selected: {String(selectedKey)}</p>
     </div>
   );
 };
