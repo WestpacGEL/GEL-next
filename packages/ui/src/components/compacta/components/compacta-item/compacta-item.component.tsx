@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { useButton, useDisclosure, mergeProps, useFocusRing, FocusScope } from 'react-aria';
 import { useDisclosureState } from 'react-stately';
 
@@ -25,8 +25,7 @@ export function CompactaItem({
   expandOnMount = true,
   ...props
 }: CompactaItemProps) {
-  const { totalItems, autoFocusNewItems } = useCompacta();
-  const [autoFocus] = useState(autoFocusNewItems);
+  const { totalItems, hasInteracted } = useCompacta();
   const state = useDisclosureState(props);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
@@ -91,7 +90,7 @@ export function CompactaItem({
               transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0], delay }}
               aria-hidden={!state.isExpanded}
             >
-              <FocusScope autoFocus={autoFocus} restoreFocus>
+              <FocusScope autoFocus={hasInteracted} restoreFocus>
                 <div className={styles.content()} ref={panelRef} {...mergeProps(panelProps, contentFocusProps)}>
                   {children}
                   {onRemove && (

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { Children, createContext, isValidElement, useContext, useEffect, useMemo, useState } from 'react';
+import React, { Children, createContext, isValidElement, useContext, useMemo, useState } from 'react';
+import { mergeProps } from 'react-aria';
 
 import { Button } from '../button/index.js';
 import { AddCircleIcon, IconProps } from '../icon/index.js';
@@ -9,7 +10,7 @@ import { type CompactaProps } from './compacta.types.js';
 
 type CompactaContextType = {
   totalItems: number;
-  autoFocusNewItems: boolean;
+  hasInteracted: boolean;
 };
 
 const CompactaContext = createContext<CompactaContextType | null>(null);
@@ -23,11 +24,9 @@ export const useCompacta = () => {
 };
 
 export function Compacta({ children, onAdd, addText = 'Add another', ...props }: CompactaProps) {
-  const [autoFocusNewItems, setAutoFocusNewItems] = useState(false);
-
-  useEffect(() => {
-    setAutoFocusNewItems(true);
-  }, []);
+  // Only auto focus items in response to a user action inside the Compacta, never on load
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const markInteracted = () => setHasInteracted(true);
 
   const finalChildren = useMemo(() => {
     return Children.map(children, (child, index) => {
@@ -44,8 +43,8 @@ export function Compacta({ children, onAdd, addText = 'Add another', ...props }:
   }, [children]);
 
   return (
-    <CompactaContext.Provider value={{ totalItems: finalChildren?.length || 0, autoFocusNewItems }}>
-      <div {...props}>
+    <CompactaContext.Provider value={{ totalItems: finalChildren?.length || 0, hasInteracted }}>
+      <div {...mergeProps(props, { onPointerDownCapture: markInteracted, onKeyDownCapture: markInteracted })}>
         {finalChildren}
         {onAdd && (
           <Button
