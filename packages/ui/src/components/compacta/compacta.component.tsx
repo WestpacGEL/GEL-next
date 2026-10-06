@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Children, createContext, isValidElement, useContext, useMemo } from 'react';
+import React, { Children, createContext, isValidElement, useContext, useEffect, useMemo, useState } from 'react';
 
 import { Button } from '../button/index.js';
 import { AddCircleIcon, IconProps } from '../icon/index.js';
@@ -9,6 +9,7 @@ import { type CompactaProps } from './compacta.types.js';
 
 type CompactaContextType = {
   totalItems: number;
+  autoFocusNewItems: boolean;
 };
 
 const CompactaContext = createContext<CompactaContextType | null>(null);
@@ -22,6 +23,12 @@ export const useCompacta = () => {
 };
 
 export function Compacta({ children, onAdd, addText = 'Add another', ...props }: CompactaProps) {
+  const [autoFocusNewItems, setAutoFocusNewItems] = useState(false);
+
+  useEffect(() => {
+    setAutoFocusNewItems(true);
+  }, []);
+
   const finalChildren = useMemo(() => {
     return Children.map(children, (child, index) => {
       if (isValidElement(child)) {
@@ -37,7 +44,7 @@ export function Compacta({ children, onAdd, addText = 'Add another', ...props }:
   }, [children]);
 
   return (
-    <CompactaContext.Provider value={{ totalItems: finalChildren?.length || 0 }}>
+    <CompactaContext.Provider value={{ totalItems: finalChildren?.length || 0, autoFocusNewItems }}>
       <div {...props}>
         {finalChildren}
         {onAdd && (
