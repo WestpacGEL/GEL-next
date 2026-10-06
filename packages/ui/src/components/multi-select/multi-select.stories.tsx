@@ -1,8 +1,8 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
-import { Field } from '../index.js';
+import { Field, FlexiCell } from '../index.js';
 
 import { MultiSelectValue } from './multi-select.types.js';
 
@@ -395,6 +395,87 @@ export const UsingField = () => {
         </MultiSelectSection>
       </MultiSelect>
     </Field>
+  );
+};
+
+/**
+ * > The dropdown stays attached to the trigger when the layout shifts while it is open, e.g. when content is
+ * > conditionally rendered based on the selection. Select "Chemical" to render extra content in the card.
+ */
+export const LayoutShiftWhileOpen = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<number>>(new Set());
+  const showExtraContent = selectedKeys.has(7);
+  const selectedOptions = Array.from(selectedKeys).map(key => {
+    return OPTIONS.find(option => option.key === Number(key));
+  });
+
+  return (
+    <div className="flex h-[30rem] items-center overflow-auto bg-surface-muted-faint p-4">
+      <div className="flex w-full flex-col gap-4 rounded-sm border border-border-muted-soft bg-background-white p-6">
+        <Field label="Engineering discipline" hintMessage='Select "Chemical" to show additional content'>
+          <MultiSelect
+            items={OPTIONS}
+            listBoxProps={{ 'aria-label': 'multiselect options' }}
+            selectedKeys={selectedKeys}
+            onSelectionChange={keys => setSelectedKeys(keys as Set<number>)}
+          >
+            {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+          </MultiSelect>
+        </Field>
+        {showExtraContent && (
+          <p className="rounded-sm border border-border-muted-soft bg-surface-muted-faint p-6 typography-body-10">
+            Additional content rendered because &quot;Chemical&quot; is selected. This grows the card, moving the select
+            above.
+          </p>
+        )}
+        <div className="flex flex-row flex-wrap gap-2">
+          {selectedOptions.map(selectedOption => (
+            <FlexiCell withBorder className="flex flex-col typography-body-10 font-bold" key={selectedOption?.key}>
+              {selectedOption?.textValue}
+            </FlexiCell>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * A notice that appears and disappears on its own timer. It owns its state, so toggling it re-renders only
+ * this component, not the MultiSelect next to it.
+ */
+const BlinkingNotice = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const interval = setInterval(() => setIsVisible(visible => !visible), 3000);
+    return () => clearInterval(interval);
+  }, []);
+  if (!isVisible) return null;
+  return (
+    <p className="rounded-sm border border-border-muted-soft bg-background-white p-6 typography-body-10">
+      A notice that appears every few seconds. It is rendered outside the card, inside a fixed-height scrolling
+      container, so nothing the select lives in changes size when it pushes the card down.
+    </p>
+  );
+};
+
+/**
+ * > The dropdown also follows the trigger when the layout shift is not caused by a render of the select: here a
+ * > sibling with its own state pushes the card down inside a fixed-height scrolling container, so no container of
+ * > the select changes size. Open the dropdown and wait a few seconds.
+ */
+export const LayoutShiftFromSiblingWhileOpen = () => {
+  return (
+    <div className="flex h-[30rem] flex-col gap-4 overflow-auto bg-surface-muted-faint p-4">
+      <BlinkingNotice />
+      <div className="flex w-full flex-col gap-4 rounded-sm border border-border-muted-soft bg-background-white p-6">
+        <Field label="Engineering discipline" hintMessage="Open the dropdown and wait for the notice above to appear">
+          <MultiSelect items={OPTIONS} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+            {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+          </MultiSelect>
+        </Field>
+      </div>
+    </div>
   );
 };
 
