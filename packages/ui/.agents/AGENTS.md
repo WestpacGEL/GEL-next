@@ -95,7 +95,9 @@ export * from './{kebab-case-name}/index.js';
 - **Responsive variants**: Use `ResponsiveVariants<T>` type, resolve with `resolveResponsiveVariant()` + `useBreakpoint()`
 - **Compound components**: Use React Context, place sub-components in `components/` subdirectory
 - **Icon props**: Type as `(props: IconProps) => JSX.Element`
-- **Polymorphic tag**: `tag?: keyof JSX.IntrinsicElements` or a constrained subset
+- **Polymorphic tag**:
+  - Element-only: `tag?: keyof JSX.IntrinsicElements` or a constrained subset (e.g. Heading, Label)
+  - Accepts custom components (e.g. `tag={NextLink}`): follow Link, Button and BreadcrumbItem — a generic `{Name}Props<C extends React.ElementType>` with `tag?: C` and `Omit<React.ComponentPropsWithoutRef<C>, keyof Base{Name}Props | 'tag'>`, a loose `{Name}ImplementationProps` for the implementation, and `forwardRef(Base{Name}) as unknown as {Name}Component`. When using react-aria hooks, pass them a string `elementType` (expose an `elementType` prop for custom components that don't render the default element)
 
 ## TypeScript Best Practices
 
