@@ -68,7 +68,9 @@ export function BaseBreadcrumbItem(
     itemRef,
   );
   const renderProps =
-    Component === Tag ? { ...componentProps, href: rendersLink ? href : undefined } : filterDOMProps(componentProps);
+    Component === Tag
+      ? { ...componentProps, href: rendersLink ? href : undefined }
+      : filterDOMProps(componentProps, { labelable: true });
   // Custom components (e.g. NextLink) resolve their own href, so keep it untransformed by RouterProvider's useHref
   const customComponentProps = typeof Component === 'string' ? {} : { href };
 

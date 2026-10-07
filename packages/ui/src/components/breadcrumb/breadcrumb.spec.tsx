@@ -141,6 +141,24 @@ describe('Breadcrumb', () => {
       expect(item).not.toHaveAttribute('tabindex');
     });
 
+    it('keeps labelling props on the current item', () => {
+      render(
+        <Breadcrumb>
+          <BreadcrumbItem tag="a" href="/home">
+            Home
+          </BreadcrumbItem>
+          <BreadcrumbItem tag="a" href="/credit-cards" aria-label="Credit cards page" aria-describedby="description">
+            Credit cards
+          </BreadcrumbItem>
+        </Breadcrumb>,
+      );
+
+      const current = screen.getByText('Credit cards');
+      expect(current).toHaveAttribute('aria-current', 'page');
+      expect(current).toHaveAttribute('aria-label', 'Credit cards page');
+      expect(current).toHaveAttribute('aria-describedby', 'description');
+    });
+
     it("applies RouterProvider's useHref to the href", () => {
       render(
         <RouterProvider navigate={vi.fn()} useHref={withBasePath}>
