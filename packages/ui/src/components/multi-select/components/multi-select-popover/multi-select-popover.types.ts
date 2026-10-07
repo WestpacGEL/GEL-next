@@ -5,4 +5,4 @@ import type { AriaPopoverProps } from 'react-aria';
 export type MultiSelectPopoverProps = {
   children: React.ReactNode;
   className?: string;
-} & Omit<AriaPopoverProps, 'popoverRef' | 'triggerRef'>;
+} & Omit<AriaPopoverProps, 'popoverRef' | 'triggerRef' | 'shouldUpdatePosition'>;
