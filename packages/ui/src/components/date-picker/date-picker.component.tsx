@@ -1,6 +1,7 @@
 'use client';
 
 import { DateValue, getDayOfWeek, isWeekend } from '@internationalized/date';
+import { filterDOMProps } from '@react-aria/utils';
 import { Breakpoint } from '@westpac/style-config/constants';
 import React, { ForwardedRef, forwardRef, useMemo, useRef } from 'react';
 import { useButton, useDatePicker, useLocale } from 'react-aria';
@@ -17,6 +18,9 @@ import { Dialog } from './components/dialog/dialog.component.js';
 import { Popover } from './components/popover/popover.component.js';
 import { styles as datePickerStyles } from './date-picker.styles.js';
 import { type DatePickerProps } from './date-picker.types.js';
+
+// Extra props allowed onto the wrapper div, on top of `id`, `data-*` and aria labelling props
+const DOM_PROP_NAMES = new Set(['style']);
 
 const BREAKPOINTS_DECRECENT = ['xl', 'lg', 'md', 'sm', 'xsl', 'initial'] as const;
 function BaseDatePicker(
@@ -104,7 +108,7 @@ function BaseDatePicker(
     <>
       {props.label && <div {...labelProps}>{props.label}</div>}
       <div
-        {...props}
+        {...filterDOMProps(props, { labelable: true, propNames: DOM_PROP_NAMES })}
         {...groupProps}
         ref={ref}
         onBlur={e => {

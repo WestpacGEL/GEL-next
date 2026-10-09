@@ -43,15 +43,18 @@ export function Calendar({ value, ...props }: CalendarProps) {
   const { buttonProps: newPrevButtonProps } = useButton(prevButtonProps, refPrevButton);
   const { buttonProps: newNextButtonProps } = useButton(nextButtonProps, refNextButton);
 
+  const minYear = state.minValue?.year;
+  const maxYear = state.maxValue?.year;
   const years = useMemo(() => {
-    const beginning = state.focusedDate.year - YEAR_OFFSET;
-    return Array.from({ length: 20 }, (_, i) => {
+    const beginning = minYear ?? state.focusedDate.year - YEAR_OFFSET;
+    const end = maxYear ?? state.focusedDate.year + YEAR_OFFSET - 1;
+    return Array.from({ length: end - beginning + 1 }, (_, i) => {
       return {
         value: beginning + i,
         label: beginning + i,
       };
     });
-  }, [state.focusedDate.year]);
+  }, [state.focusedDate.year, minYear, maxYear]);
 
   const handleMonthChange = useCallback(
     (ev: ChangeEvent<HTMLSelectElement>) => {
