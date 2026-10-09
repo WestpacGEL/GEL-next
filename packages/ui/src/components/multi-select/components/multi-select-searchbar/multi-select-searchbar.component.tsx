@@ -1,3 +1,4 @@
+import { focusWithoutScrolling } from '@react-aria/utils';
 import React, { useContext, useCallback, KeyboardEvent } from 'react';
 
 import { Button } from '../../../../components/button/index.js';
@@ -21,12 +22,8 @@ export function MultiSelectSearchbar({
     (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
-        if (selectAllRef.current) {
-          selectAllRef.current.focus();
-        } else {
-          const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-          firstItem?.focus();
-        }
+        const target = selectAllRef.current || (listBoxRef.current?.querySelector('[data-key]') as HTMLElement | null);
+        if (target) focusWithoutScrolling(target);
       }
       if (e.key === 'Escape' && filterText.length > 0) {
         e.stopPropagation();

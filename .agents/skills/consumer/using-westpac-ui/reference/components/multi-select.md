@@ -78,4 +78,4 @@ const countries = [
 
 Filtering only matches `textValue`, so typing `NZ` does not find "New Zealand +64".
 
-**Capabilities:** Multiple or single (`selectionMode="single"`) selection · Filtering · Sections · Item descriptions · Alternative selected text via `displayValue` · Built on internal selection state
+**Capabilities:** Multiple or single (`selectionMode="single"`) selection · Filtering · Sections · Item descriptions · Alternative selected text via `displayValue` · Built on internal selection state · Forwards ref to the trigger button (so `field.ref` from react-hook-form can focus it)

@@ -4,6 +4,8 @@
 
 Toggle switch control.
 
+**Capabilities:** Built on react-aria · Forwards ref to the switch `<input>` (so `field.ref` from react-hook-form can focus it)
+
 **Incorrect (children instead of the required `label` prop)**
 
 ```tsx

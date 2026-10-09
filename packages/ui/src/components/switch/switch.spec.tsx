@@ -1,5 +1,6 @@
 import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef } from 'react';
 
 import { Switch } from './switch.component.js';
 
@@ -27,5 +28,20 @@ describe('Switch', () => {
     const { getByLabelText } = render(<Switch label="onChange" onChange={onChange} />);
     await act(() => user.click(getByLabelText('onChange')));
     expect(onChange).toBeCalled();
+  });
+
+  describe('ref', () => {
+    it('points at the switch input', () => {
+      const ref = createRef<HTMLInputElement>();
+      const { getByLabelText } = render(<Switch ref={ref} label="test switch" />);
+      expect(ref.current).toBe(getByLabelText('test switch'));
+    });
+
+    it('focus() moves focus to the switch input', () => {
+      const ref = createRef<HTMLInputElement>();
+      const { getByLabelText } = render(<Switch ref={ref} label="test switch" />);
+      act(() => ref.current?.focus());
+      expect(getByLabelText('test switch')).toHaveFocus();
+    });
   });
 });

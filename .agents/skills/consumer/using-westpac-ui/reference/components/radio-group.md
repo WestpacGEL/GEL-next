@@ -25,4 +25,28 @@ Group of radio buttons.
 />
 ```
 
-**Capabilities:** Responsive size/orientation · Error/hint messages · Built on react-aria · Similar API to CheckboxGroup
+**Capabilities:** Responsive size/orientation · Error/hint messages · Built on react-aria · Similar API to CheckboxGroup · `ref` is a `FocusHandle` (`{ focus() }`): `focus()` moves focus to the group's tab stop (the selected radio, or the first enabled radio) — pass `field.ref` from react-hook-form so validation errors focus the field
+
+**With react-hook-form** (pass `field.ref` so validation errors focus the group)
+
+```tsx
+<Controller
+  control={control}
+  name="colour"
+  rules={{ required: 'Choose a colour' }}
+  render={({ field, fieldState }) => (
+    <RadioGroup
+      ref={field.ref}
+      label="Colour"
+      value={field.value}
+      onChange={field.onChange}
+      isInvalid={fieldState.invalid}
+      errorMessage={fieldState.error?.message}
+      radios={[
+        { value: 'red', label: 'Red' },
+        { value: 'blue', label: 'Blue' },
+      ]}
+    />
+  )}
+/>
+```
