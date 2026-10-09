@@ -1,5 +1,8 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef } from 'react';
+
+import { FocusHandle } from '../../hook/focus-manager-ref.hook.js';
 
 import { CheckboxGroup } from './checkbox-group.component.js';
 
@@ -106,5 +109,48 @@ describe('CheckboxGroup', () => {
     await act(() => user.click(getByRole('checkbox', { name: 'Option 1' })));
     await act(() => user.click(getByRole('checkbox', { name: 'Option 2' })));
     expect(getAllByRole('checkbox', { checked: true }).length).toBe(2);
+  });
+
+  describe('ref', () => {
+    it('focus() skips disabled checkboxes and focuses the first enabled one', () => {
+      const ref = createRef<FocusHandle>();
+      render(
+        <CheckboxGroup
+          ref={ref}
+          label="test"
+          checkboxes={[
+            { value: 'Option 1', label: 'Option 1', isDisabled: true },
+            { value: 'Option 2', label: 'Option 2' },
+          ]}
+        />,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByRole('checkbox', { name: 'Option 2' })).toHaveFocus();
+    });
+
+    it('focus() works when checkboxes are added after mount', () => {
+      const ref = createRef<FocusHandle>();
+      const { rerender } = render(<CheckboxGroup ref={ref} label="test" checkboxes={[]} />);
+      rerender(<CheckboxGroup ref={ref} label="test" checkboxes={[{ value: 'Option 1', label: 'Option 1' }]} />);
+      act(() => ref.current?.focus());
+      expect(screen.getByRole('checkbox', { name: 'Option 1' })).toHaveFocus();
+    });
+
+    it('show more moves focus to the first revealed checkbox', async () => {
+      const user = userEvent.setup();
+      render(
+        <CheckboxGroup
+          showAmount={1}
+          label="test"
+          checkboxes={[
+            { value: 'Option 1', label: 'Option 1' },
+            { value: 'Option 2', label: 'Option 2' },
+            { value: 'Option 3', label: 'Option 3' },
+          ]}
+        />,
+      );
+      await act(() => user.click(screen.getByText('Show 2 more items')));
+      expect(screen.getByRole('checkbox', { name: 'Option 2' })).toHaveFocus();
+    });
   });
 });

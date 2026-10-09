@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -293,6 +293,7 @@
   "dependencies": {
     "@internationalized/date": "^3.12.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
+    "@react-aria/focus": "~3.21.5",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
     "clsx": "^1.2.1",
