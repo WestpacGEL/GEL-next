@@ -25,15 +25,16 @@ export function CompactaItem({
   expandOnMount = true,
   ...props
 }: CompactaItemProps) {
-  const { totalItems } = useCompacta();
+  const { totalItems, hasInteracted } = useCompacta();
   const state = useDisclosureState(props);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const { buttonProps: triggerProps, panelProps } = useDisclosure(props, state, panelRef);
   const { buttonProps } = useButton(triggerProps, triggerRef);
   const { isFocusVisible, focusProps } = useFocusRing();
+  const { isFocusVisible: isContentFocusVisible, focusProps: contentFocusProps } = useFocusRing({ within: true });
 
-  const styles = compactaStyles({ isFocusVisible });
+  const styles = compactaStyles({ isFocusVisible, isContentFocusVisible });
 
   useEffect(() => {
     if (expandOnMount) {
@@ -89,8 +90,8 @@ export function CompactaItem({
               transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0], delay }}
               aria-hidden={!state.isExpanded}
             >
-              <FocusScope autoFocus restoreFocus>
-                <div className={styles.content()} ref={panelRef} {...panelProps}>
+              <FocusScope autoFocus={hasInteracted} restoreFocus>
+                <div className={styles.content()} ref={panelRef} {...mergeProps(panelProps, contentFocusProps)}>
                   {children}
                   {onRemove && (
                     <Button

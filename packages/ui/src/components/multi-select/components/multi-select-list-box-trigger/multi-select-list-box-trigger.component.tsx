@@ -6,10 +6,17 @@ import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { Button } from '../../../button/button.component.js';
 import { DropDownIcon, ClearIcon } from '../../../icon/index.js';
 import { Tooltip } from '../../../tooltip/tooltip.component.js';
+import { VisuallyHidden } from '../../../visually-hidden/visually-hidden.component.js';
 import { MultiSelectContext } from '../../multi-select.component.js';
 
 import { styles as triggerStyles } from './multi-select-list-box-trigger.styles.js';
 import { MultiSelectListBoxTriggerProps } from './multi-select-list-box-trigger.types.js';
+
+import type { MultiSelectItemProps } from '../../multi-select.types.js';
+import type { Node } from '@react-types/shared';
+
+// value is shown in the field, tooltip is the textValue shown in the tooltip and read by screen readers
+type SelectedValue = { key: string; value: string | undefined; tooltip: string | undefined };
 
 export function MultiSelectListBoxTrigger<T>({
   placeholder,
@@ -24,7 +31,7 @@ export function MultiSelectListBoxTrigger<T>({
   const breakpoint = useBreakpoint();
   const { buttonProps } = useButton(triggerProps, buttonRef);
   const { focusProps, isFocusVisible } = useFocusRing();
-  const [selectedValues, setSelectedValues] = useState<{ key: string; value: string | undefined }[]>([]);
+  const [selectedValues, setSelectedValues] = useState<SelectedValue[]>([]);
   const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined);
 
   const finalButtonProps = mergeProps(focusProps, buttonProps);
@@ -62,15 +69,17 @@ export function MultiSelectListBoxTrigger<T>({
     if (!selectedKeys || typeof selectedKeys === 'string' || (selectedKeys instanceof Set && selectedKeys.size === 0)) {
       setSelectedValues([]);
     } else {
-      const currentMap = new Map(selectedValues.map(item => [item.key, item.value]));
+      const currentMap = new Map(selectedValues.map(item => [item.key, item]));
 
-      // manages the selected values that should be displayed to work with filtering
-      const next: { key: string; value: string | undefined }[] = [];
+      const next: SelectedValue[] = [];
       for (const key of [...selectedKeys] as string[]) {
-        if (currentMap.has(key)) {
-          next.push({ key, value: currentMap.get(key) });
+        const current = currentMap.get(key);
+        if (current) {
+          next.push(current);
         } else {
-          next.push({ key, value: listState.collection.getItem(key)?.textValue });
+          const item: (Omit<Node<object>, 'props'> & { props?: Pick<MultiSelectItemProps, 'displayValue'> }) | null =
+            listState.collection.getItem(key);
+          next.push({ key, value: item?.props?.displayValue ?? item?.textValue, tooltip: item?.textValue });
         }
       }
 
@@ -87,14 +96,17 @@ export function MultiSelectListBoxTrigger<T>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedKeys]);
 
-  const valuesString =
+  const formatValues = (field: 'value' | 'tooltip') =>
     selectionMode === 'single' && selectedValues.length > 0 && showSingleSectionTitle && sectionTitle
-      ? `${sectionTitle}: ${selectedValues[0].value}`
-      : selectedValues.map(node => node.value || '').join(', ');
+      ? `${sectionTitle}: ${selectedValues[0][field]}`
+      : selectedValues.map(item => item[field] || '').join(', ');
+
+  const valuesString = formatValues('value');
+  const tooltipString = formatValues('tooltip');
 
   return (
     <>
-      <Tooltip tooltip={valuesString} position="top">
+      <Tooltip tooltip={tooltipString} position="top">
         <div className={styles.buttonContainer()}>
           <button
             className={styles.control()}
@@ -110,7 +122,17 @@ export function MultiSelectListBoxTrigger<T>({
           >
             {/* Selected items */}
             <div className={styles.selection()}>
-              <span className={styles.selectionSpan()}>{selectedValues.length > 0 ? valuesString : placeholder}</span>
+              {selectedValues.length > 0 ? (
+                <>
+                  {/* Visible text may use displayValue, so screen readers get the textValue instead */}
+                  <span aria-hidden="true" className={styles.selectionSpan()}>
+                    {valuesString}
+                  </span>
+                  <VisuallyHidden tag="span">{tooltipString}</VisuallyHidden>
+                </>
+              ) : (
+                <span className={styles.selectionSpan()}>{placeholder}</span>
+              )}
             </div>
 
             {/* dropdown toggle */}

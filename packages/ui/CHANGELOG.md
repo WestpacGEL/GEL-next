@@ -1,5 +1,18 @@
 # @westpac/ui
 
+## 1.20.0
+
+### Minor Changes
+
+- 79f4109: Add optional display text value to the multiselect component
+- c91cc6f: Added polymorphic rendering to the breadcrumb component. Note that adding href on an item without a link tag will generate a type error - specify the tag to fix.
+  Link now applied RouterProvider's useHref to the rendered href of native anchors.
+
+### Patch Changes
+
+- 9938a84: Prevents Compacta from adding focus ring when input is clicked. Prevents Compacta from focusing upon initial page load.
+- 0387979: Fixed MultiSelect dropdown not following its trigger when surrounding content shifts the layout while the dropdown is open.
+
 ## 1.19.0
 
 ### Minor Changes

@@ -11,7 +11,7 @@ import { TooltipProps } from './tooltip.types.js';
 export function Tooltip({ children, disabled, tooltip, id, className, position = 'bottom' }: TooltipProps) {
   const localId = useId();
   const [isOpen, setIsOpen] = useState(false);
-  const tooltipWaitTime = useRef<NodeJS.Timeout | null>(null);
+  const tooltipWaitTime = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Escape' && isOpen) {

@@ -3,6 +3,7 @@
 import React, { useContext, useLayoutEffect, useMemo } from 'react';
 import { DismissButton, mergeProps, Overlay, usePopover } from 'react-aria';
 
+import { useRepositionOnTriggerMove } from '../../../../hook/reposition-on-trigger-move.hook.js';
 import { MultiSelectContext } from '../../multi-select.component.js';
 
 import { styles as popoverStyles } from './multi-select-popover.styles.js';
@@ -24,6 +25,9 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Keeps the dropdown attached to the trigger if surrounding content shifts the layout while it is open
+  const shouldUpdatePosition = useRepositionOnTriggerMove(buttonRef, popoverRef, overlayState.isOpen);
+
   // react-aria assumes a non-modal popover never receives DOM focus, so it closes it whenever the page
   // scrolls (useOverlayPosition -> useCloseOnScroll via `state.close`). Focus does move into this popover
   // (filter input / options), and browsers may scroll the page when it does, which closed the dropdown
@@ -39,6 +43,7 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
       triggerRef: buttonRef,
       isNonModal: true,
       shouldFlip: true,
+      shouldUpdatePosition,
       shouldCloseOnInteractOutside: () => false, // need to manage accessibility manually due to complexity of component
       offset: 6,
     },
