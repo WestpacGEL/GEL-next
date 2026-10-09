@@ -358,6 +358,46 @@ export const SingleSelectWithSectionTitle = () => {
   );
 };
 
+const COUNTRY_CODE_OPTIONS: MultiSelectValue[] = [
+  { key: 'AU', textValue: 'Australia +61', displayValue: 'AU +61' },
+  { key: 'NZ', textValue: 'New Zealand +64', displayValue: 'NZ +64' },
+  { key: 'GB', textValue: 'United Kingdom +44', displayValue: 'GB +44' },
+  { key: 'US', textValue: 'United States +1', displayValue: 'US +1' },
+  { key: 'CA', textValue: 'Canada +1', displayValue: 'CA +1' },
+  { key: 'IN', textValue: 'India +91', displayValue: 'IN +91' },
+  { key: 'CN', textValue: 'China +86', displayValue: 'CN +86' },
+  { key: 'SG', textValue: 'Singapore +65', displayValue: 'SG +65' },
+  { key: 'JP', textValue: 'Japan +81', displayValue: 'JP +81' },
+  { key: 'FJ', textValue: 'Fiji +679', displayValue: 'FJ +679' },
+];
+
+/**
+ * > SingleSelect example using displayValue to show alternative text in the input when an item is selected
+ */
+export const SingleSelectWithDisplayValue = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+
+  return (
+    <Field label="Country code">
+      <MultiSelect
+        items={COUNTRY_CODE_OPTIONS}
+        selectionMode="single"
+        placeholder="Select country"
+        width={10}
+        listBoxProps={{ 'aria-label': 'country code options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+      >
+        {option => (
+          <MultiSelectItem key={option.key} textValue={option.textValue} displayValue={option.displayValue}>
+            {option.textValue}
+          </MultiSelectItem>
+        )}
+      </MultiSelect>
+    </Field>
+  );
+};
+
 /**
  * > Field example
  */
