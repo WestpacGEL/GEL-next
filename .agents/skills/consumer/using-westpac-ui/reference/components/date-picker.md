@@ -4,16 +4,21 @@
 
 Date selection with calendar popup.
 
-| Prop                | Type                                                           | Default       | Description            |
-| ------------------- | -------------------------------------------------------------- | ------------- | ---------------------- |
-| `size`              | `ResponsiveVariants<...>`                                      | —             | Input size             |
-| `block`             | `ResponsiveVariants<...>`                                      | —             | Full width             |
-| `separator`         | `string`                                                       | `"/"`         | Date field separator   |
-| `placement`         | `'top left' \| 'top right' \| 'bottom left' \| 'bottom right'` | `bottom left` | Calendar placement     |
-| `bottomSheetView`   | `boolean \| Partial<Record<Breakpoint, boolean>>`              | —             | Bottom sheet on mobile |
-| `disableWeekends`   | `boolean`                                                      | —             | Disable weekends       |
-| `disableDaysOfWeek` | `number[]`                                                     | —             | Disable specific days  |
-| `portalContainer`   | `Element`                                                      | —             | Portal container       |
+| Prop                | Type                                                           | Default       | Description                                                             |
+| ------------------- | -------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------- |
+| `size`              | `ResponsiveVariants<...>`                                      | —             | Input size                                                              |
+| `block`             | `ResponsiveVariants<...>`                                      | —             | Full width                                                              |
+| `separator`         | `string`                                                       | `"/"`         | Date field separator                                                    |
+| `placement`         | `'top left' \| 'top right' \| 'bottom left' \| 'bottom right'` | `bottom left` | Calendar placement                                                      |
+| `bottomSheetView`   | `boolean \| Partial<Record<Breakpoint, boolean>>`              | —             | Bottom sheet on mobile                                                  |
+| `minValue`          | `DateValue`                                                    | —             | Earliest selectable date; also sets the first year in the year dropdown |
+| `maxValue`          | `DateValue`                                                    | —             | Latest selectable date; also sets the last year in the year dropdown    |
+| `isDateUnavailable` | `(date: DateValue) => boolean`                                 | —             | Disable custom dates                                                    |
+| `disableWeekends`   | `boolean`                                                      | —             | Disable weekends                                                        |
+| `disableDaysOfWeek` | `number[]`                                                     | —             | Disable specific days                                                   |
+| `portalContainer`   | `Element`                                                      | —             | Portal container                                                        |
+
+Other React Aria `DatePicker` props (`value`, `defaultValue`, `onChange`, `isRequired`, `isInvalid`, `firstDayOfWeek`, etc.) are supported.
 
 **Incorrect (raw JS `Date`/string instead of a parsed value)**
 
@@ -31,7 +36,17 @@ import { parseDate } from '@internationalized/date';
 <DatePicker label="Date" bottomSheetView={{ initial: true, md: false }} />
 ```
 
-**Capabilities:** Responsive size/block · Calendar popup or bottom sheet (breakpoint-aware) · Disable specific days/weekends · Custom placement · Built on react-aria/react-stately DatePicker · Uses `@internationalized/date` for date values · Forwards ref to the first editable date segment (so `field.ref` from react-hook-form can focus it)
+**Restricting to a date range** (use `minValue`/`maxValue` rather than `isDateUnavailable`, so the year dropdown is limited too)
+
+```tsx
+import { getLocalTimeZone, today } from '@internationalized/date';
+
+const now = today(getLocalTimeZone());
+
+<DatePicker label="Date" minValue={now.subtract({ years: 5 })} maxValue={now.add({ years: 5 })} />;
+```
+
+**Capabilities:** Responsive size/block · Calendar popup or bottom sheet (breakpoint-aware) · Min/max date range (year dropdown limited to the range) · Disable specific days/weekends · Custom placement · Built on react-aria/react-stately DatePicker · Uses `@internationalized/date` for date values · Forwards ref to the first editable date segment (so `field.ref` from react-hook-form can focus it)
 
 **With react-hook-form** (pass `field.ref` so validation errors focus the field; default the value to `null`, not `''`)
 
