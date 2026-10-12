@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.20.1
+
+### Patch Changes
+
+- d761c80: Pass through the min/max date values to the date-picker.
+  Fixed props leaking to the DOM
+
 ## 1.20.0
 
 ### Minor Changes
