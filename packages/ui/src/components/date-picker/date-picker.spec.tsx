@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/deprecation */
 import { CalendarDate } from '@internationalized/date';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createRef } from 'react';
 import { I18nProvider } from 'react-aria';
@@ -82,6 +82,41 @@ describe('DatePicker component', () => {
       expect(button).toHaveAttribute('aria-disabled', 'true');
       expect(button.className).toContain('line-through');
     });
+  });
+
+  it('limits the year dropdown to the minValue/maxValue range', async () => {
+    render(
+      <DatePicker
+        value={new CalendarDate(2025, 7, 18)}
+        minValue={new CalendarDate(2023, 1, 1)}
+        maxValue={new CalendarDate(2027, 12, 31)}
+      />,
+    );
+    await act(async () => {
+      await user.click(screen.getByRole('button'));
+    });
+    const [, yearSelect] = within(screen.getByRole('dialog')).getAllByRole('combobox');
+    const years = within(yearSelect)
+      .getAllByRole('option')
+      .map(option => option.textContent);
+    expect(years).toEqual(['2023', '2024', '2025', '2026', '2027']);
+  });
+
+  it('only passes DOM props to the input div', () => {
+    render(
+      <DatePicker
+        label="Test Label"
+        data-testid="date-picker"
+        style={{ width: 200 }}
+        minValue={new CalendarDate(2023, 1, 1)}
+        maxValue={new CalendarDate(2027, 12, 31)}
+      />,
+    );
+    const inputDiv = screen.getByTestId('date-picker');
+    expect(inputDiv).toHaveStyle({ width: '200px' });
+    expect(inputDiv).not.toHaveAttribute('minValue');
+    expect(inputDiv).not.toHaveAttribute('maxValue');
+    expect(inputDiv).not.toHaveAttribute('label');
   });
 
   it('passes className correctly to input div', () => {
