@@ -167,6 +167,17 @@ export const DisabledDates: Story = {
 };
 
 /**
+ * > Min and max dates. Dates outside the range are disabled and the year dropdown only lists years within the range.
+ */
+export const MinMaxDates: Story = {
+  args: {},
+  render: () => {
+    const now = today(getLocalTimeZone());
+    return <DatePicker minValue={now.subtract({ years: 5 })} maxValue={now.add({ years: 5 })} />;
+  },
+};
+
+/**
  * > Disable weekends
  */
 export const DisabledWeekendsDates: Story = {
