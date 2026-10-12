@@ -178,6 +178,36 @@ export const MinMaxDates: Story = {
 };
 
 /**
+ * > Variations of min and max dates. The year dropdown starts at the min year and ends at the max year; when only one
+ * > is set, the other end shows the default 10 years either side of the focused date.
+ */
+export const MinMaxDateVariations: Story = {
+  args: {},
+  render: () => {
+    const now = today(getLocalTimeZone());
+    return (
+      <div className="flex flex-col space-y-2">
+        <Field label="Min date only (today onwards)">
+          <DatePicker minValue={now} />
+        </Field>
+        <Field label="Max date only (up to today)">
+          <DatePicker maxValue={now} />
+        </Field>
+        <Field label="Date of birth (1900 to 18 years ago)">
+          <DatePicker minValue={now.set({ year: 1900, month: 1, day: 1 })} maxValue={now.subtract({ years: 18 })} />
+        </Field>
+        <Field label="Within the next 30 days">
+          <DatePicker minValue={now} maxValue={now.add({ days: 30 })} />
+        </Field>
+        <Field label="Max date only (up to 5 years from today)">
+          <DatePicker maxValue={now.add({ years: 5 })} minValue={now} />
+        </Field>
+      </div>
+    );
+  },
+};
+
+/**
  * > Disable weekends
  */
 export const DisabledWeekendsDates: Story = {
