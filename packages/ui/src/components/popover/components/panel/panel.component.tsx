@@ -45,7 +45,15 @@ export function BasePanel({
   }, [state.isOpen]);
 
   return (
-    <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef} role="dialog">
+    <div
+      style={popoverPosition}
+      className={styles.popover()}
+      test-id="popover"
+      id={id}
+      ref={popoverRef}
+      role="dialog"
+      aria-label="Popover"
+    >
       <div className={styles.content()}>
         {heading && (
           <Tag className={styles.heading()} tabIndex={-1} ref={headingRef}>
