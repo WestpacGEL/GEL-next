@@ -15,6 +15,7 @@ export function BasePanel({
   heading,
   headingTag: Tag = 'h1',
   content,
+  'aria-labelledby': ariaLabelledBy,
   placement = 'top',
   id,
   triggerRef,
@@ -52,7 +53,7 @@ export function BasePanel({
       id={id}
       ref={popoverRef}
       role="dialog"
-      aria-label="Popover"
+      aria-labelledby={ariaLabelledBy}
     >
       <div className={styles.content()}>
         {heading && (
