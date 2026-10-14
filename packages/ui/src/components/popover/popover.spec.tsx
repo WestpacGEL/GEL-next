@@ -47,6 +47,25 @@ describe('Popover', () => {
     expect(getByText('test heading')).toBeInTheDocument();
   });
 
+  it('should name the trigger with the label prop and name the dialog from the trigger', () => {
+    const { getByRole } = render(
+      <Popover content={panelContent} icon={HelpIcon} label="More information about ABNs" open />,
+    );
+
+    expect(getByRole('button', { name: 'More information about ABNs' })).toBeInTheDocument();
+    expect(getByRole('dialog', { name: 'More information about ABNs' })).toBeInTheDocument();
+  });
+
+  it('should name the dialog from the trigger text when no label is passed', () => {
+    const { getByRole } = render(
+      <Popover content={panelContent} open>
+        Test
+      </Popover>,
+    );
+
+    expect(getByRole('dialog', { name: 'Test' })).toBeInTheDocument();
+  });
+
   it('should show the popover by default if open is passed as prop', () => {
     const { getByText } = render(
       <Popover content={panelContent} open>

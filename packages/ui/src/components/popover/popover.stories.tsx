@@ -37,7 +37,7 @@ export const Default = () => (
     <p className="typography-body-7 font-bold">
       Default display is the popover on top but will be bottom here due to not being enough space at top
     </p>
-    <Popover heading="Heading" content={popoverContent}>
+    <Popover heading="Heading" content={popoverContent} label="Click Me, default popover">
       Click Me
     </Popover>
   </>
@@ -49,6 +49,7 @@ export const Default = () => (
 export const IconTrigger: Story = {
   args: {
     icon: () => <HelpIcon color="hero" />,
+    label: 'Help information',
   },
 };
 
@@ -58,6 +59,7 @@ export const IconTrigger: Story = {
 export const DefaultOpen: Story = {
   args: {
     children: 'Click Me',
+    label: 'Click Me, default open',
     open: true,
   },
 };
@@ -68,6 +70,7 @@ export const DefaultOpen: Story = {
 export const NoHeading: Story = {
   args: {
     children: 'Click Me',
+    label: 'Click Me, no heading',
     open: true,
     heading: undefined,
   },
@@ -82,7 +85,7 @@ export const AsInlineLinkAppearance = () => (
     <p className="mb-4">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
-      <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+      <Popover linkStyling heading="Heading" content={popoverContent} size="small" label="Click here, inline paragraph">
         Click here.
       </Popover>{' '}
       To test popover.
@@ -94,7 +97,14 @@ export const AsInlineLinkAppearance = () => (
         <p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover linkStyling placement="bottom" heading="Heading" content={popoverContent} size="small">
+          <Popover
+            linkStyling
+            placement="bottom"
+            heading="Heading"
+            content={popoverContent}
+            size="small"
+            label="Click here, inline hint"
+          >
             Click here.
           </Popover>
         </p>
@@ -114,7 +124,14 @@ export const StackingOrderWithPortal = () => (
     <p className="mb-4 pb-[200px]">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
-      <Popover portal linkStyling heading="Heading" content={popoverContent} size="small">
+      <Popover
+        portal
+        linkStyling
+        heading="Heading"
+        content={popoverContent}
+        size="small"
+        label="Click here, portal paragraph"
+      >
         Click here.
       </Popover>{' '}
       To test popover.
@@ -126,7 +143,15 @@ export const StackingOrderWithPortal = () => (
         <p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover portal placement="bottom" linkStyling heading="Heading" content={popoverContent} size="small">
+          <Popover
+            portal
+            placement="bottom"
+            linkStyling
+            heading="Heading"
+            content={popoverContent}
+            size="small"
+            label="Click here, portal hint"
+          >
             Click here.
           </Popover>
         </p>
@@ -146,18 +171,18 @@ export const AutoAdjustment = () => (
       If no placement prop is used the popover will not automatically adjust itself to the top or bottom. It will always
       adjust it self if it is too close to either edge of the screen.
     </div>
-    <Popover heading="Heading" content={popoverContent}>
+    <Popover heading="Heading" content={popoverContent} label="Auto Bottom Popover information">
       Auto Bottom Popover
     </Popover>
     <div className="mt-[200px] flex flex-col">
       <div className="flex justify-between">
-        <Popover placement="bottom" heading="Heading" content={popoverContent}>
+        <Popover placement="bottom" heading="Heading" content={popoverContent} label="Left Popover information">
           Left Popover
         </Popover>
-        <Popover placement="bottom" heading="Heading" content={popoverContent}>
+        <Popover placement="bottom" heading="Heading" content={popoverContent} label="Center Popover information">
           Center Popover
         </Popover>
-        <Popover placement="bottom" heading="Heading" content={popoverContent}>
+        <Popover placement="bottom" heading="Heading" content={popoverContent} label="Right Popover information">
           Right Popover
         </Popover>
       </div>
@@ -176,24 +201,42 @@ export const PopoverPlacement = () => (
     </div>
     <div className="mt-[200px] flex flex-col space-y-2">
       <div className="flex justify-between">
-        <Popover placement="top" heading="Heading" content={popoverContent} open>
+        <Popover placement="top" heading="Heading" content={popoverContent} open label="Left Top Popover information">
           Left Top Popover
         </Popover>
-        <Popover placement="top" heading="Heading" content={popoverContent} open>
+        <Popover placement="top" heading="Heading" content={popoverContent} open label="Center Top Popover information">
           Center Top Popover
         </Popover>
-        <Popover placement="top" heading="Heading" content={popoverContent} open>
+        <Popover placement="top" heading="Heading" content={popoverContent} open label="Right Top Popover information">
           Right Top Popover
         </Popover>
       </div>
       <div className="flex justify-between">
-        <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+        <Popover
+          placement="bottom"
+          heading="Heading"
+          content={popoverContent}
+          open
+          label="Left Bottom Popover information"
+        >
           Left Bottom Popover
         </Popover>
-        <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+        <Popover
+          placement="bottom"
+          heading="Heading"
+          content={popoverContent}
+          open
+          label="Center Bottom Popover information"
+        >
           Center Bottom Popover
         </Popover>
-        <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+        <Popover
+          placement="bottom"
+          heading="Heading"
+          content={popoverContent}
+          open
+          label="Right Bottom Popover information"
+        >
           Right Bottom Popover
         </Popover>
       </div>
@@ -207,7 +250,15 @@ export const PopoverPlacement = () => (
 export const WhenThereIsALongScrollWithPortal = () => (
   <>
     <h3 className="mb-2 typography-body-7 font-bold">Inside paragraph</h3>
-    <Popover portal linkStyling heading="Heading" placement="top" content={popoverContent} size="small">
+    <Popover
+      portal
+      linkStyling
+      heading="Heading"
+      placement="top"
+      content={popoverContent}
+      size="small"
+      label="Click here portal top, flipped"
+    >
       Click here portal top. {`(Will appear on bottom as there is no space)`}
     </Popover>{' '}
     {[...Array(20)].map((_, index) => (
@@ -220,7 +271,15 @@ export const WhenThereIsALongScrollWithPortal = () => (
     <p className="mb-4">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
-      <Popover portal linkStyling heading="Heading" placement="top" content={popoverContent} size="small">
+      <Popover
+        portal
+        linkStyling
+        heading="Heading"
+        placement="top"
+        content={popoverContent}
+        size="small"
+        label="Click here portal top"
+      >
         Click here portal top.
       </Popover>{' '}
       To test popover.
@@ -228,7 +287,15 @@ export const WhenThereIsALongScrollWithPortal = () => (
     <p className="mb-4">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
-      <Popover portal linkStyling heading="Heading" placement="bottom" content={popoverContent} size="small">
+      <Popover
+        portal
+        linkStyling
+        heading="Heading"
+        placement="bottom"
+        content={popoverContent}
+        size="small"
+        label="Click here portal bottom"
+      >
         Click here portal bottom.
       </Popover>{' '}
       To test popover.
@@ -247,7 +314,15 @@ export const WhenThereIsALongScrollWithPortal = () => (
         <p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover portal linkStyling placement="bottom" heading="Heading" content={popoverContent} size="small">
+          <Popover
+            portal
+            linkStyling
+            placement="bottom"
+            heading="Heading"
+            content={popoverContent}
+            size="small"
+            label="Click here bottom placement"
+          >
             Click here. bottom placement
           </Popover>
         </p>
@@ -269,7 +344,15 @@ export const WhenThereIsALongScrollWithPortal = () => (
         <p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover portal placement="bottom" linkStyling heading="Heading" content={popoverContent} size="small">
+          <Popover
+            portal
+            placement="bottom"
+            linkStyling
+            heading="Heading"
+            content={popoverContent}
+            size="small"
+            label="Click here bottom, flipped"
+          >
             Click here bottom. {`(Will appear on top as there is no space)`}
           </Popover>
         </p>
