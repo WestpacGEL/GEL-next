@@ -20,6 +20,7 @@ export function Popover({
   headingTag,
   content,
   heading,
+  label,
   onClick = () => undefined,
   placement,
   look,
@@ -32,6 +33,7 @@ export function Popover({
 }: PopoverProps) {
   const state = useOverlayTriggerState({});
   const panelId = useId();
+  const triggerId = useId();
   const styles = popoverStyles({ linkStyling });
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const [isOpenDefault, setIsOpenDefault] = useState(open);
@@ -72,6 +74,8 @@ export function Popover({
         look={(icon && !children) || linkStyling ? 'link' : look}
         iconAfter={icon}
         soft={soft}
+        id={triggerId}
+        aria-label={label}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         aria-haspopup="dialog"
@@ -89,6 +93,7 @@ export function Popover({
           heading={heading ? heading : ''}
           headingTag={headingTag}
           content={content}
+          aria-labelledby={triggerId}
           state={state}
           id={panelId}
           triggerRef={ref}

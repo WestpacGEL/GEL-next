@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.20.1",
+  "version": "1.20.2",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -265,7 +265,7 @@
     "@westpac/style-config": "workspace:~",
     "@westpac/test-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
-    "adm-zip": ">=0.6.0",
+    "adm-zip": "^0.6.1",
     "chokidar": "^3.5.3",
     "cross-env": "~7.0.3",
     "csstype": "~3.1.3",
