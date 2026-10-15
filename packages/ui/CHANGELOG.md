@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.20.2
+
+### Patch Changes
+
+- f0f9647: Adjusted screenreader behaviour in the popover component
+
 ## 1.20.1
 
 ### Patch Changes
