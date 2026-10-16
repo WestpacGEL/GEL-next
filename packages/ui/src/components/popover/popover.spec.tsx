@@ -56,6 +56,16 @@ describe('Popover', () => {
     expect(getByRole('dialog', { name: 'More information about ABNs' })).toBeInTheDocument();
   });
 
+  it('should describe the dialog with its content', () => {
+    const { getByRole } = render(
+      <Popover content={panelContent} heading="test heading" open>
+        Test
+      </Popover>,
+    );
+
+    expect(getByRole('dialog')).toHaveAccessibleDescription(panelContent);
+  });
+
   it('should name the dialog from the trigger text when no label is passed', () => {
     const { getByRole } = render(
       <Popover content={panelContent} open>
