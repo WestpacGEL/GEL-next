@@ -1,11 +1,9 @@
-import React, { useMemo } from 'react';
-import { mergeProps, useFocusRing } from 'react-aria';
+import React from 'react';
+import { mergeProps } from 'react-aria';
 
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { Circle, VisuallyHidden } from '../../../index.js';
+import { BaseRopeStep } from '../base-rope-step/base-rope-step.component.js';
+import { useRopeStep } from '../base-rope-step/use-rope-step.hook.js';
 
-import { styles as progressRopeStyles } from './progress-rope-step.styles.js';
 import { type ProgressRopeStepProps } from './progress-rope-step.types.js';
 
 /**
@@ -15,70 +13,44 @@ export function ProgressRopeStep({
   className,
   current,
   visited,
-  tag: Tag = 'button',
   size = 'medium',
-  children,
   firstItem,
   lastItemInGroup,
   lastItemInRope,
   furthest,
   previousStepGroup,
+  text,
   ...props
 }: ProgressRopeStepProps) {
-  const state = useMemo(() => {
-    if (lastItemInRope && visited && current) {
-      return 'last-current';
-    }
-    if (lastItemInRope && visited) {
-      return 'last-visited';
-    }
-    if (current && visited) {
-      return 'current-visited';
-    }
-    if (current) {
-      return 'current';
-    }
-    if (visited) {
-      return 'visited';
-    }
-    return 'non-visited';
-  }, [current, lastItemInRope, visited]);
-  const { isFocusVisible, focusProps } = useFocusRing();
-  const breakpoint = useBreakpoint();
-
-  const styles = progressRopeStyles({
+  const { focusProps, state, styles } = useRopeStep({
     className,
-    state,
-    size: resolveResponsiveVariant(size, breakpoint),
+    current,
     firstItem,
+    furthest,
     lastItemInGroup,
-    lastItemInRope: lastItemInRope && !previousStepGroup,
-    lastItemInRopeGrouped: lastItemInRope && previousStepGroup,
-    furthestVisited: !current && furthest,
-    previousStepGroup: furthest && previousStepGroup,
-    isFocusVisible,
+    lastItemInRope,
+    previousStepGroup,
+    size,
+    variant: 'progress',
+    visited,
   });
 
-  const stateText = useMemo(() => {
-    if (current) {
-      return ', in progress';
-    }
-    if (visited || (!current && furthest)) {
-      return ', complete';
-    }
-    return ', not started';
-  }, [current, furthest, visited]);
-
   return (
-    <Tag
+    <button
+      type="button"
       className={styles.base({})}
       aria-current={current ? 'step' : false}
-      disabled={state === 'non-visited'}
+      disabled={state === 'non-visited' && !furthest}
       {...mergeProps(props, focusProps)}
     >
-      <Circle className={styles.circle()} aria-hidden="true" />
-      {children}
-      <VisuallyHidden>{stateText}</VisuallyHidden>
-    </Tag>
+      <BaseRopeStep
+        current={current}
+        visited={visited}
+        furthest={furthest}
+        styles={styles}
+        text={text}
+        variant="progress"
+      />
+    </button>
   );
 }
