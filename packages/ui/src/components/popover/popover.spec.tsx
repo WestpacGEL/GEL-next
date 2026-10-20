@@ -76,7 +76,7 @@ describe('Popover', () => {
     expect(getByText(panelContent)).toBeInTheDocument();
   });
 
-  it('should focus the heading on open and tab past the static content to the close button', async () => {
+  it('should focus the dialog on open and tab past the static content to the close button', async () => {
     const user = userEvent.setup();
     const { getByRole } = render(
       <Popover content={panelContent} heading="test heading">
@@ -85,7 +85,7 @@ describe('Popover', () => {
     );
 
     await user.click(getByRole('button', { name: 'Test' }));
-    await waitFor(() => expect(getByRole('heading', { name: 'test heading' })).toHaveFocus());
+    await waitFor(() => expect(getByRole('dialog', { name: 'Test' })).toHaveFocus());
 
     await user.tab();
     expect(getByRole('button', { name: 'Close popover' })).toHaveFocus();
