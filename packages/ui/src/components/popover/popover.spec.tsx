@@ -56,16 +56,6 @@ describe('Popover', () => {
     expect(getByRole('dialog', { name: 'More information about ABNs' })).toBeInTheDocument();
   });
 
-  it('should describe the dialog with its content', () => {
-    const { getByRole } = render(
-      <Popover content={panelContent} heading="test heading" open>
-        Test
-      </Popover>,
-    );
-
-    expect(getByRole('dialog')).toHaveAccessibleDescription(panelContent);
-  });
-
   it('should name the dialog from the trigger text when no label is passed', () => {
     const { getByRole } = render(
       <Popover content={panelContent} open>
@@ -84,6 +74,21 @@ describe('Popover', () => {
     );
 
     expect(getByText(panelContent)).toBeInTheDocument();
+  });
+
+  it('should focus the heading on open and tab past the static content to the close button', async () => {
+    const user = userEvent.setup();
+    const { getByRole } = render(
+      <Popover content={panelContent} heading="test heading">
+        Test
+      </Popover>,
+    );
+
+    await user.click(getByRole('button', { name: 'Test' }));
+    await waitFor(() => expect(getByRole('heading', { name: 'test heading' })).toHaveFocus());
+
+    await user.tab();
+    expect(getByRole('button', { name: 'Close popover' })).toHaveFocus();
   });
 
   it('should close popover when close button clicked', async () => {

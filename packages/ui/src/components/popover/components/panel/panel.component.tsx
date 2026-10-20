@@ -54,7 +54,6 @@ export function BasePanel({
       ref={popoverRef}
       role="dialog"
       aria-labelledby={ariaLabelledBy}
-      aria-describedby={`${id}-content`}
     >
       <div className={styles.content()}>
         {heading && (
@@ -62,7 +61,7 @@ export function BasePanel({
             {heading}
           </Tag>
         )}
-        <div className={styles.body()} id={`${id}-content`} tabIndex={heading ? 0 : -1} ref={bodyRef}>
+        <div className={styles.body()} id={`${id}-content`} tabIndex={-1} ref={bodyRef}>
           {content}
         </div>
         <Button
