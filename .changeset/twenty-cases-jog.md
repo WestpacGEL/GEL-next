@@ -2,4 +2,4 @@
 '@westpac/ui': patch
 ---
 
-Adjusted screenreader behaviour in the popover component
+Removed the manual focus from the popover component, which was causing a screen-reader double-read issue.
