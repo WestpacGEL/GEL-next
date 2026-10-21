@@ -56,9 +56,7 @@ export function BasePanel({
     >
       <div className={styles.content()}>
         {heading && <Tag className={styles.heading()}>{heading}</Tag>}
-        <div className={styles.body()} id={`${id}-content`}>
-          {content}
-        </div>
+        <div className={styles.body()}>{content}</div>
         <Button
           look="link"
           tag="button"

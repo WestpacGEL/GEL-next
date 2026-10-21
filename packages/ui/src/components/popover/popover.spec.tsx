@@ -66,14 +66,15 @@ describe('Popover', () => {
     expect(getByRole('dialog', { name: 'Test' })).toBeInTheDocument();
   });
 
-  it('should show the popover by default if open is passed as prop', () => {
-    const { getByText } = render(
+  it('should show the popover by default without taking focus if open is passed as prop', () => {
+    const { getByRole, getByText } = render(
       <Popover content={panelContent} open>
         Test
       </Popover>,
     );
 
     expect(getByText(panelContent)).toBeInTheDocument();
+    expect(getByRole('dialog')).not.toHaveFocus();
   });
 
   it('should focus the dialog on open and tab past the static content to the close button', async () => {
@@ -91,7 +92,7 @@ describe('Popover', () => {
     expect(getByRole('button', { name: 'Close popover' })).toHaveFocus();
   });
 
-  it('should close popover when close button clicked', async () => {
+  it('should close popover and return focus to the trigger when close button clicked', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(<Popover content={panelContent}>Test</Popover>);
     act(() => {
@@ -106,6 +107,7 @@ describe('Popover', () => {
     await waitFor(() => {
       expect(queryByText(panelContent)).not.toBeInTheDocument();
     });
+    expect(getByRole('button', { name: 'Test' })).toHaveFocus();
   });
 
   it('should close popover when esc key pressed', async () => {

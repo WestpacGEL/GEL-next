@@ -97,7 +97,7 @@ export function Popover({
           state={state}
           id={panelId}
           triggerRef={ref}
-          // Ensures popover heading doesn't get focused if default opened
+          // Ensures the dialog doesn't take focus if default opened
           open={isOpenDefault}
           onClose={() => {
             ref.current?.focus();
