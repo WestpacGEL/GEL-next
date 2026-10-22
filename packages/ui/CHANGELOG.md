@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.20.3
+
+### Patch Changes
+
+- 9db7ede: Removed the manual focus from the popover component, which was causing a screen-reader double-read issue.
+
 ## 1.20.2
 
 ### Patch Changes
