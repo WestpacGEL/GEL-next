@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 1.21.0
+
+### Minor Changes
+
+- 11fc34d: Added paperclip icon
+
+### Patch Changes
+
+- 0caba0c: Disabled months in the DatePicker dropdown that are out of range
+
 ## 1.20.3
 
 ### Patch Changes
