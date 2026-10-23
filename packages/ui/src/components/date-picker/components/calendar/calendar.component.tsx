@@ -56,6 +56,18 @@ export function Calendar({ value, ...props }: CalendarProps) {
     });
   }, [state.focusedDate.year, minYear, maxYear]);
 
+  const min = state.minValue;
+  const max = state.maxValue;
+  const isMonthOutOfRange = useCallback(
+    (year: number, month: number): boolean => {
+      return (
+        (!!min && (year < min.year || (year === min.year && month < min.month))) ||
+        (!!max && (year > max.year || (year === max.year && month > max.month)))
+      );
+    },
+    [min, max],
+  );
+
   const handleMonthChange = useCallback(
     (ev: ChangeEvent<HTMLSelectElement>) => {
       state.setFocusedDate(new CalendarDate(state.focusedDate.year, +ev.target.value, state.focusedDate.day));
@@ -76,7 +88,11 @@ export function Calendar({ value, ...props }: CalendarProps) {
         <div className="flex gap-3">
           <Select onChange={handleMonthChange} value={state.visibleRange.start.month}>
             {MONTHS.map(month => (
-              <option key={month.value} value={month.value}>
+              <option
+                key={month.value}
+                value={month.value}
+                disabled={isMonthOutOfRange(state.visibleRange.start.year, month.value)}
+              >
                 {month.label}
               </option>
             ))}

@@ -26,8 +26,6 @@ export function BasePanel({
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
   const breakpoint = useBreakpoint();
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const bodyRef = useRef<HTMLDivElement>(null);
   const { popoverPosition, arrowPosition, localPlacement } = usePanel({
     state,
     placement,
@@ -40,7 +38,7 @@ export function BasePanel({
   const styles = panelStyles({ placement: resolvedPlacement });
   useEffect(() => {
     if (state.isOpen && !open) {
-      (headingRef.current ?? bodyRef.current)?.focus();
+      popoverRef.current?.focus();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isOpen]);
@@ -53,17 +51,12 @@ export function BasePanel({
       id={id}
       ref={popoverRef}
       role="dialog"
+      tabIndex={-1}
       aria-labelledby={ariaLabelledBy}
     >
       <div className={styles.content()}>
-        {heading && (
-          <Tag className={styles.heading()} tabIndex={-1} ref={headingRef}>
-            {heading}
-          </Tag>
-        )}
-        <div className={styles.body()} id="popover-content" tabIndex={heading ? 0 : -1} ref={bodyRef}>
-          {content}
-        </div>
+        {heading && <Tag className={styles.heading()}>{heading}</Tag>}
+        <div className={styles.body()}>{content}</div>
         <Button
           look="link"
           tag="button"

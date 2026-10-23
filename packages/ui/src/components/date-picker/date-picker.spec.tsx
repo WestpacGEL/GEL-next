@@ -102,6 +102,80 @@ describe('DatePicker component', () => {
     expect(years).toEqual(['2023', '2024', '2025', '2026', '2027']);
   });
 
+  describe('month dropdown', () => {
+    const getEnabledMonths = () => {
+      const [monthSelect] = within(screen.getByRole('dialog')).getAllByRole('combobox');
+      return within(monthSelect)
+        .getAllByRole<HTMLOptionElement>('option')
+        .filter(option => !option.disabled)
+        .map(option => option.textContent);
+    };
+
+    it.each([
+      {
+        name: 'disables months before minValue, keeping the partially available min month',
+        value: new CalendarDate(2025, 3, 20),
+        minValue: new CalendarDate(2025, 3, 15),
+        maxValue: undefined,
+        expected: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      },
+      {
+        name: 'disables months after maxValue, keeping the partially available max month',
+        value: new CalendarDate(2025, 9, 5),
+        minValue: undefined,
+        maxValue: new CalendarDate(2025, 9, 10),
+        expected: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      },
+      {
+        name: 'only enables months between minValue and maxValue in the same year',
+        value: new CalendarDate(2025, 6, 1),
+        minValue: new CalendarDate(2025, 3, 15),
+        maxValue: new CalendarDate(2025, 9, 10),
+        expected: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      },
+      {
+        name: 'enables every month in a year strictly between minValue and maxValue',
+        value: new CalendarDate(2025, 7, 18),
+        minValue: new CalendarDate(2024, 10, 1),
+        maxValue: new CalendarDate(2026, 2, 1),
+        expected: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      },
+      {
+        name: 'enables every month without minValue or maxValue',
+        value: new CalendarDate(2025, 7, 18),
+        minValue: undefined,
+        maxValue: undefined,
+        expected: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      },
+    ])('$name', async ({ value, minValue, maxValue, expected }) => {
+      render(<DatePicker value={value} minValue={minValue} maxValue={maxValue} />);
+      await act(async () => {
+        await user.click(screen.getByRole('button'));
+      });
+      expect(getEnabledMonths()).toEqual(expected);
+    });
+
+    it('updates the disabled months when the visible year changes', async () => {
+      render(
+        <DatePicker
+          value={new CalendarDate(2026, 7, 18)}
+          minValue={new CalendarDate(2025, 3, 15)}
+          maxValue={new CalendarDate(2026, 9, 10)}
+        />,
+      );
+      await act(async () => {
+        await user.click(screen.getByRole('button'));
+      });
+      expect(getEnabledMonths()).toEqual(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']);
+
+      const [, yearSelect] = within(screen.getByRole('dialog')).getAllByRole('combobox');
+      await act(async () => {
+        await user.selectOptions(yearSelect, '2025');
+      });
+      expect(getEnabledMonths()).toEqual(['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+    });
+  });
+
   it('only passes DOM props to the input div', () => {
     render(
       <DatePicker
