@@ -62,6 +62,10 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
     return reference.split('.').reduce((value, key) => value[key], primitives).$value;
   };
   const allBrands = JSON.parse(read('tokens/w3c/all-brands.json'));
+  const combinedColors = resources(read('tokens/android/all-brands/all-colors.xml'), 'color');
+  assert.equal(combinedColors.westpacLightModeBackgroundWhite, '#ffffff');
+  assert.equal(combinedColors.westpacLightModeBorderHero, '#1f1c4f');
+  assert.equal(combinedColors.westpacLightModeDataAOpacity, '#80da1710');
 
   for (const { themeName, brandCode: brand } of brands) {
     const enumName = brand.toUpperCase();
@@ -111,10 +115,7 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
       ]) {
         const expected = resolve(source.color[group][name]).toLowerCase();
         const nativeName = name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-        assert.equal(
-          nativeColors[brand + nativeName[0].toUpperCase() + nativeName.slice(1)],
-          `#ff${expected.slice(1)}`,
-        );
+        assert.equal(nativeColors[brand + nativeName[0].toUpperCase() + nativeName.slice(1)], expected);
         const channels = expected
           .slice(1)
           .match(/../g)
