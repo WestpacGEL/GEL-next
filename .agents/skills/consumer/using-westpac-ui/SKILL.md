@@ -132,7 +132,7 @@ Tokens are exposed as semantic, purpose-named classes. Common groups:
 | Typography | `typography-body-8`, `typography-brand-4`                                    | Font size / line-height sets    |
 | Radius     | `rounded-md`, `rounded-lg`, `rounded-full`                                   | Border radius                   |
 
-Because tokens are semantic and brand-aware, the **same class name automatically resolves to the correct value** for whichever brand is active (`data-brand="wbc" | "stg" | "bom" | "bsa"`). This is exactly why hardcoded values must never be used — they break brand theming.
+Because tokens are semantic and brand-aware, the **same class name automatically resolves to the correct value** for whichever brand is active (`data-brand="wbc" | "stg" | "bom" | "bsa"`). Import the matching `@westpac/style-config/themes/<brand>` stylesheet. This is exactly why hardcoded values must never be used — they break brand theming.
 
 > **Never invent your own tokens or hardcode values.** Only use existing style decisions exposed by `@westpac/style-config`. Do not use hex codes, RGB values, arbitrary Tailwind values (e.g. `bg-[#da1710]`), custom CSS variables, or your own utility classes for colour, typography, spacing, or radius. If a token you need doesn't appear to exist, do not create a workaround — this is likely a design decision.
 
@@ -235,7 +235,7 @@ function MyComponent() {
 
 Returns helpers for dark mode: `getMode()`, `setMode()`, `toggleDarkMode()`, `getBrand()`, `getSystemPreference()`.
 
-> **Note:** Dark mode is disabled in the current release.
+Dark tokens are available for WBC, STG, BSA and BOM. Web dark mode is opt-in: set `data-theme="dark"` on the same element as `data-brand`. Missing `data-theme` or `data-theme="light"` uses light tokens, regardless of browser preferences. `getSystemPreference()` reads a preference; it does not apply it. Applications own selection and persistence.
 
 ## Reference Documentation
 

@@ -24,6 +24,7 @@
     "build:css": "node ./utils/transformers/css.cjs",
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
+    "test": "node --test ./utils/tokens.test.cjs",
     "build": "pnpm clean && pnpm build:style-dictionary && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
   },
   "repository": {

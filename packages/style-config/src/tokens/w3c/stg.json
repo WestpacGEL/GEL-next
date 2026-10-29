@@ -2214,6 +2214,983 @@
           }
         }
       }
+    },
+    "dark-mode": {
+      "color": {
+        "background": {
+          "background-white": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "If you need a white background use this token"
+          },
+          "background-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "If you need a grey background use this token. Note: this token replaces the current Background colour style."
+          },
+          "background-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background."
+          },
+          "background-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed"
+          },
+          "background-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed"
+          }
+        },
+        "surface": {
+          "surface-muted-vivid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for surfaces that need to be the same colour as body text (icons, arrows etc)."
+          },
+          "surface-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Muted colour style."
+          },
+          "surface-muted-strong": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.600}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-muted-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.700}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-muted-soft": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-muted-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode."
+          },
+          "surface-muted-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode."
+          },
+          "surface-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Primary colour style."
+          },
+          "surface-primary-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Hero colour style."
+          },
+          "surface-hero-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-pop": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines."
+          },
+          "surface-pop-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines."
+          },
+          "surface-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "surface-holler-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "surface-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for success alert components, do not use for anything else."
+          },
+          "surface-success-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here."
+          },
+          "surface-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for info alert components, do not use for anything else."
+          },
+          "surface-info-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for info alert components, do not use for anything else. Note: this surface should always be used with border-info-mild as shown here."
+          },
+          "surface-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for warning alert components, do not use for anything else."
+          },
+          "surface-warning-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for warning alert components, do not use for anything else. Note: this surface should always be used with border-warning-mild as shown here."
+          },
+          "surface-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for danger alert components, do not use for anything else."
+          },
+          "surface-danger-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for danger alert components, do not use for anything else. Note: this surface should always be used with border-danger-mild as shown here."
+          },
+          "surface-system-error": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for system alert components, do not use for anything else."
+          },
+          "surface-system-error-dark": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for system alert components, do not use for anything else."
+          },
+          "surface-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.black}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode."
+          },
+          "surface-reversed": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode."
+          }
+        },
+        "text": {
+          "text-body": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for paragraph text and UI elements - labels, buttons, inputs etc"
+          },
+          "text-heading": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications."
+          },
+          "text-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text that requires less emphasis like hint text etc."
+          },
+          "text-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token."
+          },
+          "text-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text that requires more emphasis, call outs, quotes etc."
+          },
+          "text-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "text-link": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands."
+          },
+          "text-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-system-error": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for system error alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.black}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Similar to surface-mono, text-mono is white in light mode and black in dark mode. It’s typically used for UI elements like buttons, tabs, panel heading etc."
+          },
+          "text-reversed": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Similar to surface-reversed, text-reversed is always white. Use with caution, in dark mode white creates too much contrast which defeats the object of reducing glare. Tip: Try using text-mono"
+          }
+        },
+        "border": {
+          "border-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-muted-strong": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc"
+          },
+          "border-muted-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.700}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "border-muted-soft": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc"
+          },
+          "border-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-pop": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "border-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-success-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.700}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-info-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.700}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success info messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-warning-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.700}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Must only be used for the Danger alert component."
+          },
+          "border-danger-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.700}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.black}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Similar to surface-mono, border-mono is white in light mode and black in dark mode."
+          },
+          "border-focus": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use with focus state keyboard navigation."
+          }
+        },
+        "data": {
+          "data-a-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-a-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-a-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-b-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-b-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-b-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-c-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-c-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-c-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-d-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-d-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-d-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-e-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.sing.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-e-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.sing.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-e-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.sing.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-f-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.dance.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-f-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.dance.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-f-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.dance.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          }
+        },
+        "pictogram": {
+          "surface-pictogram-base": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          },
+          "surface-pictogram-accent": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          }
+        },
+        "state": {
+          "surface-hover-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "surface-hover-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-hover-primary-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.900}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-primary-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-hover-hero-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "surface-active-hero-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "surface-hover-muted-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-muted-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.600}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-hover-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.black}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          }
+        }
+      },
+      "border": {
+        "radius": {
+          "rounded-none": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.0px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-sm": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.3px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-md": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.4px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-lg": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.5px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.6px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-2xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.8px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-3xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.12px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-4xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.16px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-5xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.24px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-full": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.999px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          }
+        }
+      }
     }
   }
 }
