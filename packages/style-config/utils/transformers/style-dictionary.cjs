@@ -68,6 +68,7 @@ function removePrefixes(tokenName, prefixes) {
 // ==============================
 
 const PREFIXES_TO_REMOVE_PRIMITIVES = ['-reserved', '-alias'];
+const TOKEN_MODES = ['light-mode', 'dark-mode'];
 
 StyleDictionary.registerFormat({
   name: 'css/mode-wrapped-all-brands',
@@ -82,11 +83,13 @@ StyleDictionary.registerFormat({
         return [...acc, newToken];
       }, []);
 
-    const lightTokensPerBrand = dictionary.allTokens
-      .filter(t => t.name.indexOf('light-mode') !== -1)
+    const tokensPerBrandAndMode = dictionary.allTokens
+      .filter(t => TOKEN_MODES.some(mode => t.path.includes(mode)))
       .reduce((acc, current) => {
-        const [splitBrand, tokenName] = current.name.split('-light-mode-');
+        const mode = TOKEN_MODES.find(mode => current.path.includes(mode));
+        const [splitBrand, tokenName] = current.name.split(`-${mode}-`);
         const brand = brands?.[splitBrand.replace('tokens-', '')] || splitBrand.replace('tokens-', '');
+        const selector = `[data-brand="${brand}"]${mode === 'dark-mode' ? '[data-theme="dark"]' : ''}`;
         const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
           .split('.')
           .join('-');
@@ -95,8 +98,8 @@ StyleDictionary.registerFormat({
         tokenNamePieces.splice(1, 1);
         return {
           ...acc,
-          [brand]: [
-            ...(acc[brand] || []),
+          [selector]: [
+            ...(acc[selector] || []),
             {
               ...current,
               name: tokenNamePieces.join('-'),
@@ -105,31 +108,6 @@ StyleDictionary.registerFormat({
           ],
         };
       }, {});
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // const darkTokensPerBrand = dictionary.allTokens
-    //   .filter(t => t.name.indexOf('dark-mode') !== -1)
-    //   .reduce((acc, current) => {
-    //     const [splitBrand, tokenName] = current.name.split('-dark-mode-');
-    //     const brand = brands?.[splitBrand.replace('tokens-', '')] || splitBrand.replace('tokens-', '');
-    //     const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
-    //       .split('.')
-    //       .join('-');
-    //     const finalTokenValue = `var(--${kebabCasedValue})`;
-    //     const tokenNamePieces = tokenName.split('-');
-    //     tokenNamePieces.splice(1, 1);
-    //     return {
-    //       ...acc,
-    //       [brand]: [
-    //         ...(acc[brand] || []),
-    //         {
-    //           ...current,
-    //           name: tokenNamePieces.join('-'),
-    //           $value: removePrefixes(finalTokenValue, PREFIXES_TO_REMOVE_PRIMITIVES),
-    //         },
-    //       ],
-    //     };
-    //   }, {});
 
     let output = '';
     output += '/**\n';
@@ -145,30 +123,15 @@ StyleDictionary.registerFormat({
       output += '}\n\n';
     }
 
-    // Light mode (default, wrapped in data-brand)
-    if (Object.entries(lightTokensPerBrand).length) {
-      Object.entries(lightTokensPerBrand).forEach(([brand, tokens]) => {
-        output += `[data-brand="${brand}"] {\n`;
-        tokens.forEach(token => {
-          const description = token.original.$description;
-          output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
-        });
-        output += '}\n\n';
+    // Light is the default; dark requires an explicit attribute on the brand scope.
+    Object.entries(tokensPerBrandAndMode).forEach(([selector, tokens]) => {
+      output += `${selector} {\n`;
+      tokens.forEach(token => {
+        const description = token.original.$description;
+        output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
       });
-    }
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // Dark mode (wrapped in selector)
-    // if (Object.entries(darkTokensPerBrand).length) {
-    //   Object.entries(darkTokensPerBrand).forEach(([brand, tokens]) => {
-    //     output += `[data-brand="${brand}"][data-theme="dark"] {\n`;
-    //     tokens.forEach(token => {
-    //       const description = token.original.$description;
-    //       output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
-    //     });
-    //     output += '}\n\n';
-    //   });
-    // }
+      output += '}\n\n';
+    });
     return output;
   },
 });
@@ -186,10 +149,11 @@ StyleDictionary.registerFormat({
         return [...acc, newToken];
       }, []);
 
-    const lightTokens = dictionary.allTokens
-      .filter(t => t.name.indexOf('light-mode') !== -1)
+    const semanticTokens = dictionary.allTokens
+      .filter(t => TOKEN_MODES.some(mode => t.path.includes(mode)))
       .map(current => {
-        const [, tokenName] = current.name.split('-light-mode-');
+        const mode = TOKEN_MODES.find(mode => current.path.includes(mode));
+        const [, tokenName] = current.name.split(`-${mode}-`);
         const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
           .split('.')
           .join('-');
@@ -203,24 +167,6 @@ StyleDictionary.registerFormat({
         };
       });
 
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // const darkTokens = dictionary.allTokens
-    //   .filter(t => t.name.indexOf('dark-mode') !== -1)
-    //   .map(current => {
-    //     const [, tokenName] = current.name.split('-dark-mode-');
-    //     const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
-    //       .split('.')
-    //       .join('-');
-    //     const finalTokenValue = `var(--${kebabCasedValue})`;
-    //     const tokenNamePieces = tokenName.split('-');
-    //     tokenNamePieces.splice(1, 1);
-    //     return {
-    //       ...current,
-    //       name: tokenNamePieces.join('-'),
-    //       $value: removePrefixes(finalTokenValue, PREFIXES_TO_REMOVE_PRIMITIVES),
-    //     };
-    //   });
-
     let output = '';
 
     if (primitiveTokens.length) {
@@ -232,26 +178,18 @@ StyleDictionary.registerFormat({
       output += '}\n\n';
     }
 
-    // Light mode (wrapped in data-brand)
-    if (lightTokens.length) {
-      output += `[data-brand="${options.brand}"] {\n`;
-      lightTokens.forEach(token => {
+    for (const mode of TOKEN_MODES) {
+      const tokens = semanticTokens.filter(token => token.path.includes(mode));
+      if (!tokens.length) continue;
+      const selector = `[data-brand="${options.brand}"]${mode === 'dark-mode' ? '[data-theme="dark"]' : ''}`;
+      output += `${selector} {\n`;
+      tokens.forEach(token => {
         const description = token.original.$description;
-        output += `  --${token.name.replace('light-mode-', '')}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
+        output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
       });
       output += '}\n\n';
     }
 
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // Dark mode (wrapped in selector)
-    // if (darkTokens.length) {
-    //   output += `[data-brand="${options.brand}"][data-theme="dark"] {\n`;
-    //   darkTokens.forEach(token => {
-    //     const description = token.original.$description;
-    //     output += `  --${token.name.replace('dark-mode-', '')}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
-    //   });
-    //   output += '}\n\n';
-    // }
     return output;
   },
 });
@@ -315,12 +253,12 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const lightTokens = dictionary.allTokens
-      .filter(t => t.path.includes('light-mode') && t.$type === 'color')
+    const semanticTokens = dictionary.allTokens
+      .filter(t => TOKEN_MODES.some(mode => t.path.includes(mode)) && t.$type === 'color')
       .map(current => {
         let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
-          let [, splittedTokenName] = tokenName.split('LightMode');
+          let [, splittedTokenName] = tokenName.split(/LightMode|DarkMode/);
           const tokenNamePieces = splitByUppercase(splittedTokenName);
           tokenNamePieces.splice(0, 1);
           tokenName = tokenNamePieces.join('');
@@ -334,27 +272,6 @@ StyleDictionary.registerFormat({
           name: pascalToCamel(tokenName),
         };
       });
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // const darkTokens = dictionary.allTokens
-    //   .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
-    //   .map(current => {
-    //     let tokenName = generateNameForIOSOrAndroid(current.key);
-    //     if (enumName !== 'AllBrands') {
-    //       let [, splittedTokenName] = tokenName.split('DarkMode');
-    //       const tokenNamePieces = splitByUppercase(splittedTokenName);
-    //       tokenNamePieces.splice(0, 1);
-    //       tokenName = tokenNamePieces.join('');
-    //     } else {
-    //       const tokenNamePieces = splitByUppercase(tokenName);
-    //       tokenNamePieces.splice(4, 1);
-    //       tokenName = tokenNamePieces.join('').replace('tokens', '');
-    //     }
-    //     return {
-    //       ...current,
-    //       name: pascalToCamel(tokenName),
-    //     };
-    //   });
 
     const primitiveColorEnum = `${enumName}PrimitivesColors`;
     let output = '';
@@ -371,20 +288,16 @@ StyleDictionary.registerFormat({
       output += '\n\n';
     }
 
-    output += `public enum ${enumName}LightColors {\n`;
-    lightTokens.forEach(lightToken => {
-      output += `  public static let ${lightToken.name} = ${lightToken.$value}\n`;
-    });
-    output += '}\n';
-
-    output += '\n\n';
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // output += `public enum ${enumName}DarkColors {\n`;
-    // darkTokens.forEach(darkToken => {
-    //   output += `  public static let ${darkToken.name} = ${darkToken.$value}\n`;
-    // });
-    // output += '}\n';
+    for (const mode of TOKEN_MODES) {
+      const modeName = mode === 'light-mode' ? 'Light' : 'Dark';
+      output += `public enum ${enumName}${modeName}Colors {\n`;
+      semanticTokens
+        .filter(token => token.path.includes(mode))
+        .forEach(token => {
+          output += `  public static let ${token.name} = ${token.$value}\n`;
+        });
+      output += '}\n\n\n';
+    }
 
     if (enumName === 'AllBrands') {
       return output;
@@ -392,6 +305,7 @@ StyleDictionary.registerFormat({
 
     output += '\n\n';
     output += `public enum ${enumName}Colors {\n`;
+    const lightTokens = semanticTokens.filter(token => token.path.includes('light-mode'));
     lightTokens.forEach(lightToken => {
       output += `  public static var ${lightToken.name}: UIColor {\n`;
       output += `    return UIColor { traitCollection in\n`;
@@ -426,12 +340,12 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const lightTokens = dictionary.allTokens
-      .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
+    const semanticTokens = dictionary.allTokens
+      .filter(t => TOKEN_MODES.some(mode => t.path.includes(mode)) && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
         let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
-          let [, splittedTokenName] = tokenName.split('LightMode');
+          let [, splittedTokenName] = tokenName.split(/LightMode|DarkMode/);
           const tokenNamePieces = splitByUppercase(splittedTokenName);
           tokenNamePieces.splice(1, 1);
           tokenName = tokenNamePieces.join('');
@@ -445,27 +359,6 @@ StyleDictionary.registerFormat({
           name: tokenName,
         };
       });
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // const darkTokens = dictionary.allTokens
-    //   .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
-    //   .map(current => {
-    //     let tokenName = generateNameForIOSOrAndroid(current.key);
-    //     if (enumName !== 'AllBrands') {
-    //       let [, splittedTokenName] = tokenName.split('DarkMode');
-    //       const tokenNamePieces = splitByUppercase(splittedTokenName);
-    //       tokenNamePieces.splice(1, 1);
-    //       tokenName = tokenNamePieces.join('');
-    //     } else {
-    //       const tokenNamePieces = splitByUppercase(tokenName);
-    //       tokenNamePieces.splice(4, 1);
-    //       tokenName = tokenNamePieces.join('').replace('Tokens', '');
-    //     }
-    //     return {
-    //       ...current,
-    //       name: tokenName,
-    //     };
-    //   });
 
     let output = '';
     output += `// Do not edit directly, this file was auto-generated.\n\n`;
@@ -481,20 +374,16 @@ StyleDictionary.registerFormat({
       output += '\n\n';
     }
 
-    output += `public enum ${enumName}LightDimensions {\n`;
-    lightTokens.forEach(lightToken => {
-      output += `  public static let ${lightToken.name} = ${lightToken.$value}\n`;
-    });
-    output += '}\n';
-
-    output += '\n\n';
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // output += `public enum ${enumName}DarkDimensions {\n`;
-    // darkTokens.forEach(darkToken => {
-    //   output += `  public static let ${darkToken.name} = ${darkToken.$value}\n`;
-    // });
-    // output += '}\n';
+    for (const mode of TOKEN_MODES) {
+      const modeName = mode === 'light-mode' ? 'Light' : 'Dark';
+      output += `public enum ${enumName}${modeName}Dimensions {\n`;
+      semanticTokens
+        .filter(token => token.path.includes(mode))
+        .forEach(token => {
+          output += `  public static let ${token.name} = ${token.$value}\n`;
+        });
+      output += '}\n\n\n';
+    }
 
     if (enumName === 'AllBrands') {
       return output;
@@ -502,6 +391,7 @@ StyleDictionary.registerFormat({
 
     output += '\n\n';
     output += `public enum ${enumName}Dimensions {\n\n`;
+    const lightTokens = semanticTokens.filter(token => token.path.includes('light-mode'));
     lightTokens.forEach(lightToken => {
       output += `  public static var ${lightToken.name}: Double {\n`;
       output += `    switch UIScreen.main.traitCollection.userInterfaceStyle {\n`;
@@ -530,12 +420,12 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const lightTokens = dictionary.allTokens
-      .filter(t => t.path.includes('light-mode') && t.$type === 'color')
+    const semanticTokens = dictionary.allTokens
+      .filter(t => TOKEN_MODES.some(mode => t.path.includes(mode)) && t.$type === 'color')
       .map(current => {
         let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
-          let [, splittedTokenName] = tokenName.split('LightMode');
+          let [, splittedTokenName] = tokenName.split(/LightMode|DarkMode/);
           const tokenNamePieces = splitByUppercase(splittedTokenName);
           tokenNamePieces.splice(0, 1);
           tokenName = [brandName, ...tokenNamePieces].join('');
@@ -549,27 +439,6 @@ StyleDictionary.registerFormat({
           name: tokenName,
         };
       });
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // const darkTokens = dictionary.allTokens
-    //   .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
-    //   .map(current => {
-    //     let tokenName = generateNameForIOSOrAndroid(current.key);
-    //     if (brandName !== 'AllBrands') {
-    //       let [, splittedTokenName] = tokenName.split('DarkMode');
-    //       const tokenNamePieces = splitByUppercase(splittedTokenName);
-    //       tokenNamePieces.splice(0, 1);
-    //       tokenName = [brandName, ...tokenNamePieces].join('');
-    //     } else {
-    //       const tokenNamePieces = splitByUppercase(tokenName);
-    //       tokenNamePieces.splice(4, 1);
-    //       tokenName = [brandName, ...tokenNamePieces].join('').replace('Tokens', '');
-    //     }
-    //     return {
-    //       ...current,
-    //       name: tokenName,
-    //     };
-    //   });
 
     const primitiveDimensionEnum = `${brandName}PrimitivesDimension`;
     let output = '';
@@ -589,14 +458,10 @@ StyleDictionary.registerFormat({
       output += '\n\n';
     }
 
-    lightTokens.forEach(lightToken => {
-      output += `  <color name="${lightToken.name}">${lightToken.$value}</color>\n`;
+    // The destination's filter selects one mode, with the same resource names in values and values-night.
+    semanticTokens.forEach(token => {
+      output += `  <color name="${token.name}">${token.$value}</color>\n`;
     });
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // darkTokens.forEach(darkToken => {
-    //   output += `  <color name="${darkToken.name}">${darkToken.$value}</color>\n`;
-    // });
 
     output += '</resources>\n';
     return output;
@@ -619,12 +484,12 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const lightTokens = dictionary.allTokens
-      .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
+    const semanticTokens = dictionary.allTokens
+      .filter(t => TOKEN_MODES.some(mode => t.path.includes(mode)) && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
         let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
-          let [, splittedTokenName] = tokenName.split('LightMode');
+          let [, splittedTokenName] = tokenName.split(/LightMode|DarkMode/);
           const tokenNamePieces = splitByUppercase(splittedTokenName);
           tokenNamePieces.splice(1, 1);
           tokenName = [brandName, ...tokenNamePieces].join('');
@@ -639,27 +504,6 @@ StyleDictionary.registerFormat({
         };
       });
 
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // const darkTokens = dictionary.allTokens
-    //   .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
-    //   .map(current => {
-    //     let tokenName = generateNameForIOSOrAndroid(current.key);
-    //     if (brandName !== 'AllBrands') {
-    //       let [, splittedTokenName] = tokenName.split('DarkMode');
-    //       const tokenNamePieces = splitByUppercase(splittedTokenName);
-    //       tokenNamePieces.splice(1, 1);
-    //       tokenName = [brandName, ...tokenNamePieces].join('');
-    //     } else {
-    //       const tokenNamePieces = splitByUppercase(tokenName);
-    //       tokenNamePieces.splice(4, 1);
-    //       tokenName = [brandName, ...tokenNamePieces].join('').replace('Tokens', '');
-    //     }
-    //     return {
-    //       ...current,
-    //       name: tokenName,
-    //     };
-    //   });
-
     let output = '';
     output += '<?xml version="1.0" encoding="UTF-8"?>\n\n';
     output += '<!--\n';
@@ -673,14 +517,9 @@ StyleDictionary.registerFormat({
       });
     }
 
-    lightTokens.forEach(lightToken => {
-      output += `  <dimen name="${lightToken.name}">${lightToken.$value.toString().replace('dp', '')}dp</dimen>\n`;
+    semanticTokens.forEach(token => {
+      output += `  <dimen name="${token.name}">${token.$value.toString().replace('dp', '')}dp</dimen>\n`;
     });
-
-    // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-    // darkTokens.forEach(darkToken => {
-    //   output += `  <dimen name="${darkToken.name}">${darkToken.$value.toString().replace('dp', '')}dp</dimen>\n`;
-    // });
 
     output += '</resources>\n';
     return output;
@@ -734,10 +573,10 @@ StyleDictionary.registerTransform({
 
 const SRC_FOLDER = './src/tokens';
 
-const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, primitiveName }) => {
+const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, brandCode }) => {
   return {
     ...acc,
-    [pascalToKebab(themeName)]: primitiveName.toLowerCase(),
+    [pascalToKebab(themeName)]: brandCode,
   };
 }, {});
 
@@ -752,24 +591,15 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       'light-mode': token => {
         return token.path?.includes('light-mode');
       },
-      // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-      // 'dark-mode': token => {
-      //   return token.path?.includes('dark-mode');
-      // },
+      'dark-mode': token => {
+        return token.path?.includes('dark-mode');
+      },
       'light-mode-and-color': token => {
         return token.path?.includes('light-mode') && token.$type === 'color';
       },
-      // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-      // 'dark-mode-and-color': token => {
-      //   return token.path?.includes('dark-mode') && token.$type === 'color';
-      // },
       'light-mode-and-dimension': token => {
         return token.path?.includes('light-mode') && (token.$type === 'float' || token.$type === 'dimension');
       },
-      // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-      // 'dark-mode-and-dimension': token => {
-      //   return token.path?.includes('dark-mode') && (token.$type === 'float' || token.$type === 'dimension');
-      // },
     },
   },
   platforms: {
@@ -789,7 +619,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'size/pxToRem',
         'attribute/cti',
         'name/camel',
-        'color/hex',
+        'color/hex8android',
         'size/remToSp',
         'size/remToDp',
         'strip-android-prefix',
@@ -901,12 +731,6 @@ function processTokensSection(tokenSection, brands) {
  * Merges all token definitions into a resolved token tree.
  */
 function mergeTokens(tokens) {
-  // Get brands from the constants - using both themeName and primitiveName
-  const brands = BRANDS.map(b => ({
-    themeName: b.themeName,
-    primitiveName: b.primitiveName,
-  }));
-
   const result = { Tokens: {} };
 
   return tokens.reduce((acc, current) => {
@@ -922,12 +746,14 @@ function mergeTokens(tokens) {
         const tokenSection = {
           modes: {
             'Light mode': brandModes['light-mode'] || {},
-            // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-            // 'Dark mode': brandModes['dark-mode'] || {},
+            'Dark mode': brandModes['dark-mode'] || {},
           },
         };
 
-        const processedTokens = processTokensSectionWithBrand(tokenSection, brands);
+        // Use the collection name: inherited WBC references do not make WBC26 a WBC collection.
+        const brand = BRANDS.find(({ themeName }) => themeName === brandName);
+        if (!brand) return;
+        const processedTokens = processTokensSection(tokenSection, [brand]);
 
         // Merge the processed tokens into the accumulator
         Object.keys(processedTokens).forEach(brandKey => {
@@ -937,111 +763,6 @@ function mergeTokens(tokens) {
     }
     return acc;
   }, result);
-}
-
-/**
- * Processes brand-specific token sections with proper brand detection
- */
-function processTokensSectionWithBrand(tokenSection, brands) {
-  // The tokenSection contains modes with Light mode and Dark mode
-  // We need to determine which brand this token section belongs to by examining the token values
-  const result = {};
-
-  // Try to detect the brand by looking at the first token reference
-  let detectedBrand = null;
-  const firstToken = getFirstTokenValue(tokenSection);
-
-  if (firstToken && firstToken.$value && typeof firstToken.$value === 'string') {
-    const match = firstToken.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
-    if (match) {
-      const brandCode = match[1];
-      detectedBrand = brands.find(b => b.primitiveName.toUpperCase() === brandCode);
-    }
-  }
-
-  // If we can't detect the brand, fall back to processing all brands (old behavior)
-  if (!detectedBrand) {
-    return processTokensSection(tokenSection, brands);
-  }
-
-  // Process only the detected brand
-  const themeName = detectedBrand.themeName;
-  const primitiveName = detectedBrand.primitiveName;
-
-  result[themeName] = {};
-
-  Object.entries(tokenSection.modes).forEach(([modeName, groups]) => {
-    const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
-
-    result[themeName][normalizedMode] = Object.fromEntries(
-      // Skip "misc" group as they are figma related tokens
-      Object.entries(groups)
-        .filter(([propGroup]) => propGroup !== 'misc')
-        .map(([propGroup, categories]) => [
-          propGroup,
-          Object.fromEntries(
-            Object.entries(categories).map(([categoryName, tokens]) => [
-              categoryName,
-              Object.fromEntries(
-                Object.entries(tokens).map(([tokenName, tokenValue]) => [
-                  tokenName,
-                  applyValuePrefix(tokenValue, primitiveName),
-                ]),
-              ),
-            ]),
-          ),
-        ]),
-    );
-  });
-
-  return result;
-}
-
-/**
- * Helper function to get the first token value from a token section
- */
-function getFirstTokenValue(tokenSection) {
-  if (!tokenSection.modes) return null;
-
-  // Look for a brand-specific token first
-  for (const mode of Object.values(tokenSection.modes)) {
-    for (const group of Object.values(mode)) {
-      if (typeof group === 'object' && group !== null) {
-        for (const category of Object.values(group)) {
-          if (typeof category === 'object' && category !== null) {
-            for (const token of Object.values(category)) {
-              if (token && token.$value && token.$value.includes('Primitives.color.')) {
-                // Check if this is a brand-specific reference
-                const match = token.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
-                if (match) {
-                  return token; // Return the first brand-specific token found
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Fallback: return any token
-  for (const mode of Object.values(tokenSection.modes)) {
-    for (const group of Object.values(mode)) {
-      if (typeof group === 'object' && group !== null) {
-        for (const category of Object.values(group)) {
-          if (typeof category === 'object' && category !== null) {
-            for (const token of Object.values(category)) {
-              if (token && token.$value) {
-                return token;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  return null;
 }
 
 /**
@@ -1071,15 +792,21 @@ async function ensureFolderExists(folderPath) {
 /**
  * Creates a subset of tokens for a given brand.
  */
-function extractBrandTokens(themeName, primitiveName, tokens) {
+function extractBrandTokens(themeName, primitiveName, fallbackPrimitiveName, tokens) {
+  const brandPrimitives = {
+    [primitiveName]: tokens.Primitives.color[primitiveName],
+  };
+  if (fallbackPrimitiveName) {
+    brandPrimitives[fallbackPrimitiveName] = tokens.Primitives.color[fallbackPrimitiveName];
+  }
+
   return {
     Primitives: {
       border: tokens.Primitives.border, // Include all border primitives (shared across brands)
       color: {
         mono: tokens.Primitives.color.mono, // Include shared mono colors
         reserved: tokens.Primitives.color.reserved, // Include shared reserved colors
-        // Include only the specific brand's primitives for optimized file sizes
-        [primitiveName]: tokens.Primitives.color[primitiveName],
+        ...brandPrimitives,
       },
     },
     Tokens: tokens.Tokens[themeName],
@@ -1110,9 +837,8 @@ const LOG_CONFIG = {
   await baseDictionary.buildAllPlatforms();
 
   // Build per brand
-  for (const { themeName, primitiveName } of BRANDS) {
-    const brandTokens = extractBrandTokens(themeName, primitiveName, mergedTokens);
-    const brandName = primitiveName.toLowerCase();
+  for (const { themeName, primitiveName, fallbackPrimitiveName, brandCode: brandName } of BRANDS) {
+    const brandTokens = extractBrandTokens(themeName, primitiveName, fallbackPrimitiveName, mergedTokens);
     const brandFile = `${SRC_FOLDER}/w3c/${brandName}.json`;
 
     await saveJSON(brandFile, brandTokens);
@@ -1172,7 +898,7 @@ const LOG_CONFIG = {
             'size/pxToRem',
             'attribute/cti',
             'name/camel',
-            'color/hex',
+            'color/hex8android',
             'size/remToSp',
             'size/remToDp',
             'strip-android-prefix',
@@ -1185,26 +911,24 @@ const LOG_CONFIG = {
               options: { brandName },
               filter: 'light-mode',
             },
-            // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-            // {
-            //   destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_colors.xml`,
-            //   format: 'android/colors-custom',
-            //   options: { brandName },
-            //   filter: 'dark-mode',
-            // },
+            {
+              destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_colors.xml`,
+              format: 'android/colors-custom',
+              options: { brandName },
+              filter: 'dark-mode',
+            },
             {
               destination: `${SRC_FOLDER}/android/${brandName}/values/${brandName}_dimens.xml`,
               format: 'android/dimens-custom',
               options: { brandName },
               filter: 'light-mode',
             },
-            // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-            // {
-            //   destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_dimens.xml`,
-            //   format: 'android/dimens-custom',
-            //   options: { brandName },
-            //   filter: 'dark-mode',
-            // },
+            {
+              destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_dimens.xml`,
+              format: 'android/dimens-custom',
+              options: { brandName },
+              filter: 'dark-mode',
+            },
           ],
         },
       },

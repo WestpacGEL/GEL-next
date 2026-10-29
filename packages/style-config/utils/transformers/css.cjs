@@ -2,11 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
 const BRANDS = require(path.resolve(__dirname, '../../src/constants/brands.json'));
-const tokenModes = [
-  'light-mode',
-  // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-  // 'dark-mode'
-];
+const tokenModes = ['light-mode', 'dark-mode'];
 
 // --------------------------------------------------------------------------
 // Helpers
@@ -31,7 +27,7 @@ function refToVar(ref) {
   let match = ref.match(/\{Primitives\.color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, brand, color, shade] = match;
-    return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
+    return `var(--${brand.toLowerCase().replace(/\s+/g, '')}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
 
   // Handle border radius references: {Primitives.border.radius.value}
@@ -45,7 +41,7 @@ function refToVar(ref) {
   match = ref.match(/\{color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, brand, color, shade] = match;
-    return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
+    return `var(--${brand.toLowerCase().replace(/\s+/g, '')}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
 
   // Handle two-part color references: {color.palette.shade}
@@ -86,9 +82,10 @@ function extractPrimitives(tokens) {
   const colorsObj = {};
   if (primitives) {
     for (const parentKey in primitives) {
-      const colors = flattenColors(primitives[parentKey], parentKey.toLowerCase());
-      colorsObj[parentKey.toLowerCase()] = colorsObj[parentKey.toLowerCase()] || {};
-      colorsObj[parentKey.toLowerCase()].primitives = colors;
+      const primitiveCode = parentKey.toLowerCase().replace(/\s+/g, '');
+      const colors = flattenColors(primitives[parentKey], primitiveCode);
+      colorsObj[primitiveCode] = colorsObj[primitiveCode] || {};
+      colorsObj[primitiveCode].primitives = colors;
     }
   }
   return colorsObj;
@@ -114,19 +111,16 @@ function extractTokens(tokens) {
   if (tokensBlock) {
     // Check if this is the new consolidated structure (brand names as keys)
     const brandNames = Object.keys(tokensBlock);
-    const isConsolidatedStructure = brandNames.some(name =>
-      ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name),
-    );
+    const isConsolidatedStructure = brandNames.some(name => BRANDS.some(({ themeName }) => themeName === name));
 
     if (isConsolidatedStructure) {
-      // New consolidated structure: extract from first brand (Westpac) as reference
-      const westpacTokens = tokensBlock['Westpac'];
+      // Include names unique to a brand, such as WBC26's extra pictogram surfaces.
+      const brandTokens = BRANDS.map(({ themeName }) => tokensBlock[themeName]).filter(Boolean);
 
-      if (westpacTokens) {
+      if (brandTokens.length) {
         tokenModes.forEach(modeKey => {
-          const modeColors = westpacTokens[modeKey]?.color;
-          if (modeColors) {
-            const colors = flattenColors(modeColors, '');
+          const colors = Object.assign({}, ...brandTokens.map(brand => flattenColors(brand[modeKey]?.color || {}, '')));
+          if (Object.keys(colors).length) {
             const tokenObj = {};
 
             function removeDuplicatePrefix(name) {
@@ -222,9 +216,7 @@ function getModeBorders(tokens) {
 
   // Check if this is the new consolidated structure
   const brandNames = Object.keys(modes);
-  const isConsolidatedStructure = brandNames.some(name =>
-    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name),
-  );
+  const isConsolidatedStructure = brandNames.some(name => BRANDS.some(({ themeName }) => themeName === name));
 
   if (isConsolidatedStructure) {
     // New consolidated structure: extract from first brand (Westpac) as reference
@@ -296,15 +288,16 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   // Check if this is the new consolidated structure
   const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
   const isConsolidatedStructure =
-    modes && Object.keys(modes).some(name => ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name));
+    modes && Object.keys(modes).some(name => BRANDS.some(({ themeName }) => themeName === name));
 
-  BRANDS.forEach(({ primitiveName, themeName }) => {
-    const brand = primitiveName.toLowerCase();
+  BRANDS.forEach(({ brandCode: brand, fallbackPrimitiveName, themeName }) => {
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
+    const fallbackPrimitiveCode = fallbackPrimitiveName?.toLowerCase().replace(/\s+/g, '');
 
-    // Merge brand-specific primitives with shared mono primitives
+    // WBC26 inherits some WBC references; keep both palettes under their original names.
     const allPrimitives = {
       ...(primitivesObj.mono?.primitives || {}),
+      ...(primitivesObj[fallbackPrimitiveCode]?.primitives || {}),
       ...(primitivesObj[brand]?.primitives || {}),
     };
 
@@ -315,9 +308,9 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
       // New consolidated structure: extract brand-specific tokens directly
       const brandTokens = modes[themeName];
       if (brandTokens) {
-        // Extract light mode semantic tokens
-        if (brandTokens['light-mode']?.color) {
-          const colors = flattenColors(brandTokens['light-mode'].color, '');
+        for (const mode of tokenModes) {
+          const colors = flattenColors(brandTokens[mode]?.color || {}, '');
+          const semanticTokens = mode === 'light-mode' ? brandLightSemanticTokens : brandDarkSemanticTokens;
           Object.entries(colors).forEach(([name, value]) => {
             function removeDuplicatePrefix(name) {
               const parts = name.split('-');
@@ -339,38 +332,9 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
             if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
               value = refToVar(value);
             }
-            brandLightSemanticTokens[unprefixed] = value;
+            semanticTokens[unprefixed] = value;
           });
         }
-
-        // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-        // Extract dark mode semantic tokens
-        // if (brandTokens['dark-mode']?.color) {
-        //   const colors = flattenColors(brandTokens['dark-mode'].color, '');
-        //   Object.entries(colors).forEach(([name, value]) => {
-        //     function removeDuplicatePrefix(name) {
-        //       const parts = name.split('-');
-        //       const result = [parts[0]];
-        //       for (let i = 1; i < parts.length; i++) {
-        //         if (parts[i] !== parts[i - 1]) {
-        //           result.push(parts[i]);
-        //         }
-        //       }
-        //       if (result[0] === 'state') result.shift();
-        //       if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
-        //       return result.join('-');
-        //     }
-
-        //     let unprefixed = removeDuplicatePrefix(name);
-        //     if (unprefixed.startsWith('alias-')) {
-        //       unprefixed = unprefixed.replace(/^alias-/, '');
-        //     }
-        //     if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
-        //       value = refToVar(value);
-        //     }
-        //     brandDarkSemanticTokens[unprefixed] = value;
-        //   });
-        // }
       }
     } else {
       // Fallback to old behavior for non-consolidated structure
@@ -454,10 +418,10 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandFontMap = BRANDS.reduce((acc, { fontName, primitiveName }) => {
+  const brandFontMap = BRANDS.reduce((acc, { fontName, brandCode }) => {
     return {
       ...acc,
-      [primitiveName.toLowerCase()]: fontName,
+      [brandCode]: fontName,
     };
   }, {});
 
