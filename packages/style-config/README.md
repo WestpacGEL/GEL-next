@@ -8,7 +8,7 @@ The GEL Style Config package is the central design system foundation for Westpac
 
 - **Design Tokens**: Complete set of W3C-compliant design tokens for colors, typography, spacing, and borders
 - **Multi-Brand Support**: Pre-configured themes for all Westpac Group brands
-- **Light/Dark Mode**: Light by default, with explicitly selected dark tokens for WBC, WBC26, STG, BSA and BOM
+- **Light/Dark Mode**: Light by default, with explicitly selected dark tokens for WBC, STG, BSA and BOM
 - **Tailwind CSS v4 Integration**: Optimized for the latest Tailwind CSS with native CSS variable support
 
 This package serves as the single source of truth for design consistency across the Westpac Group ecosystem, ensuring brand compliance and accelerating development workflows.
@@ -52,7 +52,6 @@ For brand theming, import the required brand stylesheets:
 
 ```css
 @import '@westpac/style-config/themes/wbc';
-@import '@westpac/style-config/themes/wbc26';
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
@@ -62,7 +61,7 @@ For brand theming, import the required brand stylesheets:
 
 Add a custom attribute tag `data-brand="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
 
-Following example shows adding `wbc` brand. Use `wbc26` for Westpac 2026 tokens, or `stg`, `bom` and `bsa` for the other token themes.
+Following example shows adding `wbc` brand. Use `stg`, `bom` and `bsa` for the other token themes.
 
 ```html
 <!doctype html>
@@ -103,8 +102,6 @@ pnpm --filter @westpac/style-config test
 ```
 
 Style Dictionary writes both modes to `src/tokens/w3c`, standalone CSS to `src/tokens/css`, Swift to `src/tokens/ios`, and XML to `src/tokens/android`. The CSS transformer writes the Tailwind-facing brand themes and shared styles. Edit the transformers/templates, not generated output files.
-
-WBC26 uses the Figma collection `Westpac 2026`, primitive palette `WBC 26` and output code `wbc26`. Its light and dark semantic mappings inherit some `WBC` primitives, so WBC26 exports include both palettes. Preserve those references rather than replacing every WBC alias. This adds token support, not the separate WBC26 logo/component rollout.
 
 Per-brand Swift output includes `LightColors`/`DarkColors` and `LightDimensions`/`DarkDimensions` enums, plus adaptive properties. Android uses matching resource names in `values` and `values-night`. Native theme adaptation follows platform conventions; the explicit opt-in requirement applies to the web. Validate native integration with the consuming application's toolchain.
 

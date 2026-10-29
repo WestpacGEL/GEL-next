@@ -84,24 +84,4 @@
   <dimen name="bankSaDarkModeBorderRadiusRounded4xl">16</dimen>
   <dimen name="bankSaDarkModeBorderRadiusRounded5xl">24</dimen>
   <dimen name="bankSaDarkModeBorderRadiusRoundedFull">999</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRoundedNone">0</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRoundedSm">3</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRoundedMd">4</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRoundedLg">5</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRoundedXl">6</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRounded2xl">8</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRounded3xl">12</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRounded4xl">16</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRounded5xl">24</dimen>
-  <dimen name="westpac2026LightModeBorderRadiusRoundedFull">999</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRoundedNone">0</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRoundedSm">3</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRoundedMd">4</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRoundedLg">5</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRoundedXl">6</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRounded2xl">8</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRounded3xl">12</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRounded4xl">16</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRounded5xl">24</dimen>
-  <dimen name="westpac2026DarkModeBorderRadiusRoundedFull">999</dimen>
 </resources>

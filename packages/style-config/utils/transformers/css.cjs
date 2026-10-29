@@ -114,7 +114,7 @@ function extractTokens(tokens) {
     const isConsolidatedStructure = brandNames.some(name => BRANDS.some(({ themeName }) => themeName === name));
 
     if (isConsolidatedStructure) {
-      // Include names unique to a brand, such as WBC26's extra pictogram surfaces.
+      // Include semantic utility names from every configured brand.
       const brandTokens = BRANDS.map(({ themeName }) => tokensBlock[themeName]).filter(Boolean);
 
       if (brandTokens.length) {
@@ -290,14 +290,11 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   const isConsolidatedStructure =
     modes && Object.keys(modes).some(name => BRANDS.some(({ themeName }) => themeName === name));
 
-  BRANDS.forEach(({ brandCode: brand, fallbackPrimitiveName, themeName }) => {
+  BRANDS.forEach(({ brandCode: brand, themeName }) => {
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
-    const fallbackPrimitiveCode = fallbackPrimitiveName?.toLowerCase().replace(/\s+/g, '');
 
-    // WBC26 inherits some WBC references; keep both palettes under their original names.
     const allPrimitives = {
       ...(primitivesObj.mono?.primitives || {}),
-      ...(primitivesObj[fallbackPrimitiveCode]?.primitives || {}),
       ...(primitivesObj[brand]?.primitives || {}),
     };
 

@@ -57,16 +57,6 @@ public enum AllBrandsLightDimensions {
   public static let tokensBankSAModeBorderRadiusRounded4xl = 16
   public static let tokensBankSAModeBorderRadiusRounded5xl = 24
   public static let tokensBankSAModeBorderRadiusRoundedFull = 999
-  public static let tokensWestpac2026LightModeRadiusRoundedNone = 0
-  public static let tokensWestpac2026LightModeRadiusRoundedSm = 3
-  public static let tokensWestpac2026LightModeRadiusRoundedMd = 4
-  public static let tokensWestpac2026LightModeRadiusRoundedLg = 5
-  public static let tokensWestpac2026LightModeRadiusRoundedXl = 6
-  public static let tokensWestpac2026LightModeRadiusRounded2xl = 8
-  public static let tokensWestpac2026LightModeRadiusRounded3xl = 12
-  public static let tokensWestpac2026LightModeRadiusRounded4xl = 16
-  public static let tokensWestpac2026LightModeRadiusRounded5xl = 24
-  public static let tokensWestpac2026LightModeRadiusRoundedFull = 999
 }
 
 
@@ -111,16 +101,6 @@ public enum AllBrandsDarkDimensions {
   public static let tokensBankSAModeBorderRadiusRounded4xl = 16
   public static let tokensBankSAModeBorderRadiusRounded5xl = 24
   public static let tokensBankSAModeBorderRadiusRoundedFull = 999
-  public static let tokensWestpac2026DarkModeRadiusRoundedNone = 0
-  public static let tokensWestpac2026DarkModeRadiusRoundedSm = 3
-  public static let tokensWestpac2026DarkModeRadiusRoundedMd = 4
-  public static let tokensWestpac2026DarkModeRadiusRoundedLg = 5
-  public static let tokensWestpac2026DarkModeRadiusRoundedXl = 6
-  public static let tokensWestpac2026DarkModeRadiusRounded2xl = 8
-  public static let tokensWestpac2026DarkModeRadiusRounded3xl = 12
-  public static let tokensWestpac2026DarkModeRadiusRounded4xl = 16
-  public static let tokensWestpac2026DarkModeRadiusRounded5xl = 24
-  public static let tokensWestpac2026DarkModeRadiusRoundedFull = 999
 }
 
 

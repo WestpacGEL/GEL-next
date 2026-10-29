@@ -163,9 +163,5 @@
       --color-surface-active-muted-pale: var(--surface-active-muted-pale);
       --color-surface-hover-mono: var(--surface-hover-mono);
       --color-surface-active-mono: var(--surface-active-mono);
-      --color-surface-pictogram-a: var(--surface-pictogram-a);
-      --color-surface-pictogram-b: var(--surface-pictogram-b);
-      --color-surface-pictogram-c: var(--surface-pictogram-c);
-      --color-surface-pictogram-d: var(--surface-pictogram-d);
     }
 }

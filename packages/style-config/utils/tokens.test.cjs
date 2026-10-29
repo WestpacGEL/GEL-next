@@ -63,15 +63,6 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
   };
   const allBrands = JSON.parse(read('tokens/w3c/all-brands.json'));
 
-  // WBC26-only semantic colours must be available as Tailwind utilities too.
-  const sharedColors = {};
-  postcss.parse(read('css/shared/colors.css')).walkDecls(declaration => {
-    sharedColors[declaration.prop] = declaration.value;
-  });
-  for (const suffix of ['a', 'b', 'c', 'd']) {
-    assert.equal(sharedColors[`--color-surface-pictogram-${suffix}`], `var(--surface-pictogram-${suffix})`);
-  }
-
   for (const { themeName, brandCode: brand } of brands) {
     const enumName = brand.toUpperCase();
     const w3c = JSON.parse(read(`tokens/w3c/${brand}.json`));
@@ -112,7 +103,7 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
       assert.match(opacity, /^#[0-9a-f]{8}$/);
       assert.equal(nativeColors[`${brand}DataAOpacity`], `#${opacity.slice(7)}${opacity.slice(1, 7)}`);
 
-      // Neutral/hero catch swapped brands/modes; WBC26's focus border requires inherited WBC primitives.
+      // Neutral, hero and focus tokens catch swapped brands or modes.
       for (const [group, name] of [
         ['background', 'background-white'],
         ['background', 'background-hero'],

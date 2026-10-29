@@ -750,7 +750,7 @@ function mergeTokens(tokens) {
           },
         };
 
-        // Use the collection name: inherited WBC references do not make WBC26 a WBC collection.
+        // Select the brand by collection name rather than inferring it from token aliases.
         const brand = BRANDS.find(({ themeName }) => themeName === brandName);
         if (!brand) return;
         const processedTokens = processTokensSection(tokenSection, [brand]);
@@ -792,21 +792,14 @@ async function ensureFolderExists(folderPath) {
 /**
  * Creates a subset of tokens for a given brand.
  */
-function extractBrandTokens(themeName, primitiveName, fallbackPrimitiveName, tokens) {
-  const brandPrimitives = {
-    [primitiveName]: tokens.Primitives.color[primitiveName],
-  };
-  if (fallbackPrimitiveName) {
-    brandPrimitives[fallbackPrimitiveName] = tokens.Primitives.color[fallbackPrimitiveName];
-  }
-
+function extractBrandTokens(themeName, primitiveName, tokens) {
   return {
     Primitives: {
       border: tokens.Primitives.border, // Include all border primitives (shared across brands)
       color: {
         mono: tokens.Primitives.color.mono, // Include shared mono colors
         reserved: tokens.Primitives.color.reserved, // Include shared reserved colors
-        ...brandPrimitives,
+        [primitiveName]: tokens.Primitives.color[primitiveName],
       },
     },
     Tokens: tokens.Tokens[themeName],
@@ -837,8 +830,8 @@ const LOG_CONFIG = {
   await baseDictionary.buildAllPlatforms();
 
   // Build per brand
-  for (const { themeName, primitiveName, fallbackPrimitiveName, brandCode: brandName } of BRANDS) {
-    const brandTokens = extractBrandTokens(themeName, primitiveName, fallbackPrimitiveName, mergedTokens);
+  for (const { themeName, primitiveName, brandCode: brandName } of BRANDS) {
+    const brandTokens = extractBrandTokens(themeName, primitiveName, mergedTokens);
     const brandFile = `${SRC_FOLDER}/w3c/${brandName}.json`;
 
     await saveJSON(brandFile, brandTokens);
