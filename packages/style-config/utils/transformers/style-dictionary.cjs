@@ -261,6 +261,16 @@ StyleDictionary.registerFormat({
 // ==============================
 
 StyleDictionary.registerTransform({
+  ...StyleDictionary.hooks.transforms['color/hex8android'],
+  name: 'color/hex-android',
+  transform: (token, config, options) => {
+    const argb = StyleDictionary.hooks.transforms['color/hex8android'].transform(token, config, options);
+    // Android accepts six-digit RGB for opaque colours; only retain alpha when needed.
+    return argb.startsWith('#ff') ? `#${argb.slice(3)}` : argb;
+  },
+});
+
+StyleDictionary.registerTransform({
   type: 'name',
   transitive: true,
   name: `strip-ios-prefix`,
@@ -789,7 +799,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'size/pxToRem',
         'attribute/cti',
         'name/camel',
-        'color/hex',
+        'color/hex-android',
         'size/remToSp',
         'size/remToDp',
         'strip-android-prefix',
@@ -1072,7 +1082,7 @@ const LOG_CONFIG = {
             'size/pxToRem',
             'attribute/cti',
             'name/camel',
-            'color/hex',
+            'color/hex-android',
             'size/remToSp',
             'size/remToDp',
             'strip-android-prefix',
