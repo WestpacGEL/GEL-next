@@ -2,6 +2,12 @@
 
 Comprehensive design guidelines, dos/don'ts, user experience notes, and accessibility information for all @westpac/ui components.
 
+## Light and dark tokens
+
+WBC, WBC26, STG, BSA and BOM provide light and dark tokens. For Westpac 2026, import `@westpac/style-config/themes/wbc26` and use `data-brand="wbc26"`. Web dark mode is opt-in: put `data-theme="dark"` on the same element as `data-brand`. Omitting `data-theme`, or setting it to `light`, uses light tokens even when the browser or operating system prefers dark mode. Applications own selection and persistence; GEL does not automatically follow `prefers-color-scheme`.
+
+Use semantic utilities such as `bg-background-white` and `text-text-body` in both modes. Their values resolve to the selected brand and mode. During migration, use `data-brand` for the brand and `data-theme` for the light/dark selection.
+
 ## Accordions
 
 **Description:** Accordions are grouped sets of expanding and collapsing panels. Use them to group and simplify large amounts of content such as product information.

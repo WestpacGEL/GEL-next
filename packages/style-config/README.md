@@ -8,7 +8,7 @@ The GEL Style Config package is the central design system foundation for Westpac
 
 - **Design Tokens**: Complete set of W3C-compliant design tokens for colors, typography, spacing, and borders
 - **Multi-Brand Support**: Pre-configured themes for all Westpac Group brands
-- **Light/Dark Mode**: Built-in theme switching capabilities NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+- **Light/Dark Mode**: Light by default, with explicitly selected dark tokens for WBC, WBC26, STG, BSA and BOM
 - **Tailwind CSS v4 Integration**: Optimized for the latest Tailwind CSS with native CSS variable support
 
 This package serves as the single source of truth for design consistency across the Westpac Group ecosystem, ensuring brand compliance and accelerating development workflows.
@@ -52,6 +52,7 @@ For brand theming, import the required brand stylesheets:
 
 ```css
 @import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/wbc26';
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
@@ -61,7 +62,7 @@ For brand theming, import the required brand stylesheets:
 
 Add a custom attribute tag `data-brand="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
 
-Following example shows adding `wbc` brand. You can add other valid brand names such as `stg`, `bom`, `bsa` etc. as the value.
+Following example shows adding `wbc` brand. Use `wbc26` for Westpac 2026 tokens, or `stg`, `bom` and `bsa` for the other token themes.
 
 ```html
 <!doctype html>
@@ -70,16 +71,18 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
 </html>
 ```
 
-#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+#### Light and dark mode
 
-For theme modes (light/dark), use the `data-theme` attribute:
+Web dark mode is opt-in. Set `data-theme="dark"` on the **same element** as `data-brand` to select dark tokens. Omitting `data-theme`, or setting it to `light`, uses light tokens even when the browser or operating system prefers dark mode. The styles do not automatically follow `prefers-color-scheme`.
 
 ```html
 <!doctype html>
-<html lang="en" data-brand="wbc" data-theme="light">
+<html lang="en" data-brand="wbc" data-theme="dark">
   ...
 </html>
 ```
+
+Keep using semantic utilities such as `bg-background-white` and `text-text-body`; their values change with the selected mode. Applications own the user's selection and any persistence of it.
 
 ### Tokens
 
@@ -88,6 +91,24 @@ All brand tokens are also exported in the [W3C design tokens format](https://www
 ```js
 import { ALL_BRANDS } from '@westpac/style-config/tokens';
 ```
+
+#### Generating web and native tokens
+
+From the repository root, regenerate both output paths from the checked-in `src/tokens/GEL-tokens-figma.json`:
+
+```sh
+pnpm --filter @westpac/style-config build:style-dictionary
+pnpm --filter @westpac/style-config build:css
+pnpm --filter @westpac/style-config test
+```
+
+Style Dictionary writes both modes to `src/tokens/w3c`, standalone CSS to `src/tokens/css`, Swift to `src/tokens/ios`, and XML to `src/tokens/android`. The CSS transformer writes the Tailwind-facing brand themes and shared styles. Edit the transformers/templates, not generated output files.
+
+WBC26 uses the Figma collection `Westpac 2026`, primitive palette `WBC 26` and output code `wbc26`. Its light and dark semantic mappings inherit some `WBC` primitives, so WBC26 exports include both palettes. Preserve those references rather than replacing every WBC alias. This adds token support, not the separate WBC26 logo/component rollout.
+
+Per-brand Swift output includes `LightColors`/`DarkColors` and `LightDimensions`/`DarkDimensions` enums, plus adaptive properties. Android uses matching resource names in `values` and `values-night`. Native theme adaptation follows platform conventions; the explicit opt-in requirement applies to the web. Validate native integration with the consuming application's toolchain.
+
+Android colours use `#AARRGGBB` (alpha first), not CSS `#RRGGBBAA`. This also corrects previously generated light-mode opacity resources; opaque colours include the equivalent `ff` alpha byte.
 
 #### Tokens usage with Tailwind
 

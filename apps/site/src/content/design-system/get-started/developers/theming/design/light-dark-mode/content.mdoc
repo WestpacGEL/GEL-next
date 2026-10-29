@@ -1,6 +1,6 @@
-For brands which have light and dark mode support, you can enable them via the `data-theme` attribute.
+WBC, WBC26, STG, BSA and BOM provide light and dark tokens. Web dark mode is opt-in via the `data-theme` attribute. For Westpac 2026, import `@westpac/style-config/themes/wbc26` and use `data-brand="wbc26"`.
 
-#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+Set `data-theme="dark"` on the same element as `data-brand`. Without this explicit selection, tokens stay light even when the browser or operating system prefers dark mode. Applications own theme selection and persistence; GEL does not automatically follow `prefers-color-scheme`.
 
 Available theme values:
 
