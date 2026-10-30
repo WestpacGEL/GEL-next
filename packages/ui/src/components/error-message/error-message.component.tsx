@@ -22,7 +22,14 @@ export function ErrorMessage({
     return (
       <div className={styles.titleWrapper({ className })} {...props}>
         <span className={styles.title({})}>
-          <FinalIcon color="danger" copyrightYear="2026" className={styles.icon({})} size="xsmall" look="outlined" />
+          <FinalIcon
+            aria-hidden="true"
+            color="danger"
+            copyrightYear="2026"
+            className={styles.icon({})}
+            size="xsmall"
+            look="outlined"
+          />
           {errorTitle}
         </span>
         <List type="bullet" look="primary" className={styles.bulletList({})}>
@@ -38,14 +45,28 @@ export function ErrorMessage({
     <ul className={styles.list({})} {...props}>
       {message.map((msg, index) => (
         <li key={index} className={styles.base({ className })}>
-          <FinalIcon color="danger" copyrightYear="2026" className={styles.icon({})} size="xsmall" look="outlined" />
+          <FinalIcon
+            aria-hidden="true"
+            color="danger"
+            copyrightYear="2026"
+            className={styles.icon({})}
+            size="xsmall"
+            look="outlined"
+          />
           {msg}
         </li>
       ))}
     </ul>
   ) : (
     <Tag className={styles.base({ className: clsx(className, 'mb-2') })} {...props}>
-      <FinalIcon color="danger" copyrightYear="2026" className={styles.icon({})} size="xsmall" look="outlined" />
+      <FinalIcon
+        aria-hidden="true"
+        color="danger"
+        copyrightYear="2026"
+        className={styles.icon({})}
+        size="xsmall"
+        look="outlined"
+      />
       {message as ReactNode}
     </Tag>
   );

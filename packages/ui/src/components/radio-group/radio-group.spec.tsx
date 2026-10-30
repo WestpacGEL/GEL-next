@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createRef } from 'react';
 
@@ -18,6 +18,69 @@ describe('RadioGroup', () => {
       />,
     );
     expect(container).toBeInTheDocument();
+  });
+
+  it('announces only visible errors in a persistent region when opted in', async () => {
+    const radios = [
+      { value: 'email', label: 'Email' },
+      { value: 'phone', label: 'Phone' },
+    ];
+    const renderGroup = (isInvalid: boolean, errorMessage?: string | string[], announceError?: boolean) => (
+      <RadioGroup
+        label="Contact preference"
+        hintMessage="Choose how we contact you"
+        radios={radios}
+        isInvalid={isInvalid}
+        errorMessage={errorMessage}
+        announceError={announceError}
+      />
+    );
+    const { container, rerender } = render(renderGroup(true, 'Choose a contact preference'));
+    expect(screen.getByText('Choose a contact preference')).toBeVisible();
+    expect(container.querySelector('[aria-live]')).not.toBeInTheDocument();
+
+    // A supplied message must stay hidden while the group is valid.
+    rerender(renderGroup(false, 'Choose a contact preference', true));
+    const liveRegion = container.querySelector('[aria-live="polite"]');
+    expect(liveRegion).toBeEmptyDOMElement();
+    expect(liveRegion).toHaveAttribute('aria-atomic', 'true');
+    expect(screen.queryByText('Choose a contact preference')).not.toBeInTheDocument();
+
+    rerender(renderGroup(true, 'Choose a contact preference', true));
+    expect(container.querySelector('[aria-live="polite"]')).toBe(liveRegion);
+    expect(screen.getAllByText('Choose a contact preference')).toHaveLength(1);
+    expect(screen.getByText('Choose a contact preference')).toBeVisible();
+    expect(liveRegion).toContainElement(screen.getByText('Choose a contact preference'));
+    expect(liveRegion).not.toContainElement(screen.getByText('Contact preference'));
+    expect(liveRegion).not.toContainElement(screen.getByText('Choose how we contact you'));
+    expect(liveRegion).not.toContainElement(screen.getByRole('radio', { name: 'Email' }));
+    expect(liveRegion).not.toContainElement(screen.getByRole('radio', { name: 'Phone' }));
+    await waitFor(() =>
+      expect(screen.getByRole('radiogroup', { name: 'Contact preference' })).toHaveAccessibleDescription(
+        'Choose how we contact you Choose a contact preference',
+      ),
+    );
+
+    rerender(renderGroup(true, ['Choose email or phone', 'Confirm your preference'], true));
+    expect(container.querySelector('[aria-live="polite"]')).toBe(liveRegion);
+    expect(screen.queryByText('Choose a contact preference')).not.toBeInTheDocument();
+    const list = screen.getByRole('list');
+    expect(liveRegion).toContainElement(list);
+    expect(within(list).getAllByRole('listitem')).toHaveLength(2);
+    expect(within(list).getByText('Choose email or phone')).toBeVisible();
+    expect(within(list).getByText('Confirm your preference')).toBeVisible();
+
+    // Clearing invalidity must clear the announcement even when a message remains supplied.
+    rerender(renderGroup(false, 'Choose a contact preference', true));
+    expect(container.querySelector('[aria-live="polite"]')).toBe(liveRegion);
+    expect(liveRegion).toBeEmptyDOMElement();
+    await waitFor(() =>
+      expect(screen.getByRole('radiogroup')).toHaveAccessibleDescription('Choose how we contact you'),
+    );
+
+    rerender(renderGroup(true, undefined, true));
+    expect(container.querySelector('[aria-live="polite"]')).toBe(liveRegion);
+    expect(liveRegion).toBeEmptyDOMElement();
   });
 
   it('should render Radios when passed in through radios prop', () => {

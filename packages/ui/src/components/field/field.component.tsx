@@ -15,6 +15,7 @@ export function Field({
   hintMessage,
   errorTitle,
   errorMessage,
+  announceError = false,
   labelElementType,
   labelSize,
   id,
@@ -37,6 +38,8 @@ export function Field({
     });
   }, [children, fieldProps]);
 
+  const error = errorMessage && <ErrorMessage {...errorMessageProps} errorTitle={errorTitle} message={errorMessage} />;
+
   return (
     <Tag className={className} {...props}>
       {label && (
@@ -45,7 +48,14 @@ export function Field({
         </Label>
       )}
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && <ErrorMessage {...errorMessageProps} errorTitle={errorTitle} message={errorMessage} />}
+      {announceError ? (
+        // Keep the live region mounted before errors appear so updates can be announced.
+        <div aria-live="polite" aria-atomic="true">
+          {error}
+        </div>
+      ) : (
+        error
+      )}
       {renderChildren()}
     </Tag>
   );

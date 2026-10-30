@@ -4,6 +4,10 @@
 
 Group of radio buttons.
 
+| Prop            | Type      | Default | Description                                                              |
+| --------------- | --------- | ------- | ------------------------------------------------------------------------ |
+| `announceError` | `boolean` | `false` | Politely announce updates to the visible error when the group is invalid |
+
 **Incorrect (`RadioGroupRadio` children instead of the `radios` prop)**
 
 ```tsx
@@ -25,7 +29,36 @@ Group of radio buttons.
 />
 ```
 
-**Capabilities:** Responsive size/orientation · Error/hint messages · Built on react-aria · Similar API to CheckboxGroup · `ref` is a `FocusHandle` (`{ focus() }`): `focus()` moves focus to the group's tab stop (the selected radio, or the first enabled radio) — pass `field.ref` from react-hook-form so validation errors focus the field
+**Capabilities:** Responsive size/orientation · Error/hint messages · Opt-in live error announcements · Built on react-aria · Similar API to CheckboxGroup · `ref` is a `FocusHandle` (`{ focus() }`): `focus()` moves focus to the group's tab stop (the selected radio, or the first enabled radio) — pass `field.ref` from react-hook-form so validation errors focus the field
+
+### Announcing validation errors
+
+RadioGroup renders its own error; it does not inherit Field's announcement setting. Enable
+`announceError` directly on RadioGroup before errors appear and keep it enabled while validating:
+
+```tsx
+<RadioGroup
+  label="Contact preference"
+  radios={[
+    { value: 'email', label: 'Email' },
+    { value: 'phone', label: 'Phone' },
+  ]}
+  isInvalid={Boolean(error)}
+  errorMessage={error}
+  announceError
+/>
+```
+
+Only the visible error goes inside a persistent `aria-live="polite"`, `aria-atomic="true"` region.
+The region stays empty unless an error message is supplied and the group is invalid. This also
+supports arrays of errors, without hidden duplicate text. Labels, hints, and radio controls stay
+outside the live region; focus, keyboard navigation, and the error description association are
+unchanged. Omit `announceError` or pass false to retain the existing markup.
+
+Initial errors and repeated identical messages are not guaranteed to be announced. Clearing the
+error does not announce success. Focus announcements can overlap with live announcements, so test
+with supported screen readers, especially when submitting moves focus to the group. Do not add a
+separate error announcer when using this option.
 
 **With react-hook-form** (pass `field.ref` so validation errors focus the group)
 

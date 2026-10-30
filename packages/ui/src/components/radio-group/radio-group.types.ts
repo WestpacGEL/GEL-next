@@ -7,6 +7,13 @@ import { RadioGroupRadioProps } from './components/radio-group-radio/radio-group
 
 export type RadioGroupProps = {
   /**
+   * Politely announces updates to the visible error when the group is invalid, without moving focus.
+   * Enable before errors appear and keep enabled while validating.
+   * Initial errors and repeated identical messages are not guaranteed to be announced.
+   * @default false
+   */
+  announceError?: boolean;
+  /**
    * String to override base style
    */
   className?: string;

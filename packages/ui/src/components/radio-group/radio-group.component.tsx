@@ -86,6 +86,7 @@ function BaseRadioGroup(
     size = 'medium',
     errorMessage,
     hintMessage,
+    announceError = false,
     ...props
   }: RadioGroupProps,
   // `ref.current.focus()` (e.g. react-hook-form focusing a field with a validation error) moves focus
@@ -121,11 +122,20 @@ function BaseRadioGroup(
     }
   }, [hiddenOptions, showAmount]);
 
+  const error = errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />;
+
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
       <Label {...labelProps}>{label}</Label>
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
+      {announceError ? (
+        // Keep the live region mounted before errors appear so updates can be announced.
+        <div aria-live="polite" aria-atomic="true">
+          {error}
+        </div>
+      ) : (
+        error
+      )}
       <div className={styles.radioWrapper()} id={panelId} ref={wrapperRef}>
         <RadioGroupContext.Provider value={{ state, orientation: resolvedOrientation, size: resolvedSize }}>
           {childrenToRender}
