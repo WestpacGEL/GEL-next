@@ -33,6 +33,7 @@ We have some skills available to use with AI agents:
 - `using-westpac-ui` - **Highly recommended**: Provides general context for all components in the library, has reference material generated from the [docs site](https://gel.westpacgroup.com.au/design-system/wbc) content and usage examples of components.
 - `installing-westpac-ui` - **Optional**: Skill that provides context for installing GEL Next in a fresh project.
 - `migrating-to-westpac-ui-v1` - **Optional**: Skill that provides context for migrating from pre-1.0 GEL Next to >1.0 GEL Next
+- `managing-react-state` - **Optional**: Skill that provides guidance on state management in React / Next.js apps using GEL Next (local state, React Hook Form + Zod, URL state, SWR, Context, Zustand stores and multi-step wizards)
 
 #### Skill Installation
 

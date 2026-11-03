@@ -15,6 +15,7 @@ Reference this skill when a user has @westpac/ui installed and is asking a quest
 
 - **`installing-westpac-ui`** — Full setup guide for new projects (installation, CSS, theming, brand fonts, ESLint)
 - **`migrating-to-westpac-ui-v1`** — Migration guide from pre-1.0 to v1.0 (breaking changes, token codemod, component API changes)
+- **`managing-react-state`** — State management for apps built with @westpac/ui (React Hook Form + Zod field bindings, Zustand stores, multi-step wizards, URL and server state)
 
 ## Imports
 

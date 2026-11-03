@@ -34,6 +34,9 @@ When making changes to any of the following, ensure related documentation and sk
 ### For projects in `/apps`:
 
 - **`using-westpac-ui`** — Component usage guidance, capabilities, and API reference
+- **`managing-react-state`** — Choosing and implementing state management (local, React Hook Form + Zod, URL, SWR, Context, Zustand, wizards)
+- **`installing-westpac-ui`** — Setting up `@westpac/ui` and `@westpac/style-config` in a new project
+- **`migrating-to-westpac-ui-v1`** — Migrating a consumer from pre-1.0 `@westpac/ui` to v1
 
 ### For `packages/ui`:
 
