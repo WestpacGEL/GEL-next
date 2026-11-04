@@ -20,8 +20,10 @@
       --font-brand: {{fontFamily}};
     }
 
-    /* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */
+    /* Dark mode is opt-in; native browser controls follow the selected mode. */
     [data-brand="{{brand}}"][data-theme="dark"] {
+      color-scheme: dark;
+
       /* Dark Mode Semantic Tokens */
       {{#each darkSemanticTokens}}
       --{{@key}}: {{this}};
