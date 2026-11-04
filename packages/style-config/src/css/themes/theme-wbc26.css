@@ -308,6 +308,8 @@
 
     /* Dark mode is opt-in; browser preferences do not change the default. */
     [data-brand="wbc26"][data-theme="dark"] {
+      color-scheme: dark;
+
       /* Dark Mode Semantic Tokens */
       --background-white: var(--wbc26-muted-900);
       --background-pale: var(--wbc26-muted-950);

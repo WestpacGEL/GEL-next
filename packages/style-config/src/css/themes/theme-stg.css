@@ -201,6 +201,8 @@
 
     /* Dark mode is opt-in; browser preferences do not change the default. */
     [data-brand="stg"][data-theme="dark"] {
+      color-scheme: dark;
+
       /* Dark Mode Semantic Tokens */
       --background-white: var(--stg-muted-900);
       --background-pale: var(--stg-muted-950);

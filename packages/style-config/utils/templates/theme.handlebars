@@ -22,6 +22,8 @@
 
     /* Dark mode is opt-in; browser preferences do not change the default. */
     [data-brand="{{brand}}"][data-theme="dark"] {
+      color-scheme: dark;
+
       /* Dark Mode Semantic Tokens */
       {{#each darkSemanticTokens}}
       --{{@key}}: {{this}};

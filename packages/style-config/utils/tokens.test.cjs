@@ -101,6 +101,7 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
       const members = swiftMembers(swift, `${enumName}${swiftMode}Colors`);
       const radii = swiftMembers(dimensions, `${enumName}${swiftMode}Dimensions`);
       const selector = `[data-brand="${brand}"]${mode === 'dark' ? '[data-theme="dark"]' : ''}`;
+      assert.equal(declarations(theme, selector)['color-scheme'], mode === 'dark' ? 'dark' : undefined);
       assert.deepEqual(w3c.Tokens[`${mode}-mode`], allBrands.Tokens[themeName][`${mode}-mode`]);
       assert.equal(
         Object.keys(nativeColors).length,
