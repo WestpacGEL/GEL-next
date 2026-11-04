@@ -2,6 +2,17 @@
 
 Server-owned data lives in Server Components or SWR. Navigable state lives in the route or the search params. Neither is copied into a Zustand store or Context.
 
+## Adapt the example dependencies
+
+The account domain is illustrative. Define these in the consuming project rather than importing them from a demo:
+
+- `apiClient.get(url)` must resolve to parsed response data and reject on failures. Use the existing request layer and its error/authentication handling.
+- `accountsApi.list()`, `.get(id)`, and `.rename(id, values)` stand for typed API operations for the real resource. `Nickname` is the example mutation input `{ nickname: string }`.
+- `accountKeys.list()` and `.detail(id)` build stable SWR keys shared by reads and mutations. Include every request parameter that distinguishes cached data.
+- `AccountList` is the project's rendering component; its `fallbackData` prop accepts the list result from the server. `ReactNode` is imported from `react`.
+
+Choose revalidation settings for the product. The example disables focus revalidation for a banking UI; this is not a requirement for every application. The route snippets target Next.js App Router; adapt them to the installed router in other React projects.
+
 ## SWR (v2)
 
 ### Global config once, at the app or section root

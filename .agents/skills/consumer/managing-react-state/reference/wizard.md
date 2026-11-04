@@ -1,9 +1,11 @@
 # Multi-Step Wizards
 
-Reference implementation: `apps/test-app/src/app/apply` in the GEL-next repository. Copy its shape.
+The structure below illustrates a hypothetical `apply` journey. Adapt the routes, steps, and names to your project.
 
 The examples below use explicit form-store names. Keep that naming consistent across the store,
 provider, hooks, and tests; see [form store naming and ownership](forms.md#form-store-naming-and-ownership).
+
+This is a suggested feature layout, not a directory to find or a required scaffold. Create only the parts the journey needs. The `Apply*` names below stand for your journey's own modules.
 
 ```text
 src/app/apply/
@@ -16,13 +18,13 @@ src/app/apply/
 ├── stores/
 │   ├── apply-form.store.ts    # createApplyFormStore(): saved step values, furthestReached, submission, submit(), reset()
 │   ├── apply-form-store-provider.tsx  # ApplyFormStoreProvider, useApplyFormStore(selector), useApplyFormStoreApi()
-│   ├── steps.ts               # STEPS, StepId, stepIndex(), stepIndexForPath(), stepHeading()
+│   ├── steps.ts               # STEPS, StepId, stepIndex(), stepIndexForPath()
 │   └── apply-form.store.test.ts  # headless store tests
 ├── _hooks/
 │   ├── use-wizard.ts          # navigation only
 │   └── use-step-form.ts       # useForm wiring + save-on-submit
 ├── _components/
-│   ├── apply-shell.tsx        # progress rope, heading, step guard
+│   ├── apply-shell.tsx        # progress indicator, heading, step guard
 │   ├── step-form.tsx          # <form> chrome: Back/Next, live region
 │   ├── fields.tsx             # TextField/SelectField (register or Controller field), RadioField/DateField (Controller)
 │   ├── personal-step.tsx …    # one component per step
@@ -43,6 +45,15 @@ src/app/apply/
 | Furthest step reached, submission | Journey store               |
 | Current step                      | The route (`usePathname()`) |
 | Step order and paths              | Static `STEPS` array        |
+
+## Contracts to implement in the consuming project
+
+- **Store and provider:** use [zustand-patterns.md](zustand-patterns.md). For the generic `useStepForm` below, choose its `save(stepId, values)` variant. Define `ApplyFormValues` from each data step's schema output; derive `ApplyFormDataStepId` from its keys and give every data step a nullable saved-value slot. Review/confirmation pages have no slot. The shorter store example covers two data steps; add a slot and submission mapping for every additional step you actually use.
+- **Schemas:** define each step's schema, inferred values, and input defaults as in [forms.md](forms.md#setup). Field names in the UI must exist in that schema. Option lists and validation messages belong to your domain.
+- **Shell:** render children, a progress indicator, the current step title from `STEPS`, and the guard shown below. Use the project's components; no particular progress component is required.
+- **`StepForm`:** accept `children`, RHF `control`, and `onSubmit`; render `<form noValidate>`, invoke the async handler with `event => void onSubmit(event)`, use `type="button"` for Back and `type="submit"` for Next, and read submission/error state with `useFormState`. Disable duplicate submissions and announce errors in a live region.
+- **Field wrappers:** `TextField` and `SelectField` are optional local wrappers, not library exports. Follow [forms.md](forms.md#one-field-wrapper-for-both), forwarding the binding to the native control and rendering labels/errors. `SelectField` additionally renders options and an empty placeholder. Inline the library components if wrappers add no value.
+- **Imports:** navigation hooks come from `next/navigation`; `useForm`, `FieldValues`, and `DefaultValues` from `react-hook-form`; `zodResolver` from `@hookform/resolvers/zod`; `z` from `zod`. Import the store hook, step definitions, schemas, and UI from the modules you implement above.
 
 ## Steps definition
 
@@ -67,18 +78,18 @@ export function useWizard() {
   const pathname = usePathname();
   const router = useRouter();
   const furthestReached = useApplyFormStore(s => s.furthestReached);
-  const stepIndex = stepIndexForPath(pathname);
+  const currentIndex = stepIndexForPath(pathname);
 
   return {
     steps: STEPS,
-    stepIndex,
-    currentStep: stepIndex >= 0 ? STEPS[stepIndex] : undefined, // undefined off the step routes (e.g. /apply index)
+    stepIndex: currentIndex,
+    currentStep: currentIndex >= 0 ? STEPS[currentIndex] : undefined, // undefined off the step routes (e.g. /apply index)
     totalSteps: STEPS.length,
-    isFirst: stepIndex === 0,
-    isLast: stepIndex === STEPS.length - 1,
+    isFirst: currentIndex === 0,
+    isLast: currentIndex === STEPS.length - 1,
     canVisit: (index: number) => index <= furthestReached,
-    goNext: () => router.push(STEPS[Math.min(stepIndex + 1, STEPS.length - 1)].path),
-    goBack: () => router.push(STEPS[Math.max(stepIndex - 1, 0)].path),
+    goNext: () => router.push(STEPS[Math.min(currentIndex + 1, STEPS.length - 1)].path),
+    goBack: () => router.push(STEPS[Math.max(currentIndex - 1, 0)].path),
     goTo: (id: StepId) => router.push(STEPS[stepIndex(id)].path),
   };
 }
@@ -127,7 +138,7 @@ export function AddressStep() {
   } = form;
   return (
     <StepForm control={control} onSubmit={onSubmit}>
-      <TextField label="Suburb" field={register('suburb')} error={errors.suburb?.message} />
+      <TextField label="Street name" field={register('streetName')} error={errors.streetName?.message} />
       <SelectField
         label="State / Territory"
         field={register('state')}

@@ -7,6 +7,18 @@ description: 'Chooses and implements state management for React and Next.js App 
 
 Pick the narrowest owner for each piece of state. Rank by **who reads it** and **how often it changes**; reach for a heavier tool only when the lighter one causes real re-render or coupling problems.
 
+Examples use a hypothetical `apply` journey. Adapt its names and paths to the consuming project; no reference application is required.
+
+## Apply This Skill in Any Project
+
+1. Inspect the consuming project's dependencies, routing, component APIs, and existing state conventions. Do not look for a separate demo application or copy files from another repository.
+2. Use the decision order below to assign ownership before adding a store, provider, or form helper.
+3. Read only the bundled references relevant to the task. Their snippets illustrate patterns, not a complete application: implement omitted domain schemas, API calls, UI wrappers, and fixtures in the consuming project using the contracts described alongside them.
+4. Substitute the real journey name for `apply` / `ApplyForm`, and use its actual steps, fields, validation rules, and submission response. Personal/address/payment steps, Australian options, and card formatting are examples, not requirements.
+5. Verify the resulting behavior using [reference/testing.md](reference/testing.md), including navigation, validation, reset, and persistence when applicable.
+
+Paths under `src/app/` illustrate Next.js App Router placement. In other React applications, use the project's router and feature folders while keeping the same ownership and provider lifecycle. `@westpac/ui` examples apply when that library is installed; otherwise use the same native-input versus controlled-value binding rules with the project's components.
+
 ## Check Versions First
 
 Read the project's `package.json` before writing code. The examples in this skill target `zustand@^5`, `zod@^4`, `@hookform/resolvers@^5`, `react-hook-form@^7.5x`, `swr@^2` and TypeScript ≥ 5.4. Adjust when the project differs:
@@ -44,6 +56,8 @@ Rules of thumb:
 ## Zustand (v5)
 
 Write every store as a **factory** so it is testable and resettable, one store per feature or journey, never one app-wide store.
+
+`PersonalValues` below represents the output type inferred from the consuming form's Zod schema; see [reference/forms.md](reference/forms.md#setup).
 
 ```ts
 // src/app/apply/stores/apply-form.store.ts
@@ -116,7 +130,7 @@ Follow the React Hook Form funnel recommendation: **one form per step page, one 
 
 Reset semantics: Back never clears data. Restart/Cancel and Sign-out call `reset()`. Submit success shows the confirmation, then `reset()` (and `persist.clearStorage()` if persisted). Hard refresh restores only persisted, non-sensitive fields; the guard sends the user to the furthest step whose data is still valid.
 
-See [reference/wizard.md](reference/wizard.md) for the full pattern and the reference implementation in `apps/test-app/src/app/apply`.
+See [reference/wizard.md](reference/wizard.md) for the pattern and example structure.
 
 ## Persistence
 
@@ -157,6 +171,8 @@ See [reference/testing.md](reference/testing.md).
 See [reference/anti-patterns.md](reference/anti-patterns.md). The most common: Context for high-churn state, `useReducer` + Context as a shared store, module-level Zustand store in a Next.js journey, selecting the whole store, mirroring server data in a store, writing form values to a store on every keystroke, persisting sensitive fields.
 
 ## Related Skills
+
+Optional supplements when installed; none is required to use this skill or its bundled references.
 
 - `vercel-react-best-practices` — render and re-render rules that apply on top of this skill.
 - `using-westpac-ui` — component APIs used in the form examples.

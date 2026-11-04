@@ -2,6 +2,8 @@
 
 Each entry: what it looks like, why it hurts, what to do instead.
 
+Names such as `ApplyFormStore`, `Cart`, and `fetchAccounts` illustrate roles in the consuming application; they are not dependencies to locate. Use [zustand-patterns.md](zustand-patterns.md), [forms.md](forms.md), and [server-and-url-state.md](server-and-url-state.md) for the replacement patterns.
+
 ## Context as a high-churn store
 
 ```tsx
@@ -13,7 +15,7 @@ Every consumer re-renders on every change, and every consumer receives the whole
 
 ## `useReducer` + Context as the shared store
 
-The React docs pattern is fine for one screen. Once several routes or unrelated subtrees read it, it has all of Context's re-render cost plus hand-written action typing, no devtools, no selectors, and no way to read outside React. Replace with a Zustand store; keep the reducer idea as flat actions. (`apps/test-app/src/app/apply` was refactored away from this.)
+The React docs pattern is fine for one screen. Once several routes or unrelated subtrees read it, it has all of Context's re-render cost plus hand-written action typing, no devtools, no selectors, and no way to read outside React. Replace with a Zustand store; keep the reducer idea as flat actions.
 
 ## Module-level Zustand store in a Next.js journey
 

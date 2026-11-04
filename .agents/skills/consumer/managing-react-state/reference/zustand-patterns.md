@@ -9,6 +9,15 @@ Use this shape for any store with a lifecycle: a journey, a feature that mounts 
 For form-backed journeys, use the `<Journey>Form` prefix consistently; non-form stores retain
 their domain name. See [form store naming and ownership](forms.md#form-store-naming-and-ownership).
 
+### Example dependencies
+
+`apply` / `ApplyForm` are illustrative names, not an application dependency. Adapt the snippets to the consuming feature:
+
+- Infer `PersonalValues`, `AddressValues`, and any additional step types from that feature's schemas as shown in [forms.md](forms.md#setup). The selector/Immer examples that access `personal.children` apply only when that schema includes children with `id` and `name` fields.
+- Implement `submitApplication` with the project's API client. In this example it accepts `{ personal, address }` and resolves to a reference string; map the actual payload and response for your API. The snippet shows the success path and duplicate-submit guard. Add the project's failure state and retry behavior so a rejected request does not leave the store stuck in `submitting`.
+- `getSavedDraft` in the layout is an optional server-side loader for editable draft values, not an imported helper supplied by this skill. Omit it and `initialState` if the feature has no saved draft. Do not use draft seeding to mirror live server data in a store.
+- The generic save, slices, Immer, and persistence examples are alternatives/extensions, not files to concatenate. Choose only what the feature needs and keep its state, actions, and schema-derived types consistent.
+
 ```ts
 // src/app/apply/stores/apply-form.store.ts
 import { devtools } from 'zustand/middleware';
@@ -68,11 +77,14 @@ export function createApplyFormStore(initial: ApplyFormState = initialApplyFormS
 export type ApplyFormStoreApi = ReturnType<typeof createApplyFormStore>;
 ```
 
-When every step saves the same way, one typed action replaces the per-step ones — this is what the reference implementation does:
+When every step saves the same way, one typed action replaces the per-step ones:
 
 ```ts
 export type ApplyFormValues = { personal: PersonalValues; address: AddressValues; payment: PaymentValues };
 export type ApplyFormDataStepId = keyof ApplyFormValues;
+
+// Use these nullable slots in ApplyFormState alongside progress and submission.
+type ApplyFormData = { [K in ApplyFormDataStepId]: ApplyFormValues[K] | null };
 
 save: <K extends ApplyFormDataStepId>(step: K, values: ApplyFormValues[K]) => void;
 // …
@@ -80,6 +92,8 @@ save: (step, values) => set({ [step]: values } as Partial<ApplyFormState>, undef
 ```
 
 Use per-step actions when steps need different side effects; use the generic `save` when they do not.
+
+When adding the illustrated payment step, initialise `payment: null` and include it in validation and submission as appropriate. Do not add a payment step to a journey that does not need one.
 
 ```tsx
 // src/app/apply/stores/apply-form-store-provider.tsx

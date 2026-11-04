@@ -1,5 +1,7 @@
 # Forms: React Hook Form + Zod with @westpac/ui
 
+These are adaptable examples, not imports from an existing application. `ApplyForm` is an example journey name. Use the consuming project's schemas, fields, option lists, and components. The binding and state-ownership recommendations also apply to other UI libraries; the component matrix below is specific to `@westpac/ui`.
+
 ## Form store naming and ownership
 
 When a form journey needs shared Zustand state across steps, make `form` part of the subject name:
@@ -37,8 +39,10 @@ persistence keys. Changing a storage key is a separate migration, not part of re
 
 ```ts
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { useForm, type DefaultValues } from 'react-hook-form';
 import { z } from 'zod';
+
+export const AU_STATES = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'] as const;
 
 export const addressSchema = z.object({
   streetName: z
@@ -47,7 +51,7 @@ export const addressSchema = z.object({
     .min(1, 'Enter your street name')
     .min(2, 'Enter a street name with 2 to 100 characters')
     .max(100),
-  state: z.enum(['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'], { error: 'Select your state or territory' }),
+  state: z.enum(AU_STATES, { error: 'Select your state or territory' }),
   postcode: z
     .string()
     .trim()
@@ -66,6 +70,8 @@ const form = useForm<AddressValues>({
 });
 ```
 
+`savedAddress` is the saved step value selected from the journey store, or server-provided initial values for a standalone form. Omit it when there is no saved data. Call `useForm` inside the form component or a custom hook; keep schemas and defaults outside it.
+
 - Zod v4: pass `{ error: '…' }` for enum/type messages (`message` is the deprecated v3 spelling). Custom rules use `ctx.addIssue({ code: 'custom', message, path })` inside `superRefine`.
 - Types come from the schema; never hand-write the values type. `z.infer` when input and output are the same; when the schema `transform`s, use `useForm<z.input<S>, unknown, z.output<S>>` so `handleSubmit` receives the parsed output type.
 - `mode: 'onTouched'` is the standard. Do not change validation timing on an existing form incidentally.
@@ -75,7 +81,7 @@ const form = useForm<AddressValues>({
 
 ## Which @westpac/ui component takes `register` vs `Controller`
 
-Verified against `packages/ui/src/components`.
+Check the installed `@westpac/ui` version's component APIs when applying this matrix.
 
 | Component       | Use          | Why                                                                                                 |
 | --------------- | ------------ | --------------------------------------------------------------------------------------------------- |
@@ -100,6 +106,11 @@ Exception: use `Controller` on an `Input` when the displayed text differs from t
 `register()`'s return and `Controller`'s `field` both provide `{ name, ref, onChange, onBlur }`, so a thin wrapper can accept either:
 
 ```tsx
+import { type ChangeEvent, type FocusEvent, type ReactNode, type Ref } from 'react';
+import { Field, Input, type InputProps } from '@westpac/ui';
+
+type FieldChrome = { label: ReactNode; hint?: ReactNode; error?: string };
+
 type NativeBinding<E extends HTMLElement> = {
   name: string;
   ref: Ref<E>;
@@ -116,7 +127,7 @@ export function TextField({ label, hint, error, field, ...inputProps }: FieldChr
   );
 }
 
-<TextField label="Suburb" field={register('suburb')} error={errors.suburb?.message} />
+<TextField label="Street name" field={register('streetName')} error={errors.streetName?.message} />
 
 <Controller control={control} name="cardNumber" render={({ field, fieldState }) => (
   <TextField
@@ -127,7 +138,7 @@ export function TextField({ label, hint, error, field, ...inputProps }: FieldChr
 )} />
 ```
 
-See `apps/test-app/src/app/apply/_components/fields.tsx`.
+The two usages above belong to separate forms: the address schema defines `streetName`; a card form must define its own `cardNumber` schema. `formatCardNumber` converts stored digits to display text and `normaliseCardNumber` converts edited text back to digits; implement and test those domain functions only when formatted input is needed.
 
 ## Templates
 
@@ -165,9 +176,11 @@ const {
 </Field>
 ```
 
-Zod: `z.enum(AU_STATES)` rejects `''`, so the placeholder option produces "Select your state or territory" via the enum `message`.
+Zod: `z.enum(AU_STATES)` rejects `''`, so the placeholder option produces "Select your state or territory" via the configured enum `error`.
 
 ### `Controller` with `RadioGroup`
+
+`GENDER_OPTIONS` illustrates a domain-owned array of `{ value, label }` options. Substitute the actual field and allowed options from the form's schema; these are not supplied by the UI library.
 
 ```tsx
 <Controller
@@ -211,6 +224,8 @@ Zod: `z.enum(AU_STATES)` rejects `''`, so the placeholder option produces "Selec
 
 Keep serialisable primitives (`'YYYY-MM-DD'`) in form and store state; convert to `DateValue` at the component boundary.
 
+`parseIsoDate` is a local conversion helper: return `null` for an absent value and convert a validated ISO date with the date library supported by the installed component (for example `parseDate` from `@internationalized/date`). Validate external saved data before conversion.
+
 ### Field arrays (repeating groups)
 
 ```tsx
@@ -233,6 +248,8 @@ fields.map((child, index) => (
 ### Conditional fields
 
 Read only the field that drives the condition:
+
+`ChildrenFields` represents the consuming form's repeating-field UI, such as the field-array pattern above. Define `hasChildren` and `children` in that form's schema; they are not part of the address example.
 
 ```tsx
 const hasChildren = useWatch({ control, name: 'hasChildren' });
