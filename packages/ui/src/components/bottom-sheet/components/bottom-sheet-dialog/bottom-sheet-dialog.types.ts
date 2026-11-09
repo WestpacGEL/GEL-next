@@ -28,6 +28,6 @@ export type DialogProps = AriaDialogProps & {
   secondaryOnClick?: () => void;
   /**
    * Heading displayed at the top of the bottom-sheet dialog
-  */
+   */
   title?: string;
 } & HTMLAttributes<HTMLDivElement>;
