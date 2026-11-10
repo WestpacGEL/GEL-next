@@ -27,10 +27,29 @@ export type MultiSelectContextProps<T extends object = object> = {
   hideSelectAll?: boolean;
 };
 
-export type MultiSelectItemProps<T extends object = object> = { description?: string } & ItemProps<T>;
+export type MultiSelectItemProps<T extends object = object> = {
+  /**
+   * Supporting text shown under the item in the dropdown
+   */
+  description?: string;
+  /**
+   * Text shown in the field when the item is selected. The dropdown, tooltip and screen readers still use the textValue.
+   * If not provided, the textValue will be used
+   */
+  displayValue?: string;
+} & ItemProps<T>;
 
 // Props for the items that can be passed to the MultiSelect component
-export type MultiSelectValue = { textValue?: string; content?: ReactNode; key: Key; description?: string };
+export type MultiSelectValue = {
+  textValue?: string;
+  content?: ReactNode;
+  key: Key;
+  description?: string;
+  /**
+   * Text shown in the field when the item is selected when provided
+   */
+  displayValue?: string;
+};
 
 export type MultiSelectProps<T> = {
   /**

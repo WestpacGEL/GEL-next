@@ -1,8 +1,10 @@
 'use client';
 
-import React, { useCallback, useMemo } from 'react';
+import React, { ForwardedRef, forwardRef, useCallback, useMemo } from 'react';
 import { useToggleButtonGroup } from 'react-aria';
 import { useToggleGroupState } from 'react-stately';
+
+import { FocusHandle, useFocusManagerRef } from '../../hook/focus-manager-ref.hook.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 
@@ -19,20 +21,26 @@ export const ToggleButtonGroupContext = React.createContext<
   | null
 >(null);
 
-export function ButtonGroup({
-  size,
-  look,
-  block,
-  children,
-  onSelect,
-  orientation = 'horizontal',
-  selectionMode,
-  selectedKeys,
-  defaultSelectedKeys,
-  onSelectionChange,
-  className,
-  ...props
-}: ButtonGroupProps) {
+function BaseButtonGroup(
+  {
+    size,
+    look,
+    block,
+    children,
+    onSelect,
+    orientation = 'horizontal',
+    selectionMode,
+    selectedKeys,
+    defaultSelectedKeys,
+    onSelectionChange,
+    className,
+    ...props
+  }: ButtonGroupProps,
+  // `ref.current.focus()` (e.g. react-hook-form focusing a field with a validation error) moves
+  // focus to the first tabbable button in the group.
+  forwardedRef: ForwardedRef<FocusHandle>,
+) {
+  const ref = useFocusManagerRef(forwardedRef);
   /**
    * Normalizes key sets depending on selection mode.
    */
@@ -71,7 +79,6 @@ export function ButtonGroup({
     selectedKeys: finalSelectedKeys,
   });
 
-  const ref = React.useRef<HTMLDivElement | null>(null);
   const { groupProps } = useToggleButtonGroup(
     {
       ...props,
@@ -95,3 +102,6 @@ export function ButtonGroup({
     </div>
   );
 }
+
+export const ButtonGroup = forwardRef(BaseButtonGroup);
+ButtonGroup.displayName = 'ButtonGroup';

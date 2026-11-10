@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useId, useRef } from 'react';
-import { VisuallyHidden, mergeProps, useCheckbox, useFocusRing } from 'react-aria';
+import React, { ForwardedRef, forwardRef, useId } from 'react';
+import { VisuallyHidden, mergeProps, useCheckbox, useFocusRing, useObjectRef } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -10,18 +10,13 @@ import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { styles as switchStyles } from './switch.styles.js';
 import { type SwitchProps } from './switch.types.js';
 
-export function Switch({
-  className,
-  label,
-  size = 'medium',
-  block = false,
-  checked = false,
-  isDisabled,
-  ...props
-}: SwitchProps) {
+function BaseSwitch(
+  { className, label, size = 'medium', block = false, checked = false, isDisabled, ...props }: SwitchProps,
+  forwardedRef: ForwardedRef<HTMLInputElement>,
+) {
   const state = useToggleState({ ...props, defaultSelected: checked });
   const labelId = useId();
-  const ref = useRef(null);
+  const ref = useObjectRef(forwardedRef);
   const { isSelected } = state;
   const { inputProps, labelProps } = useCheckbox(
     { isDisabled, 'aria-labelledby': labelId, defaultSelected: checked, ...props },
@@ -50,3 +45,6 @@ export function Switch({
     </label>
   );
 }
+
+export const Switch = forwardRef(BaseSwitch);
+Switch.displayName = 'Switch';

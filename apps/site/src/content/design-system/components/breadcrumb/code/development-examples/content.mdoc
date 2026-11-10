@@ -1,31 +1,18 @@
 ### Default breadcrumb
 
 ```jsx
-// Using the Link component (as NextLink) from 'next/Link'
 <div className="flex flex-col gap-5">
   <Breadcrumb aria-label="Page transitions and the such">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem isCurrent tag="a">Home</BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag="a" href="#home">Home</BreadcrumbItem>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>Personal</BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag="a" href="#home">Home</BreadcrumbItem>
+    <BreadcrumbItem tag="a" href="#personal">Personal</BreadcrumbItem>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#credit-cards" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>Credit cards</BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag="a" href="#home">Home</BreadcrumbItem>
+    <BreadcrumbItem tag="a" href="#personal">Personal</BreadcrumbItem>
+    <BreadcrumbItem tag="a" href="#credit-cards">Credit cards</BreadcrumbItem>
   </Breadcrumb>
 </div>
 ```
@@ -35,17 +22,9 @@
 ```jsx
 <div>
   <Breadcrumb aria-label="Page transitions and the such">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#credit-cards" passHref legacyBehavior>
-      <BreadcrumbItem isCurrent tag="a">
-        Credit cards
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">Home</BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#personal">Personal</BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#credit-cards">Credit cards</BreadcrumbItem>
   </Breadcrumb>
 </div>
 ```

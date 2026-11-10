@@ -28,6 +28,10 @@ export type PopoverProps = {
    */
   icon?: (props: IconProps) => JSX.Element;
   /**
+   * Accessible name for the trigger button. The dialog is also named from the trigger button.
+   */
+  label?: string;
+  /**
    * Removes padding from trigger button and sets look to link to be able to look inline, use size prop to match font size
    */
   linkStyling?: boolean;

@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { ButtonRef } from '../../../button/button.types.js';
 import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
 
@@ -16,6 +15,7 @@ export function BasePanel({
   heading,
   headingTag: Tag = 'h1',
   content,
+  'aria-labelledby': ariaLabelledBy,
   placement = 'top',
   id,
   triggerRef,
@@ -26,8 +26,6 @@ export function BasePanel({
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
   const breakpoint = useBreakpoint();
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const buttonRef = useRef<ButtonRef>(null);
   const { popoverPosition, arrowPosition, localPlacement } = usePanel({
     state,
     placement,
@@ -40,31 +38,29 @@ export function BasePanel({
   const styles = panelStyles({ placement: resolvedPlacement });
   useEffect(() => {
     if (state.isOpen && !open) {
-      if (headingRef.current) {
-        headingRef.current.focus();
-      } else {
-        buttonRef.current?.focus();
-      }
+      popoverRef.current?.focus();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isOpen]);
 
   return (
-    <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef} role="dialog">
+    <div
+      style={popoverPosition}
+      className={styles.popover()}
+      test-id="popover"
+      id={id}
+      ref={popoverRef}
+      role="dialog"
+      tabIndex={-1}
+      aria-labelledby={ariaLabelledBy}
+    >
       <div className={styles.content()}>
-        {heading && (
-          <Tag className={styles.heading()} tabIndex={-1} ref={headingRef}>
-            {heading}
-          </Tag>
-        )}
-        <div className={styles.body()} id="popover-content">
-          {content}
-        </div>
+        {heading && <Tag className={styles.heading()}>{heading}</Tag>}
+        <div className={styles.body()}>{content}</div>
         <Button
           look="link"
           tag="button"
           size="small"
-          ref={buttonRef}
           onClick={() => {
             onClose?.();
             state.close();

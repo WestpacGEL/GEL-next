@@ -13,7 +13,7 @@ export const styles = tv({
     addBtn: 'h-auto p-0 no-underline hover:underline',
     toggleBtn: 'p-0',
     collapsible: '',
-    content: 'px-3 pt-0 pb-5 md:px-9 [&_:focus-visible]:focus-outline',
+    content: 'px-3 pt-0 pb-5 md:px-9',
     footer: '',
     titlePrimary: 'typography-body-9 font-bold',
     titleSecondary: 'mt-1 items-center',
@@ -23,6 +23,11 @@ export const styles = tv({
     isFocusVisible: {
       true: {
         toggleBtn: 'focus-outline',
+      },
+    },
+    isContentFocusVisible: {
+      true: {
+        content: '[&_:focus]:focus-outline',
       },
     },
   },

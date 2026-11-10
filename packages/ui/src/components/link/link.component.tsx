@@ -79,12 +79,15 @@ export function BaseLink(
     IconBefore = ArrowRightIcon;
   }
 
+  // Custom components (e.g. NextLink) resolve their own href, so keep it untransformed by RouterProvider's useHref
+  const customComponentProps = typeof Component === 'string' ? {} : { href };
+
   return (
     <Component
       {...componentProps}
-      {...mergeProps(linkProps, focusProps)}
+      // href is the base value so it's kept when React Aria omits it (e.g. for href="")
+      {...mergeProps({ href }, linkProps, focusProps, customComponentProps)}
       ref={linkRef}
-      href={href}
       target={target}
       className={styles.base({ className })}
     >

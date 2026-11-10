@@ -869,37 +869,31 @@ The Bottom sheet is a generic component designed to work in as many scenarios as
 Breadcrumbs come in one style for navigational consistency across all touch-points.
 
 ```tsx
-// Using the Link component (as NextLink) from 'next/Link'
+// Using the Link component (as NextLink) from 'next/link'
 <div className="flex flex-col gap-4">
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mt-2">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem isCurrent tag="a">
-        Home
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">
+      Home
+    </BreadcrumbItem>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>
-        Personal
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">
+      Home
+    </BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#personal">
+      Personal
+    </BreadcrumbItem>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mb-2">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#credit-cards" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>
-        Credit cards
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">
+      Home
+    </BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#personal">
+      Personal
+    </BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#credit-cards">
+      Credit cards
+    </BreadcrumbItem>
   </Breadcrumb>
 </div>
 ```
