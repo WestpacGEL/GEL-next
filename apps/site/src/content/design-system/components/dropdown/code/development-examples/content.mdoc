@@ -20,15 +20,31 @@
 ### Dropdown sizes
 
 ```jsx
-<div className="flex gap-1">
+<div className="flex flex-col items-start gap-y-2">
   <Dropdown text="Small dropdown" dropdownSize="small" look="primary" soft>
-    <DropdownHeading>Small dropdown menu: 130px wide</DropdownHeading>
+    <DropdownHeading>130px min.</DropdownHeading>
   </Dropdown>
   <Dropdown text="Medium dropdown" dropdownSize="medium" look="primary" soft>
-    <DropdownHeading>Medium (default) dropdown menu: 190px wide</DropdownHeading>
+    <DropdownHeading>190px min.</DropdownHeading>
   </Dropdown>
   <Dropdown text="Large dropdown" dropdownSize="large" look="primary" soft>
-    <DropdownHeading>Large dropdown menu: 250px wide</DropdownHeading>
+    <DropdownHeading>250px min.</DropdownHeading>
+  </Dropdown>
+</div>
+```
+
+### Dropdown button sizes
+
+```jsx
+<div className="flex flex-col items-start gap-y-2">
+  <Dropdown text="Small dropdown button" size="small" look="primary" soft>
+    <DropdownHeading>Dropdown example</DropdownHeading>
+  </Dropdown>
+  <Dropdown text="Medium dropdown button" size="medium" look="primary" soft>
+    <DropdownHeading>Dropdown example</DropdownHeading>
+  </Dropdown>
+  <Dropdown text="Large dropdown button" size="large" look="primary" soft>
+    <DropdownHeading>Dropdown example</DropdownHeading>
   </Dropdown>
 </div>
 ```
