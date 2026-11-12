@@ -394,7 +394,13 @@
       before={<Button onClick={minusButton}>-</Button>}
       after={<Button onClick={plusButton}>+</Button>}
     >
-      <Input value={numberOfDependents} />
+      <Input
+        type="number"
+        value={numberOfDependents}
+        onChange={({ target: { value } }) => {
+          setNumberOfDependents(value === '' ? '' : Number(value));
+        }}
+      />
     </InputGroup>
   );
 };

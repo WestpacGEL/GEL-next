@@ -3,31 +3,16 @@
 ```jsx
 <div>
   <h1 className="typography-body-10 mb-2 italic text-text-muted">Default list</h1>
-  <List type="bullet">
-    <ListItem>Styled bullet list</ListItem>
-    <ListItem>Styled bullet list</ListItem>
-    <ListItem>Styled bullet list</ListItem>
+  <List>
+    <ListItem>Default styled bullet list</ListItem>
     <List>
-      <ListItem>Styled bullet list</ListItem>
-      <ListItem>Styled bullet list</ListItem>
-      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Default styled bullet list</ListItem>
       <List>
-        <ListItem>Styled bullet list</ListItem>
-        <ListItem>Styled bullet list</ListItem>
-        <ListItem>Styled bullet list</ListItem>
+        <ListItem>Default styled bullet list</ListItem>
       </List>
-      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Default styled bullet list</ListItem>
     </List>
-    <ListItem>Styled bullet list</ListItem>
-  </List>
-  <h1 className="typography-body-10 mb-2 italic text-text-muted">Look</h1>
-  <List type="bullet" look="primary" className="mb-4">
-    <ListItem>Styled bullet list - primary</ListItem>
-    <ListItem>Styled bullet list - primary</ListItem>
-  </List>
-  <List type="bullet" look="hero" className="mb-4">
-    <ListItem>Styled bullet list - hero</ListItem>
-    <ListItem>Styled bullet list - hero</ListItem>
+    <ListItem>Default styled bullet list</ListItem>
   </List>
 </div>
 ```
@@ -35,22 +20,58 @@
 ### List looks
 
 ```jsx
-() => {
-  const TYPES = ['bullet', 'link', 'tick', 'ordered', 'unstyled', 'icon'];
-  return TYPES.map(type => {
-    const href = type === 'link' ? '#' : undefined;
+<div className="flex flex-col gap-4">
+  <List type="bullet" look="primary">
+    <ListItem>Styled bullet list - primary</ListItem>
+  </List>
+  <List type="bullet" look="hero">
+    <ListItem>Styled bullet list - hero</ListItem>
+  </List>
+  <List type="bullet" look="success">
+    <ListItem>Styled bullet list - success</ListItem>
+  </List>
+  <List type="bullet" look="danger">
+    <ListItem>Styled bullet list - danger</ListItem>
+  </List>
+  <List type="bullet" look="link">
+    <ListItem>Styled bullet list - link</ListItem>
+  </List>
+</div>
+```
 
-    return (
-      <div key={type}>
-        <h1 className="typography-body-10 mb-2 italic text-text-muted">{`${type[0].toUpperCase()}${type.slice(1)} List`}</h1>
-        <List type={type} icon={type === 'icon' ? GithubIcon : undefined}>
-          <ListItem href={href}>Styled {type} list</ListItem>
-          <ListItem href={href}>Styled {type} list</ListItem>
-          <ListItem href={href}>Styled {type} list</ListItem>
-        </List>
-      </div>
-    )});
-};
+### List types
+
+```jsx
+<div className="flex flex-col gap-4">
+  <List type="bullet">
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
+  </List>
+  <List type="link">
+    <ListItem href="#">Styled link list</ListItem>
+    <ListItem href="#">Styled link list</ListItem>
+  </List>
+  <List type="tick">
+    <ListItem>Styled tick list</ListItem>
+    <ListItem>Styled tick list</ListItem>
+  </List>
+  <List type="cross">
+    <ListItem>Styled cross list</ListItem>
+    <ListItem>Styled cross list</ListItem>
+  </List>
+  <List type="ordered">
+    <ListItem>Styled ordered list</ListItem>
+    <ListItem>Styled ordered list</ListItem>
+  </List>
+  <List type="unstyled">
+    <ListItem>Unstyled list</ListItem>
+    <ListItem>Unstyled list</ListItem>
+  </List>
+  <List type="icon" icon={GithubIcon}>
+    <ListItem>Styled icon list</ListItem>
+    <ListItem>Styled icon list</ListItem>
+  </List>
+</div>
 ```
 
 ### List spacing

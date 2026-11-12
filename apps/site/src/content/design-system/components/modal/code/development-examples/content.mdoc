@@ -22,54 +22,252 @@
 
 ### Modal sizes
 
+#### Small modal
+
 ```tsx
 () => {
-  const stateSM = useOverlayTriggerState({});
-  const stateMD = useOverlayTriggerState({});
-  const stateLG = useOverlayTriggerState({});
-
-  const states = useMemo(() => {
-    return {
-      sm: stateSM,
-      md: stateMD,
-      lg: stateLG,
-    };
-  }, [stateSM, stateMD, stateLG]);
+  const state = useOverlayTriggerState({});
 
   return (
-    <div className="flex justify-center gap-4">
-      {[
-        { size: 'sm', label: 'Small' },
-        { size: 'md', label: 'Default' },
-        { size: 'lg', label: 'Large' },
-      ].map(({ size, label }: { size: string; label: string }) => (
-        <Fragment key={size}>
-          <Modal
-            zIndex={1020}
-            isDismissable
-            size={size}
-            state={states[size as 'sm' | 'md' | 'lg']}
-            title="Sudden and magnificent"
-          >
-            <ModalBody>
-              <p>
-                The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
-                black against a silvery climbing phosphorescence that grew and grew.
-              </p>
-            </ModalBody>
-            <ModalFooter
-              primaryLabel="Label"
-              primaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
-              secondaryLabel="Label"
-              secondaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
-            />
-          </Modal>
-          <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
-            {label} modal
-          </Button>
-        </Fragment>
-      ))}
-    </div>
+    <>
+      <Modal zIndex={1020} isDismissable size="sm" state={state} title="Sudden and magnificent">
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Small modal
+      </Button>
+    </>
+  );
+};
+```
+
+#### Medium modal (default)
+
+```tsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal zIndex={1020} isDismissable size="md" state={state} title="Sudden and magnificent">
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Default modal
+      </Button>
+    </>
+  );
+};
+```
+
+#### Large modal
+
+```tsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal zIndex={1020} isDismissable size="lg" state={state} title="Sudden and magnificent">
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Large modal
+      </Button>
+    </>
+  );
+};
+```
+
+#### Full-screen modal
+
+```tsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal zIndex={1020} isDismissable size="full" state={state} title="Sudden and magnificent">
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Full-screen modal
+      </Button>
+    </>
+  );
+};
+```
+
+#### Fluid modal
+
+```tsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal zIndex={1020} isDismissable size="fluid" state={state} title="Sudden and magnificent">
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Fluid modal
+      </Button>
+    </>
+  );
+};
+```
+
+### Responsive sizing
+
+```tsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal
+        zIndex={1020}
+        isDismissable
+        size={{ initial: 'fluid', md: 'md' }}
+        state={state}
+        title="Sudden and magnificent"
+      >
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Responsive modal
+      </Button>
+    </>
+  );
+};
+```
+
+### Compact modal with scrolling content
+
+```tsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal zIndex={1020} compact isDismissable size="md" state={state} title="Scrolling content">
+        <ModalBody>
+          <div className="space-y-4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non
+              scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis
+              ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies
+              vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet.
+            </p>
+            <p>
+              Phasellus elementum, augue in tempor imperdiet, justo mauris porttitor elit, ac ornare mauris tellus ac
+              ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ante mi,
+              rhoncus in nisl id, convallis aliquet quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo,
+              quis gravida dui convallis ut.
+            </p>
+            <p>
+              Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel
+              vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor
+              quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce
+              lorem magna, fringilla id auctor eu, faucibus vitae magna.
+            </p>
+            <p>
+              Suspendisse potenti. Praesent id turpis non libero feugiat posuere. Donec condimentum, arcu vel
+              sollicitudin malesuada, lorem neque consequat sem, a dignissim erat lectus quis enim. Integer accumsan
+              nibh at lorem malesuada, vitae tincidunt nunc tincidunt. Aliquam erat volutpat. Sed vitae est nec risus
+              faucibus consequat sed quis velit.
+            </p>
+            <p>
+              Mauris luctus neque vitae erat aliquam, in tempor nibh facilisis. Vestibulum ante ipsum primis in faucibus
+              orci luctus et ultrices posuere cubilia curae. Aenean sed mauris vitae lectus pellentesque tincidunt.
+              Vivamus interdum lorem id quam sagittis, sit amet placerat tortor consequat. Nulla facilisi. Cras mattis
+              justo ut velit gravida, at tristique metus aliquam.
+            </p>
+            <p>
+              Ut finibus, augue ut tincidunt consequat, justo velit vulputate ipsum, at consequat sapien lacus eget
+              neque. Proin eget lacus in metus fermentum tincidunt. Donec ac libero ac justo vestibulum consequat.
+              Curabitur vitae velit vitae ligula vulputate tincidunt. Nam suscipit ipsum at felis pulvinar, quis
+              pharetra erat facilisis. Integer vitae augue vel nibh posuere tempor.
+            </p>
+          </div>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Done"
+          primaryOnClick={state.close}
+          secondaryLabel="Cancel"
+          secondaryOnClick={state.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Compact modal
+      </Button>
+    </>
   );
 };
 ```
@@ -100,6 +298,26 @@
 };
 ```
 
+### Single-action footer
+
+```jsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal zIndex={1020} isDismissable state={state} title="Changes saved">
+        <ModalBody>Your changes have been saved.</ModalBody>
+        <ModalFooter primaryLabel="Done" primaryOnClick={state.close} />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Single-action modal
+      </Button>
+    </>
+  );
+};
+```
+
 ### Not dismissable example
 
 ```jsx
@@ -121,6 +339,32 @@
         Open modal
       </Button>
     </Fragment>
+  );
+};
+```
+
+### Open and close callbacks
+
+```jsx
+() => {
+  const [lastEvent, setLastEvent] = useState('Not opened');
+  const state = useOverlayTriggerState({
+    onOpenChange: isOpen => setLastEvent(isOpen ? 'Opened' : 'Closed'),
+  });
+
+  return (
+    <>
+      <Modal zIndex={1020} isDismissable state={state} title="Open and close callbacks">
+        <ModalBody>Use any dismissal method to close this modal.</ModalBody>
+        <ModalFooter primaryLabel="Close" primaryOnClick={state.close} />
+      </Modal>
+      <Button soft look="primary" onClick={state.open}>
+        Modal with callbacks
+      </Button>
+      <p aria-live="polite" className="typography-body-9 mt-2">
+        Last event: {lastEvent}
+      </p>
+    </>
   );
 };
 ```
