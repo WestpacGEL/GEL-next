@@ -23,13 +23,17 @@ export function CompactaItem({
   title,
   index,
   expandOnMount = true,
+  defaultExpanded,
+  isExpanded,
+  onExpandedChange,
   ...props
 }: CompactaItemProps) {
   const { totalItems, hasInteracted } = useCompacta();
-  const state = useDisclosureState(props);
+  const disclosureProps = { defaultExpanded, isExpanded, onExpandedChange };
+  const state = useDisclosureState(disclosureProps);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const { buttonProps: triggerProps, panelProps } = useDisclosure(props, state, panelRef);
+  const { buttonProps: triggerProps, panelProps } = useDisclosure(disclosureProps, state, panelRef);
   const { buttonProps } = useButton(triggerProps, triggerRef);
   const { isFocusVisible, focusProps } = useFocusRing();
   const { isFocusVisible: isContentFocusVisible, focusProps: contentFocusProps } = useFocusRing({ within: true });
@@ -45,7 +49,7 @@ export function CompactaItem({
 
   useEffect(() => {
     const secondLastIndex = totalItems - 1;
-    if (index !== secondLastIndex && !props.defaultExpanded) {
+    if (index !== secondLastIndex && !defaultExpanded) {
       state.setExpanded(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
