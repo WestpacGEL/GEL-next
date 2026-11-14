@@ -1,13 +1,11 @@
 import { HTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 import { ProgressRopeStepItem } from '../../progress-rope.types.js';
+import { type BaseRopeStepVariants } from '../base-rope-step/base-rope-step.types.js';
 
-import { styles } from './progress-rope-step.styles.js';
-
-type Variants = VariantProps<typeof styles>;
+type Variants = BaseRopeStepVariants;
 
 export type ProgressRopeStepProps = {
   /**
@@ -39,12 +37,8 @@ export type ProgressRopeStepProps = {
    */
   size?: ResponsiveVariants<Variants['size']>;
   /**
-   * Tag to render
-   */
-  tag?: keyof JSX.IntrinsicElements;
-  /**
    * Says it is visited
    */
   visited?: boolean;
-} & Omit<ProgressRopeStepItem, 'text' | 'type'> &
-  HTMLAttributes<Element>;
+} & Omit<ProgressRopeStepItem, 'type'> &
+  Omit<HTMLAttributes<Element>, 'children'>;
