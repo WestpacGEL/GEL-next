@@ -1,4 +1,4 @@
-import { type HTMLAttributes, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { VariantProps } from 'tailwind-variants';
 
 import { BadgeProps } from '../index.js';
@@ -31,26 +31,10 @@ type BaseFlexiCellProps = {
    */
   disabled?: boolean;
   /**
-   * Wraps body with an 'a' tag for dual action styled component
-   * - Requires href to be provided
-   * - Tag prop should not be used when using this prop
-   * @default false
-   */
-  dualAction?: boolean;
-  /**
-   * href in case it is an "a" tag or dualAction
-   */
-  href?: string;
-  /**
    * Large adds more padding/spacing to the Flex Cell
    * @default default
    */
   size?: ResponsiveVariants<Variants['size']>;
-  /**
-   * The native tag that flexicell will be rendered
-   * @default div
-   */
-  tag?: keyof JSX.IntrinsicElements;
   /**
    * Renders badge in top right corner based on provided string
    */
@@ -64,37 +48,58 @@ type BaseFlexiCellProps = {
    * @default false
    */
   withBorder?: ResponsiveVariants<boolean>;
-} & HTMLAttributes<HTMLOrSVGElement>;
-
-type FlexiCellAsLinkProps = {
-  /**
-   * The href for the link
-   */
-  href: string;
-  /**
-   * The native tag that the circle will be rendered as
-   */
-  tag: 'a';
 };
 
-type DualActionFlexiCellProps = {
-  /**
-   * The native tag that the circle will be rendered as
-   */
+type FlexiCellNormalProps<C extends React.ElementType> = BaseFlexiCellProps & {
+  tag?: C;
+  dualAction?: false;
+} & NoInfer<Omit<React.ComponentPropsWithoutRef<C>, keyof BaseFlexiCellProps | 'tag' | 'dualAction'>> &
+  ([C] extends ['div']
+      ? {
+          // Only the default element can omit tag.
+          tag?: 'div';
+          href?: never;
+        }
+      : {tag: C});
+
+type DualActionFlexiCellProps = BaseFlexiCellProps & {
   dualAction: true;
-  /**
-   * The href for the link
-   */
   href: string;
-};
-
-type FlexiCellAsAllOtherTagsProps<Tag> = {
-  href?: never;
-  tag?: Tag;
-};
+  tag?: never;
+} & Omit<React.ComponentPropsWithoutRef<'div'>,
+    keyof BaseFlexiCellProps | 'tag' | 'dualAction' | 'href'>
 
 export type FlexiCellProps<
-  Tag extends keyof Omit<JSX.IntrinsicElements, 'a'> = keyof Omit<JSX.IntrinsicElements, 'a'>,
-> = (FlexiCellAsLinkProps | DualActionFlexiCellProps | FlexiCellAsAllOtherTagsProps<Tag>) &
-  BaseFlexiCellProps &
-  HTMLAttributes<Element>;
+  C extends React.ElementType = 'div'
+> = FlexiCellNormalProps<C> | DualActionFlexiCellProps;
+
+type PolymorphicRef<C extends React.ElementType> = 
+  C extends keyof JSX.IntrinsicElements
+  ? React.Ref<HTMLElement>
+  : 'ref' extends keyof React.ComponentPropsWithRef<C>
+  ? React.ComponentPropsWithRef<C>['ref']
+  : never;
+
+export type FlexiCellImplementationProps =
+BaseFlexiCellProps & {
+  tag?: React.ElementType;
+  className?: string;
+  tabIndex?: number;
+  dualAction?: boolean;
+  href?: unknown;
+} & Record<string, unknown>
+
+export type FlexiCellComponent = {
+  <C extends React.ElementType = 'div'>(
+    props: C extends unknown
+      ? FlexiCellNormalProps<C> & {
+        ref?: PolymorphicRef<C>;
+      } : never,
+  ): React.ReactElement | null;
+  (
+    props: DualActionFlexiCellProps & {
+      ref?: PolymorphicRef<'div'>;
+    },
+  ): React.ReactElement | null;
+  displayName?: string;
+}

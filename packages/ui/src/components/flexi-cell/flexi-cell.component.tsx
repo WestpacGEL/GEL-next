@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Ref, forwardRef, useMemo } from 'react';
+import React, { ForwardedRef, Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -9,7 +9,7 @@ import { ArrowRightIcon } from '../icon/index.js';
 
 import { FlexiCellAdornment, FlexiCellBody } from './components/index.js';
 import { styles as flexiCellStyles } from './flexi-cell.styles.js';
-import { type FlexiCellProps } from './flexi-cell.types.js';
+import { FlexiCellComponent, FlexiCellImplementationProps, type FlexiCellProps } from './flexi-cell.types.js';
 
 function FlexiCellBase(
   {
@@ -28,8 +28,8 @@ function FlexiCellBase(
     tabIndex,
     body = true,
     ...props
-  }: FlexiCellProps,
-  ref: Ref<HTMLElement>,
+  }: FlexiCellImplementationProps,
+  ref: ForwardedRef<unknown>,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
   const breakpoint = useBreakpoint();
@@ -44,7 +44,7 @@ function FlexiCellBase(
   });
 
   const content = useMemo(() => {
-    if (dualAction && href) {
+    if (dualAction && typeof href === 'string' && href) {
       return (
         <FlexiCellBody tag="a" href={href}>
           {children}
@@ -56,7 +56,7 @@ function FlexiCellBase(
 
   return (
     <Tag
-      {...({ ref } as object)}
+      ref={ref}
       className={styles.base({ className })}
       href={href}
       {...mergeProps(props, focusProps)}
@@ -79,5 +79,5 @@ function FlexiCellBase(
   );
 }
 
-export const FlexiCell = forwardRef(FlexiCellBase);
+export const FlexiCell = forwardRef(FlexiCellBase) as unknown as FlexiCellComponent;
 FlexiCell.displayName = 'FlexiCell';

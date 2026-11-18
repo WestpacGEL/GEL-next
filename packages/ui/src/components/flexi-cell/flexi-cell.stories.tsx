@@ -1,12 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { type Meta, StoryFn } from '@storybook/react-vite';
+import NextLinkModule from 'next/link.js';
+import { type ComponentPropsWithoutRef, useState } from 'react';
 
+import { Button } from '../button/button.component.js';
 import { GiftIcon } from '../icon/index.js';
 import { Badge, FlexiCellBody, Grid, GridContainer, GridItem } from '../index.js';
 
 import { FlexiCellHint } from './components/flexi-cell-hint/flexi-cell-hint.component.js';
 import { FlexiCellLabel } from './components/flexi-cell-label/flexi-cell-label.component.js';
 import { FlexiCell } from './flexi-cell.component.js';
+
+const NextLink = NextLinkModule.default;
 
 const meta: Meta<typeof FlexiCell> = {
   title: 'Components/FlexiCell',
@@ -48,6 +53,91 @@ const meta: Meta<typeof FlexiCell> = {
 const imgString = 'https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png';
 
 export default meta;
+
+/**
+ * > Dual action
+ *
+ * The body is a native link, while the separate save button performs an independent action.
+ * No custom tag is supplied: FlexiCell uses its default div wrapper.
+ */
+export function DualAction() {
+  const [saved, setSaved] = useState(false);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <FlexiCell
+        dualAction
+        href="#account-details"
+        withBorder
+        after={
+          <Button look="link" aria-pressed={saved} onClick={() => setSaved(value => !value)}>
+            {saved ? 'Unsave account' : 'Save account'}
+          </Button>
+        }
+      >
+        <FlexiCellLabel tag="h3">Everyday account</FlexiCellLabel>
+        <FlexiCellHint>View account details</FlexiCellHint>
+      </FlexiCell>
+      <p role="status" className="typography-body-10 text-text-body">
+        {saved ? 'Account saved' : 'Account not saved'}
+      </p>
+      <div id="account-details" tabIndex={-1} className="rounded-2xl bg-surface-muted-pale p-2">
+        <h3 className="typography-body-9 font-medium text-text-body">Account details</h3>
+        <p className="typography-body-10 text-text-body">
+          The primary link navigates here without changing the saved state.
+        </p>
+      </div>
+    </div>
+  );
+}
+DualAction.storyName = 'Dual action';
+
+/**
+ * > NextLink
+ *
+ * Renders FlexiCell using Next.js Link through the tag prop with NextLink-specific controls.
+ * Storybook has no Next.js router, so history, scrolling and prefetch behaviour must be tested in a Next.js app.
+ */
+export const WithNextLink: StoryFn<ComponentPropsWithoutRef<typeof NextLink>> = args => {
+  return (
+    <FlexiCell {...args} tag={NextLink} withBorder withArrow>
+      <FlexiCellLabel tag="h3">Next.js link</FlexiCellLabel>
+      <FlexiCellHint>Rendered using NextLink through the tag prop.</FlexiCellHint>
+    </FlexiCell>
+  );
+};
+WithNextLink.storyName = 'NextLink';
+WithNextLink.args = {
+  href: '#next-link',
+  prefetch: false,
+  replace: true,
+  scroll: false,
+};
+WithNextLink.argTypes = {
+  prefetch: {
+    control: 'boolean',
+    description: 'Controls Next.js route prefetching. Requires a Next.js router and a production build.',
+    table: { category: 'NextLink' },
+  },
+  replace: {
+    control: 'boolean',
+    description: 'Replaces the current browser history entry instead of adding a new one during Next.js navigation.',
+    table: { category: 'NextLink' },
+  },
+  scroll: {
+    control: 'boolean',
+    description: 'Set to false to preserve the scroll position during Next.js navigation.',
+    table: { category: 'NextLink' },
+  },
+};
+WithNextLink.parameters = {
+  docs: {
+    description: {
+      story:
+        'Use the NextLink controls to configure the props forwarded through FlexiCell. Storybook has no Next.js router; verify history, scrolling and prefetch behaviour in a Next.js app.',
+    },
+  },
+};
 
 /**
  * > Symbol - Horizontal
@@ -288,3 +378,59 @@ export const ImagePaddedVertical = () => {
   );
 };
 ImagePaddedVertical.storyName = 'Image padded - Vertical';
+
+export const EventInferenceCheck = () => {
+  return (
+    <>
+      <FlexiCell
+        tag="a"
+        href="#test"
+        withBorder
+        onClick={event => {
+          const anchor: HTMLAnchorElement = event.currentTarget;
+          console.log(anchor.href);
+        }}
+      >
+        <FlexiCellLabel tag="span">Native anchor</FlexiCellLabel>
+        <FlexiCellHint tag="span">Click to log the destination URL</FlexiCellHint>
+      </FlexiCell>
+
+      <FlexiCell
+        tag="button"
+        withBorder
+        className="w-full text-left"
+        onClick={event => {
+          const button: HTMLButtonElement = event.currentTarget;
+          console.log(button.disabled);
+        }}
+      >
+        <FlexiCellLabel tag="span">Native button</FlexiCellLabel>
+        <FlexiCellHint tag="span">Click to log whether the button is disabled</FlexiCellHint>
+      </FlexiCell>
+
+      <FlexiCell
+        withBorder
+        onClick={event => {
+          const div: HTMLDivElement = event.currentTarget;
+          console.log(div);
+        }}
+      >
+        <FlexiCellLabel tag="span">Default div</FlexiCellLabel>
+        <FlexiCellHint tag="span">Click to log the div element</FlexiCellHint>
+      </FlexiCell>
+
+      <FlexiCell
+        tag={NextLink}
+        href="#test"
+        withBorder
+        onClick={event => {
+          const anchor: HTMLAnchorElement = event.currentTarget;
+          console.log(anchor.href);
+        }}
+      >
+        <FlexiCellLabel tag="span">NextLink</FlexiCellLabel>
+        <FlexiCellHint tag="span">Click to log the NextLink destination URL</FlexiCellHint>
+      </FlexiCell>
+    </>
+  );
+};
