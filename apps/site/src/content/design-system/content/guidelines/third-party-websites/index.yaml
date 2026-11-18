@@ -13,9 +13,6 @@ design:
     noDemo: true
 accessibility: []
 relatedComponents:
+  icon: cube
   links: []
-code:
-  - title:
-      name: Development examples
-      slug: development-examples
-    noTitle: false
+code: []
