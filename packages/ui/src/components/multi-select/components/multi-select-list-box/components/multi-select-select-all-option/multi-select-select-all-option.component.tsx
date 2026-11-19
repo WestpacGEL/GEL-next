@@ -1,5 +1,6 @@
 'use client';
 
+import { focusWithoutScrolling } from '@react-aria/utils';
 import React, { useCallback, useContext, useMemo, KeyboardEvent } from 'react';
 import { useOption, useFocusRing, mergeProps } from 'react-aria';
 
@@ -54,12 +55,12 @@ export function MultiSelectSelectAllOption() {
     (e: KeyboardEvent<HTMLDivElement>) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
-        const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-        firstItem?.focus();
+        const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement | null;
+        if (firstItem) focusWithoutScrolling(firstItem);
       }
       if (e.key === 'ArrowUp') {
         e.preventDefault();
-        inputRef.current?.focus();
+        if (inputRef.current) focusWithoutScrolling(inputRef.current);
       }
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();

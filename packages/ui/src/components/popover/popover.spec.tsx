@@ -47,17 +47,52 @@ describe('Popover', () => {
     expect(getByText('test heading')).toBeInTheDocument();
   });
 
-  it('should show the popover by default if open is passed as prop', () => {
-    const { getByText } = render(
+  it('should name the trigger with the label prop and name the dialog from the trigger', () => {
+    const { getByRole } = render(
+      <Popover content={panelContent} icon={HelpIcon} label="More information about ABNs" open />,
+    );
+
+    expect(getByRole('button', { name: 'More information about ABNs' })).toBeInTheDocument();
+    expect(getByRole('dialog', { name: 'More information about ABNs' })).toBeInTheDocument();
+  });
+
+  it('should name the dialog from the trigger text when no label is passed', () => {
+    const { getByRole } = render(
+      <Popover content={panelContent} open>
+        Test
+      </Popover>,
+    );
+
+    expect(getByRole('dialog', { name: 'Test' })).toBeInTheDocument();
+  });
+
+  it('should show the popover by default without taking focus if open is passed as prop', () => {
+    const { getByRole, getByText } = render(
       <Popover content={panelContent} open>
         Test
       </Popover>,
     );
 
     expect(getByText(panelContent)).toBeInTheDocument();
+    expect(getByRole('dialog')).not.toHaveFocus();
   });
 
-  it('should close popover when close button clicked', async () => {
+  it('should focus the dialog on open and tab past the static content to the close button', async () => {
+    const user = userEvent.setup();
+    const { getByRole } = render(
+      <Popover content={panelContent} heading="test heading">
+        Test
+      </Popover>,
+    );
+
+    await user.click(getByRole('button', { name: 'Test' }));
+    await waitFor(() => expect(getByRole('dialog', { name: 'Test' })).toHaveFocus());
+
+    await user.tab();
+    expect(getByRole('button', { name: 'Close popover' })).toHaveFocus();
+  });
+
+  it('should close popover and return focus to the trigger when close button clicked', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(<Popover content={panelContent}>Test</Popover>);
     act(() => {
@@ -72,6 +107,7 @@ describe('Popover', () => {
     await waitFor(() => {
       expect(queryByText(panelContent)).not.toBeInTheDocument();
     });
+    expect(getByRole('button', { name: 'Test' })).toHaveFocus();
   });
 
   it('should close popover when esc key pressed', async () => {

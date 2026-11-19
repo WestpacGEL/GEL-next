@@ -1,7 +1,7 @@
 'use client';
 
-import React, { Ref, forwardRef, useContext, useRef } from 'react';
-import { VisuallyHidden, mergeProps, useCheckboxGroupItem, useFocusRing } from 'react-aria';
+import React, { ForwardedRef, forwardRef, useContext } from 'react';
+import { VisuallyHidden, mergeProps, useCheckboxGroupItem, useFocusRing, useObjectRef } from 'react-aria';
 
 import { Icon } from '../../../icon/icon.component.js';
 import { IconProps } from '../../../icon/index.js';
@@ -33,22 +33,22 @@ function CheckIcon({ copyrightYear = '2025', size, ...props }: IconProps) {
 
 function BaseCheckbox(
   { className, hint, label, value, ...props }: CheckboxGroupCheckboxProps,
-  ref: Ref<HTMLLabelElement>,
+  ref: ForwardedRef<HTMLInputElement>,
 ) {
   const { state, size, orientation } = useContext(CheckboxGroupContext);
-  const localRef = useRef(null);
+  const inputRef = useObjectRef(ref);
   const { inputProps, labelProps, isDisabled, isSelected } = useCheckboxGroupItem(
     { ...props, value, children: label },
     state,
-    localRef,
+    inputRef,
   );
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = checkboxItemStyles({ isDisabled, size, orientation, isFocusVisible });
 
   return (
-    <label className={styles.base({ className })} ref={ref} {...labelProps}>
+    <label className={styles.base({ className })} {...labelProps}>
       <VisuallyHidden elementType="span">
-        <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
+        <input {...mergeProps(inputProps, focusProps)} ref={inputRef} />
       </VisuallyHidden>
       <span className={styles.checkbox()}>
         {isSelected && <CheckIcon className={styles.checkIcon()} size={size} color={isDisabled ? 'muted' : 'hero'} />}

@@ -1,8 +1,9 @@
 'use client';
 
+import { focusWithoutScrolling } from '@react-aria/utils';
 import { Node } from '@react-types/shared';
-import React, { useRef, useState, memo, createContext } from 'react';
-import { useFilter, useOverlayTrigger } from 'react-aria';
+import React, { ForwardedRef, forwardRef, useRef, useState, memo, createContext } from 'react';
+import { useFilter, useObjectRef, useOverlayTrigger } from 'react-aria';
 import { Item, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { MultiSelectDropdown } from './components/multi-select-dropdown/multi-select-dropdown.component.js';
@@ -30,22 +31,25 @@ export const MultiSelectContext = createContext<MultiSelectContextProps>({
   hideSelectAll: false,
 });
 
-export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
-  size = 'medium',
-  listBoxProps,
-  selectionMode = 'multiple',
-  selectedKeys,
-  onSelectionChange,
-  placeholder = 'Select',
-  showSingleSectionTitle = false,
-  placement = 'bottom left',
-  portalContainer,
-  id,
-  hideFilter = false,
-  hideSelectAll = false,
-  width = 'full',
-  ...props
-}: MultiSelectProps<T>) {
+export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>(
+  {
+    size = 'medium',
+    listBoxProps,
+    selectionMode = 'multiple',
+    selectedKeys,
+    onSelectionChange,
+    placeholder = 'Select',
+    showSingleSectionTitle = false,
+    placement = 'bottom left',
+    portalContainer,
+    id,
+    hideFilter = false,
+    hideSelectAll = false,
+    width = 'full',
+    ...props
+  }: MultiSelectProps<T>,
+  forwardedRef: ForwardedRef<HTMLButtonElement>,
+) {
   const [filterText, setFilterText] = useState('');
   const filter = useFilter({ sensitivity: 'base' });
 
@@ -62,7 +66,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
 
   // refs
   const inputRef = useRef<HTMLInputElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonRef = useObjectRef(forwardedRef);
   const popoverRef = useRef<HTMLDivElement>(null);
   const selectAllRef = useRef<HTMLInputElement>(null);
   const listBoxRef = useRef<HTMLUListElement>(null);
@@ -70,15 +74,14 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   const overlayState = useOverlayTriggerState({
     onOpenChange: isOpen => {
       if (isOpen) {
+        // Focus moves into the popover without scrolling the page (react-aria's own focus helper), so the
+        // dropdown does not jump around, and page scroll cannot dismiss it while the user navigates.
         requestAnimationFrame(() => {
-          if (!hideFilter) {
-            inputRef.current?.focus();
-          } else if (selectionMode === 'multiple' && !hideSelectAll) {
-            selectAllRef.current?.focus();
-          } else {
-            const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-            firstItem?.focus();
-          }
+          const target =
+            (!hideFilter && inputRef.current) ||
+            (selectionMode === 'multiple' && !hideSelectAll && selectAllRef.current) ||
+            (listBoxRef.current?.querySelector('[data-key]') as HTMLElement | null);
+          if (target) focusWithoutScrolling(target);
         });
       }
       if (!isOpen) {
@@ -124,7 +127,9 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     </MultiSelectContext.Provider>
   );
 }
-export const MultiSelect = memo(BaseMultiSelect);
+
+export const MultiSelect = memo(forwardRef(BaseMultiSelect));
+MultiSelect.displayName = 'MultiSelect';
 
 // Exporting react-stately's Item with custom props/naming and Section with custom naming to align with other components
 export const MultiSelectItem = Item as (props: MultiSelectItemProps) => JSX.Element;

@@ -32,4 +32,4 @@ Toggle button group with single or multiple selection.
 </ButtonGroup>
 ```
 
-**Capabilities:** Single or multiple selection · Controlled or uncontrolled · Responsive look/block · Built on react-aria toggle group
+**Capabilities:** Single or multiple selection · Controlled or uncontrolled · Responsive look/block · Built on react-aria toggle group · `ref` is a `FocusHandle` (`{ focus() }`) that focuses the first enabled button (pass `field.ref` from react-hook-form)

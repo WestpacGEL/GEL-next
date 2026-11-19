@@ -38,5 +38,6 @@ design:
     noDemo: true
 accessibility: []
 relatedComponents:
+  icon: cube
   links: []
 code: []

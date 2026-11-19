@@ -3,6 +3,7 @@
 import React, { useContext, useLayoutEffect, useMemo } from 'react';
 import { DismissButton, mergeProps, Overlay, usePopover } from 'react-aria';
 
+import { useRepositionOnTriggerMove } from '../../../../hook/reposition-on-trigger-move.hook.js';
 import { MultiSelectContext } from '../../multi-select.component.js';
 
 import { styles as popoverStyles } from './multi-select-popover.styles.js';
@@ -24,6 +25,16 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Keeps the dropdown attached to the trigger if surrounding content shifts the layout while it is open
+  const shouldUpdatePosition = useRepositionOnTriggerMove(buttonRef, popoverRef, overlayState.isOpen);
+
+  // react-aria assumes a non-modal popover never receives DOM focus, so it closes it whenever the page
+  // scrolls (useOverlayPosition -> useCloseOnScroll via `state.close`). Focus does move into this popover
+  // (filter input / options), and browsers may scroll the page when it does, which closed the dropdown
+  // mid keyboard navigation. Dismissal (blur, Escape, Tab, DismissButton) is handled explicitly below, so
+  // give react-aria a state it cannot close.
+  const positioningState = { ...overlayState, close: () => undefined };
+
   const { popoverProps } = usePopover(
     {
       ...props,
@@ -32,10 +43,11 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
       triggerRef: buttonRef,
       isNonModal: true,
       shouldFlip: true,
+      shouldUpdatePosition,
       shouldCloseOnInteractOutside: () => false, // need to manage accessibility manually due to complexity of component
       offset: 6,
     },
-    overlayState,
+    positioningState,
   );
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
@@ -80,7 +92,6 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
           }
         }}
         role="dialog"
-        aria-modal="true"
         aria-label="Options list with filter"
       >
         {children}

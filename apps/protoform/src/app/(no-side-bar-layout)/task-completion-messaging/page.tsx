@@ -1,9 +1,8 @@
-/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { Button } from '@westpac/ui';
 import { TickCircleIcon } from '@westpac/ui/icon';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
 
@@ -21,16 +20,12 @@ export default function TaskCompletionMessagingPage() {
       </CustomHeading>
       <p>Your new card is good to go. You can now set or change your pin.</p>
       <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
-        <Link href="/" passHref legacyBehavior>
-          <Button size="large" look="primary">
-            Set PIN
-          </Button>
-        </Link>
-        <Link href="/" passHref legacyBehavior>
-          <Button size="large" look="link">
-            Not now
-          </Button>
-        </Link>
+        <Button tag={NextLink} href="/" size="large" look="primary">
+          Set PIN
+        </Button>
+        <Button tag={NextLink} href="/" size="large" look="link">
+          Not now
+        </Button>
       </div>
     </div>
   );

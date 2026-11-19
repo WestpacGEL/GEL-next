@@ -68,6 +68,29 @@ export const WithFooter = () => {
 };
 
 /**
+ * > Footer with configurable button styles
+ */
+export const ButtonStyles = () => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal title="Title" isDismissable state={state} aria-label="Modal title">
+        <ModalBody>{`I'm children`}</ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={() => state.close()}
+          secondaryButtonProps={{ look: 'faint', soft: true }}
+          secondaryLabel="Label"
+          secondaryOnClick={() => state.close()}
+        />
+      </Modal>
+      <Button onClick={() => state.open()}>Open Modal</Button>
+    </>
+  );
+};
+
+/**
  * > All sizes usage example
  */
 export const Sizes = () => {

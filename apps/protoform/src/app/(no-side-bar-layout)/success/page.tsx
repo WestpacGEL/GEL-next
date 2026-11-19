@@ -1,9 +1,8 @@
-/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { Button, List, ListItem } from '@westpac/ui';
 import { TickCircleIcon } from '@westpac/ui/icon';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
 
@@ -38,11 +37,16 @@ export default function SuccessPage() {
           If it’s successful, we’ll provide sign-in instructions for Westpac OnlinePay
         </ListItem>
       </List>
-      <Link href="/" passHref legacyBehavior>
-        <Button tag="a" look="primary" size="large" block={{ initial: true, xsl: false }} className="mt-5">
-          Return home
-        </Button>
-      </Link>
+      <Button
+        tag={NextLink}
+        href="/"
+        look="primary"
+        size="large"
+        block={{ initial: true, xsl: false }}
+        className="mt-5"
+      >
+        Return home
+      </Button>
     </div>
   );
 }
