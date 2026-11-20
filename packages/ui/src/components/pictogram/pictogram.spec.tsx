@@ -16,6 +16,33 @@ describe('Pictogram', () => {
       render(<Pictogram />);
       expect(screen.getByRole('img')).toBeInTheDocument();
     });
+
+    it.each([
+      [
+        ['wbc', false],
+        //  ['wbcLegacy', true],
+        ['bom', true],
+        ['bsa', true],
+        ['btfg', true],
+        ['stg', true],
+        [undefined, true],
+      ],
+    ])(`renders ${name} with data-brand=%s: visible=%s`, (brand, visible) => {
+      render(
+        <div data-brand={brand}>
+          <Pictogram />
+        </div>,
+      );
+
+      const pictogram = screen.getByRole('img', { hidden: true });
+      expect(pictogram).toBeInTheDocument();
+
+      if (visible) {
+        expect(pictogram).toBeVisible();
+      } else {
+        expect(pictogram).not.toBeVisible();
+      }
+    });
   });
 
   it('renders the style correctly', () => {
