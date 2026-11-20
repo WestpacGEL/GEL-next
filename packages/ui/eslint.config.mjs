@@ -1,4 +1,4 @@
-import { dirname } from 'path';
+// import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import { fixupPluginRules } from '@eslint/compat';
@@ -64,7 +64,8 @@ export default defineConfig([
     settings: {
       'better-tailwindcss': {
         // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
-        entryPoint: 'src/css/global.css',
+        // entryPoint: 'src/css/global.css',
+        entryPoint: fileURLToPath(new URL('./.storybook/global.css', import.meta.url)),
       },
     },
   },

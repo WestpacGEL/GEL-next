@@ -18,7 +18,7 @@ export function AeroplanePictogram({
 }: PictogramProps) {
   return (
     <Pictogram
-      className={clsx('size-13', className)}
+      className={clsx('size-13', className, 'wbc:hidden')}
       viewBoxWidth={viewBoxWidth}
       viewBoxHeight={viewBoxHeight}
       aria-label={ariaLabel}
