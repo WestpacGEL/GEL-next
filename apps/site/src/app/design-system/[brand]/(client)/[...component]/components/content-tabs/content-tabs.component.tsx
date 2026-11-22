@@ -42,6 +42,16 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
       />
     );
   }
+  if (tabKey === 'content') {
+    return (
+      <DesignContent
+        shortCodes={content.shortCodes}
+        description={content.description}
+        designSections={content.contentSections}
+      />
+    );
+  }
+
   return <></>;
 };
 
@@ -67,12 +77,14 @@ export function ContentTabs({ content, tab }: { brand: string; content: ContentT
       ...(content.designSections?.length ? [{ label: 'Design', key: 'design' }] : []),
       ...(content.accessibilitySections.length > 0 ? [{ label: 'Accessibility', key: 'accessibility' }] : []),
       ...(content.componentProps || content.codeSections.length > 0 ? [{ label: 'Code', key: 'code' }] : []),
+      ...(content.contentSections.length > 0 ? [{ label: 'Content', key: 'content' }] : []),
     ];
   }, [
     content.accessibilitySections.length,
     content.codeSections.length,
     content.componentProps,
     content.designSections?.length,
+    content.contentSections.length,
   ]);
 
   if (filteredTabs.length === 1) {

@@ -94,76 +94,85 @@ export default async function ComponentPage({
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');
 
-  const [designSections, accessibilitySections, accessibilityDemo, codeSections, relatedArticles] = await Promise.all([
-    Promise.all(
-      content.design.map(section => {
-        return new Promise<DesignSectionProps>((resolve, reject) => {
-          return section
-            .content()
-            .then(content => {
-              resolve({
-                title: section.title.name,
-                content: content,
-                noTitle: section.noTitle,
-                noDemo: section.noDemo,
+  const [designSections, accessibilitySections, accessibilityDemo, codeSections, relatedArticles, contentSections] =
+    await Promise.all([
+      Promise.all(
+        content.design.map(section => {
+          return new Promise<DesignSectionProps>((resolve, reject) => {
+            return section
+              .content()
+              .then(content => {
+                resolve({
+                  title: section.title.name,
+                  content: content,
+                  noTitle: section.noTitle,
+                  noDemo: section.noDemo,
+                });
+                return {
+                  ...section,
+                  content,
+                };
+              })
+              .catch((error: unknown) => {
+                reject(error as Error);
               });
-              return {
-                ...section,
-                content,
-              };
-            })
-            .catch((error: unknown) => {
-              reject(error as Error);
-            });
-        });
-      }),
-    ),
-    Promise.all(
-      content.accessibility.map(section => {
-        return new Promise<AccessibilitySectionProps>((resolve, reject) => {
-          return section
-            .content()
-            .then(content => {
-              resolve({
-                title: section.title.name,
-                content: content,
+          });
+        }),
+      ),
+      Promise.all(
+        content.accessibility.map(section => {
+          return new Promise<AccessibilitySectionProps>((resolve, reject) => {
+            return section
+              .content()
+              .then(content => {
+                resolve({
+                  title: section.title.name,
+                  content: content,
+                });
+                return {
+                  ...section,
+                  content,
+                };
+              })
+              .catch((error: unknown) => {
+                reject(error as Error);
               });
-              return {
-                ...section,
-                content,
-              };
-            })
-            .catch((error: unknown) => {
-              reject(error as Error);
-            });
-        });
-      }),
-    ),
-    content?.accessibilityDemo(),
-    Promise.all(
-      content.code.map(section => {
-        return new Promise<CodeSectionProps>((resolve, reject) => {
-          return section
-            .content()
-            .then(content => {
-              resolve({
-                title: section.title.name,
-                content: content,
-                noTitle: section.noTitle,
+          });
+        }),
+      ),
+      content?.accessibilityDemo(),
+      Promise.all(
+        content.code.map(section => {
+          return new Promise<CodeSectionProps>((resolve, reject) => {
+            return section
+              .content()
+              .then(content => {
+                resolve({
+                  title: section.title.name,
+                  content: content,
+                  noTitle: section.noTitle,
+                });
+                return {
+                  ...section,
+                  content,
+                };
+              })
+              .catch((error: unknown) => {
+                reject(error as Error);
               });
-              return {
-                ...section,
-                content,
-              };
-            })
-            .catch((error: unknown) => {
-              reject(error as Error);
-            });
-        });
-      }),
-    ),
-    content?.relatedArticles(),
-  ]);
+          });
+        }),
+      ),
+      content?.relatedArticles(),
+      Promise.all(
+        content.content.map(async section => ({
+          title: section.title.name,
+          content: await section.content(),
+          noTitle: section.noTitle,
+          noDemo: section.noDemo,
+        })),
+      ),
+    ]);
 
   const accessibilityIsEmpty = accessibilityDemo[0].children.length <= 1 && !accessibilityDemo[0].children[0].text;
   const relatedArticlesIsEmpty = relatedArticles[0].children.length <= 1 && !relatedArticles[0].children[0].text;
@@ -198,6 +207,7 @@ export default async function ComponentPage({
         relatedComponents: content?.relatedComponents as RelatedInfoProps['relatedComponents'],
         componentProps,
         subComponentProps,
+        contentSections,
       }}
     />
   );

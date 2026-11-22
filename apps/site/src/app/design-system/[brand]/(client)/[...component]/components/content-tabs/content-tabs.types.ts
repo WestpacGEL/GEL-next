@@ -15,6 +15,7 @@ export type ContentTabsProps = {
   codeSections: CodeSectionProps[];
   componentName: string;
   componentProps?: ComponentProps;
+  contentSections: DesignSectionProps[];
   description?: string;
   designSections?: DesignSectionProps[];
   namedExport?: string;

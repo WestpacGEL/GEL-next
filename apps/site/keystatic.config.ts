@@ -341,6 +341,54 @@ export default config({
             slugField: 'title',
           },
         ),
+        content: fields.array(
+          fields.object({
+            title: fields.slug({
+              name: {
+                label: 'Title',
+                validation: {
+                  length: {
+                    min: 1,
+                  },
+                },
+              },
+            }),
+            noTitle: fields.checkbox({ label: 'No title' }),
+            noDemo: fields.checkbox({ label: 'No demo button on examples' }),
+            content: fields.document({
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+                listTypes: {
+                  ordered: true,
+                  unordered: true,
+                },
+                headingLevels: [1, 2, 3, 4, 5, 6],
+                blockTypes: {
+                  blockquote: true,
+                  code: true,
+                },
+                softBreaks: true,
+              },
+              dividers: true,
+              links: true,
+              images: true,
+              layouts: [[6, 6]],
+              label: 'Content',
+              componentBlocks: foundationBlocks,
+            }),
+          }),
+          {
+            label: 'Content sections',
+            itemLabel: props => props.fields.title.value.name,
+            slugField: 'title',
+          },
+        ),
       },
     }),
     articles: collection({
