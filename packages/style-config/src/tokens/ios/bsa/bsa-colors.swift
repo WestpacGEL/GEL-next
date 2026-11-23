@@ -35,6 +35,20 @@ public enum BSALightColors {
   public static let surfaceSystemErrorDark = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
   public static let surfaceMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let surfaceReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let iconBody = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
+  public static let iconHeading = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 1)
+  public static let iconMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
+  public static let iconPrimary = UIColor(red: 0.847, green: 0.106, blue: 0.169, alpha: 1)
+  public static let iconHero = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 1)
+  public static let iconHoller = UIColor(red: 0.635, green: 0.133, blue: 0.412, alpha: 1)
+  public static let iconLink = UIColor(red: 0.847, green: 0.106, blue: 0.169, alpha: 1)
+  public static let iconSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
+  public static let iconInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
+  public static let iconWarning = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
+  public static let iconDanger = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
+  public static let iconSystemError = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
+  public static let iconMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let iconReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let textBody = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
   public static let textHeading = UIColor(red: 0.000, green: 0.184, blue: 0.424, alpha: 1)
   public static let textMuted = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
@@ -139,6 +153,20 @@ public enum BSADarkColors {
   public static let surfaceSystemErrorDark = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
   public static let surfaceMono = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
   public static let surfaceReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let iconBody = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let iconHeading = UIColor(red: 0.298, green: 0.553, blue: 0.882, alpha: 1)
+  public static let iconMuted = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
+  public static let iconPrimary = UIColor(red: 0.976, green: 0.263, blue: 0.310, alpha: 1)
+  public static let iconHero = UIColor(red: 0.298, green: 0.553, blue: 0.882, alpha: 1)
+  public static let iconHoller = UIColor(red: 0.859, green: 0.322, blue: 0.620, alpha: 1)
+  public static let iconLink = UIColor(red: 0.976, green: 0.263, blue: 0.310, alpha: 1)
+  public static let iconSuccess = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
+  public static let iconInfo = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
+  public static let iconWarning = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
+  public static let iconDanger = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
+  public static let iconSystemError = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
+  public static let iconMono = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
+  public static let iconReversed = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
   public static let textBody = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
   public static let textHeading = UIColor(red: 0.298, green: 0.553, blue: 0.882, alpha: 1)
   public static let textMuted = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
@@ -530,6 +558,146 @@ public enum BSAColors {
           return BSADarkColors.surfaceReversed
         default:
           return BSALightColors.surfaceReversed
+      }
+    }
+  }
+  public static var iconBody: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconBody
+        default:
+          return BSALightColors.iconBody
+      }
+    }
+  }
+  public static var iconHeading: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconHeading
+        default:
+          return BSALightColors.iconHeading
+      }
+    }
+  }
+  public static var iconMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconMuted
+        default:
+          return BSALightColors.iconMuted
+      }
+    }
+  }
+  public static var iconPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconPrimary
+        default:
+          return BSALightColors.iconPrimary
+      }
+    }
+  }
+  public static var iconHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconHero
+        default:
+          return BSALightColors.iconHero
+      }
+    }
+  }
+  public static var iconHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconHoller
+        default:
+          return BSALightColors.iconHoller
+      }
+    }
+  }
+  public static var iconLink: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconLink
+        default:
+          return BSALightColors.iconLink
+      }
+    }
+  }
+  public static var iconSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconSuccess
+        default:
+          return BSALightColors.iconSuccess
+      }
+    }
+  }
+  public static var iconInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconInfo
+        default:
+          return BSALightColors.iconInfo
+      }
+    }
+  }
+  public static var iconWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconWarning
+        default:
+          return BSALightColors.iconWarning
+      }
+    }
+  }
+  public static var iconDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconDanger
+        default:
+          return BSALightColors.iconDanger
+      }
+    }
+  }
+  public static var iconSystemError: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconSystemError
+        default:
+          return BSALightColors.iconSystemError
+      }
+    }
+  }
+  public static var iconMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconMono
+        default:
+          return BSALightColors.iconMono
+      }
+    }
+  }
+  public static var iconReversed: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return BSADarkColors.iconReversed
+        default:
+          return BSALightColors.iconReversed
       }
     }
   }

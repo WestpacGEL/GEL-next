@@ -1534,6 +1534,120 @@
             "$description": "Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode."
           }
         },
+        "icon": {
+          "icon-body": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.muted.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-heading": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.muted.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.holler.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-link": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-system-error": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-reversed": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          }
+        },
         "text": {
           "text-body": {
             "$type": "color",
@@ -1998,6 +2112,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-accent": {
@@ -2007,6 +2122,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-a": {
@@ -2016,6 +2132,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-b": {
@@ -2025,6 +2142,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-c": {
@@ -2034,6 +2152,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-d": {
@@ -2043,6 +2162,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           }
         },
@@ -2547,6 +2667,120 @@
             "$description": "Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode."
           }
         },
+        "icon": {
+          "icon-body": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.muted.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-heading": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.hero.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.muted.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.primary.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.hero.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.holler.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-link": {
+            "$type": "color",
+            "$value": "{Primitives.color.BSA.primary.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-system-error": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.black}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "icon-reversed": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          }
+        },
         "text": {
           "text-body": {
             "$type": "color",
@@ -3011,6 +3245,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-accent": {
@@ -3020,6 +3255,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-a": {
@@ -3029,6 +3265,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-b": {
@@ -3038,6 +3275,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-c": {
@@ -3047,6 +3285,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           },
           "surface-pictogram-d": {
@@ -3056,6 +3295,7 @@
             "$scopes": [
               "ALL_SCOPES"
             ],
+            "$hiddenFromPublishing": true,
             "$description": "Reserved. Only for use on Pictograms."
           }
         },

@@ -126,6 +126,20 @@
       --surface-system-error-dark: var(--reserved-system-950);
       --surface-mono: var(--mono-white);
       --surface-reversed: var(--mono-white);
+      --icon-body: var(--bom-muted-950);
+      --icon-heading: var(--bom-hero-500);
+      --icon-muted: var(--bom-muted-500);
+      --icon-primary: var(--bom-primary-500);
+      --icon-hero: var(--bom-hero-500);
+      --icon-holler: var(--bom-holler-500);
+      --icon-link: var(--bom-primary-500);
+      --icon-success: var(--reserved-success-500);
+      --icon-info: var(--reserved-info-500);
+      --icon-warning: var(--reserved-warning-500);
+      --icon-danger: var(--reserved-danger-500);
+      --icon-system-error: var(--reserved-system-950);
+      --icon-mono: var(--mono-white);
+      --icon-reversed: var(--mono-white);
       --text-body: var(--bom-hero-900);
       --text-heading: var(--bom-hero-500);
       --text-muted: var(--bom-muted-500);
@@ -199,7 +213,7 @@
       --font-brand: Brown Pro;
     }
 
-    /* Dark mode is opt-in; browser preferences do not change the default. */
+    /* Dark mode is opt-in; native browser controls follow the selected mode. */
     [data-brand="bom"][data-theme="dark"] {
       color-scheme: dark;
 
@@ -236,6 +250,20 @@
       --surface-system-error-dark: var(--reserved-system-500);
       --surface-mono: var(--mono-black);
       --surface-reversed: var(--mono-white);
+      --icon-body: var(--bom-muted-200);
+      --icon-heading: var(--bom-hero-200);
+      --icon-muted: var(--bom-muted-400);
+      --icon-primary: var(--bom-primary-300);
+      --icon-hero: var(--bom-hero-300);
+      --icon-holler: var(--bom-holler-300);
+      --icon-link: var(--bom-primary-300);
+      --icon-success: var(--reserved-success-300);
+      --icon-info: var(--reserved-info-300);
+      --icon-warning: var(--reserved-warning-300);
+      --icon-danger: var(--reserved-danger-300);
+      --icon-system-error: var(--reserved-system-500);
+      --icon-mono: var(--mono-black);
+      --icon-reversed: var(--mono-white);
       --text-body: var(--bom-muted-200);
       --text-heading: var(--bom-hero-300);
       --text-muted: var(--bom-muted-400);

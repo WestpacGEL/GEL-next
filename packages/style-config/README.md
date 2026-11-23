@@ -8,7 +8,7 @@ The GEL Style Config package is the central design system foundation for Westpac
 
 - **Design Tokens**: Complete set of W3C-compliant design tokens for colors, typography, spacing, and borders
 - **Multi-Brand Support**: Pre-configured themes for all Westpac Group brands
-- **Light/Dark Mode**: Light by default, with explicitly selected dark tokens for WBC, WBC26, STG, BSA and BOM
+- **Light/Dark Mode**: Light by default, with explicitly selected dark tokens for Westpac, Westpac Legacy, STG, BSA and BOM
 - **Tailwind CSS v4 Integration**: Optimized for the latest Tailwind CSS with native CSS variable support
 
 This package serves as the single source of truth for design consistency across the Westpac Group ecosystem, ensuring brand compliance and accelerating development workflows.
@@ -52,7 +52,7 @@ For brand theming, import the required brand stylesheets:
 
 ```css
 @import '@westpac/style-config/themes/wbc';
-@import '@westpac/style-config/themes/wbc26';
+@import '@westpac/style-config/themes/wbcLegacy';
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
@@ -62,7 +62,7 @@ For brand theming, import the required brand stylesheets:
 
 Add a custom attribute tag `data-brand="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
 
-Following example shows adding `wbc` brand. Use `wbc26`, `stg`, `bom` and `bsa` for the other token themes. WBC26 retains the release branch's `wbc26` code for theme imports, DOM attributes and native output paths; `release/wbc-26` is the Git branch name, not the token brand code.
+The following example selects `wbc`, the refreshed Westpac appearance previously named WBC26. Use `wbcLegacy` (capital L) to retain the previous Westpac appearance, or `stg`, `bom` and `bsa` for the other token themes. The public `wbc26` identifier has been removed without a compatibility alias. Existing WBC26 consumers must migrate to `wbc`; existing WBC consumers retaining their appearance must change their theme import, `data-brand` and explicit component brand props to `wbcLegacy`.
 
 ```html
 <!doctype html>
@@ -84,7 +84,7 @@ Web dark mode is opt-in. Set `data-theme="dark"` on the **same element** as `dat
 
 Keep using semantic utilities such as `bg-background-white` and `text-text-body`; their values change with the selected mode. Applications own the user's selection and any persistence of it.
 
-In Storybook, select WBC or WBC26 from the brand toolbar, then use the dark-mode toggle. The preview sets `data-theme` on the same `<html>` element as `data-brand`; no DevTools edit is needed. A fresh Storybook session starts in light mode; the addon can remember a previous selection.
+In Storybook, Westpac is the default brand; select Westpac Legacy to preview the previous appearance, then use the dark-mode toggle. The preview sets `data-theme` on the same `<html>` element as `data-brand`; no DevTools edit is needed. A fresh Storybook session starts in light mode; the addon can remember a previous selection.
 
 ### Tokens
 
@@ -93,6 +93,10 @@ All brand tokens are also exported in the [W3C design tokens format](https://www
 ```js
 import { ALL_BRANDS } from '@westpac/style-config/tokens';
 ```
+
+Aggregate token keys retain their Figma source identities: `ALL_BRANDS.Tokens['Westpac 2026']` supplies `wbc`, and `ALL_BRANDS.Tokens.Westpac` supplies `wbcLegacy`. Primitive palette names and references are unchanged. These source names are not additional selectable brands.
+
+The colour tokens include 14 `icon-*` tokens for each brand in both modes. Use utilities such as `text-icon-body`, `text-icon-primary` and `text-icon-hero` for icons that inherit `currentColor`. Icon tokens can use different dark-mode ramp values from surface tokens; do not substitute `surface-*` values. Preview them under **Foundation / Colours / Icon** in Storybook.
 
 #### Generating web and native tokens
 
@@ -206,3 +210,7 @@ FIGMA_TOKEN=PAT
 4. If you have your access to the project approved you can now run `pnpm build:tokens-file` to generate a new `GEL-tokens-figma.json` file, which is used to build off.
 
 5. You can now run `pnpm build` and update the tokens. Double check the updates to ensure they are all correct before raising a PR.
+
+The import preserves Figma collection names. `src/constants/brands.json` allocates those collections to public brands during generation: `Westpac 2026` becomes `wbc`, and `Westpac` becomes `wbcLegacy`. Do not rename collections in the Figma export or edit generated CSS/native files to perform this allocation.
+
+The 23 November 2026 refresh adds the icon colour group for all five brands and updates the Westpac 2026 pictogram palette (four light-mode and six dark-mode values). Other existing token values are unchanged. Run `pnpm test` after generation and review the source-token diff alongside the generated outputs.

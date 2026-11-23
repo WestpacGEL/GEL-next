@@ -898,7 +898,7 @@ const LOG_CONFIG = {
             {
               destination: `${SRC_FOLDER}/css/${brandName}/style.css`,
               format: ['css/mode-wrapped-single-brand'],
-              options: { brand: brandName.toLowerCase() },
+              options: { brand: brandName },
             },
           ],
         },

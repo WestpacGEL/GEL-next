@@ -38,10 +38,6 @@ function swiftMembers(swift, enumName) {
 }
 
 test('generates brand-specific light and opt-in dark tokens for web and native consumers', t => {
-  assert.ok(
-    brands.some(({ brandCode }) => brandCode === 'wbc26'),
-    'WBC26 must be generated alongside WBC',
-  );
   // Generate from source in an empty output tree, so stale checked-in files cannot make this pass.
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'gel-tokens-'));
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
@@ -61,6 +57,19 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
     execFileSync(process.execPath, [path.join(root, 'utils/transformers', script)], { cwd: root, stdio: 'pipe' });
   }
   const read = file => fs.readFileSync(path.join(root, 'src', file), 'utf8');
+  assert.deepEqual(fs.readdirSync(path.join(root, 'src/css/themes')).sort(), [
+    'theme-bom.css',
+    'theme-bsa.css',
+    'theme-stg.css',
+    'theme-wbc.css',
+    'theme-wbcLegacy.css',
+  ]);
+  for (const platform of ['w3c', 'css', 'ios', 'android']) {
+    assert.equal(
+      fs.existsSync(path.join(root, 'src/tokens', platform, platform === 'w3c' ? 'wbc26.json' : 'wbc26')),
+      false,
+    );
+  }
   const resolve = token => {
     const reference = token.$value.replace(/^\{(?:Primitives\.)?|\}$/g, '');
     return reference.split('.').reduce((value, key) => value[key], primitives).$value;
@@ -101,6 +110,20 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
       const members = swiftMembers(swift, `${enumName}${swiftMode}Colors`);
       const radii = swiftMembers(dimensions, `${enumName}${swiftMode}Dimensions`);
       const selector = `[data-brand="${brand}"]${mode === 'dark' ? '[data-theme="dark"]' : ''}`;
+      // Independent values catch an incorrect public-to-source mapping even if the registry agrees with itself.
+      const heroColors = {
+        wbc: { light: '#990000', dark: '#e76969' },
+        wbcLegacy: { light: '#1f1c4f', dark: '#6f69c9' },
+      };
+      const iconHeroColors = {
+        wbc: { light: '#990000', dark: '#efa2a2' },
+        wbcLegacy: { light: '#1f1c4f', dark: '#a9a5df' },
+      };
+      if (heroColors[brand]) {
+        assert.equal(nativeColors[`${brand}BorderHero`], heroColors[brand][mode]);
+        // Icon and surface colours deliberately use different dark-mode ramp steps in Figma.
+        assert.equal(nativeColors[`${brand}IconHero`], iconHeroColors[brand][mode]);
+      }
       assert.equal(declarations(theme, selector)['color-scheme'], mode === 'dark' ? 'dark' : undefined);
       assert.deepEqual(w3c.Tokens[`${mode}-mode`], allBrands.Tokens[themeName][`${mode}-mode`]);
       assert.equal(
@@ -119,7 +142,11 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
       for (const [group, name] of [
         ['background', 'background-white'],
         ['background', 'background-hero'],
+        ['border', 'border-hero'],
         ['border', 'border-focus'],
+        ['icon', 'icon-body'],
+        ['icon', 'icon-hero'],
+        ['pictogram', 'surface-pictogram-a'],
       ]) {
         const expected = resolve(source.color[group][name]).toLowerCase();
         const nativeName = name.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
@@ -136,6 +163,7 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
 
         for (const css of [theme, standalone, allCSS]) {
           assert.doesNotMatch(css, /prefers-color-scheme/);
+          assert.doesNotMatch(css, /data-brand="(?:wbc26|wbclegacy)"/);
           const scoped = declarations(css, selector);
           const globals = {
             ...declarations(css, ':root, :host'),

@@ -12,11 +12,11 @@ const meta: Meta = {
 };
 
 const brandMap = {
-  WBC: 'Westpac',
-  WBC26: 'Westpac 2026',
-  STG: 'StGeorge',
-  BOM: 'Bank of Melbourne',
-  BSA: 'Bank SA',
+  wbc: 'Westpac 2026',
+  wbcLegacy: 'Westpac',
+  stg: 'StGeorge',
+  bom: 'Bank of Melbourne',
+  bsa: 'Bank SA',
 };
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -119,6 +119,22 @@ const LOADED_COLORS = {
     'bg-text-mono',
     'bg-text-reversed',
   ],
+  icon: [
+    'bg-icon-body',
+    'bg-icon-heading',
+    'bg-icon-muted',
+    'bg-icon-primary',
+    'bg-icon-hero',
+    'bg-icon-holler',
+    'bg-icon-link',
+    'bg-icon-success',
+    'bg-icon-info',
+    'bg-icon-warning',
+    'bg-icon-danger',
+    'bg-icon-system-error',
+    'bg-icon-mono',
+    'bg-icon-reversed',
+  ],
   border: [
     'bg-border-muted',
     'bg-border-muted-strong',
@@ -187,7 +203,7 @@ const LOADED_COLORS = {
 
 export const Background: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const backgroundColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.background);
     return (
@@ -208,7 +224,7 @@ export const Background: Story = {
 
 export const Surface: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const surfaceColors = Object.keys(
       ALL_BRANDS.Tokens[brandName]['light-mode'].color.surface as Record<string, unknown>,
@@ -232,7 +248,7 @@ export const Surface: Story = {
 
 export const Text: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const textColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.text);
     return (
@@ -251,9 +267,30 @@ export const Text: Story = {
   },
 };
 
+export const Icon: Story = {
+  render: (_, { globals: { theme } }) => {
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
+    const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
+    const iconColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.icon);
+    return (
+      <div className="flex flex-wrap bg-background-white">
+        {iconColors.map(color => (
+          <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: text-${color}`}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  },
+};
+
 export const Border: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const borderColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.border);
     return (
@@ -274,7 +311,7 @@ export const Border: Story = {
 
 export const Data: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const dataColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.data);
     return (
@@ -295,7 +332,7 @@ export const Data: Story = {
 
 export const Pictogram: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const pictogramColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.pictogram);
     return (
@@ -316,7 +353,7 @@ export const Pictogram: Story = {
 
 export const State: Story = {
   render: (_, { globals: { theme } }) => {
-    const currThemeToken = (theme ? theme : 'WBC') as keyof typeof brandMap;
+    const currThemeToken = (theme ? theme : 'wbc') as keyof typeof brandMap;
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const stateColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.state);
     return (

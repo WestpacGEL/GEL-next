@@ -290,14 +290,15 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   const isConsolidatedStructure =
     modes && Object.keys(modes).some(name => BRANDS.some(({ themeName }) => themeName === name));
 
-  BRANDS.forEach(({ brandCode: brand, fallbackPrimitiveName, themeName }) => {
+  BRANDS.forEach(({ brandCode: brand, primitiveName, fallbackPrimitiveName, themeName }) => {
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
+    const primitiveCode = primitiveName.toLowerCase().replace(/\s+/g, '');
     const fallbackPrimitiveCode = fallbackPrimitiveName?.toLowerCase().replace(/\s+/g, '');
 
     const allPrimitives = {
       ...(primitivesObj.mono?.primitives || {}),
       ...(primitivesObj[fallbackPrimitiveCode]?.primitives || {}),
-      ...(primitivesObj[brand]?.primitives || {}),
+      ...(primitivesObj[primitiveCode]?.primitives || {}),
     };
 
     let brandLightSemanticTokens = {};

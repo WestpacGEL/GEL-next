@@ -2,7 +2,7 @@
 
 import UIKit 
 
-public enum WBC26LightDimensions {
+public enum WBCLEGACYLightDimensions {
   public static let BorderRoundedNone = 0
   public static let BorderRoundedSm = 3
   public static let BorderRoundedMd = 4
@@ -16,7 +16,7 @@ public enum WBC26LightDimensions {
 }
 
 
-public enum WBC26DarkDimensions {
+public enum WBCLEGACYDarkDimensions {
   public static let BorderRoundedNone = 0
   public static let BorderRoundedSm = 3
   public static let BorderRoundedMd = 4
@@ -32,95 +32,95 @@ public enum WBC26DarkDimensions {
 
 
 
-public enum WBC26Dimensions {
+public enum WBCLEGACYDimensions {
 
   public static var BorderRoundedNone: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRoundedNone)
+      return Double(WBCLEGACYDarkDimensions.BorderRoundedNone)
     default:
-      return Double(WBC26LightDimensions.BorderRoundedNone)
+      return Double(WBCLEGACYLightDimensions.BorderRoundedNone)
     }
   }
 
   public static var BorderRoundedSm: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRoundedSm)
+      return Double(WBCLEGACYDarkDimensions.BorderRoundedSm)
     default:
-      return Double(WBC26LightDimensions.BorderRoundedSm)
+      return Double(WBCLEGACYLightDimensions.BorderRoundedSm)
     }
   }
 
   public static var BorderRoundedMd: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRoundedMd)
+      return Double(WBCLEGACYDarkDimensions.BorderRoundedMd)
     default:
-      return Double(WBC26LightDimensions.BorderRoundedMd)
+      return Double(WBCLEGACYLightDimensions.BorderRoundedMd)
     }
   }
 
   public static var BorderRoundedLg: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRoundedLg)
+      return Double(WBCLEGACYDarkDimensions.BorderRoundedLg)
     default:
-      return Double(WBC26LightDimensions.BorderRoundedLg)
+      return Double(WBCLEGACYLightDimensions.BorderRoundedLg)
     }
   }
 
   public static var BorderRoundedXl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRoundedXl)
+      return Double(WBCLEGACYDarkDimensions.BorderRoundedXl)
     default:
-      return Double(WBC26LightDimensions.BorderRoundedXl)
+      return Double(WBCLEGACYLightDimensions.BorderRoundedXl)
     }
   }
 
   public static var BorderRounded2xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRounded2xl)
+      return Double(WBCLEGACYDarkDimensions.BorderRounded2xl)
     default:
-      return Double(WBC26LightDimensions.BorderRounded2xl)
+      return Double(WBCLEGACYLightDimensions.BorderRounded2xl)
     }
   }
 
   public static var BorderRounded3xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRounded3xl)
+      return Double(WBCLEGACYDarkDimensions.BorderRounded3xl)
     default:
-      return Double(WBC26LightDimensions.BorderRounded3xl)
+      return Double(WBCLEGACYLightDimensions.BorderRounded3xl)
     }
   }
 
   public static var BorderRounded4xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRounded4xl)
+      return Double(WBCLEGACYDarkDimensions.BorderRounded4xl)
     default:
-      return Double(WBC26LightDimensions.BorderRounded4xl)
+      return Double(WBCLEGACYLightDimensions.BorderRounded4xl)
     }
   }
 
   public static var BorderRounded5xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRounded5xl)
+      return Double(WBCLEGACYDarkDimensions.BorderRounded5xl)
     default:
-      return Double(WBC26LightDimensions.BorderRounded5xl)
+      return Double(WBCLEGACYLightDimensions.BorderRounded5xl)
     }
   }
 
   public static var BorderRoundedFull: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBC26DarkDimensions.BorderRoundedFull)
+      return Double(WBCLEGACYDarkDimensions.BorderRoundedFull)
     default:
-      return Double(WBC26LightDimensions.BorderRoundedFull)
+      return Double(WBCLEGACYLightDimensions.BorderRoundedFull)
     }
   }
 

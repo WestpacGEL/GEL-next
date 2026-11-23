@@ -19,7 +19,7 @@ const LOGO_MAP = {
   wbc: {
     logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
   },
-  wbc26: {
+  wbcLegacy: {
     logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
   },
   stg: {
