@@ -38,6 +38,7 @@ export function SearchProvider({ children, results }: { children: ReactNode; res
     },
   });
   const [query, setQuery] = useState('');
+  const [portalContainer, setPortalContainer] = useState<Element>();
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const normalizedQuery = query.trim().toLowerCase();
@@ -107,6 +108,7 @@ export function SearchProvider({ children, results }: { children: ReactNode; res
         openSearch: trigger => {
           setQuery('');
           triggerRef.current = trigger;
+          setPortalContainer(document.querySelector('[data-brand]') ?? document.body);
           state.open();
         },
       }}
@@ -116,6 +118,7 @@ export function SearchProvider({ children, results }: { children: ReactNode; res
         aria-label="Search GEL Design System"
         className="!top-2 max-h-[calc(100dvh-2rem)] overflow-hidden"
         isDismissable
+        portalContainer={portalContainer}
         size="md"
         state={state}
         title="Search GEL Design System"
