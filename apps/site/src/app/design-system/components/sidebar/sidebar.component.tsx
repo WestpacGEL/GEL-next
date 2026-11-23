@@ -6,12 +6,14 @@ import { useParams, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import { CloseIcon } from '@/components/code/code.inject-components';
-import { BANK_OPTIONS } from '@/constants/bank-options';
+import { SearchTrigger } from '../search/search.component';
 
 import { BackToGelSvg, Logo, Navigation, SidebarSelect } from './components';
 import { useSidebar } from './sidebar.context';
 import { SidebarProps } from './sidebar.types';
+
+import { CloseIcon } from '@/components/code/code.inject-components';
+import { BANK_OPTIONS } from '@/constants/bank-options';
 
 // Credits: https://github.com/jmarioste/next-responsive-sidebar-tailwind
 
@@ -28,16 +30,17 @@ export function Sidebar({ items, brand }: SidebarProps) {
   });
 
   useEffect(() => {
-    if (!outsideRef.current) {
+    const listElement = listRef.current;
+    if (!listElement) {
       return;
     }
     const listener = () => {
-      const y = listRef.current?.scrollTop || 0;
+      const y = listElement.scrollTop;
       setScrolled(y > 0);
     };
-    listRef?.current?.addEventListener('scroll', listener);
+    listElement.addEventListener('scroll', listener);
     return () => {
-      listRef?.current?.removeEventListener('scroll', listener);
+      listElement.removeEventListener('scroll', listener);
     };
   }, []);
 
@@ -133,6 +136,9 @@ export function Sidebar({ items, brand }: SidebarProps) {
                   </SidebarSelect.Option>
                 ))}
               </SidebarSelect>
+            </div>
+            <div className="px-3 py-2">
+              <SearchTrigger className="w-full justify-start" />
             </div>
           </div>
           <nav
