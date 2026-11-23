@@ -45,7 +45,7 @@ export function SidebarSelect(props: SidebarSelectProps) {
       >
         <div className={styles.textWrapper()}>
           <div className="w-full text-left typography-body-11 leading-normal" {...valueProps}>
-            Change brand
+            {state.selectedItems[0]?.textValue || 'Change brand'}
           </div>
         </div>
         <div aria-hidden="true" className={styles.iconWrapper()}>

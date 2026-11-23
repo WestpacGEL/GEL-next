@@ -1,9 +1,10 @@
 import { SkipLink } from '@westpac/ui';
+import { notFound } from 'next/navigation';
 import { ReactNode, Suspense } from 'react';
 
 import { reader } from '@/app/reader';
-import { BrandKey } from '@/app/types/brand.types';
 import { StickyFooter } from '@/components/sticky-footer';
+import { BANK_OPTIONS } from '@/constants/bank-options';
 import { formatNavItems, sortMenu } from '@/utils/format';
 
 import { Sidebar, SidebarContextProvider } from '../components';
@@ -16,6 +17,10 @@ export default async function DesignSystemLayout({
   params: Promise<{ brand: string }>;
 }) {
   const paramsBrand = await params;
+  const brand = BANK_OPTIONS.find(({ key }) => key === paramsBrand.brand)?.key;
+  if (!brand) {
+    notFound();
+  }
   const readerInstance = await reader();
   const allContent = await readerInstance.collections.designSystem.all();
   const formattedItems = sortMenu(
@@ -25,10 +30,8 @@ export default async function DesignSystemLayout({
     ),
   );
 
-  const brand = (paramsBrand?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
-
   return (
-    <div data-brand={brand?.toLowerCase()} className="bg-background-white">
+    <div data-brand={brand} className="bg-background-white">
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>

@@ -13,6 +13,7 @@ export const styles = tv({
   variants: {
     brand: {
       wbc: { base: 'bg-background-primary' },
+      wbcLegacy: { base: 'bg-background-primary' },
       stg: { base: 'bg-background-hero' },
       bom: { base: 'bg-background-hero' },
       bsa: {

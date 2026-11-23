@@ -2,6 +2,8 @@ GEL provides custom CSS variants that allow you to apply brand-specific styles u
 
 Syntax: `{brand}:{utility-class}`
 
+Use `wbc:` for refreshed Westpac and `wbcLegacy:` for the previous appearance. The spelling is case-sensitive. When keeping the legacy appearance, update custom `wbc:` variants to `wbcLegacy:` along with the stylesheet import and `data-brand` attribute; `wbc26:` is no longer supported.
+
 ```html
 <StaticCode language="jsx" code={`
 // Apply different background colors per brand

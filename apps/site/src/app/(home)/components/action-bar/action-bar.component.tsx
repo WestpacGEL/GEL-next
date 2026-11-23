@@ -51,6 +51,9 @@ export function ActionBar() {
                   <CircleLogo>
                     <Logo aria-label={`${name} Design System`} className={logoStyles({ brand: key as BrandKey })} />
                   </CircleLogo>
+                  {key === 'wbcLegacy' && (
+                    <span className="block text-center typography-body-11 text-gel-text">Legacy</span>
+                  )}
                 </Link>
               </li>
             ))}

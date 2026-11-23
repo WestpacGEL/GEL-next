@@ -16,6 +16,7 @@ export function BackgroundImage({
 }) {
   const imageMap = {
     wbc: WbcBackgroundSvg,
+    wbcLegacy: WbcBackgroundSvg,
     stg: StgBackgroundSvg,
     bsa: BsaBackgroundSvg,
     bom: null,
@@ -25,7 +26,7 @@ export function BackgroundImage({
   let BgImage = imageMap[brand];
 
   // WBC background image only on header and if fixed
-  if (type === 'hero' && brand === 'wbc' && !fixed) {
+  if (type === 'hero' && (brand === 'wbc' || brand === 'wbcLegacy') && !fixed) {
     BgImage = null;
   }
 

@@ -67,6 +67,13 @@ export const styles = tv({
         `,
         title: 'uppercase',
       },
+      wbcLegacy: {
+        base: `
+          bg-background-primary bg-[url(/imgs/backgrounds/wbc-background.svg)]
+          bg-contain bg-right-bottom bg-no-repeat
+        `,
+        title: 'uppercase',
+      },
     },
   },
 });
