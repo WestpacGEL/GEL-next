@@ -1,13 +1,13 @@
 import { SkipLink } from '@westpac/ui';
 import { ReactNode, Suspense } from 'react';
 
-import { Sidebar, SidebarContextProvider } from '../components';
-import { SearchProvider, SearchResult } from '../components/search/search.component';
-
 import { reader } from '@/app/reader';
 import { BrandKey } from '@/app/types/brand.types';
 import { StickyFooter } from '@/components/sticky-footer';
 import { formatNavItems, sortMenu } from '@/utils/format';
+
+import { Sidebar, SidebarContextProvider } from '../components';
+import { SearchProvider, SearchResult } from '../components/search/search.component';
 
 export default async function DesignSystemLayout({
   children,
