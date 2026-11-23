@@ -72,7 +72,8 @@ Or on any container element:
 
 Available brands:
 
-- `wbc` — Westpac Banking Corporation
+- `wbc` — Westpac (refreshed appearance, previously WBC26; default selection)
+- `wbcLegacy` — Westpac Legacy (previous Westpac appearance; capital L)
 - `stg` — St.George Bank
 - `bom` — Bank of Melbourne
 - `bsa` — BankSA
@@ -81,6 +82,7 @@ Import each brand's theme CSS that you need:
 
 ```css
 @import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/wbcLegacy';
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
@@ -92,7 +94,9 @@ For multi-brand applications, dynamically switch with the `data-brand` attribute
 <div data-brand={currentBrand}>{/* Your app content */}</div>
 ```
 
-> **Note:** Dark mode (`data-theme="dark"`) is disabled in the current release.
+> **Migration:** To keep the previous Westpac appearance, change existing `wbc` theme imports, `data-brand`, explicit component `brand` props, saved selections and custom `wbc:` variants to `wbcLegacy`. Existing WBC26 consumers must migrate to `wbc`; the public `wbc26` identifier has been removed without a compatibility alias.
+
+> **Dark mode:** Both Westpac brands, STG, BSA and BOM provide dark tokens. Opt in with `data-theme="dark"` on the same element as `data-brand`; light is the default. Applications own selection and persistence. Enable dark mode only when approved for your application.
 
 5. Brand Fonts
 

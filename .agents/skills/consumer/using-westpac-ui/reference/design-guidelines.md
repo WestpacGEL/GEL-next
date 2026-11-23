@@ -4,9 +4,15 @@ Comprehensive design guidelines, dos/don'ts, user experience notes, and accessib
 
 ## Light and dark tokens
 
-WBC, WBC26, STG, BSA and BOM provide light and dark tokens. Use `data-brand="wbc26"` and the `@westpac/style-config/themes/wbc26` stylesheet for WBC26. Web dark mode is opt-in: put `data-theme="dark"` on the same element as `data-brand`. Omitting `data-theme`, or setting it to `light`, uses light tokens even when the browser or operating system prefers dark mode. Applications own selection and persistence; GEL does not automatically follow `prefers-color-scheme`.
+Westpac (`wbc`), Westpac Legacy (`wbcLegacy`), STG, BSA and BOM provide light and dark tokens. Use `data-brand="wbc"` and `@westpac/style-config/themes/wbc` for refreshed Westpac, or `data-brand="wbcLegacy"` and `@westpac/style-config/themes/wbcLegacy` for the previous appearance. Web dark mode is opt-in: put `data-theme="dark"` on the same element as `data-brand`. Omitting `data-theme`, or setting it to `light`, uses light tokens even when the browser or operating system prefers dark mode. Applications own selection and persistence; GEL does not automatically follow `prefers-color-scheme`.
 
 Use semantic utilities such as `bg-background-white` and `text-text-body` in both modes. Their values resolve to the selected brand and mode. During migration, use `data-brand` for the brand and `data-theme` for the light/dark selection.
+
+## Migrating the Westpac brand
+
+**Breaking change:** `wbc` now uses the refreshed appearance formerly called WBC26. To retain the previous Westpac appearance, change the theme import, `data-brand`, explicit component `brand` props, saved selections and custom `wbc:` Tailwind variants to `wbcLegacy` / `wbcLegacy:` (capital L). Existing WBC26 consumers must instead migrate `wbc26` to `wbc`; there is no public compatibility alias.
+
+Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers as well. Aggregate Figma keys retain their source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`. Review both modes and update visual snapshots deliberately. Existing STG, BSA and BOM token values are unchanged; the refreshed Figma export adds icon tokens for all brands and updates Westpac pictogram colours.
 
 ## Accordions
 
