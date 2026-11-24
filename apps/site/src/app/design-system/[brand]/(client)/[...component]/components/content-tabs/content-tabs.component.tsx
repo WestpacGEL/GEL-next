@@ -4,7 +4,7 @@ import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { usePathname, useRouter } from 'next/navigation';
 import { Key, useCallback, useMemo } from 'react';
 
-import { AccessibilityContent, CodeContent, DesignContent, Tabs, TabsPanel } from './components';
+import { AccessibilityContent, CodeContent, DesignContent, Tabs, TabsPanel, ContentGuidance } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
 
 const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey: string }) => {
@@ -43,13 +43,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
     );
   }
   if (tabKey === 'content') {
-    return (
-      <DesignContent
-        shortCodes={content.shortCodes}
-        description={content.description}
-        designSections={content.contentSections}
-      />
-    );
+    return <ContentGuidance shortCodes={content.shortCodes} contentSections={content.contentSections} />;
   }
 
   return <></>;
