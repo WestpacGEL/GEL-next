@@ -113,6 +113,8 @@ import { ArrowRightIcon, BurgerIcon } from '@westpac/ui/icon';
 
 Icons support `look` (`'filled'` | `'outlined'`), `size`, and `color` props. Over 260 icons are available.
 
+Semantic icon colours (`body`, `heading`, `muted`, `primary`, `hero`, `holler`, `link`, `success`, `info`, `warning`, `danger`, `system-error`, `mono`, `reversed`) use corresponding `icon-*` tokens. Omit `color` to inherit parent colour, including button/link states. Older colours without icon-token counterparts retain their previous surface/background mappings; see `reference/components/icon.md` for the compatibility list.
+
 ### Focus Management
 
 Components use `react-aria` for accessible focus management. Focus rings are shown only during keyboard navigation (not on click). This is handled automatically — no configuration needed.

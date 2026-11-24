@@ -14,6 +14,12 @@ Use semantic utilities such as `bg-background-white` and `text-text-body` in bot
 
 Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers as well. Aggregate Figma keys retain their source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`. Review both modes and update visual snapshots deliberately. Existing STG, BSA and BOM token values are unchanged; the refreshed Figma export adds icon tokens for all brands and updates Westpac pictogram colours.
 
+## Icon colours
+
+Prefer semantic icon roles: `body`, `heading`, `muted`, `primary`, `hero`, `holler`, `link`, `success`, `info`, `warning`, `danger`, `system-error`, `mono` and `reversed`. Use the icon's `color` prop, for example `<TickCircleIcon color="hero" />`; it resolves to the matching `icon-*` token for the active brand and mode. Icon and surface tokens can intentionally differ, especially in dark mode. Preview white/reversed icons on an appropriate contrasting surface.
+
+Omit `color` when the icon should inherit the parent's foreground, including button/link states. Existing faint, pop and other colours with no icon-token equivalent retain their previous mappings for compatibility; prefer semantic roles for new usage. See `components/icon.md` for the complete compatibility list. Do not invent `icon-pop` or automatically replace unrelated component surface styles.
+
 ## Accordions
 
 **Description:** Accordions are grouped sets of expanding and collapsing panels. Use them to group and simplify large amounts of content such as product information.

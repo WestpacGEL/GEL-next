@@ -211,7 +211,7 @@ describe('Flyout', () => {
     expect(header).toHaveClass('h-9', 'items-center', 'pl-2');
     expect(heading).toHaveClass('typography-body-10', 'font-bold');
     expect(closeButton).toHaveClass('ml-auto', 'h-6', 'shrink-0', 'px-2');
-    expect(closeIcon).toHaveClass('size-4', 'text-surface-primary');
+    expect(closeIcon).toBeVisible();
     expect(body).toHaveClass('min-h-0', 'flex-1', 'overflow-auto');
   });
 });

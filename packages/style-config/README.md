@@ -98,6 +98,8 @@ Aggregate token keys retain their Figma source identities: `ALL_BRANDS.Tokens['W
 
 The colour tokens include 14 `icon-*` tokens for each brand in both modes. Use utilities such as `text-icon-body`, `text-icon-primary` and `text-icon-hero` for icons that inherit `currentColor`. Icon tokens can use different dark-mode ramp values from surface tokens; do not substitute `surface-*` values. Preview them under **Foundation / Colours / Icon** in Storybook.
 
+In `@westpac/ui`, matching icon colour props select these tokens directly: `color="hero"` uses `icon-hero`, and `body`, `heading` and `link` are available too. Omitting `color` preserves parent-colour inheritance. Existing props without an icon-token counterpart, such as `pop` and `hero-faint`, retain their surface/background mappings for compatibility. Preview actual SVGs under **Foundation / Icons / Semantic Colors**.
+
 #### Generating web and native tokens
 
 From the repository root, regenerate both output paths from the checked-in `src/tokens/GEL-tokens-figma.json`:

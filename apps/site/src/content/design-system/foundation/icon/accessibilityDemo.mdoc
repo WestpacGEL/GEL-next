@@ -1,19 +1,29 @@
 ```tsx
 () => {
   const ALL_COLORS = [
+    'body',
+    'heading',
+    'muted',
     'primary',
     'hero',
-    'pop',
     'holler',
-    'muted',
-    'muted-vivid',
+    'link',
+    'success',
+    'info',
+    'warning',
+    'danger',
+    'system-error',
+    'mono',
+    'reversed',
   ] as const;
 
   return (
     <div className="flex flex-wrap justify-center gap-2">
       {ALL_COLORS.map(color => (
         <div key={color} className="flex flex-col items-center gap-1 w-14">
-          <TickCircleIcon key={color} color={color} />
+          <div className={color === 'mono' || color === 'reversed' ? 'bg-surface-hero p-1' : 'p-1'}>
+            <TickCircleIcon color={color} />
+          </div>
           <p className="typography-body-11 text-text-body text-center">{color}</p>
         </div>
       ))}

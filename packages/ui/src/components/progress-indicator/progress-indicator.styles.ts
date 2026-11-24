@@ -16,6 +16,18 @@ export const styles = tv({
       xlarge: { base: 'size-15' },
     },
     color: {
+      body: {
+        base: 'text-icon-body',
+        label: 'text-text-body',
+      },
+      heading: {
+        base: 'text-icon-heading',
+        label: 'text-text-heading',
+      },
+      link: {
+        base: 'text-icon-link',
+        label: 'text-text-link',
+      },
       muted: {
         base: 'text-surface-muted',
         label: 'text-surface-muted',

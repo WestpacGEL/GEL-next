@@ -1,21 +1,33 @@
-Icons can be used with any brand colour. You can also invert them to appear as white on a dark background.
+Use semantic icon colours to select the right role for the active brand and light/dark mode. For example, `color="hero"` selects `icon-hero`, which can differ from `surface-hero` in dark mode. Use `mono` or `reversed` on an appropriate contrasting background.
+
+Omit `color` to inherit the parent's foreground, including button and link states. Older colours without an icon-token equivalent, such as `pop`, `muted-vivid` and faint variants, remain supported with their previous surface/background mappings. Prefer semantic roles for new usage.
 
 ```tsx
 () => {
   const ALL_COLORS = [
+    'body',
+    'heading',
+    'muted',
     'primary',
     'hero',
-    'pop',
     'holler',
-    'muted',
-    'muted-vivid',
+    'link',
+    'success',
+    'info',
+    'warning',
+    'danger',
+    'system-error',
+    'mono',
+    'reversed',
   ] as const;
 
   return (
     <div className="flex flex-wrap justify-center gap-2">
       {ALL_COLORS.map(color => (
         <div key={color} className="flex flex-col items-center gap-1 w-14">
-          <TickCircleIcon key={color} color={color} />
+          <div className={color === 'mono' || color === 'reversed' ? 'bg-surface-hero p-1' : 'p-1'}>
+            <TickCircleIcon color={color} />
+          </div>
           <p className="typography-body-11 text-text-body text-center">{color}</p>
         </div>
       ))}

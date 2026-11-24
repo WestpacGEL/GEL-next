@@ -9,4 +9,4 @@ Applications currently using `wbc` must switch to `wbcLegacy` to retain their ex
 
 Remove the public `wbc26` identifier and per-brand outputs without a compatibility alias. Existing WBC26 consumers must migrate to `wbc`. Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers too. Aggregate tokens retain their Figma source identities: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`.
 
-Refresh the Figma export with 14 icon-colour tokens per brand in both modes and updated Westpac pictogram colours. Existing legacy, STG, BSA and BOM token values are unchanged. Existing component colour props are not remapped to icon tokens. Review both modes and update visual snapshots deliberately after migration.
+Refresh the Figma export with 14 icon-colour tokens per brand in both modes and updated Westpac pictogram colours. Existing legacy, STG, BSA and BOM token values are unchanged. Matching icon colour props now use the semantic icon tokens; props without an icon-token counterpart retain their previous mappings. Review both modes and update visual snapshots deliberately after migration.
