@@ -27,6 +27,7 @@ export default async function ComponentLayout({
             focus:outline-none
           `}
           id="content"
+          tabIndex={-1}
         >
           {children}
         </div>

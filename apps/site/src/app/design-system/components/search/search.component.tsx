@@ -1,10 +1,23 @@
 'use client';
 
-import { Button, Modal, ModalBody } from '@westpac/ui';
+import { Button, Input, Label, Modal, ModalBody, Pagination } from '@westpac/ui';
 import { SearchIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
-import { createContext, ReactNode, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import {
+  createContext,
+  type MutableRefObject,
+  type ReactNode,
+  Suspense,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { useOverlayTriggerState } from 'react-stately';
+
+import { useSidebar } from '../sidebar/sidebar.context';
 
 export type SearchResult = {
   context?: string;
@@ -12,33 +25,52 @@ export type SearchResult = {
   label: string;
   pageHref: string;
   searchText: string;
+  titleText: string;
   tab?: string;
 };
 
+const RESULTS_PER_PAGE = 10;
+
 type SearchContextValue = {
-  openSearch: (trigger: HTMLButtonElement) => void;
+  openSearch: () => void;
 };
 
 const SearchContext = createContext<SearchContextValue | null>(null);
 
-export function SearchProvider({ children, results }: { children: ReactNode; results: SearchResult[] }) {
-  const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const wasOpenRef = useRef(false);
-  const state = useOverlayTriggerState({
-    onOpenChange: isOpen => {
-      if (isOpen) {
-        wasOpenRef.current = true;
+function SearchNavigationFocus({ pendingFocusRef }: { pendingFocusRef: MutableRefObject<boolean> }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentLocation = `${pathname}?${searchParams.toString()}`;
+
+  useEffect(() => {
+    const focusDestination = () => {
+      if (!pendingFocusRef.current) {
         return;
       }
 
-      if (wasOpenRef.current) {
-        wasOpenRef.current = false;
-        setTimeout(() => triggerRef.current?.focus(), 0);
-      }
-    },
-  });
+      requestAnimationFrame(() => {
+        const headingId = decodeURIComponent(window.location.hash.slice(1));
+        const destination = (headingId && document.getElementById(headingId)) || document.getElementById('content');
+        pendingFocusRef.current = false;
+        destination?.focus();
+      });
+    };
+
+    focusDestination();
+    window.addEventListener('hashchange', focusDestination);
+    return () => window.removeEventListener('hashchange', focusDestination);
+  }, [currentLocation, pendingFocusRef]);
+
+  return null;
+}
+
+export function SearchProvider({ children, results }: { children: ReactNode; results: SearchResult[] }) {
+  const state = useOverlayTriggerState({});
+  const { setOpen } = useSidebar();
   const [query, setQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const [portalContainer, setPortalContainer] = useState<Element>();
+  const pendingFocusRef = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const normalizedQuery = query.trim().toLowerCase();
@@ -55,64 +87,95 @@ export function SearchProvider({ children, results }: { children: ReactNode; res
       return [];
     }
 
-    const matches = results.filter(result => result.searchText.toLowerCase().includes(normalizedQuery));
-    const matchingPages = new Set(matches.filter(result => !result.tab).map(result => result.pageHref));
+    const matches = results.filter(
+      result =>
+        (!result.context && result.titleText.toLowerCase().includes(normalizedQuery)) ||
+        result.searchText.toLowerCase().includes(normalizedQuery),
+    );
     const seenTargets = new Set<string>();
 
     return matches
       .filter(result => {
-        if (result.tab && matchingPages.has(result.pageHref)) {
+        if (seenTargets.has(result.href)) {
           return false;
         }
-
-        const target = result.tab ? `${result.pageHref}?tab=${result.tab}` : result.pageHref;
-        if (seenTargets.has(target)) {
-          return false;
-        }
-        seenTargets.add(target);
+        seenTargets.add(result.href);
         return true;
       })
-      .slice(0, 10);
+      .sort((first, second) => {
+        const getRank = (result: SearchResult) => {
+          if (!result.context && result.titleText.toLowerCase().includes(normalizedQuery)) {
+            return 0;
+          }
+          if (result.context && result.searchText.toLowerCase().includes(normalizedQuery)) {
+            return 1;
+          }
+          return 2;
+        };
+
+        return getRank(first) - getRank(second);
+      });
   }, [normalizedQuery, results]);
+  const totalPages = Math.ceil(matchingResults.length / RESULTS_PER_PAGE);
+  const pageResults = matchingResults.slice((currentPage - 1) * RESULTS_PER_PAGE, currentPage * RESULTS_PER_PAGE);
 
   if (!normalizedQuery) {
     resultsContent = (
       <p className="py-3 typography-body-10 text-text-muted">Enter a search term to find pages and guidance.</p>
     );
-  } else if (matchingResults.length) {
-    resultsContent = (
-      <ul aria-label="Search results" className="divide-y divide-border-muted-soft">
-        {matchingResults.map((result, index) => (
-          <li key={`${result.href}-${result.context ?? 'page'}-${index}`}>
-            <Link
-              className="block rounded px-3 py-3 text-text-body hover:bg-surface-muted-faint focus-visible:focus-outline"
-              href={result.href}
-              onClick={() => state.close()}
-            >
-              <span className="block typography-body-10 font-bold">{result.label}</span>
-              {result.context && (
-                <span className="mt-1 block typography-body-11 text-text-muted">{result.context}</span>
-              )}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    );
   } else {
-    resultsContent = <p className="py-3 typography-body-10 text-text-muted">No results found.</p>;
+    resultsContent = (
+      <>
+        <p className="pb-2 typography-body-11 text-text-muted">
+          {matchingResults.length} {matchingResults.length === 1 ? 'result' : 'results'}
+        </p>
+        {matchingResults.length ? (
+          <>
+            <ul aria-label="Search results" className="divide-y divide-border-muted-soft">
+              {pageResults.map((result, index) => (
+                <li key={`${result.href}-${result.context ?? 'page'}-${index}`}>
+                  <Link
+                    className="block rounded px-3 py-3 text-text-body hover:bg-surface-muted-faint focus-visible:focus-outline"
+                    href={result.href}
+                    onClick={() => {
+                      pendingFocusRef.current = true;
+                      setOpen(false);
+                      state.close();
+                    }}
+                  >
+                    <span className="block typography-body-10 font-bold">{result.label}</span>
+                    {result.context && (
+                      <span className="mt-1 block typography-body-11 text-text-muted">{result.context}</span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {totalPages > 1 && (
+              <Pagination className="mt-4" current={currentPage} onChange={setCurrentPage} totalPages={totalPages} />
+            )}
+          </>
+        ) : (
+          <p className="py-3 typography-body-10 text-text-muted">No results found.</p>
+        )}
+      </>
+    );
   }
 
   return (
     <SearchContext.Provider
       value={{
-        openSearch: trigger => {
+        openSearch: () => {
           setQuery('');
-          triggerRef.current = trigger;
+          setCurrentPage(1);
           setPortalContainer(document.querySelector('[data-brand]') ?? document.body);
           state.open();
         },
       }}
     >
+      <Suspense fallback={null}>
+        <SearchNavigationFocus pendingFocusRef={pendingFocusRef} />
+      </Suspense>
       {children}
       <Modal
         aria-label="Search GEL Design System"
@@ -125,12 +188,18 @@ export function SearchProvider({ children, results }: { children: ReactNode; res
         zIndex={1100}
       >
         <ModalBody className="flex max-h-[calc(100dvh-12rem)] min-h-0 flex-col gap-4 overflow-y-auto bg-background-white p-7">
-          <label className="flex flex-col gap-1.5 typography-body-10 text-text-body">
-            Search pages and guidance
-            <input
+          <div className="flex flex-col">
+            <Label htmlFor="design-system-search" size="small">
+              Search pages and guidance
+            </Label>
+            <Input
               autoFocus
-              className="w-full rounded border border-border-muted-soft bg-background-white px-3 py-2 typography-body-10 text-text-body focus-visible:focus-outline"
-              onChange={event => setQuery(event.target.value)}
+              className="w-full"
+              id="design-system-search"
+              onChange={event => {
+                setQuery(event.target.value);
+                setCurrentPage(1);
+              }}
               onKeyDown={event => {
                 if (event.key === 'ArrowDown') {
                   event.preventDefault();
@@ -142,7 +211,7 @@ export function SearchProvider({ children, results }: { children: ReactNode; res
               type="search"
               value={query}
             />
-          </label>
+          </div>
           <div aria-live="polite" className="min-h-12 overflow-y-auto" ref={resultsRef}>
             {resultsContent}
           </div>
@@ -160,13 +229,7 @@ export function SearchTrigger({ className }: { className?: string }) {
   }
 
   return (
-    <Button
-      className={className}
-      iconBefore={SearchIcon}
-      look="faint"
-      onClick={event => context.openSearch(event.currentTarget as HTMLButtonElement)}
-      soft
-    >
+    <Button className={className} iconBefore={SearchIcon} look="faint" onClick={context.openSearch} soft>
       Search
     </Button>
   );
