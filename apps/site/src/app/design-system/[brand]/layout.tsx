@@ -9,6 +9,14 @@ import { formatNavItems, sortMenu } from '@/utils/format';
 import { Sidebar, SidebarContextProvider } from '../components';
 import { SearchProvider, SearchResult } from '../components/search/search.component';
 
+function getSectionHeadingId(title: string) {
+  return title
+    .replace(/[^a-zA-Z0-9\s]/g, '')
+    .toLowerCase()
+    .split(' ')
+    .join('-');
+}
+
 export default async function DesignSystemLayout({
   children,
   params,
@@ -34,22 +42,26 @@ export default async function DesignSystemLayout({
         href: baseHref,
         label: entry.name,
         pageHref: baseHref,
-        searchText: `${entry.name} ${entry.description}`,
+        searchText: entry.description,
+        titleText: entry.name,
       };
       const sections = [
-        ...entry.design.map(section => ({ name: section.title.name, tab: 'design' })),
+        ...entry.design
+          .filter(section => !section.noTitle)
+          .map(section => ({ name: section.title.name, tab: 'design' })),
         ...entry.accessibility.map(section => ({ name: section.title.name, tab: 'accessibility' })),
-        ...entry.code.map(section => ({ name: section.title.name, tab: 'code' })),
+        ...entry.code.filter(section => !section.noTitle).map(section => ({ name: section.title.name, tab: 'code' })),
       ];
 
       return [
         pageResult,
         ...sections.map(section => ({
           context: section.name,
-          href: `${baseHref}?tab=${section.tab}`,
+          href: `${baseHref}?tab=${section.tab}#${getSectionHeadingId(section.name)}`,
           label: entry.name,
           pageHref: baseHref,
-          searchText: `${entry.name} ${entry.description} ${section.name}`,
+          searchText: section.name,
+          titleText: entry.name,
           tab: section.tab,
         })),
       ];
