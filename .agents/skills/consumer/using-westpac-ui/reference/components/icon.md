@@ -33,7 +33,7 @@ import { ArrowRightIcon } from '@westpac/ui/icon';
 
 ### Semantic colours
 
-Prefer `body`, `heading`, `muted`, `primary`, `hero`, `holler`, `link`, `success`, `info`, `warning`, `danger`, `system-error`, `mono` and `reversed`. Each maps to its corresponding `icon-*` token, for example `color="hero"` uses `text-icon-hero`, not `text-surface-hero`. Values resolve for the active brand and mode.
+Prefer `body`, `heading`, `muted`, `primary`, `hero`, `holler`, `link`, `success`, `info`, `warning`, `danger`, `system-error`, `mono` and `reversed`. Each prefers its corresponding `icon-*` token. UI supplies a CSS variable fallback for older style-config releases: for example, `color="hero"` uses `var(--icon-hero,var(--surface-hero))`. Body, heading and link fall back to their corresponding `text-*` tokens; other matching roles fall back to their previous `surface-*` tokens. Values resolve for the active brand and mode. Do not combine competing surface and icon utility classes to implement a fallback.
 
 `body`, `heading` and `link` are newly available colour props. Existing colours without a corresponding icon token remain supported with their previous surface/background mappings: `muted-vivid`, `muted-strong`, `muted-mild`, `muted-soft`, `muted-pale`, `muted-faint`, `white-pale`, `white-faint`, `primary-faint`, `hero-faint`, `pop`, `pop-faint`, `holler-faint`, `success-faint`, `info-faint`, `warning-faint`, `danger-faint` and `system-error-dark`. Do not invent replacements such as `icon-pop`.
 

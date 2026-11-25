@@ -1,6 +1,6 @@
 ---
 '@westpac/style-config': major
-'@westpac/ui': major
+'@westpac/ui': minor
 ---
 
 **Breaking change:** make the refreshed Westpac appearance (previously WBC26) the default `wbc` brand. Preserve the previous Westpac appearance as `wbcLegacy` (capital L), selectable in Storybook and the documentation site. Both support light and dark tokens.
@@ -10,3 +10,5 @@ Applications currently using `wbc` must switch to `wbcLegacy` to retain their ex
 Remove the public `wbc26` identifier and per-brand outputs without a compatibility alias. Existing WBC26 consumers must migrate to `wbc`. Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers too. Aggregate tokens retain their Figma source identities: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`.
 
 Refresh the Figma export with 14 icon-colour tokens per brand in both modes and updated Westpac pictogram colours. Existing legacy, STG, BSA and BOM token values are unchanged. Matching icon colour props now use the semantic icon tokens; props without an icon-token counterpart retain their previous mappings. Review both modes and update visual snapshots deliberately after migration.
+
+The breaking brand/token migration belongs to `@westpac/style-config`. UI remains a minor release: semantic icon colours fall back to existing surface tokens (or text tokens for body, heading and link) when used with older style-config releases. Static pictogram downloads now allocate WBC to refreshed Westpac and WBCLEGACY to the previous palette. Generated themes explicitly reset native browser controls to light mode at each brand boundary, with dark mode remaining opt-in.
