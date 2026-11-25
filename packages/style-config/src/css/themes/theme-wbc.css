@@ -6,6 +6,8 @@
 
 @layer theme {
     [data-brand="wbc"] {
+      color-scheme: light;
+
       /* Primitive Colors */
       --mono-white: #ffffff;
       --mono-black: #000000;

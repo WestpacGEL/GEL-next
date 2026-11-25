@@ -124,7 +124,7 @@ test('generates brand-specific light and opt-in dark tokens for web and native c
         // Icon and surface colours deliberately use different dark-mode ramp steps in Figma.
         assert.equal(nativeColors[`${brand}IconHero`], iconHeroColors[brand][mode]);
       }
-      assert.equal(declarations(theme, selector)['color-scheme'], mode === 'dark' ? 'dark' : undefined);
+      assert.equal(declarations(theme, selector)['color-scheme'], mode);
       assert.deepEqual(w3c.Tokens[`${mode}-mode`], allBrands.Tokens[themeName][`${mode}-mode`]);
       assert.equal(
         Object.keys(nativeColors).length,
