@@ -95,11 +95,11 @@ const preview: Preview = {
         title: 'Theme',
         icon: 'paintbrush',
         items: [
-          { value: 'stg', title: 'STG' },
-          { value: 'wbc', title: 'Westpac' },
-          { value: 'wbcLegacy', title: 'Westpac Legacy' },
-          { value: 'bom', title: 'BOM' },
-          { value: 'bsa', title: 'BSA' },
+          { value: 'stg', title: 'stg' },
+          { value: 'wbc', title: 'wbc' },
+          { value: 'wbcLegacy', title: 'wbcLegacy' },
+          { value: 'bom', title: 'bom' },
+          { value: 'bsa', title: 'bsa' },
         ],
         // Change title based on selected value
         dynamicTitle: true,
