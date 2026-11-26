@@ -1,8 +1,6 @@
 'use client';
 
-// TODO: DARK MODE TEMPORARILY DISABLED - REVERT TO THIS ONCE DARK MODE IS RE-IMPLEMENTED
-// import { useDarkMode } from '@westpac/ui/hook';
-// import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'usehooks-ts';
 import { create } from 'zustand';
 
 type Mode = 'light' | 'dark' | 'system';
@@ -17,24 +15,13 @@ const useThemeModeZustand = create<ThemeState>()(set => ({
 }));
 
 export function useThemeMode() {
-  const mode = 'light';
-  // TODO: DARK MODE TEMPORARILY DISABLED - REVERT TO THIS ONCE DARK MODE IS RE-IMPLEMENTED
-  // const [mode, setMode] = useState<'light' | 'dark'>('light');
-  // const { getSystemPreference } = useDarkMode();
+  const prefersDark = useMediaQuery('(prefers-color-scheme: dark)', { initializeWithValue: false });
+  const systemMode = prefersDark ? 'dark' : 'light';
   const props = useThemeModeZustand();
-
-  // TODO: DARK MODE TEMPORARILY DISABLED - REVERT TO THIS ONCE DARK MODE IS RE-IMPLEMENTED
-  // useEffect(() => {
-  //   if (props.mode === 'system') {
-  //     setMode(getSystemPreference());
-  //     return;
-  //   }
-  //   setMode(props.mode);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [props.mode]);
 
   return {
     ...props,
-    mode: mode || 'light',
+    preference: props.mode,
+    mode: props.mode === 'system' ? systemMode : props.mode,
   };
 }

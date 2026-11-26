@@ -5,6 +5,7 @@ import throttle from 'lodash.throttle';
 import { useLayoutEffect, useRef, useState } from 'react';
 
 import { type BrandKey } from '@/app/types/brand.types';
+import { ThemeDropDown } from '@/components/theme-dropdown';
 
 import { useSidebar } from '../../../sidebar/sidebar.context';
 import { BackgroundImage } from '../background-image/background-image.component';
@@ -55,8 +56,7 @@ export function Header({ brand }: { brand: BrandKey }) {
           <strong>GEL</strong> Codebase
         </h1>
       </div>
-      {/* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */}
-      {/* <ThemeDropDown className="!border-0" /> */}
+      <ThemeDropDown className="relative z-10 mx-2 !border-0" />
     </header>
   );
 }

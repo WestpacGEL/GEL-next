@@ -5,6 +5,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
+import { ThemeDropDown } from '@/components/theme-dropdown';
 
 import { styles as headerStyles } from './header.styles';
 
@@ -40,10 +41,9 @@ export function Header({ className, title, brand }: { brand: string; className?:
         {title}
       </h2>
 
-      {/* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */}
-      {/* <div className="fixed top-2.5 right-2">
+      <div className="fixed top-2.5 right-2">
         <ThemeDropDown className="!border-0" />
-      </div> */}
+      </div>
     </header>
   );
 }
