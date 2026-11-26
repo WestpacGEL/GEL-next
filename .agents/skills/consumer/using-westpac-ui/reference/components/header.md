@@ -4,17 +4,17 @@
 
 Application header with brand logo and navigation controls.
 
-| Prop              | Type                                      | Default | Description          |
-| ----------------- | ----------------------------------------- | ------- | -------------------- |
-| `brand`           | `'bom' \| 'bsa' \| 'stg' \| 'wbc'`        | —       | Brand logo           |
-| `fixed`           | `ResponsiveVariants<boolean>`             | —       | Fixed position       |
-| `fixedMaxWidth`   | `CSS MaxWidth`                            | —       | Max width when fixed |
-| `logoLink`        | `string`                                  | `#`     | Logo link            |
-| `logoCenter`      | `ResponsiveVariants<boolean>`             | —       | Center logo          |
-| `leftIcon`        | `ResponsiveVariants<'arrow' \| 'burger'>` | —       | Left button icon     |
-| `leftOnClick`     | `() => void`                              | —       | Left button handler  |
-| `isScrolled`      | `boolean`                                 | —       | Show scroll shadow   |
-| `skipToContentId` | `string`                                  | —       | Skip link target     |
+| Prop              | Type                                              | Default | Description          |
+| ----------------- | ------------------------------------------------- | ------- | -------------------- |
+| `brand`           | `'bom' \| 'bsa' \| 'stg' \| 'wbc' \| 'wbcLegacy'` | —       | Brand logo           |
+| `fixed`           | `ResponsiveVariants<boolean>`                     | —       | Fixed position       |
+| `fixedMaxWidth`   | `CSS MaxWidth`                                    | —       | Max width when fixed |
+| `logoLink`        | `string`                                          | `#`     | Logo link            |
+| `logoCenter`      | `ResponsiveVariants<boolean>`                     | —       | Center logo          |
+| `leftIcon`        | `ResponsiveVariants<'arrow' \| 'burger'>`         | —       | Left button icon     |
+| `leftOnClick`     | `() => void`                                      | —       | Left button handler  |
+| `isScrolled`      | `boolean`                                         | —       | Show scroll shadow   |
+| `skipToContentId` | `string`                                          | —       | Skip link target     |
 
 **Incorrect (invalid `leftIcon` value)**
 

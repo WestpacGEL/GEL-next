@@ -1,11 +1,12 @@
 'use client';
 
-import React, { createContext } from 'react';
+import React, { ForwardedRef, createContext, forwardRef } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { FocusHandle, useFocusManagerRef } from '../../../../hook/focus-manager-ref.hook.js';
 import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
@@ -73,15 +74,21 @@ export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContext
   },
 });
 
-export function SelectorRadioGroup({
-  className,
-  children,
-  label,
-  orientation = 'vertical',
-  errorMessage,
-  description,
-  ...props
-}: SelectorRadioGroupProps) {
+function BaseSelectorRadioGroup(
+  {
+    className,
+    children,
+    label,
+    orientation = 'vertical',
+    errorMessage,
+    description,
+    ...props
+  }: SelectorRadioGroupProps,
+  // `ref.current.focus()` moves focus to the group's tab stop: the selected radio, or the first
+  // enabled radio when nothing is selected.
+  ref: ForwardedRef<FocusHandle>,
+) {
+  const wrapperRef = useFocusManagerRef(ref);
   const breakpoint = useBreakpoint();
   const resolvedOrientation = resolveResponsiveVariant(orientation, breakpoint);
   const state = useRadioGroupState({ ...props, errorMessage, label, orientation: resolvedOrientation });
@@ -95,7 +102,7 @@ export function SelectorRadioGroup({
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div className={styles({ className, orientation: resolvedOrientation })} {...radioGroupProps}>
+      <div className={styles({ className, orientation: resolvedOrientation })} {...radioGroupProps} ref={wrapperRef}>
         <SelectorRadioGroupContext.Provider value={{ state, orientation: resolvedOrientation }}>
           {children}
         </SelectorRadioGroupContext.Provider>
@@ -103,3 +110,6 @@ export function SelectorRadioGroup({
     </>
   );
 }
+
+export const SelectorRadioGroup = forwardRef(BaseSelectorRadioGroup);
+SelectorRadioGroup.displayName = 'SelectorRadioGroup';

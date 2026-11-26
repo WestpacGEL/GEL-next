@@ -9,12 +9,12 @@ import { useDarkMode } from '@vueless/storybook-dark-mode';
 import './global.css';
 
 const withThemeProvider: Decorator = (Story, context) => {
-  const theme = context.globals?.theme || 'WBC';
+  const theme = context.globals?.theme || 'wbc';
   const isDarkMode = useDarkMode();
   // workaround for modal
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      document.querySelector('html')?.setAttribute('data-brand', theme.toLowerCase());
+      document.querySelector('html')?.setAttribute('data-brand', theme);
     }
   }, [theme]);
 
@@ -84,18 +84,23 @@ const VIEWPORTS = {
 };
 
 const preview: Preview = {
+  initialGlobals: {
+    theme: 'wbc',
+  },
   globalTypes: {
     theme: {
       description: 'Global theme for components',
-      defaultValue: 'WBC',
       toolbar: {
         // The label to show for this toolbar item
         title: 'Theme',
         icon: 'paintbrush',
-        // Array of plain string values or MenuItem shape (see below)
-        // TODO: Re-enable other brands once tokens have been created
-        // items: ['BOM', 'BSA', 'BTFG', 'STG', 'WBC'],
-        items: ['STG', 'WBC', 'WBC26', 'BOM', 'BSA'],
+        items: [
+          { value: 'stg', title: 'stg' },
+          { value: 'wbc', title: 'wbc' },
+          { value: 'wbcLegacy', title: 'wbcLegacy' },
+          { value: 'bom', title: 'bom' },
+          { value: 'bsa', title: 'bsa' },
+        ],
         // Change title based on selected value
         dynamicTitle: true,
       },

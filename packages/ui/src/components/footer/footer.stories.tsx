@@ -32,7 +32,7 @@ export const DefaultStory: Story = {
   // for underscored property
 
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <Footer brand={brand === 'btfg' ? 'wbc' : brand} hideLogo {...rest}>
         <div className="relative">

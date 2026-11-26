@@ -1,5 +1,6 @@
-import { render, screen, within, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createRef, useState } from 'react';
 
 import { MultiSelect, MultiSelectItem, MultiSelectSection } from './multi-select.component.js';
 
@@ -257,11 +258,60 @@ describe('MultiSelect', () => {
       expect(screen.getByRole('listbox')).toBeInTheDocument();
     });
 
-    // Simple navigation test - just verify the listbox responds to keyboard input
-    await user.keyboard('{ArrowDown}');
+    // Focus lands on the filter input when the dropdown opens
+    await waitFor(() => {
+      expect(screen.getByLabelText('Filter options')).toHaveFocus();
+    });
 
-    // Verify listbox is still present and interactive
+    // ArrowDown: filter input -> "Select all" -> first option
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('option', { name: 'Select all options' })).toHaveFocus();
+    await user.keyboard('{ArrowDown}');
+    const option1 = screen.getByRole('option', { name: 'Option 1' });
+    expect(option1).toHaveFocus();
+
+    // Space / Enter toggle the focused option
+    await user.keyboard(' ');
+    expect(option1).toHaveAttribute('aria-checked', 'true');
+    expect(screen.getByRole('option', { name: 'Select all options' })).toHaveAttribute('aria-checked', 'mixed');
+    await user.keyboard('{Enter}');
+    expect(option1).toHaveAttribute('aria-checked', 'false');
+
+    // ArrowUp from the first option goes back to "Select all"
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('option', { name: 'Select all options' })).toHaveFocus();
+
+    // Escape closes and returns focus to the trigger
+    await user.keyboard('{Escape}');
+    await waitFor(() => {
+      expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    });
+    expect(triggerButton).toHaveFocus();
+  });
+
+  it('stays open when the page scrolls while focus is inside the dropdown', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <MultiSelect items={mockOptions} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+        {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+      </MultiSelect>,
+    );
+
+    await user.click(screen.getByRole('combobox'));
+    await waitFor(() => {
+      expect(screen.getByLabelText('Filter options')).toHaveFocus();
+    });
+
+    // Browsers scroll the page when focus moves (or the layout shifts); react-aria's default non-modal
+    // popover behaviour would dismiss the dropdown here, mid keyboard navigation.
+    fireEvent.scroll(document);
+    await user.keyboard('{ArrowDown}{ArrowDown}');
+    fireEvent.scroll(document);
+    await user.keyboard(' ');
+
     expect(screen.getByRole('listbox')).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Option 1' })).toHaveAttribute('aria-checked', 'true');
   });
 
   it('handles empty items array', () => {
@@ -359,5 +409,160 @@ describe('MultiSelect', () => {
     expect(screen.getByText('Option 1')).toBeInTheDocument();
     expect(screen.queryByText('Option 2')).not.toBeInTheDocument();
     expect(screen.queryByText('Option 3')).not.toBeInTheDocument();
+  });
+
+  describe('displayValue', () => {
+    const countryOptions = [
+      { key: 'AU', textValue: 'Australia +61', displayValue: 'AU +61' },
+      { key: 'NZ', textValue: 'New Zealand +64', displayValue: 'NZ +64' },
+      { key: 'GB', textValue: 'United Kingdom +44' },
+    ];
+
+    function CountrySelect({
+      initialKeys = [],
+      selectionMode = 'single',
+    }: {
+      initialKeys?: string[];
+      selectionMode?: 'single' | 'multiple';
+    }) {
+      const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set(initialKeys));
+      return (
+        <MultiSelect
+          items={countryOptions}
+          selectionMode={selectionMode}
+          selectedKeys={selectedKeys}
+          onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+          listBoxProps={{ 'aria-label': 'country options' }}
+        >
+          {option => (
+            <MultiSelectItem key={option.key} textValue={option.textValue} displayValue={option.displayValue}>
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelect>
+      );
+    }
+
+    // Visible text is hidden from screen readers, which get the textValue from a visually hidden span instead
+    const getDisplayedText = () => screen.getByRole('combobox').querySelector('span[aria-hidden="true"]')?.textContent;
+    const getScreenReaderText = () => screen.getByRole('combobox').querySelector('.sr-only')?.textContent;
+
+    it('displays the displayValue in the textbox for a controlled selected item', () => {
+      render(<CountrySelect initialKeys={['AU']} />);
+
+      expect(getDisplayedText()).toBe('AU +61');
+    });
+
+    it('displays the displayValue in the textbox when an item is selected from the dropdown', async () => {
+      const user = userEvent.setup();
+      render(<CountrySelect />);
+
+      await user.click(screen.getByRole('combobox'));
+
+      const listbox = screen.getByRole('listbox');
+      await user.click(within(listbox).getByRole('option', { name: /Australia \+61/ }));
+
+      expect(getDisplayedText()).toBe('AU +61');
+    });
+
+    it('provides the textValue to screen readers when displayValue is provided', () => {
+      render(<CountrySelect initialKeys={['AU']} />);
+
+      expect(getScreenReaderText()).toBe('Australia +61');
+    });
+
+    it('still shows the textValue in the dropdown list', async () => {
+      const user = userEvent.setup();
+      render(<CountrySelect initialKeys={['AU']} />);
+
+      await user.click(screen.getByRole('combobox'));
+
+      const listbox = screen.getByRole('listbox');
+      expect(within(listbox).getByRole('option', { name: /Australia \+61/ })).toBeInTheDocument();
+      expect(within(listbox).queryByText('AU +61')).not.toBeInTheDocument();
+    });
+
+    it('falls back to textValue when displayValue is not provided', () => {
+      render(<CountrySelect initialKeys={['GB']} />);
+
+      expect(getDisplayedText()).toBe('United Kingdom +44');
+      expect(getScreenReaderText()).toBe('United Kingdom +44');
+    });
+
+    it('displays the displayValue for each selected item in multiple selection mode', () => {
+      render(<CountrySelect selectionMode="multiple" initialKeys={['AU', 'NZ', 'GB']} />);
+
+      expect(getDisplayedText()).toBe('AU +61, NZ +64, United Kingdom +44');
+      expect(getScreenReaderText()).toBe('Australia +61, New Zealand +64, United Kingdom +44');
+    });
+
+    it('shows the textValue in the tooltip when displayValue is provided', async () => {
+      const user = userEvent.setup();
+      render(<CountrySelect initialKeys={['AU']} />);
+
+      // Keyboard focus opens the tooltip immediately, without the hover delay
+      await user.tab();
+
+      expect(screen.getByRole('tooltip')).toHaveTextContent('Australia +61');
+    });
+
+    it('includes the section title with the displayValue and screen reader text when showSingleSectionTitle is set', () => {
+      render(
+        <MultiSelect
+          selectionMode="single"
+          showSingleSectionTitle
+          selectedKeys={new Set(['AU'])}
+          listBoxProps={{ 'aria-label': 'country options' }}
+        >
+          <MultiSelectSection key="oceania" title="Oceania" items={countryOptions}>
+            {option => (
+              <MultiSelectItem key={option.key} textValue={option.textValue} displayValue={option.displayValue}>
+                {option.textValue}
+              </MultiSelectItem>
+            )}
+          </MultiSelectSection>
+        </MultiSelect>,
+      );
+
+      expect(getDisplayedText()).toBe('Oceania: AU +61');
+      expect(getScreenReaderText()).toBe('Oceania: Australia +61');
+    });
+
+    it('keeps the displayValue and screen reader text for previously selected items that are filtered out', async () => {
+      const user = userEvent.setup();
+      render(<CountrySelect selectionMode="multiple" />);
+
+      await user.click(screen.getByRole('combobox'));
+      await user.click(within(screen.getByRole('listbox')).getByRole('option', { name: /Australia \+61/ }));
+
+      await user.type(screen.getByRole('textbox'), 'New');
+      await user.click(within(screen.getByRole('listbox')).getByRole('option', { name: /New Zealand \+64/ }));
+
+      expect(getDisplayedText()).toBe('AU +61, NZ +64');
+      expect(getScreenReaderText()).toBe('Australia +61, New Zealand +64');
+    });
+  });
+
+  describe('ref', () => {
+    it('points at the trigger button', () => {
+      const ref = createRef<HTMLButtonElement>();
+      render(
+        <MultiSelect ref={ref} items={mockOptions} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+          {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+        </MultiSelect>,
+      );
+      expect(ref.current).toBe(screen.getByRole('combobox'));
+    });
+
+    it('focus() moves focus to the trigger button', () => {
+      const ref = createRef<HTMLButtonElement>();
+      render(
+        <MultiSelect ref={ref} items={mockOptions} listBoxProps={{ 'aria-label': 'multiselect options' }}>
+          {option => <MultiSelectItem key={option.key}>{option.textValue}</MultiSelectItem>}
+        </MultiSelect>,
+      );
+      act(() => ref.current?.focus());
+      expect(screen.getByRole('combobox')).toHaveFocus();
+    });
   });
 });

@@ -11,7 +11,7 @@ describe('Header', () => {
   });
 
   it('should render correct brand logo', () => {
-    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'wbc26', 'stg', 'bom', 'bsa'];
+    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'wbcLegacy', 'stg', 'bom', 'bsa'];
     const brandNames = ['Westpac', 'Westpac', 'St.George', 'Bank of Melbourne', 'Bank SA'];
     brandList.forEach((brand, index) => {
       const { container } = render(<Header brand={brand} />);

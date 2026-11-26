@@ -1,4 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { ComponentPropsWithoutRef, forwardRef, useState } from 'react';
 
 import { ArrowRightIcon, PdfFileIcon } from '../icon/index.js';
 
@@ -22,6 +23,43 @@ export const Default: Story = {
     children: "Look, I'm a default link",
     href: '#',
   },
+};
+
+type RouterLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & { to: string };
+
+const RouterLink = forwardRef<HTMLAnchorElement, RouterLinkProps>(({ to, ...props }, ref) => (
+  <a ref={ref} {...props} href={to} />
+));
+
+/**
+ * > Demonstrates rendering Link as a custom routing component while retaining GEL styling and behaviour.
+ */
+export const PolymorphicLink = () => (
+  <Link tag={RouterLink} to="#">
+    Look, I'm a polymorphic link
+  </Link>
+);
+
+const SpanLink = forwardRef<HTMLSpanElement, ComponentPropsWithoutRef<'span'>>((props, ref) => (
+  <span ref={ref} {...props} />
+));
+
+/**
+ * > Use `elementType` when the custom component does not render an anchor so React Aria applies the correct semantics.
+ */
+export const PolymorphicNonAnchorLink = () => {
+  const [activationCount, setActivationCount] = useState(0);
+
+  return (
+    <div className="flex flex-col items-start gap-2">
+      <Link tag={SpanLink} elementType="span" onPress={() => setActivationCount(currentCount => currentCount + 1)}>
+        Activate the span link
+      </Link>
+      <p aria-live="polite" className="typography-body-10 text-text-body">
+        Activated {activationCount} {activationCount === 1 ? 'time' : 'times'}
+      </p>
+    </div>
+  );
 };
 
 const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;

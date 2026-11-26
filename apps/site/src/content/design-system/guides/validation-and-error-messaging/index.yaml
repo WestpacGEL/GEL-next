@@ -12,12 +12,12 @@ design:
       name: 'Anatomy of an error '
       slug: anatomy-of-an-error
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Error triggers & display
       slug: error-triggers-and-display
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Writing error messages
       slug: writing-error-messages
@@ -25,9 +25,10 @@ design:
     noDemo: false
 accessibility: []
 relatedComponents:
+  icon: cube
   links:
-      - title: Alerts
-        slug: /components/alerts
-      - title: Colours
-        slug: /components/foundation/colours
+    - title: Alerts
+      slug: /components/alerts
+    - title: Colours
+      slug: /components/foundation/colours
 code: []

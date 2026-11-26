@@ -113,6 +113,8 @@ import { ArrowRightIcon, BurgerIcon } from '@westpac/ui/icon';
 
 Icons support `look` (`'filled'` | `'outlined'`), `size`, and `color` props. Over 260 icons are available.
 
+Semantic icon colours (`body`, `heading`, `muted`, `primary`, `hero`, `holler`, `link`, `success`, `info`, `warning`, `danger`, `system-error`, `mono`, `reversed`) use corresponding `icon-*` tokens. Omit `color` to inherit parent colour, including button/link states. Older colours without icon-token counterparts retain their previous surface/background mappings; see `reference/components/icon.md` for the compatibility list.
+
 ### Focus Management
 
 Components use `react-aria` for accessible focus management. Focus rings are shown only during keyboard navigation (not on click). This is handled automatically — no configuration needed.
@@ -128,11 +130,12 @@ Tokens are exposed as semantic, purpose-named classes. Common groups:
 | Surface    | `bg-surface-primary`, `bg-surface-muted`, `bg-surface-hero-faint`            | Component / element backgrounds |
 | Background | `bg-background-white`, `bg-background-pale`, `bg-background-hero`            | Page and section backgrounds    |
 | Text       | `text-text-body`, `text-text-heading`, `text-text-muted`, `text-text-danger` | Text colour                     |
+| Icon       | `text-icon-body`, `text-icon-primary`, `text-icon-hero`                      | Icons using `currentColor`      |
 | Border     | `border-border-muted`, `border-border-focus`, `border-border-primary`        | Border colour                   |
 | Typography | `typography-body-8`, `typography-brand-4`                                    | Font size / line-height sets    |
 | Radius     | `rounded-md`, `rounded-lg`, `rounded-full`                                   | Border radius                   |
 
-Because tokens are semantic and brand-aware, the **same class name automatically resolves to the correct value** for whichever brand is active (`data-brand="wbc" | "wbc26" | "stg" | "bom" | "bsa"`). Import the matching `@westpac/style-config/themes/<brand>` stylesheet. This is exactly why hardcoded values must never be used — they break brand theming.
+Because tokens are semantic and brand-aware, the **same class name automatically resolves to the correct value** for whichever brand is active (`data-brand="wbc" | "wbcLegacy" | "stg" | "bom" | "bsa"`). Import the matching `@westpac/style-config/themes/<brand>` stylesheet. `wbc` is the refreshed Westpac appearance formerly called WBC26; select `wbcLegacy` (capital L) to keep the previous appearance, including matching theme imports and component brand props. The public `wbc26` identifier is no longer supported. This is exactly why hardcoded values must never be used — they break brand theming.
 
 > **Never invent your own tokens or hardcode values.** Only use existing style decisions exposed by `@westpac/style-config`. Do not use hex codes, RGB values, arbitrary Tailwind values (e.g. `bg-[#da1710]`), custom CSS variables, or your own utility classes for colour, typography, spacing, or radius. If a token you need doesn't appear to exist, do not create a workaround — this is likely a design decision.
 
@@ -235,7 +238,7 @@ function MyComponent() {
 
 Returns helpers for dark mode: `getMode()`, `setMode()`, `toggleDarkMode()`, `getBrand()`, `getSystemPreference()`.
 
-Dark tokens are available for WBC, WBC26, STG, BSA and BOM. Web dark mode is opt-in: set `data-theme="dark"` on the same element as `data-brand`. Missing `data-theme` or `data-theme="light"` uses light tokens, regardless of browser preferences. `getSystemPreference()` reads a preference; it does not apply it. Applications own selection and persistence.
+Dark tokens are available for Westpac (`wbc`), Westpac Legacy (`wbcLegacy`), STG, BSA and BOM. Web dark mode is opt-in: set `data-theme="dark"` on the same element as `data-brand`. Missing `data-theme` or `data-theme="light"` uses light tokens, regardless of browser preferences. `getSystemPreference()` reads a preference; it does not apply it. Applications own selection and persistence.
 
 ## Reference Documentation
 

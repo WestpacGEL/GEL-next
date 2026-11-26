@@ -62,6 +62,12 @@ const FONTS_PER_BRAND = {
       className: FONT_BOLD,
     },
   ],
+  wbcLegacy: [
+    {
+      fontWeight: 'Bold',
+      className: FONT_BOLD,
+    },
+  ],
 } as const;
 
 export const Fonts = ({ view = 'default' }: FontProps) => {

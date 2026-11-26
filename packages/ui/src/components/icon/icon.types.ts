@@ -15,7 +15,9 @@ export type IconProps = Omit<SVGAttributes<SVGElement>, 'color'> & {
    */
   children?: ReactNode;
   /**
-   * Icon color
+   * Semantic icon colour role. Older colours without an icon-token counterpart
+   * retain their surface/background mappings. Omit to inherit the parent's colour.
+   * @default undefined
    */
   color?: ResponsiveVariants<Variants['color']>;
   /**

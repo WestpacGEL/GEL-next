@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultStory: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -41,7 +41,7 @@ export const DefaultStory: Story = {
  */
 export const NoLogoLink: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header disableLogoLink brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -55,7 +55,7 @@ export const NoLogoLink: Story = {
  */
 export const RightButton: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header brand={brand === 'btfg' ? 'wbc' : brand} {...rest}>
@@ -73,7 +73,7 @@ export const RightButton: Story = {
  */
 export const CenterAtXS: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header logoCenter brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -87,7 +87,7 @@ export const CenterAtXS: Story = {
  */
 export const LogoOnClick: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         {/* eslint-disable-next-line no-console */}
@@ -102,7 +102,7 @@ export const LogoOnClick: Story = {
  */
 export const LogoWithSkipLink: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header skipToContentId="#" brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -116,7 +116,7 @@ export const LogoWithSkipLink: Story = {
  */
 export const Fixed: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <div className="h-10">
         <Header fixed brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -130,7 +130,7 @@ export const Fixed: Story = {
  */
 export const WithArrow: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header leftIcon="arrow" brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -144,7 +144,7 @@ export const WithArrow: Story = {
  */
 export const WithArrowOnClick: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header
@@ -164,7 +164,7 @@ export const WithArrowOnClick: Story = {
  */
 export const WithHamburger: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header leftIcon="hamburger" brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
@@ -179,7 +179,7 @@ export const WithHamburger: Story = {
  */
 export const WithHamburgerOnClick: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
-    const brand = theme ? theme.toLowerCase() : 'wbc';
+    const brand = theme || 'wbc';
     return (
       <>
         <Header

@@ -19,6 +19,12 @@ export const styles = tv({
           sm:top-auto sm:h-[14.25rem]
         `,
       },
+      wbcLegacy: {
+        header: `
+          inset-y-0 right-0
+          sm:top-auto sm:h-[14.25rem]
+        `,
+      },
       stg: {
         base: 'bottom-0 left-0 w-[75.125rem]',
         header: `

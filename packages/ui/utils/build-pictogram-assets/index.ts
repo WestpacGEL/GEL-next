@@ -1,6 +1,6 @@
 // Generates static SVG assets for each brand from an existing pictogram component.
 
-import { writeFile } from 'fs/promises';
+import { mkdir, writeFile } from 'fs/promises';
 
 import { type ComponentType, createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -42,6 +42,7 @@ const renderPictogram = (component: PictogramComponent, mode: 'base' | 'duo' | '
 // Write the SVG to its brand and colouring folder.
 const writePictogram = async (folder: string, name: string, svg: string) => {
   const file = `assets/pictograms/${folder}/${name}.svg`;
+  await mkdir(`assets/pictograms/${folder}`, { recursive: true });
   await writeFile(file, svg);
   /* eslint-disable no-console */
   console.log(`Written: ${file}`);

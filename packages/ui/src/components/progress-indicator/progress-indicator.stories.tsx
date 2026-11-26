@@ -25,6 +25,24 @@ export const Default: Story = {
 };
 
 /**
+ * > New semantic roles preserve compatibility when the indicator is used as an icon.
+ * > The spinner and embedded icon use icon tokens; the label uses text tokens.
+ * > The toolbar controls the brand and light/dark mode.
+ */
+export const SemanticColors: Story = {
+  render: () => (
+    <section aria-label="Semantic loading indicators" className="bg-background-white p-3 text-text-body">
+      <h2 className="mb-3 typography-body-7 font-bold">Semantic loading indicators</h2>
+      <div className="flex flex-wrap justify-center gap-4">
+        {(['body', 'heading', 'link'] as const).map(color => (
+          <ProgressIndicator key={color} color={color} size="large" icon={PadlockIcon} label={color} />
+        ))}
+      </div>
+    </section>
+  ),
+};
+
+/**
  * >Different sizes of indicator
  */
 

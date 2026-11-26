@@ -184,6 +184,20 @@
   --color-surface-system-error-dark: var(--primitives-color-system-950); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-white); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
+  --color-icon-body: var(--primitives-color-stg-muted-950);
+  --color-icon-heading: var(--primitives-color-stg-hero-500);
+  --color-icon-muted: var(--primitives-color-stg-muted-500);
+  --color-icon-primary: var(--primitives-color-stg-primary-500);
+  --color-icon-hero: var(--primitives-color-stg-hero-600);
+  --color-icon-holler: var(--primitives-color-stg-holler-500);
+  --color-icon-link: var(--primitives-color-stg-primary-500);
+  --color-icon-success: var(--primitives-color-success-500);
+  --color-icon-info: var(--primitives-color-info-500);
+  --color-icon-warning: var(--primitives-color-warning-500);
+  --color-icon-danger: var(--primitives-color-danger-500);
+  --color-icon-system-error: var(--primitives-color-system-950);
+  --color-icon-mono: var(--primitives-color-mono-white);
+  --color-icon-reversed: var(--primitives-color-mono-white);
   --color-text-body: var(--primitives-color-stg-hero-800); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
   --color-text-heading: var(--primitives-color-stg-hero-600); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
   --color-text-muted: var(--primitives-color-stg-muted-500); /* Use for text that requires less emphasis like hint text etc. */
@@ -297,6 +311,20 @@
   --color-surface-system-error-dark: var(--primitives-color-system-500); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-black); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
+  --color-icon-body: var(--primitives-color-stg-muted-200);
+  --color-icon-heading: var(--primitives-color-stg-hero-200);
+  --color-icon-muted: var(--primitives-color-stg-muted-400);
+  --color-icon-primary: var(--primitives-color-stg-primary-300);
+  --color-icon-hero: var(--primitives-color-stg-hero-300);
+  --color-icon-holler: var(--primitives-color-stg-holler-300);
+  --color-icon-link: var(--primitives-color-stg-primary-300);
+  --color-icon-success: var(--primitives-color-success-300);
+  --color-icon-info: var(--primitives-color-info-300);
+  --color-icon-warning: var(--primitives-color-warning-300);
+  --color-icon-danger: var(--primitives-color-danger-300);
+  --color-icon-system-error: var(--primitives-color-system-500);
+  --color-icon-mono: var(--primitives-color-mono-black);
+  --color-icon-reversed: var(--primitives-color-mono-white);
   --color-text-body: var(--primitives-color-stg-muted-200); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
   --color-text-heading: var(--primitives-color-stg-hero-300); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
   --color-text-muted: var(--primitives-color-stg-muted-400); /* Use for text that requires less emphasis like hint text etc. */

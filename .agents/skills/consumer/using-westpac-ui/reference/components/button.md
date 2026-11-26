@@ -16,7 +16,7 @@ Interactive button with multiple variants.
 | `iconColor`         | `IconProps['color']`                                                         | auto     | Icon color                  |
 | `iconLook`          | `IconProps['look']`                                                          | `filled` | Icon look                   |
 | `iconSize`          | `IconProps['size']`                                                          | auto     | Icon size                   |
-| `tag`               | `'a' \| 'span' \| 'button' \| 'div'`                                         | `button` | HTML element                |
+| `tag`               | `React.ElementType`                                                          | `button` | Element or component        |
 | `removeLinkPadding` | `boolean`                                                                    | `false`  | Remove padding on link look |
 
 **Incorrect (wrong prop names and wrapping in an anchor)**
@@ -34,12 +34,14 @@ import { ArrowRightIcon } from '@westpac/ui/icon';
 
 ```tsx
 import { ArrowRightIcon } from '@westpac/ui/icon';
+import { Link } from 'react-router-dom';
 
 <Button look="primary" size="large">Click me</Button>
 <Button look="hero" soft iconAfter={ArrowRightIcon}>Next</Button>
 <Button tag="a" href="/page" look="link">Go to page</Button>
+<Button tag={Link} to="/page">Router link</Button>
 <Button size={{ initial: 'small', md: 'large' }}>Responsive</Button>
 <Button block>Full width</Button>
 ```
 
-**Capabilities:** Responsive look/size/soft/block/justify · Icons before/after · Polymorphic tag (button/a/span/div) · Soft variants for primary/hero/faint · Icon-only mode (no children) · Accessible focus ring · Disabled state via `disabled` prop · Forwards ref
+**Capabilities:** Responsive look/size/soft/block/justify · Icons before/after · Polymorphic tag (elements/components) · Soft variants for primary/hero/faint · Icon-only mode (no children) · Accessible focus ring · Disabled state via `disabled` prop · Forwards ref

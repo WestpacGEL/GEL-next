@@ -6,6 +6,8 @@
 
 @layer theme {
     [data-brand="stg"] {
+      color-scheme: light;
+
       /* Primitive Colors */
       --mono-white: #ffffff;
       --mono-black: #000000;
@@ -126,6 +128,20 @@
       --surface-system-error-dark: var(--reserved-system-950);
       --surface-mono: var(--mono-white);
       --surface-reversed: var(--mono-white);
+      --icon-body: var(--stg-muted-950);
+      --icon-heading: var(--stg-hero-500);
+      --icon-muted: var(--stg-muted-500);
+      --icon-primary: var(--stg-primary-500);
+      --icon-hero: var(--stg-hero-600);
+      --icon-holler: var(--stg-holler-500);
+      --icon-link: var(--stg-primary-500);
+      --icon-success: var(--reserved-success-500);
+      --icon-info: var(--reserved-info-500);
+      --icon-warning: var(--reserved-warning-500);
+      --icon-danger: var(--reserved-danger-500);
+      --icon-system-error: var(--reserved-system-950);
+      --icon-mono: var(--mono-white);
+      --icon-reversed: var(--mono-white);
       --text-body: var(--stg-hero-800);
       --text-heading: var(--stg-hero-600);
       --text-muted: var(--stg-muted-500);
@@ -199,7 +215,7 @@
       --font-brand: Dragon Bold;
     }
 
-    /* Dark mode is opt-in; browser preferences do not change the default. */
+    /* Dark mode is opt-in; native browser controls follow the selected mode. */
     [data-brand="stg"][data-theme="dark"] {
       color-scheme: dark;
 
@@ -236,6 +252,20 @@
       --surface-system-error-dark: var(--reserved-system-500);
       --surface-mono: var(--mono-black);
       --surface-reversed: var(--mono-white);
+      --icon-body: var(--stg-muted-200);
+      --icon-heading: var(--stg-hero-200);
+      --icon-muted: var(--stg-muted-400);
+      --icon-primary: var(--stg-primary-300);
+      --icon-hero: var(--stg-hero-300);
+      --icon-holler: var(--stg-holler-300);
+      --icon-link: var(--stg-primary-300);
+      --icon-success: var(--reserved-success-300);
+      --icon-info: var(--reserved-info-300);
+      --icon-warning: var(--reserved-warning-300);
+      --icon-danger: var(--reserved-danger-300);
+      --icon-system-error: var(--reserved-system-500);
+      --icon-mono: var(--mono-black);
+      --icon-reversed: var(--mono-white);
       --text-body: var(--stg-muted-200);
       --text-heading: var(--stg-hero-300);
       --text-muted: var(--stg-muted-400);

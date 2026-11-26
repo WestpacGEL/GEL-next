@@ -3,16 +3,24 @@ To use brands in your project, make sure you import the required brand themes in
 ```html
 <StaticCode language="css" code={`
 @import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/wbcLegacy';
 @import '@westpac/style-config/themes/stg';
 `} />
 ```
 
 Add the custom attribute tag `data-brand="brand_name"` to your HTML tag or parent container. You can use the following valid brand names:
 
-- `wbc`: Westpac Banking Corporation
+- `wbc`: Westpac (refreshed appearance, previously WBC26; the default selection)
+- `wbcLegacy`: Westpac Legacy (previous Westpac appearance; capital L)
 - `stg`: St.George Bank
 - `bom`: Bank of Melbourne
 - `bsa`: BankSA
+
+**Breaking change:** applications currently using `wbc` must switch to `wbcLegacy` to retain their previous appearance. Change the theme import to `@westpac/style-config/themes/wbcLegacy`, set `data-brand="wbcLegacy"`, and update explicit component brand props such as `Header` and `Footer` to `brand="wbcLegacy"`. Update saved brand selections and custom `wbc:` Tailwind variants to `wbcLegacy:` too.
+
+The public `wbc26` identifier has been removed without a compatibility alias. Existing WBC26 consumers must use `wbc` instead, including imports, attributes, props and custom variants. Per-brand W3C, standalone CSS, Swift and Android outputs follow the same mapping; update their paths and generated identifiers. Aggregate token keys retain their Figma source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`.
+
+Both Westpac brands support light and dark tokens. Review both modes and update visual snapshots deliberately after migrating. Existing STG, BSA and BOM values are unchanged; the refreshed Figma export adds icon tokens to all brands and updates Westpac pictogram colours.
 
 ```html
 <StaticCode language="jsx" code={`

@@ -2,8 +2,11 @@ import { readFileSync } from 'fs';
 
 // Load the latest GEL brand colours when the script runs.
 const allBrands: unknown = JSON.parse(readFileSync('../style-config/src/tokens/w3c/all-brands.json', 'utf8'));
+const brands: { brandCode: string; themeName: string }[] = JSON.parse(
+  readFileSync('../style-config/src/constants/brands.json', 'utf8'),
+);
 
-export const pictogramBrands = ['WBC', 'BOM', 'BSA', 'STG'] as const;
+export const pictogramBrands = ['WBC', 'WBCLEGACY', 'BOM', 'BSA', 'STG'] as const;
 export type PictogramBrand = (typeof pictogramBrands)[number];
 
 export type PictogramColors = {
@@ -17,12 +20,13 @@ type TokenObject = {
   [key: string]: unknown;
 };
 
-// Match each asset folder name to the brand name used in the GEL colour file.
-const brandTokenNames: Record<PictogramBrand, string> = {
-  WBC: 'Westpac',
-  BOM: 'Bank of Melbourne',
-  BSA: 'Bank SA',
-  STG: 'StGeorge',
+// Asset folders use uppercase names; the shared registry owns the source allocation.
+const brandCodes: Record<PictogramBrand, string> = {
+  WBC: 'wbc',
+  WBCLEGACY: 'wbcLegacy',
+  BOM: 'bom',
+  BSA: 'bsa',
+  STG: 'stg',
 };
 
 // Some colours point to other GEL colours instead of a hex value.
@@ -47,7 +51,11 @@ const resolveToken = (tokenPath: string): string => {
 
 // Get the base, accent and mono colours used to build a brands SVG files.
 export const getPictogramColors = (brand: PictogramBrand): PictogramColors => {
-  const tokenPath = `Tokens.${brandTokenNames[brand]}.light-mode.color`;
+  const allocation = brands.find(({ brandCode }) => brandCode === brandCodes[brand]);
+  if (!allocation) {
+    throw new Error(`No brand allocation for pictogram folder: ${brand}`);
+  }
+  const tokenPath = `Tokens.${allocation.themeName}.light-mode.color`;
 
   return {
     base: resolveToken(`${tokenPath}.pictogram.surface-pictogram-base`),

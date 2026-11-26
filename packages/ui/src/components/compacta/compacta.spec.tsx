@@ -65,6 +65,52 @@ describe('Compacta', () => {
     expect(container).toBeInTheDocument();
   });
 
+  it('should not focus inputs or show their focus ring on initial load', async () => {
+    const { getByTestId } = render(<TestCompacta items={[{ primary: '', secondary: '', tertiary: '' }]} />);
+
+    await act(async () => {
+      await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
+    });
+
+    expect(getByTestId('input-one')).not.toHaveFocus();
+    expect(getByTestId('input-one')).not.toHaveClass('focus-outline');
+    expect(getByTestId('input-one').closest('.pb-5')).not.toHaveClass('[&_:focus]:focus-outline');
+  });
+
+  it('should show input focus rings for tabbing but not clicking', async () => {
+    const user = userEvent.setup();
+    const { getByTestId } = render(<TestCompacta items={[{ primary: '', secondary: '', tertiary: '' }]} />);
+    const firstInput = getByTestId('input-one');
+    const secondInput = getByTestId('input-two');
+    const content = firstInput.closest('.pb-5');
+
+    await user.click(firstInput);
+    expect(firstInput).toHaveFocus();
+    expect(firstInput).not.toHaveClass('focus-outline');
+    expect(content).not.toHaveClass('[&_:focus]:focus-outline');
+
+    await user.tab();
+    expect(secondInput).toHaveFocus();
+    expect(secondInput).toHaveClass('focus-outline');
+    expect(content).toHaveClass('[&_:focus]:focus-outline');
+
+    await user.click(secondInput);
+    expect(secondInput).not.toHaveClass('focus-outline');
+    expect(content).not.toHaveClass('[&_:focus]:focus-outline');
+  });
+
+  it('should focus the first input when an item is added with the keyboard', async () => {
+    const user = userEvent.setup();
+    const { getByRole, getByTestId } = render(<TestCompacta />);
+
+    await user.tab();
+    expect(getByRole('button', { name: 'Add another' })).toHaveFocus();
+    await user.keyboard('{Enter}');
+
+    await waitFor(() => expect(getByTestId('input-one')).toHaveFocus());
+    expect(getByTestId('input-one')).toHaveClass('focus-outline');
+  });
+
   it('should hide contents of compacta when button pressed', async () => {
     const user = userEvent.setup();
     const { getByText, getByLabelText } = render(

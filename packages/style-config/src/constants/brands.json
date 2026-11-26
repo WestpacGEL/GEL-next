@@ -1,10 +1,10 @@
 [
-  { "themeName": "Westpac", "primitiveName": "WBC", "brandCode": "wbc", "fontName": "Westpac" },
+  { "themeName": "Westpac", "primitiveName": "WBC", "brandCode": "wbcLegacy", "fontName": "Westpac" },
   {
     "themeName": "Westpac 2026",
     "primitiveName": "WBC 26",
     "fallbackPrimitiveName": "WBC",
-    "brandCode": "wbc26",
+    "brandCode": "wbc",
     "fontName": "Westpac"
   },
   { "themeName": "StGeorge", "primitiveName": "STG", "brandCode": "stg", "fontName": "Dragon Bold" },

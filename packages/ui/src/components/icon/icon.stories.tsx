@@ -1,11 +1,50 @@
 /* eslint-disable no-console */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { expect, waitFor, within } from 'storybook/test';
 
 import { Icon } from './icon.component.js';
 
 import * as AllIcons from './index.js';
 import { AlertIcon } from './index.js';
+
+const SEMANTIC_COLORS = [
+  'body',
+  'heading',
+  'muted',
+  'primary',
+  'hero',
+  'holler',
+  'link',
+  'success',
+  'info',
+  'warning',
+  'danger',
+  'system-error',
+  'mono',
+  'reversed',
+] as const;
+
+const COMPATIBILITY_COLORS = [
+  'muted-vivid',
+  'muted-strong',
+  'muted-mild',
+  'muted-soft',
+  'muted-pale',
+  'muted-faint',
+  'white-pale',
+  'white-faint',
+  'primary-faint',
+  'hero-faint',
+  'pop',
+  'pop-faint',
+  'holler-faint',
+  'success-faint',
+  'info-faint',
+  'warning-faint',
+  'danger-faint',
+  'system-error-dark',
+] as const;
 
 const AllIconsExample = (props: AllIcons.IconProps) => {
   const [search, setSearch] = useState('');
@@ -73,31 +112,10 @@ const meta: Meta<typeof Icon> = {
       type: { name: 'enum', value: ['xsmall', 'small', 'medium', 'large', 'xlarge'] },
     },
     color: {
-      description: 'color',
+      description: 'Semantic icon role, or a retained compatibility colour. Omit to inherit colour.',
       type: {
         name: 'enum',
-        value: [
-          'success',
-          'info',
-          'warning',
-          'danger',
-          'system',
-          'white',
-          'black',
-          'background',
-          'border',
-          'borderDark',
-          'focus',
-          'heading',
-          'hero',
-          'light',
-          'link',
-          'muted',
-          'neutral',
-          'pop',
-          'primary',
-          'text',
-        ],
+        value: [...SEMANTIC_COLORS, ...COMPATIBILITY_COLORS],
       },
     },
     look: {
@@ -127,45 +145,14 @@ export const Primary: Story = {
 };
 
 /**
- * > With primary color example
+ * > All supported colours, including retained surface/background compatibility values.
  */
 export const AllColorsExample: Story = {
   args: {},
   render: () => {
-    const ALL_COLORS = [
-      'muted',
-      'muted-vivid',
-      'muted-strong',
-      'muted-mild',
-      'muted-soft',
-      'muted-pale',
-      'muted-faint',
-      'white-pale',
-      'white-faint',
-      'mono',
-      'primary',
-      'primary-faint',
-      'hero',
-      'hero-faint',
-      'pop',
-      'pop-faint',
-      'holler',
-      'holler-faint',
-      'success',
-      'success-faint',
-      'info',
-      'info-faint',
-      'warning',
-      'warning-faint',
-      'danger',
-      'danger-faint',
-      'system-error',
-      'system-error-dark',
-    ] as const;
-
     return (
       <div className="flex flex-wrap gap-2">
-        {ALL_COLORS.map(color => (
+        {[...SEMANTIC_COLORS, ...COMPATIBILITY_COLORS].map(color => (
           <div key={color} className="flex flex-col items-center">
             <AlertIcon key={color} color={color} />
             <p>{color}</p>
@@ -173,6 +160,49 @@ export const AllColorsExample: Story = {
         ))}
       </div>
     );
+  },
+};
+
+/**
+ * > Semantic icon colours follow the toolbar's selected brand and light/dark mode.
+ * > Mono and reversed samples use a hero backdrop so white icons remain visible.
+ */
+export const SemanticColors: Story = {
+  render: () => (
+    <section aria-label="Semantic icon colours" className="bg-background-white p-3 text-text-body">
+      <h2 className="mb-3 typography-body-7 font-bold">Semantic icon colours</h2>
+      <div className="grid grid-cols-2 gap-2">
+        {SEMANTIC_COLORS.map(color => (
+          <div key={color} className="border border-border-muted-soft p-2">
+            <p className="mb-1 typography-body-11">{color}</p>
+            <div
+              className={color === 'mono' || color === 'reversed' ? 'flex gap-2 bg-surface-hero p-1' : 'flex gap-2 p-1'}
+            >
+              <AlertIcon color={color} size="large" aria-label={`${color} filled`} />
+              <AlertIcon color={color} look="outlined" size="large" aria-label={`${color} outlined`} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  ),
+  play: async ({ canvasElement }) => {
+    const section = within(canvasElement).getByRole('region', { name: 'Semantic icon colours' });
+    // Resolve the token independently of the Icon mapping, using real browser CSS.
+    const reference = document.createElement('span');
+    section.appendChild(reference);
+    try {
+      for (const color of SEMANTIC_COLORS) {
+        await expect(getComputedStyle(section).getPropertyValue(`--icon-${color}`).trim()).not.toBe('');
+        reference.style.color = `var(--icon-${color})`;
+        for (const look of ['filled', 'outlined']) {
+          const icon = within(section).getByRole('img', { name: `${color} ${look}` });
+          await waitFor(() => expect(getComputedStyle(icon).color).toBe(getComputedStyle(reference).color));
+        }
+      }
+    } finally {
+      reference.remove();
+    }
   },
 };
 

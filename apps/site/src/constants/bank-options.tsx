@@ -10,6 +10,14 @@ export const BANK_OPTIONS = [
     designSystemPageClasses: 'block h-3 w-[2.75rem]',
   },
   {
+    key: 'wbcLegacy',
+    label: 'Westpac Legacy',
+    fontName: 'Westpac',
+    icon: WBCLogo,
+    homePageClasses: 'mr-1 block h-3 w-[2.75rem]',
+    designSystemPageClasses: 'block h-3 w-[2.75rem]',
+  },
+  {
     key: 'stg',
     label: 'St.George',
     fontName: 'Dragon',

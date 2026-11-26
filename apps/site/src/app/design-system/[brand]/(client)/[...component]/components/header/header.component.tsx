@@ -12,7 +12,7 @@ const FIXED_HEADER = 162; // 228 - 66 = height to stick
 
 export function Header({ className, title, brand }: { brand: string; className?: string; title?: string }) {
   const [fixed, setFixed] = useState(false);
-  const styles = headerStyles({ brand: brand.toLowerCase() as BrandKey, fixed, className });
+  const styles = headerStyles({ brand: brand as BrandKey, fixed, className });
   const headerRef = useRef<HTMLHeadingElement>(null);
   const { setOpen } = useSidebar();
 

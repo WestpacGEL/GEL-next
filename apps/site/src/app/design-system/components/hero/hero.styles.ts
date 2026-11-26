@@ -24,6 +24,14 @@ export const styles = tv({
           uppercase
         `,
       },
+      wbcLegacy: {
+        base: `
+          before:absolute before:top-15 before:bottom-0 before:left-0
+          before:block before:w-2 before:bg-surface-pop
+          sm:bg-background-primary sm:before:w-4
+        `,
+        heading: 'uppercase',
+      },
       stg: {
         base: 'sm:bg-background-hero',
         heading: 'text-text-hero',

@@ -8,6 +8,7 @@ import { BrandKey } from '@/app/types/brand.types';
 
 export const logoMap: Record<BrandKey, { logo: FC<SymbolProps>; name: string }> = {
   wbc: { name: 'Westpac', logo: WBCLogo },
+  wbcLegacy: { name: 'Westpac Legacy', logo: WBCLogo },
   stg: { name: 'St.George', logo: STGDragonLogo },
   bom: { name: 'Bank of Melbourne', logo: BOMShieldLogo },
   bsa: { name: 'BankSA', logo: BSAStackedLogo },
@@ -18,6 +19,7 @@ export const logoStyles = tv({
   variants: {
     brand: {
       wbc: 'h-3 w-[45px]',
+      wbcLegacy: 'h-3 w-[45px]',
       stg: 'h-[32px] w-[45px]',
       bom: 'h-[35px] w-[23px]',
       bsa: 'h-[34px] w-[21px]',
@@ -28,7 +30,7 @@ export const logoStyles = tv({
   },
   compoundVariants: [
     {
-      brand: 'wbc',
+      brand: ['wbc', 'wbcLegacy'],
       footer: true,
       className: 'lg:h-[20px] lg:w-[50px]',
     },

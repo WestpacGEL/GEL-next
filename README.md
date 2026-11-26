@@ -76,6 +76,7 @@ For brand theming, import the required brand stylesheets:
 
 ```css
 @import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/wbcLegacy';
 @import '@westpac/style-config/themes/stg';
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
@@ -84,6 +85,21 @@ For brand theming, import the required brand stylesheets:
 If you have initialized your project with Nx build system follow the official [Nx tailwind documentation](https://nx.dev/recipes/react/using-tailwind-css-in-react#manual-setup-instructions) to configure tailwind.
 
 ### Theming
+
+#### Breaking change: the default Westpac appearance
+
+`wbc` now selects the refreshed Westpac appearance previously called WBC26. The previous Westpac appearance is available as `wbcLegacy` (capital L), in both light and dark modes.
+
+| Appearance to keep | Previous identifier | New identifier |
+| ------------------ | ------------------- | -------------- |
+| Previous Westpac   | `wbc`               | `wbcLegacy`    |
+| Refreshed Westpac  | `wbc26`             | `wbc`          |
+
+Update the theme import, `data-brand`, explicit component `brand` props (such as Header and Footer), saved brand selections and brand-specific Tailwind variants together. For the legacy appearance, import `@westpac/style-config/themes/wbcLegacy`, set `data-brand="wbcLegacy"`, use `brand="wbcLegacy"` where required, and change custom `wbc:` variants to `wbcLegacy:`. Applications accepting the refreshed appearance can keep `wbc`.
+
+The public `wbc26` identifier and per-brand outputs have been removed **without a compatibility alias**. Update per-brand W3C, standalone CSS, Swift and Android paths/identifiers too; regenerate and validate native integrations. Aggregate tokens retain the Figma source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`. Do not blindly replace these source names or raw palette references.
+
+Review both modes and update visual snapshots deliberately. Existing STG, BSA and BOM values are unchanged; the separately refreshed Figma export adds icon tokens to all brands and updates Westpac pictogram colours.
 
 To switch between brands, set the `data-brand` attribute on a parent element:
 

@@ -4,9 +4,21 @@ Comprehensive design guidelines, dos/don'ts, user experience notes, and accessib
 
 ## Light and dark tokens
 
-WBC, WBC26, STG, BSA and BOM provide light and dark tokens. Use `data-brand="wbc26"` and the `@westpac/style-config/themes/wbc26` stylesheet for WBC26. Web dark mode is opt-in: put `data-theme="dark"` on the same element as `data-brand`. Omitting `data-theme`, or setting it to `light`, uses light tokens even when the browser or operating system prefers dark mode. Applications own selection and persistence; GEL does not automatically follow `prefers-color-scheme`.
+Westpac (`wbc`), Westpac Legacy (`wbcLegacy`), STG, BSA and BOM provide light and dark tokens. Use `data-brand="wbc"` and `@westpac/style-config/themes/wbc` for refreshed Westpac, or `data-brand="wbcLegacy"` and `@westpac/style-config/themes/wbcLegacy` for the previous appearance. Web dark mode is opt-in: put `data-theme="dark"` on the same element as `data-brand`. Omitting `data-theme`, or setting it to `light`, uses light tokens even when the browser or operating system prefers dark mode. Applications own selection and persistence; GEL does not automatically follow `prefers-color-scheme`.
 
 Use semantic utilities such as `bg-background-white` and `text-text-body` in both modes. Their values resolve to the selected brand and mode. During migration, use `data-brand` for the brand and `data-theme` for the light/dark selection.
+
+## Migrating the Westpac brand
+
+**Breaking change:** `wbc` now uses the refreshed appearance formerly called WBC26. To retain the previous Westpac appearance, change the theme import, `data-brand`, explicit component `brand` props, saved selections and custom `wbc:` Tailwind variants to `wbcLegacy` / `wbcLegacy:` (capital L). Existing WBC26 consumers must instead migrate `wbc26` to `wbc`; there is no public compatibility alias.
+
+Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers as well. Aggregate Figma keys retain their source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`. Review both modes and update visual snapshots deliberately. Existing STG, BSA and BOM token values are unchanged; the refreshed Figma export adds icon tokens for all brands and updates Westpac pictogram colours.
+
+## Icon colours
+
+Prefer semantic icon roles: `body`, `heading`, `muted`, `primary`, `hero`, `holler`, `link`, `success`, `info`, `warning`, `danger`, `system-error`, `mono` and `reversed`. Use the icon's `color` prop, for example `<TickCircleIcon color="hero" />`; it resolves to the matching `icon-*` token for the active brand and mode. Icon and surface tokens can intentionally differ, especially in dark mode. Preview white/reversed icons on an appropriate contrasting surface.
+
+Omit `color` when the icon should inherit the parent's foreground, including button/link states. Existing faint, pop and other colours with no icon-token equivalent retain their previous mappings for compatibility; prefer semantic roles for new usage. See `components/icon.md` for the complete compatibility list. Do not invent `icon-pop` or automatically replace unrelated component surface styles.
 
 ## Accordions
 
@@ -875,37 +887,31 @@ The Bottom sheet is a generic component designed to work in as many scenarios as
 Breadcrumbs come in one style for navigational consistency across all touch-points.
 
 ```tsx
-// Using the Link component (as NextLink) from 'next/Link'
+// Using the Link component (as NextLink) from 'next/link'
 <div className="flex flex-col gap-4">
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mt-2">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem isCurrent tag="a">
-        Home
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">
+      Home
+    </BreadcrumbItem>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>
-        Personal
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">
+      Home
+    </BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#personal">
+      Personal
+    </BreadcrumbItem>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mb-2">
-    <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
-    </NextLink>
-    <NextLink href="#credit-cards" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>
-        Credit cards
-      </BreadcrumbItem>
-    </NextLink>
+    <BreadcrumbItem tag={NextLink} href="#home">
+      Home
+    </BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#personal">
+      Personal
+    </BreadcrumbItem>
+    <BreadcrumbItem tag={NextLink} href="#credit-cards">
+      Credit cards
+    </BreadcrumbItem>
   </Breadcrumb>
 </div>
 ```
