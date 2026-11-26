@@ -3,3 +3,4 @@ export * from './code-content';
 export * from './design-content';
 export * from './intro';
 export * from './tabs';
+export * from './content-guidance';

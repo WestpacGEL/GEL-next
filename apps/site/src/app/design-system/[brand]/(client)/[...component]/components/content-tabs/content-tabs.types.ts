@@ -7,6 +7,7 @@ import { WestpacUIInfo } from '@/types/westpac-ui-info.types';
 
 import { AccessibilitySectionProps } from './components/accessibility-content/accessibility-content.types';
 import { CodeSectionProps } from './components/code-content/code-content.types';
+import { ContentSectionProps } from './components/content-guidance/content-guidance.types';
 import { DesignSectionProps } from './components/design-content/design-content.types';
 
 export type ContentTabsProps = {
@@ -15,6 +16,7 @@ export type ContentTabsProps = {
   codeSections: CodeSectionProps[];
   componentName: string;
   componentProps?: ComponentProps;
+  contentSections: ContentSectionProps[];
   description?: string;
   designSections?: DesignSectionProps[];
   namedExport?: string;

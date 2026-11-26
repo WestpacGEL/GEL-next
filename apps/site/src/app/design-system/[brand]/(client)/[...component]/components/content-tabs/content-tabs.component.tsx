@@ -4,7 +4,7 @@ import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { usePathname, useRouter } from 'next/navigation';
 import { Key, useCallback, useMemo } from 'react';
 
-import { AccessibilityContent, CodeContent, DesignContent, Tabs, TabsPanel } from './components';
+import { AccessibilityContent, CodeContent, DesignContent, Tabs, TabsPanel, ContentGuidance } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
 
 const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey: string }) => {
@@ -42,6 +42,10 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
       />
     );
   }
+  if (tabKey === 'content') {
+    return <ContentGuidance shortCodes={content.shortCodes} contentSections={content.contentSections} />;
+  }
+
   return <></>;
 };
 
@@ -67,12 +71,14 @@ export function ContentTabs({ content, tab }: { brand: string; content: ContentT
       ...(content.designSections?.length ? [{ label: 'Design', key: 'design' }] : []),
       ...(content.accessibilitySections.length > 0 ? [{ label: 'Accessibility', key: 'accessibility' }] : []),
       ...(content.componentProps || content.codeSections.length > 0 ? [{ label: 'Code', key: 'code' }] : []),
+      ...(content.contentSections.length > 0 ? [{ label: 'Content', key: 'content' }] : []),
     ];
   }, [
     content.accessibilitySections.length,
     content.codeSections.length,
     content.componentProps,
     content.designSections?.length,
+    content.contentSections.length,
   ]);
 
   if (filteredTabs.length === 1) {
