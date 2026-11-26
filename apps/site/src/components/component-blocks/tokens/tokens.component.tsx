@@ -1,9 +1,9 @@
 'use client';
 
 import { Badge, Grid, GridItem } from '@westpac/ui';
-import { useBreakpoint, useDarkMode } from '@westpac/ui/hook';
-import { useCallback, useEffect, useState } from 'react';
+import { useBreakpoint } from '@westpac/ui/hook';
 
+import { useBrand } from '@/app/design-system/hooks/use-brand';
 import { Svg } from '@/components/svg';
 import { useThemeMode } from '@/hooks/theme-mode.hook';
 
@@ -11,29 +11,19 @@ import { styles as tokenStyles } from './tokens.styles';
 import { processAllBrands, TokenItem, TokensData } from './tokens.utils';
 
 export function Tokens({ title, tokens }: TokensData) {
-  const { getBrand } = useDarkMode();
-  const [brand, setBrand] = useState('Westpac');
+  const selectedBrand = useBrand();
+  const brand = {
+    wbc: 'Westpac 2026',
+    wbcLegacy: 'Westpac',
+    stg: 'StGeorge',
+    bsa: 'Bank SA',
+    bom: 'Bank of Melbourne',
+  }[selectedBrand?.key ?? 'wbc'];
   const breakpoint = useBreakpoint();
 
   const styles = tokenStyles({ size: breakpoint });
 
   const { mode } = useThemeMode();
-  const convertBrandName = useCallback(() => {
-    switch (getBrand()) {
-      case 'stg':
-        return 'StGeorge';
-      case 'bsa':
-        return 'Bank SA';
-      case 'bom':
-        return 'Bank of Melbourne';
-      default:
-        return 'Westpac';
-    }
-  }, [getBrand]);
-
-  useEffect(() => {
-    setBrand(convertBrandName());
-  }, [convertBrandName]);
 
   const circleToRender = (token: TokenItem) => {
     const fillValue = token.fillColour ? processAllBrands(brand, `${mode}-mode`, token.fillColour) : 'none';
