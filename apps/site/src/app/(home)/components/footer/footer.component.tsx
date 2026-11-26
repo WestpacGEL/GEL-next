@@ -38,24 +38,26 @@ export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: strin
                 lg:gap-y-2
               `}
             >
-              {Object.entries(logoMap).map(([key, { logo: Logo, name }]) => {
-                return (
-                  <li
-                    key={key}
-                    className={`
+              {Object.entries(logoMap)
+                .filter(([key]) => key !== 'wbcLegacy')
+                .map(([key, { logo: Logo, name }]) => {
+                  return (
+                    <li
+                      key={key}
+                      className={`
                       col-span-12
                       xsl:col-span-6
                     `}
-                  >
-                    <Link href={`/design-system/${key}`}>
-                      <Circle>
-                        <Logo className={logoStyles({ brand: key as BrandKey, footer: true })} />
-                      </Circle>
-                      <Text>{name}</Text>
-                    </Link>
-                  </li>
-                );
-              })}
+                    >
+                      <Link href={`/design-system/${key}`}>
+                        <Circle>
+                          <Logo className={logoStyles({ brand: key as BrandKey, footer: true })} />
+                        </Circle>
+                        <Text>{name}</Text>
+                      </Link>
+                    </li>
+                  );
+                })}
             </Grid>
           </div>
           <div

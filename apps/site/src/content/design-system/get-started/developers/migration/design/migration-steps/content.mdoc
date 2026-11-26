@@ -14,10 +14,7 @@
 @import '@westpac/style-config/tailwind';
 
 /* For brand theming, import the required brand stylesheets: */
-@import '@westpac/style-config/themes/wbc';
-@import '@westpac/style-config/themes/stg';
-@import '@westpac/style-config/themes/bom';
-@import '@westpac/style-config/themes/bsa';
+${BANK_OPTIONS.map(({ key }) => "@import '@westpac/style-config/themes/" + key + "';").join('\n')}
 
 /* Also the fonts required for each theme: */
 /* WBC fonts */

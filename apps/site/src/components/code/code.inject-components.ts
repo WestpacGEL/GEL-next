@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+export { BANK_OPTIONS } from '@/constants/bank-options';
+
 export { clsx } from 'clsx';
 
 export { DesktopComputerPictogram, DriversLicencePictogram } from '@westpac/ui/pictogram';
