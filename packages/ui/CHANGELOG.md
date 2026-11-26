@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.21.1
+
+### Patch Changes
+
+- 2186ef9: Remove React warnings by preventing state props from being forwarded to the DOM
+
 ## 1.21.0
 
 ### Minor Changes
