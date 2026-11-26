@@ -10,9 +10,9 @@ Use semantic utilities such as `bg-background-white` and `text-text-body` in bot
 
 ## Migrating the Westpac brand
 
-**Breaking change:** `wbc` now uses the refreshed appearance formerly called WBC26. To retain the previous Westpac appearance, change the theme import, `data-brand`, explicit component `brand` props, saved selections and custom `wbc:` Tailwind variants to `wbcLegacy` / `wbcLegacy:` (capital L). Existing WBC26 consumers must instead migrate `wbc26` to `wbc`; there is no public compatibility alias.
+**Breaking change:** `wbc` now uses the refreshed appearance formerly called WBC26. To retain the previous Westpac appearance, change the theme import, `data-brand`, explicit component `brand` props, saved selections and custom `wbc:` Tailwind variants to `wbcLegacy` / `wbcLegacy:`. Existing WBC26 consumers must instead migrate `wbc26` to `wbc`; there is no public compatibility alias.
 
-Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers as well. Aggregate Figma keys retain their source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`. Review both modes and update visual snapshots deliberately. Existing STG, BSA and BOM token values are unchanged; the refreshed Figma export adds icon tokens for all brands and updates Westpac pictogram colours.
+Update per-brand W3C, standalone CSS, Swift and Android paths and generated identifiers as well. Aggregate Figma keys retain their source names: `Westpac 2026` supplies `wbc`, and `Westpac` supplies `wbcLegacy`. Review both modes and update visual snapshots deliberately. Existing STG, BSA and BOM token values are unchanged. Icons now support dedicated colour tokens across all brands, and Westpac pictogram colours have been updated.
 
 ## Icon colours
 
