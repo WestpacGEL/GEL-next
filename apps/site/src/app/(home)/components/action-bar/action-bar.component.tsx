@@ -45,18 +45,17 @@ export function ActionBar() {
             </p>
           </div>
           <ul role="list" className="flex gap-2">
-            {Object.entries(logoMap).map(([key, { logo: Logo, name }]) => (
-              <li key={key}>
-                <Link href={`/design-system/${key}`} className="outline-offset-[3px] focus-visible:outline-gel-focus">
-                  <CircleLogo>
-                    <Logo aria-label={`${name} Design System`} className={logoStyles({ brand: key as BrandKey })} />
-                  </CircleLogo>
-                  {key === 'wbcLegacy' && (
-                    <span className="block text-center typography-body-11 text-gel-text">Legacy</span>
-                  )}
-                </Link>
-              </li>
-            ))}
+            {Object.entries(logoMap)
+              .filter(([key]) => key !== 'wbcLegacy')
+              .map(([key, { logo: Logo, name }]) => (
+                <li key={key}>
+                  <Link href={`/design-system/${key}`} className="outline-offset-[3px] focus-visible:outline-gel-focus">
+                    <CircleLogo>
+                      <Logo aria-label={`${name} Design System`} className={logoStyles({ brand: key as BrandKey })} />
+                    </CircleLogo>
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
         <div
@@ -72,17 +71,19 @@ export function ActionBar() {
             }}
             aria-label="Change brand"
           >
-            {BANK_OPTIONS.map(({ icon: Icon, homePageClasses, key, label }) => (
-              <BrandSelect.Option href={`/design-system/${key}`} key={key} textValue={label}>
-                <div className="flex w-full items-center justify-between">
-                  <span className="typography-body-10">
-                    {label}
-                    <span className="sr-only"> Design System</span>
-                  </span>
-                  <Icon aria-hidden="true" className={homePageClasses} />
-                </div>
-              </BrandSelect.Option>
-            ))}
+            {BANK_OPTIONS.filter(({ key }) => key !== 'wbcLegacy').map(
+              ({ icon: Icon, homePageClasses, key, label }) => (
+                <BrandSelect.Option href={`/design-system/${key}`} key={key} textValue={label}>
+                  <div className="flex w-full items-center justify-between">
+                    <span className="typography-body-10">
+                      {label}
+                      <span className="sr-only"> Design System</span>
+                    </span>
+                    <Icon aria-hidden="true" className={homePageClasses} />
+                  </div>
+                </BrandSelect.Option>
+              ),
+            )}
           </BrandSelect>
         </div>
       </GridContainer>
