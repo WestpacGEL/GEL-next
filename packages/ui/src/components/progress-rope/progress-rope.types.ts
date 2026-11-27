@@ -1,44 +1,24 @@
-import { HTMLAttributes, MouseEventHandler, ReactNode } from 'react';
+import { HTMLAttributes, MouseEventHandler } from 'react';
+
+import { type BaseRopeProps, type RopeStepItem } from './components/base-rope/base-rope.types.js';
 
 export type ProgressRopeStepItem = {
+  /**
+   * Handler called when the user selects an available step
+   */
   onClick?: MouseEventHandler<Element>;
-  text: ReactNode;
-  type?: 'step';
-};
-
-export type ProgressRopeStepWithIndex =
-  | (ProgressRopeStepItem & { index: number })
-  | {
-      steps: (ProgressRopeStepItem & { index: number })[];
-      text: ReactNode;
-      type: 'group';
-    };
+} & RopeStepItem;
 
 export type ProgressRopeProps = {
-  /**
-   * Current active step (zero-indexed)
-   * @default 0
-   */
-  current?: number;
-  /**
-   * Data
-   */
-  data?: (
-    | ProgressRopeStepItem
-    | {
-        steps: ProgressRopeStepItem[];
-        text: ReactNode;
-        type: 'group';
-      }
-  )[];
-  /**
-   * The semantic tag for the group step headings
-   * @default h3
-   */
-  headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /**
    * Tag to render
    * @default nav
    */
   tag?: keyof JSX.IntrinsicElements;
-} & HTMLAttributes<Element>;
+  /**
+   * The semantic tag for the group step headings
+   * @default h3
+   */
+  headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+} & HTMLAttributes<Element> &
+  Omit<BaseRopeProps<ProgressRopeStepItem>, 'groupToggleMode' | 'renderGroup' | 'renderStep'>;
