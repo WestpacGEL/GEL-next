@@ -18,7 +18,7 @@ export const Heading = ({ children, level = 3, textAlign = 'left', className }: 
   }, [children]);
 
   return (
-    <Tag id={id} className={styles({ textAlign, level, className })}>
+    <Tag id={id} tabIndex={-1} className={styles({ textAlign, level, className })}>
       {children}
     </Tag>
   );
